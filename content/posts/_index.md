@@ -3,4 +3,4 @@ title: "All Posts"
 draft: false
 ---
 
-Here’s a list of all my cybersecurity walkthroughs and write‑ups.
+Here you’ll find every walkthrough and write‑up I publish.
