@@ -1,4 +1,4 @@
-baseURL = "https://KalaimaranB.github.io/"
+baseURL = "https://cyberblog-kalaimaran.netlify.app/"
 languageCode = "en-us"
 title = "Cybersecurity Blog"
 theme = "tailbliss"
@@ -9,16 +9,21 @@ theme = "tailbliss"
   favicon = "favicon.ico"
 
 [menu]
-
   [[menu.main]]
-    name = "Home"
-    url = "/"
+    name   = "Home"
+    url    = "/"
     weight = 1
 
   [[menu.main]]
-    name = "Posts"
-    url = "/posts"
+    name   = "Posts"
+    url    = "/posts/"
     weight = 2
+
+  [[menu.main]]
+    name   = "About"
+    url    = "/about/"
+    weight = 3
+
 
 ignoreLogs = ["warning-goldmark-raw-html"]
 
