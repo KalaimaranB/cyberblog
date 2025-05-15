@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Windows on Cybersecurity Blog</title>
-    <link>https://KalaimaranB.github.io/tags/windows/</link>
-    <description>Recent content in Windows on Cybersecurity Blog</description>
+    <title>Windows on Personal Portfolio</title>
+    <link>http://localhost:1313/tags/windows/</link>
+    <description>Recent content in Windows on Personal Portfolio</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 14 May 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://KalaimaranB.github.io/tags/windows/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/windows/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>TryHackMe: Blue Walkthrough</title>
-      <link>https://KalaimaranB.github.io/posts/tryhackme-blue/</link>
+      <title>TryHackMe: Blue Walkthrough Again</title>
+      <link>http://localhost:1313/posts/tryhackme-blue/</link>
       <pubDate>Wed, 14 May 2025 00:00:00 +0000</pubDate>
-      <guid>https://KalaimaranB.github.io/posts/tryhackme-blue/</guid>
+      <guid>http://localhost:1313/posts/tryhackme-blue/</guid>
       <description>&lt;h2 id=&#34;-summary&#34;&gt;🧠 Summary&lt;/h2&gt;&#xA;&lt;p&gt;This post walks through enumeration, exploitation, and post-exploitation for the Blue room on TryHackMe.&lt;/p&gt;</description>
     </item>
   </channel>

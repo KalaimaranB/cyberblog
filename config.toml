@@ -1,0 +1,75 @@
+baseURL = "https://kalaimaran-portfolio.netlify.app/"
+languageCode = "en-us"
+title = "Personal Portfolio"
+theme = "tailbliss"
+ignoreLogs = ["warning-goldmark-raw-html"]
+relativeURLs = true        # generate links like "posts/" instead of full URLs
+canonifyURLs = false       # don’t prepend baseURL
+
+[params]
+  Moto        = "Sharing my journey"
+  Description = "A biomedical engineering student and cybersecurity enthusiast"
+  author = "Kalaimaran"
+  favicon = "favicon.ico"
+
+  [params.P1]
+    Heading = "My Mission"
+    Image   = "images/mission.png"
+    Content = [
+      { text = "I started in biomedical engineering…" },
+      { text = "Now I love pentesting and red teams…" }
+    ]
+
+  [params.P2]
+    Heading = "What I Build"
+    Image   = "images/test.png"
+    Content = [
+      { text = "Custom CTF tools" },
+      { text = "Automated scanners" }
+    ]
+
+  [params.P3]
+    Heading = "Sponsors & Clients"
+    Logos = []
+    Content = [
+      { text = "Trusted by these organizations…" }
+    ]
+    Links = [
+      { text = "View All Clients", url = "/clients/" }
+    ]
+
+  [params.P4]
+    Heading = "Latest From the Blog"
+    Content = [
+      { text = "Keep up with my newest posts and tutorials." }
+    ]
+
+[menu]
+
+  [[menu.main]]
+    name   = "Home"
+    url    = "/"
+    weight = 1
+
+  [[menu.main]]
+    name   = "About"
+    url    = "/about/"
+    weight = 2
+
+  [[menu.main]]
+    name   = "Posts"
+    url    = "/posts/"
+    weight = 3
+
+
+  [[menu.footer]]
+    identifier = "about"
+    name       = "About"
+    url        = "/about/"
+    weight     = 10
+
+  [[menu.footer]]
+    identifier = "posts"
+    name       = "Posts"
+    url        = "/posts"
+    weight     = 20
