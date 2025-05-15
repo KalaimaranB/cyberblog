@@ -1,5 +1,5 @@
 ---
-title: "TryHackMe: Blue Walkthrough"
+title: "TryHackMe: Blue Walkthrough Again"
 date: 2025-05-14
 draft: false
 tags: ["tryhackme", "windows", "enumeration"]
