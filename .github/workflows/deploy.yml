@@ -13,6 +13,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           submodules: true
+          fetch-depth: 0
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -25,15 +26,16 @@ jobs:
           hugo-version: '0.147.0'
           extended: true
 
-      - name: Install dependencies
+      - name: Install NPM dependencies
         run: npm install
 
-      - name: Build site
-        run: hugo --minify
+      - name: Build Hugo site
+        run: hugo --minify --buildDrafts --buildFuture
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
+          force_orphan: true  # ⬅️ Forces new gh-pages history
 
