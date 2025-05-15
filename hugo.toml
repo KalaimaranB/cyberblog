@@ -1,0 +1,24 @@
+baseURL = "https://KalaimaranB.github.io/"
+languageCode = "en-us"
+title = "Cybersecurity Blog"
+theme = "tailbliss"
+
+[params]
+  description = "My cybersecurity walkthroughs and learning logs"
+  author = "Kalaimaran"
+  favicon = "favicon.ico"
+
+[menu]
+
+  [[menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 1
+
+  [[menu.main]]
+    name = "Posts"
+    url = "/posts"
+    weight = 2
+
+ignoreLogs = ["warning-goldmark-raw-html"]
+
