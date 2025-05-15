@@ -1,4 +1,4 @@
-baseURL = "https://cyberblog-kalaimaran.netlify.app/"
+baseURL = "https://kalaimaran-portfolio.netlify.app/"
 languageCode = "en-us"
 title = "Cybersecurity Blog"
 theme = "tailbliss"
@@ -26,4 +26,5 @@ theme = "tailbliss"
 
 
 ignoreLogs = ["warning-goldmark-raw-html"]
-
+relativeURLs = true        # generate links like "posts/" instead of full URLs
+canonifyURLs = false       # don’t prepend baseURL
