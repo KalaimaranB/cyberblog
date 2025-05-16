@@ -6,21 +6,14 @@
     <description>Recent content in Welcome to My Cybersecurity Blog on Personal Portfolio</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 14 May 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 15 May 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>TryHackMe: Blue Walkthrough Again</title>
-      <link>http://localhost:1313/posts/tryhackme-blue/</link>
-      <pubDate>Wed, 14 May 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/tryhackme-blue/</guid>
-      <description>&lt;h2 id=&#34;-summary&#34;&gt;🧠 Summary&lt;/h2&gt;&#xA;&lt;p&gt;This post walks through enumeration, exploitation, and post-exploitation for the Blue room on TryHackMe.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Blog Post 1</title>
-      <link>http://localhost:1313/posts/blog-post-1/</link>
-      <pubDate>Sat, 18 Jun 2022 11:10:36 +0800</pubDate>
-      <guid>http://localhost:1313/posts/blog-post-1/</guid>
-      <description>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus, odio nec venenatis lacinia, lacus lectus varius nisi, in tristique mi purus ut libero.</description>
+      <title>Intro to AWS &amp; IAM Enumeration</title>
+      <link>http://localhost:1313/posts/introtoaws-iam-enumeration/</link>
+      <pubDate>Thu, 15 May 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/introtoaws-iam-enumeration/</guid>
+      <description>A walkthrough of the Intro to AWS Pentesting IAM Enumeration with Pacu Challenge</description>
     </item>
   </channel>
 </rss>

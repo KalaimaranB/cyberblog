@@ -41,7 +41,7 @@ canonifyURLs = false       # don’t prepend baseURL
   [params.P4]
     Heading = "Latest From the Blog"
     Content = [
-      { text = "Keep up with my newest posts and tutorials." }
+      { text = "Keep up with my newest posts! (a very much in progress site...)" }
     ]
 
 [menu]

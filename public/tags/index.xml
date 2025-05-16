@@ -6,34 +6,41 @@
     <description>Recent content in Tags on Personal Portfolio</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 14 May 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 15 May 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AWS</title>
+      <link>http://localhost:1313/tags/aws/</link>
+      <pubDate>Thu, 15 May 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/aws/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>AWS Pentesting</title>
+      <link>http://localhost:1313/tags/aws-pentesting/</link>
+      <pubDate>Thu, 15 May 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/aws-pentesting/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Enumeration</title>
       <link>http://localhost:1313/tags/enumeration/</link>
-      <pubDate>Wed, 14 May 2025 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 15 May 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/enumeration/</guid>
       <description></description>
     </item>
     <item>
-      <title>Tryhackme</title>
-      <link>http://localhost:1313/tags/tryhackme/</link>
-      <pubDate>Wed, 14 May 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/tryhackme/</guid>
+      <title>IAM</title>
+      <link>http://localhost:1313/tags/iam/</link>
+      <pubDate>Thu, 15 May 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/iam/</guid>
       <description></description>
     </item>
     <item>
-      <title>Windows</title>
-      <link>http://localhost:1313/tags/windows/</link>
-      <pubDate>Wed, 14 May 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/windows/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Blog</title>
-      <link>http://localhost:1313/tags/blog/</link>
-      <pubDate>Sat, 18 Jun 2022 11:10:36 +0800</pubDate>
-      <guid>http://localhost:1313/tags/blog/</guid>
+      <title>Pacu</title>
+      <link>http://localhost:1313/tags/pacu/</link>
+      <pubDate>Thu, 15 May 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/pacu/</guid>
       <description></description>
     </item>
   </channel>
