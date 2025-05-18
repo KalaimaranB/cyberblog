@@ -3,7 +3,7 @@ title: "Intro to AWS & S3 Bucket Attacking"
 date: 2025-05-17
 draft: false
 language: en
-featured_image: ../assets/images/posts/pacuIcon.png
+featured_image: ../assets/images/posts/s3-bucket-aws.png
 summary: A walkthrough of the Intro to AWS Pentesting Attacking S3 Buckets for Credit Card Info
 authorimage: ../assets/images/posts/cyber-immuno-fusion.png
 categories: Blog

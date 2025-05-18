@@ -6,8 +6,22 @@
     <description>Recent content in All Posts on Personal Portfolio</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 15 May 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 18 May 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cloudgoat EC2 SSRF Walkthrough</title>
+      <link>http://localhost:1313/posts/ec2_ssrf_walkthrough/</link>
+      <pubDate>Sun, 18 May 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/ec2_ssrf_walkthrough/</guid>
+      <description>A walkthrough of the EC2 SSRF medium challenge from CloudGoat</description>
+    </item>
+    <item>
+      <title>Intro to AWS &amp; S3 Bucket Attacking</title>
+      <link>http://localhost:1313/posts/introtoaws-s3-bucketattack/</link>
+      <pubDate>Sat, 17 May 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/introtoaws-s3-bucketattack/</guid>
+      <description>A walkthrough of the Intro to AWS Pentesting Attacking S3 Buckets for Credit Card Info</description>
+    </item>
     <item>
       <title>Intro to AWS &amp; IAM Enumeration</title>
       <link>http://localhost:1313/posts/introtoaws-iam-enumeration/</link>

