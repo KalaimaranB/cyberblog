@@ -10,9 +10,9 @@
     <atom:link href="http://localhost:1313/tags/s3/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Intro to AWS &amp; S3 Bucket Attacking</title>
-      <link>http://localhost:1313/posts/introtoaws-s3-bucketattack/</link>
+      <link>http://localhost:1313/posts/introtoaws_s3_bucketattack/</link>
       <pubDate>Sat, 17 May 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/introtoaws-s3-bucketattack/</guid>
+      <guid>http://localhost:1313/posts/introtoaws_s3_bucketattack/</guid>
       <description>A walkthrough of the Intro to AWS Pentesting Attacking S3 Buckets for Credit Card Info</description>
     </item>
   </channel>

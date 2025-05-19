@@ -10,10 +10,17 @@
     <atom:link href="http://localhost:1313/tags/lambda/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Cloudgoat EC2 SSRF Walkthrough</title>
-      <link>http://localhost:1313/posts/ec2_ssrf_walkthrough/</link>
+      <link>http://localhost:1313/posts/ec2_ssrf_cloudgoat_walkthrough/</link>
       <pubDate>Sun, 18 May 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/ec2_ssrf_walkthrough/</guid>
+      <guid>http://localhost:1313/posts/ec2_ssrf_cloudgoat_walkthrough/</guid>
       <description>A walkthrough of the EC2 SSRF medium challenge from CloudGoat</description>
+    </item>
+    <item>
+      <title>Cloudgoat Lambda Privesc</title>
+      <link>http://localhost:1313/posts/lambdaprivsec_cloudgoat-walkthrough/</link>
+      <pubDate>Sat, 17 May 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/lambdaprivsec_cloudgoat-walkthrough/</guid>
+      <description>A walkthrough of the Lambda Privesc easy Cloudgoat challenge</description>
     </item>
   </channel>
 </rss>

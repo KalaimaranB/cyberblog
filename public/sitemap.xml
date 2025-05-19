@@ -20,7 +20,7 @@
     <loc>http://localhost:1313/tags/cloudgoat/</loc>
     <lastmod>2025-05-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/ec2_ssrf_walkthrough/</loc>
+    <loc>http://localhost:1313/posts/ec2_ssrf_cloudgoat_walkthrough/</loc>
     <lastmod>2025-05-18T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/lambda/</loc>
@@ -38,10 +38,16 @@
     <loc>http://localhost:1313/cybersecurity/</loc>
     <lastmod>2025-05-17T00:00:00-07:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/posts/lambdaprivsec_cloudgoat-walkthrough/</loc>
+    <lastmod>2025-05-17T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/tags/enumeration/</loc>
     <lastmod>2025-05-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/introtoaws-s3-bucketattack/</loc>
+    <loc>http://localhost:1313/posts/introtoaws_s3_bucketattack/</loc>
+    <lastmod>2025-05-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/privilege-escalation/</loc>
     <lastmod>2025-05-17T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/s3/</loc>
@@ -50,7 +56,7 @@
     <loc>http://localhost:1313/tags/iam/</loc>
     <lastmod>2025-05-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/introtoaws-iam-enumeration/</loc>
+    <loc>http://localhost:1313/posts/introtoaws_iam_enumeration/</loc>
     <lastmod>2025-05-15T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/about/</loc>
