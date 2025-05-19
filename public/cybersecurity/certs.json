@@ -1,0 +1,42 @@
+[
+    {
+        "file": "THM-Hackfinity.png",
+        "description": "The first CTF I competed in, Hackfinity was an international event run by TryHackMe for students. The tasks I completed were on Web Applications, OSINT, Boot2Root among others."
+    },
+    {
+        "file": "ISC2-CC.png",
+        "description": "An introductory certification that teaches foundational concepts such as Business continuity, Disaster Recovery & Network Security."
+    },
+    {
+        "file": "THM-AdventOfCyber.png",
+        "description": "Advent of Cyber is a yearly event run by TryHackMe where you I learned about red & blue teaming concepts like Log Analysis, Wifi attacks and more."
+    },
+    {
+        "file": "THM-Pathway-Cyber101.png",
+        "description": "A pathway teaching Cybersecurity basics including Linux, Windows, Networking, Metasploit, Red & Blue Team tools among others."
+    },
+    {
+        "file": "THM-Pathway-DevSecOps.png",
+        "description": "A pathway focused on secure pipeliens, Iac & Containerization where I learned about CI/CD, Docker/Kubernetes & IaC basics. "
+    },
+    {
+        "file": "SimplyCyber-HackingMethod.png",
+        "description": "A course run by Tyler, an OSCP certified professional, where he teaches basic Kali & methodology for ethical hacking."
+    },
+    {
+        "file": "THM-Pathway-JrPenTester.png",
+        "description": "A pathway focused on technical skills where I learned about Web Hacking, BurpSuite, Nmap, Metasploit and other tools."
+    },
+    {
+        "file": "Google-Cybersecurity.png",
+        "description": "A certificate by Google teaching foundational Cybersecurity concepts focused on network security and threat analysis from a Cloud perspective."
+    },
+    {
+        "file": "THM-Pathway-SecurityEngineer.png",
+        "description": "A pathway focused on understanding secure software development, system hardening, SAST/DAST & Incident management."
+    },
+    {
+        "file": "THM-Pathway-WebFundamentals.png",
+        "description": "A pathway focused on understanding how web applications work and how to exploit them, including IDOR, SSRF, and SQL vulnerabilities."
+    }
+]

@@ -10,6 +10,24 @@
 <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
 <link rel="manifest" href="../../favicon/site.webmanifest">
 <link rel="mask-icon" href="../../favicon/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/>
+
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper/css/effect-coverflow.min.css"
+/>
+
+<link rel="stylesheet" href="../../css/custom-swiper.css">
+
+
+
+
 <meta name="msapplication-TileColor" content="#da532c">
 <meta name="theme-color" content="#ffffff">
 <title itemprop="name"> Cloudgoat EC2 SSRF Walkthrough | Personal Portfolio 
@@ -75,8 +93,14 @@
             
             
             
-            <a class="px-4 py-2 mt-2 text-sm font-semibold rounded-lg md:mt-0 md:ml-4 hover:text-white focus:text-white hover:bg-primary-600 focus:bg-primary-700 focus:outline-none focus:shadow-outline" href="http://localhost:1313/posts/" title="Posts">
-                Posts
+            <a class="px-4 py-2 mt-2 text-sm font-semibold rounded-lg md:mt-0 md:ml-4 hover:text-white focus:text-white hover:bg-primary-600 focus:bg-primary-700 focus:outline-none focus:shadow-outline" href="http://localhost:1313/cybersecurity/" title="Cybersecurity">
+                Cybersecurity
+            </a>
+            
+            
+            
+            <a class="px-4 py-2 mt-2 text-sm font-semibold rounded-lg md:mt-0 md:ml-4 hover:text-white focus:text-white hover:bg-primary-600 focus:bg-primary-700 focus:outline-none focus:shadow-outline" href="http://localhost:1313/posts/" title="Walkthroughs">
+                Walkthroughs
             </a>
             
             
@@ -121,7 +145,7 @@
   
   <div class="max-w-2xl px-6 pt-6 pb-16 mx-auto prose dark:prose-invert dark:text-white">
     <h1 id="introduction--context">Introduction &amp; Context</h1>
-<p>Hey guys! This is a walkthrough of the <a href="https://github.com/RhinoSecurityLabs/cloudgoat/blob/master/cloudgoat/scenarios/aws/ec2_ssrf/README.md">Cloudgoat EC2 SSRF</a> Medium Challenge. I completed this challenge as part of Tyler&rsquo;s <a href="https://academy.simplycyber.io/l/pdp/introduction-to-aws-pentesting">Intro to AWS Pentesting course</a>, so part of this I was guided through, part of it not (I&rsquo;ll clarify which parts were and weren&rsquo;t). I&rsquo;ll be walking through how I solved this challenge and give my reasoning for it. I&rsquo;m writing targeted as beginners, so I&rsquo;ll try and explain as much as possible. I&rsquo;d still consider myself a noob at this, so don&rsquo;t expect this to be the &ldquo;optimal&rdquo; solution, but it&rsquo;s the most logical one (at least for me).</p>
+<p>Hey guys! This is a walkthrough of the <a href="https://github.com/RhinoSecurityLabs/cloudgoat/blob/master/cloudgoat/scenarios/aws/ec2_ssrf/README.md">Cloudgoat EC2 SSRF</a> Medium Challenge. I completed this challenge as part of Tyler&rsquo;s <a href="https://academy.simplycyber.io/l/pdp/introduction-to-aws-pentesting">Intro to AWS Pentesting course</a>, so part of this I was guided through, part of it not (I&rsquo;ll clarify which parts were and weren&rsquo;t). This is quite a long challenge, but completing it teached me a lot so hopefully you try it out too. I&rsquo;m writing this targeted as beginners, so I&rsquo;ll try and explain as much as possible. I&rsquo;d still consider myself a newbie at this, so don&rsquo;t expect this to be the &ldquo;optimal&rdquo; solution, but it&rsquo;s the most logical one (at least for me).</p>
 <h1 id="setup-guided">Setup (Guided)</h1>
 <p>Only setup we need to do is to start the cloudgoat challenge if you haven&rsquo;t already with</p>
 <pre tabindex="0"><code>cloudgoat create ec2_ssrf
@@ -301,6 +325,55 @@ cloudgoat_output_solus_secret_key = SECRET_KEY_VALUE
 <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
 <script src="../../js/darkmode.js" defer></script>
+  
+
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+
+  <script defer>
+    document.addEventListener('DOMContentLoaded', () => {
+      new Swiper('.swiper', {
+        effect: 'coverflow',
+        grabCursor: true,
+        centeredSlides: true,
+
+        slidesPerView: 'auto',
+        spaceBetween: 30,
+        loop: true,
+
+        coverflowEffect: {
+          rotate: 30,
+          stretch: 0,
+          depth: 150,
+          modifier: 1,
+          slideShadows: true,
+        },
+
+        
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+        
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+
+        on: {
+          slideChange() {
+            
+            const idx = this.realIndex;
+            document.getElementById('cert-caption').innerText = certData[idx].description;
+          }
+        }
+      });
+    });
+  </script>
+
+
+
 <footer class="bg-gray-900">
     <div class="max-w-md px-4 py-12 mx-auto overflow-hidden sm:max-w-3xl sm:px-6 lg:max-w-7xl lg:px-8">
         <nav class="flex flex-wrap justify-center -mx-5 -my-2" aria-label="Footer">
@@ -310,7 +383,11 @@ cloudgoat_output_solus_secret_key = SECRET_KEY_VALUE
             </div>
             
             <div class="px-5 py-2">
-                <a href="http://localhost:1313/posts" class="text-base text-gray-400 hover:text-gray-300">Posts</a>
+                <a href="http://localhost:1313/cybersecurity" class="text-base text-gray-400 hover:text-gray-300">Cybersecurity</a>
+            </div>
+            
+            <div class="px-5 py-2">
+                <a href="http://localhost:1313/walkthroughs" class="text-base text-gray-400 hover:text-gray-300">Walkthroughs</a>
             </div>
             
         </nav>
