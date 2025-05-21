@@ -6,12 +6,12 @@
     <description>Recent content in Privilege Escalation on Personal Portfolio</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 17 May 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 19 May 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/privilege-escalation/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Cloudgoat Lambda Privesc</title>
       <link>http://localhost:1313/posts/lambdaprivsec_cloudgoat-walkthrough/</link>
-      <pubDate>Sat, 17 May 2025 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 19 May 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/lambdaprivsec_cloudgoat-walkthrough/</guid>
       <description>A walkthrough of the Lambda Privesc easy Cloudgoat challenge</description>
     </item>

@@ -16,13 +16,6 @@
       <description>A walkthrough of the EC2 SSRF medium challenge from CloudGoat</description>
     </item>
     <item>
-      <title>Cloudgoat Lambda Privesc</title>
-      <link>http://localhost:1313/posts/lambdaprivsec_cloudgoat-walkthrough/</link>
-      <pubDate>Sat, 17 May 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/lambdaprivsec_cloudgoat-walkthrough/</guid>
-      <description>A walkthrough of the Lambda Privesc easy Cloudgoat challenge</description>
-    </item>
-    <item>
       <title>Intro to AWS &amp; S3 Bucket Attacking</title>
       <link>http://localhost:1313/posts/introtoaws_s3_bucketattack/</link>
       <pubDate>Sat, 17 May 2025 00:00:00 +0000</pubDate>
