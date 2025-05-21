@@ -6,8 +6,15 @@
     <description>Recent content on Personal Portfolio</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 20 May 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 21 May 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cloudgoat SNS Secrets</title>
+      <link>http://localhost:1313/posts/snssecrets_cloudgoat-walkthrough/</link>
+      <pubDate>Wed, 21 May 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/snssecrets_cloudgoat-walkthrough/</guid>
+      <description>A walkthrough of the SNS Secrets easy Cloudgoat challenge</description>
+    </item>
     <item>
       <title>Cloudgoat Beanstalk Secrets</title>
       <link>http://localhost:1313/posts/beanstalksecrets_cloudgoat-walkthrough/</link>
