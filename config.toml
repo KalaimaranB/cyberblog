@@ -43,28 +43,44 @@ canonifyURLs = false       # don’t prepend baseURL
     Content = [
       { text = "Keep up with my newest posts! (a very much in progress site...)" }
     ]
-
 [menu]
 
   [[menu.main]]
-    name   = "Home"
-    url    = "/"
-    weight = 1
+    identifier = "home"
+    name       = "Home"
+    url        = "/"
+    weight     = 1
 
   [[menu.main]]
-    name   = "About"
-    url    = "/about/"
-    weight = 2
+    identifier = "about"
+    name       = "About"
+    url        = "/about/"
+    weight     = 2
 
   [[menu.main]]
-    name   = "Walkthroughs"
-    url    = "/posts/"
-    weight = 3
+    identifier = "biomedical"
+    name       = "Biomedical"
+    url        = "/biomedical/"
+    weight     = 3
 
   [[menu.main]]
-    name   = "Cybersecurity"
-    url    = "/cybersecurity/"
-    weight = 3
+    identifier = "software"
+    name       = "Software"
+    url        = "/software/"
+    weight     = 4
+
+  [[menu.main]]
+    identifier = "cybersecurity"
+    name       = "Cybersecurity"
+    url        = "/cybersecurity/"
+    weight     = 5
+
+  [[menu.main]]
+    identifier = "walkthroughs"
+    name       = "Walkthroughs"
+    url        = "/posts/"
+    weight     = 6
+
 
 
   [[menu.footer]]
@@ -74,13 +90,25 @@ canonifyURLs = false       # don’t prepend baseURL
     weight     = 10
 
   [[menu.footer]]
-    identifier = "walkthroughs"
-    name       = "Walkthroughs"
-    url        = "/walkthroughs"
+    identifier = "biomedical"
+    name       = "Biomedical"
+    url        = "/biomedical/"
     weight     = 20
+
+  [[menu.footer]]
+    identifier = "software"
+    name       = "Software"
+    url        = "/software/"
+    weight     = 30
 
   [[menu.footer]]
     identifier = "cybersecurity"
     name       = "Cybersecurity"
-    url        = "/cybersecurity"
-    weight     = 20
+    url        = "/cybersecurity/"
+    weight     = 40
+
+  [[menu.footer]]
+    identifier = "walkthroughs"
+    name       = "Walkthroughs"
+    url        = "/posts/"
+    weight     = 50

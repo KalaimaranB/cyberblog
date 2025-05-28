@@ -6,8 +6,15 @@
     <description>Recent content in All Posts on Personal Portfolio</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 21 May 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 27 May 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cloudgoat IAM Privesc By Key Rotation</title>
+      <link>http://localhost:1313/posts/iam_privesc_by_key_rotation_walkthrough/</link>
+      <pubDate>Tue, 27 May 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/iam_privesc_by_key_rotation_walkthrough/</guid>
+      <description>A walkthrough of the IAM Privesc by Key Rotation easy Cloudgoat challenge</description>
+    </item>
     <item>
       <title>Cloudgoat SNS Secrets</title>
       <link>http://localhost:1313/posts/snssecrets_cloudgoat-walkthrough/</link>
