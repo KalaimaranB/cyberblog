@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  /* Base card styling */
+  .course-card {
+    @apply p-6 bg-white border border-gray-200 rounded-lg shadow-sm 
+           hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 
+           border-l-4;
+  }
+
+  .course-card h5 {
+    @apply text-gray-900 dark:text-white;
+  }
+
+  /* Per-category accents */
+  .category-math {
+    border-left-color: #6366F1; /* indigo-500 */
+  }
+  .category-math h5 {
+    color: #6366F1;
+  }
+
+  .category-chem {
+    border-left-color: #10B981; /* emerald-500 */
+  }
+  .category-chem h5 {
+    color: #10B981;
+  }
+
+  .category-apsc {
+    border-left-color: #EAB308; /* yellow-500 */
+  }
+  .category-apsc h5 {
+    color: #EAB308;
+  }
+
+  .category-bmeg {
+    border-left-color: #14B8A6; /* teal-500 */
+  }
+  .category-bmeg h5 {
+    color: #14B8A6;
+  }
+
+  .category-cpen {
+    border-left-color: #F43F5E; /* rose-500 */
+  }
+  .category-cpen h5 {
+    color: #F43F5E;
+  }
+
+  .category-micb {
+    border-left-color: #8B5CF6; /* violet-500 */
+  }
+  .category-micb h5 {
+    color: #8B5CF6;
+  }
+
+  .category-phys {
+    border-left-color: #D946EF; /* fuchsia-500 */
+  }
+  .category-phys h5 {
+    color: #D946EF;
+  }
+}

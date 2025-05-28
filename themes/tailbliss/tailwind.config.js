@@ -2,7 +2,11 @@ const defaultTheme = require('tailwindcss/defaultTheme')
 
 // tailwind.config.js
 module.exports = {
-  content: ['./layouts/**/*.html', './content/**/*.md'],
+  content: [
+    "./layouts/**/*.html",
+    "./content/**/*.md",
+    "./node_modules/flowbite/**/*.js"
+  ],
   darkMode: 'class',
   theme: {
     extend: {
@@ -97,5 +101,11 @@ module.exports = {
   variants: {
     typography: ["dark"],
   },
-  plugins: [require("@tailwindcss/typography")],
+  plugins: [require("@tailwindcss/typography"), require("flowbite/plugin")],
+  safelist: [
+    {
+      pattern: /^(border|text)-(indigo|emerald|yellow|teal|rose|violet|fuchsia)-(500|300)$/,
+      variants: ['dark']
+    }
+  ]
 };

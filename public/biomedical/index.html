@@ -131,33 +131,905 @@
     </div>
 </div>
     
-<main>
-    <article>
-        <header class="mb-4 bg-primary-600">
-            <span class="py-96">
-                <h1 class="py-16 text-5xl font-black text-center text-white capitalize">
-                    Biomedical
-                </h1>
-            </span>
-        </header>
+<section 
+  class="px-4 py-8" 
+  x-data="{ selectedCategory: 'All' }"
+>
+  <h1 class="text-3xl font-semibold mb-4 text-gray-900 dark:text-white">
+    My Degree So Far
+  </h1>
+
+    
+
+  
+  <div class="border-b border-gray-200 dark:border-gray-700 mb-6">
+    <ul class="flex flex-wrap -mb-px text-sm font-medium text-center text-gray-500 dark:text-gray-400">
+      
+      <li class="mr-2">
+        <button
+          @click="selectedCategory='All'"
+          :class=" selectedCategory==='All'
+            ? 'inline-flex items-center p-4 border-b-2 border-blue-600 text-blue-600 dark:text-blue-500 dark:border-blue-500'
+            : 'inline-flex items-center p-4 border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300' "
+          class="rounded-t-lg transition"
+        >
+          All
+        </button>
+      </li>
+      
+      <li class="mr-2">
+        <button
+          @click="selectedCategory='MATH'"
+          :class=" selectedCategory==='MATH'
+            ? 'inline-flex items-center p-4 border-b-2 border-blue-600 text-blue-600 dark:text-blue-500 dark:border-blue-500'
+            : 'inline-flex items-center p-4 border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300' "
+          class="rounded-t-lg transition"
+        >
+          MATH
+        </button>
+      </li>
+      
+      <li class="mr-2">
+        <button
+          @click="selectedCategory='CHEM'"
+          :class=" selectedCategory==='CHEM'
+            ? 'inline-flex items-center p-4 border-b-2 border-blue-600 text-blue-600 dark:text-blue-500 dark:border-blue-500'
+            : 'inline-flex items-center p-4 border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300' "
+          class="rounded-t-lg transition"
+        >
+          CHEM
+        </button>
+      </li>
+      
+      <li class="mr-2">
+        <button
+          @click="selectedCategory='APSC'"
+          :class=" selectedCategory==='APSC'
+            ? 'inline-flex items-center p-4 border-b-2 border-blue-600 text-blue-600 dark:text-blue-500 dark:border-blue-500'
+            : 'inline-flex items-center p-4 border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300' "
+          class="rounded-t-lg transition"
+        >
+          APSC
+        </button>
+      </li>
+      
+      <li class="mr-2">
+        <button
+          @click="selectedCategory='BMEG'"
+          :class=" selectedCategory==='BMEG'
+            ? 'inline-flex items-center p-4 border-b-2 border-blue-600 text-blue-600 dark:text-blue-500 dark:border-blue-500'
+            : 'inline-flex items-center p-4 border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300' "
+          class="rounded-t-lg transition"
+        >
+          BMEG
+        </button>
+      </li>
+      
+      <li class="mr-2">
+        <button
+          @click="selectedCategory='CPEN'"
+          :class=" selectedCategory==='CPEN'
+            ? 'inline-flex items-center p-4 border-b-2 border-blue-600 text-blue-600 dark:text-blue-500 dark:border-blue-500'
+            : 'inline-flex items-center p-4 border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300' "
+          class="rounded-t-lg transition"
+        >
+          CPEN
+        </button>
+      </li>
+      
+      <li class="mr-2">
+        <button
+          @click="selectedCategory='MICB'"
+          :class=" selectedCategory==='MICB'
+            ? 'inline-flex items-center p-4 border-b-2 border-blue-600 text-blue-600 dark:text-blue-500 dark:border-blue-500'
+            : 'inline-flex items-center p-4 border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300' "
+          class="rounded-t-lg transition"
+        >
+          MICB
+        </button>
+      </li>
+      
+      <li class="mr-2">
+        <button
+          @click="selectedCategory='PHYS'"
+          :class=" selectedCategory==='PHYS'
+            ? 'inline-flex items-center p-4 border-b-2 border-blue-600 text-blue-600 dark:text-blue-500 dark:border-blue-500'
+            : 'inline-flex items-center p-4 border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300' "
+          class="rounded-t-lg transition"
+        >
+          PHYS
+        </button>
+      </li>
+      
+    </ul>
+  </div>
+
+  
+  <div class="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+      
+    
+      
+      <div
+        x-show="selectedCategory==='All' || selectedCategory==='APSC'"
+      >
         
-        <div class="max-w-2xl px-6 mx-auto mt-6 prose dark:prose-invert dark:text-white"><p>Still thinking of what will go here, my degree perhaps?</p>
-</div>
-        
-        <div class="mx-auto text-gray-900 max-w-7xl dark:text-gray-50">
-    <div class="px-4 not-prose">
-        <div class="grid gap-4 mx-auto mt-12 mb-4 lg:max-w-none md:grid-cols-3">
-            
-        </div>
-    </div>
+
+
+
+
+<div
+  class="p-6 bg-white rounded-lg shadow-sm hover:bg-gray-100
+         dark:bg-gray-800 dark:hover:bg-gray-700"
+  style="border-left:4px solid #EAB308;"
+>
+  
+
+  <h5
+    class="mb-2 text-2xl font-bold tracking-tight"
+    style="color: #EAB308;"
+  >
+    APSC100 - Applied Science 100
+  </h5>
+
+  <p class="font-normal text-gray-700 dark:text-gray-400">
+    An introduction to engineering, including topics like: roles, responsibilities, diciplines, sustainability, prototyping, CAD &amp; ethics
+  </p>
 </div>
 
-    </article>
-    <div class="max-w-xl mx-auto my-16">
+      </div>
+    
+      
+      <div
+        x-show="selectedCategory==='All' || selectedCategory==='APSC'"
+      >
         
 
-    </div>
-</main>
+
+
+
+<div
+  class="p-6 bg-white rounded-lg shadow-sm hover:bg-gray-100
+         dark:bg-gray-800 dark:hover:bg-gray-700"
+  style="border-left:4px solid #EAB308;"
+>
+  
+
+  <h5
+    class="mb-2 text-2xl font-bold tracking-tight"
+    style="color: #EAB308;"
+  >
+    APSC160 - Applied Science 160
+  </h5>
+
+  <p class="font-normal text-gray-700 dark:text-gray-400">
+    Introductory programming course in C with practical application shown using Arduinos. Focused on understanding core programming principles &amp; snytax.
+  </p>
+</div>
+
+      </div>
+    
+      
+      <div
+        x-show="selectedCategory==='All' || selectedCategory==='MATH'"
+      >
+        
+
+
+
+
+<div
+  class="p-6 bg-white rounded-lg shadow-sm hover:bg-gray-100
+         dark:bg-gray-800 dark:hover:bg-gray-700"
+  style="border-left:4px solid #6366F1;"
+>
+  
+
+  <h5
+    class="mb-2 text-2xl font-bold tracking-tight"
+    style="color: #6366F1;"
+  >
+    MATH100 - Math 100
+  </h5>
+
+  <p class="font-normal text-gray-700 dark:text-gray-400">
+    Differential Calculus with Applications is one of 2 mandatory math courses focused on teaching varying techniques for differential computations.
+  </p>
+</div>
+
+      </div>
+    
+      
+      <div
+        x-show="selectedCategory==='All' || selectedCategory==='MATH'"
+      >
+        
+
+
+
+
+<div
+  class="p-6 bg-white rounded-lg shadow-sm hover:bg-gray-100
+         dark:bg-gray-800 dark:hover:bg-gray-700"
+  style="border-left:4px solid #6366F1;"
+>
+  
+
+  <h5
+    class="mb-2 text-2xl font-bold tracking-tight"
+    style="color: #6366F1;"
+  >
+    MATH101 - Math 101
+  </h5>
+
+  <p class="font-normal text-gray-700 dark:text-gray-400">
+    Integral Calculus with Applications is the 2nd of two mandatory math courses focused on teaching varying manual techniques for integral computations.
+  </p>
+</div>
+
+      </div>
+    
+      
+      <div
+        x-show="selectedCategory==='All' || selectedCategory==='APSC'"
+      >
+        
+
+
+
+
+<div
+  class="p-6 bg-white rounded-lg shadow-sm hover:bg-gray-100
+         dark:bg-gray-800 dark:hover:bg-gray-700"
+  style="border-left:4px solid #EAB308;"
+>
+  
+
+  <h5
+    class="mb-2 text-2xl font-bold tracking-tight"
+    style="color: #EAB308;"
+  >
+    MATH152 - Applied Science 100
+  </h5>
+
+  <p class="font-normal text-gray-700 dark:text-gray-400">
+    Linear Systems is an introductory math course teaching 2D/3D geometry, vectors, matrices, eigenvalues &amp; related concepts. 
+  </p>
+</div>
+
+      </div>
+    
+      
+      <div
+        x-show="selectedCategory==='All' || selectedCategory==='PHYS'"
+      >
+        
+
+
+
+
+<div
+  class="p-6 bg-white rounded-lg shadow-sm hover:bg-gray-100
+         dark:bg-gray-800 dark:hover:bg-gray-700"
+  style="border-left:4px solid #D946EF;"
+>
+  
+
+  <h5
+    class="mb-2 text-2xl font-bold tracking-tight"
+    style="color: #D946EF;"
+  >
+    PHYS157 - Physics 157
+  </h5>
+
+  <p class="font-normal text-gray-700 dark:text-gray-400">
+    Introductory Physics for Engineers I teaches core concepts including heat, thermodynamics, oscillations, waves &amp; sound.
+  </p>
+</div>
+
+      </div>
+    
+      
+      <div
+        x-show="selectedCategory==='All' || selectedCategory==='PHYS'"
+      >
+        
+
+
+
+
+<div
+  class="p-6 bg-white rounded-lg shadow-sm hover:bg-gray-100
+         dark:bg-gray-800 dark:hover:bg-gray-700"
+  style="border-left:4px solid #D946EF;"
+>
+  
+
+  <h5
+    class="mb-2 text-2xl font-bold tracking-tight"
+    style="color: #D946EF;"
+  >
+    PHYS158 - Physics 158
+  </h5>
+
+  <p class="font-normal text-gray-700 dark:text-gray-400">
+    Introductory Physics for Engineers II focuses on Electricity &amp; Magnetism along with DC/AC circuits.
+  </p>
+</div>
+
+      </div>
+    
+      
+      <div
+        x-show="selectedCategory==='All' || selectedCategory==='PHYS'"
+      >
+        
+
+
+
+
+<div
+  class="p-6 bg-white rounded-lg shadow-sm hover:bg-gray-100
+         dark:bg-gray-800 dark:hover:bg-gray-700"
+  style="border-left:4px solid #D946EF;"
+>
+  
+
+  <h5
+    class="mb-2 text-2xl font-bold tracking-tight"
+    style="color: #D946EF;"
+  >
+    PHYS170- Physics 170
+  </h5>
+
+  <p class="font-normal text-gray-700 dark:text-gray-400">
+    Mechanics I focuses on static &amp; dynamic analysis of bodies and related concepts including impulse, work, energy among others. 
+  </p>
+</div>
+
+      </div>
+    
+      
+      <div
+        x-show="selectedCategory==='All' || selectedCategory==='CHEM'"
+      >
+        
+
+
+
+
+<div
+  class="p-6 bg-white rounded-lg shadow-sm hover:bg-gray-100
+         dark:bg-gray-800 dark:hover:bg-gray-700"
+  style="border-left:4px solid #10B981;"
+>
+  
+
+  <h5
+    class="mb-2 text-2xl font-bold tracking-tight"
+    style="color: #10B981;"
+  >
+    CHEM121 - Chemistry 121
+  </h5>
+
+  <p class="font-normal text-gray-700 dark:text-gray-400">
+    Structure &amp; Bonding in Chemistry discusses fundamental bonding theories &amp; structural chemistry, with modern applications. Some concepts were highlighted in the accompanying lab component. 
+  </p>
+</div>
+
+      </div>
+    
+      
+      <div
+        x-show="selectedCategory==='All' || selectedCategory==='CHEM'"
+      >
+        
+
+
+
+
+<div
+  class="p-6 bg-white rounded-lg shadow-sm hover:bg-gray-100
+         dark:bg-gray-800 dark:hover:bg-gray-700"
+  style="border-left:4px solid #10B981;"
+>
+  
+
+  <h5
+    class="mb-2 text-2xl font-bold tracking-tight"
+    style="color: #10B981;"
+  >
+    CHEM123 - Chemistry 123
+  </h5>
+
+  <p class="font-normal text-gray-700 dark:text-gray-400">
+    Thermodynamics, Kinetics &amp; Organic Chemistry teaches those concepts with a specific application relevant to modern society. Some concepts were highlighted in the accompanying lab component. 
+  </p>
+</div>
+
+      </div>
+    
+      
+      <div
+        x-show="selectedCategory==='All' || selectedCategory==='BMEG'"
+      >
+        
+
+
+
+
+<div
+  class="p-6 bg-white rounded-lg shadow-sm hover:bg-gray-100
+         dark:bg-gray-800 dark:hover:bg-gray-700"
+  style="border-left:4px solid #14B8A6;"
+>
+  
+
+  <h5
+    class="mb-2 text-2xl font-bold tracking-tight"
+    style="color: #14B8A6;"
+  >
+    BMEG101 - Biomedical Engineering 101
+  </h5>
+
+  <p class="font-normal text-gray-700 dark:text-gray-400">
+    Introduction to Biomedical Engineering provides a foundational introduction to the 4 stream of BMEG: Cellular Engineering, Systems &amp; Signals,Biomaterials &amp; Biomechanics &amp; Informatics 
+  </p>
+</div>
+
+      </div>
+    
+      
+      <div
+        x-show="selectedCategory==='All' || selectedCategory==='BMEG'"
+      >
+        
+
+
+
+
+<div
+  class="p-6 bg-white rounded-lg shadow-sm hover:bg-gray-100
+         dark:bg-gray-800 dark:hover:bg-gray-700"
+  style="border-left:4px solid #14B8A6;"
+>
+  
+
+  <h5
+    class="mb-2 text-2xl font-bold tracking-tight"
+    style="color: #14B8A6;"
+  >
+    BMEG102 - Biomedical Engineering 102
+  </h5>
+
+  <p class="font-normal text-gray-700 dark:text-gray-400">
+    Biomedical Engineering lab teaches basic laboratory skills in genetic engineering of bacteria, bioinformatics pipeline construction &amp; electrical instrumentation.
+  </p>
+</div>
+
+      </div>
+    
+      
+      <div
+        x-show="selectedCategory==='All' || selectedCategory==='BMEG'"
+      >
+        
+
+
+
+
+<div
+  class="p-6 bg-white rounded-lg shadow-sm hover:bg-gray-100
+         dark:bg-gray-800 dark:hover:bg-gray-700"
+  style="border-left:4px solid #14B8A6;"
+>
+  
+
+  <h5
+    class="mb-2 text-2xl font-bold tracking-tight"
+    style="color: #14B8A6;"
+  >
+    BMEG201- Biomedical Engineering 201
+  </h5>
+
+  <p class="font-normal text-gray-700 dark:text-gray-400">
+    Technical Communication for Biomedical Engineers teaches students about report preparation, oral presentation among others underscoring the interdisciplinary nature of BMEG.
+  </p>
+</div>
+
+      </div>
+    
+      
+      <div
+        x-show="selectedCategory==='All' || selectedCategory==='BMEG'"
+      >
+        
+
+
+
+
+<div
+  class="p-6 bg-white rounded-lg shadow-sm hover:bg-gray-100
+         dark:bg-gray-800 dark:hover:bg-gray-700"
+  style="border-left:4px solid #14B8A6;"
+>
+  
+
+  <h5
+    class="mb-2 text-2xl font-bold tracking-tight"
+    style="color: #14B8A6;"
+  >
+    BMEG210- Biomedical Engineering 210
+  </h5>
+
+  <p class="font-normal text-gray-700 dark:text-gray-400">
+    Thermodynamics in Biomedical Engineering builds of first year chemistry and physics, focusing on the laws of thermodynamics with applications to biomedical systems. 
+  </p>
+</div>
+
+      </div>
+    
+      
+      <div
+        x-show="selectedCategory==='All' || selectedCategory==='BMEG'"
+      >
+        
+
+
+
+
+<div
+  class="p-6 bg-white rounded-lg shadow-sm hover:bg-gray-100
+         dark:bg-gray-800 dark:hover:bg-gray-700"
+  style="border-left:4px solid #14B8A6;"
+>
+  
+
+  <h5
+    class="mb-2 text-2xl font-bold tracking-tight"
+    style="color: #14B8A6;"
+  >
+    BMEG220- Biomedical Engineering 220
+  </h5>
+
+  <p class="font-normal text-gray-700 dark:text-gray-400">
+    Circuits &amp; Electromagnetics with Applications to Biomedical Engineering builds off of first year physics. This course teaches electrostatics, electromagnetics, capacitance/inductance int eh context of physiological &amp; biomedical systems. 
+  </p>
+</div>
+
+      </div>
+    
+      
+      <div
+        x-show="selectedCategory==='All' || selectedCategory==='BMEG'"
+      >
+        
+
+
+
+
+<div
+  class="p-6 bg-white rounded-lg shadow-sm hover:bg-gray-100
+         dark:bg-gray-800 dark:hover:bg-gray-700"
+  style="border-left:4px solid #14B8A6;"
+>
+  
+
+  <h5
+    class="mb-2 text-2xl font-bold tracking-tight"
+    style="color: #14B8A6;"
+  >
+    BMEG230- Biomedical Engineering 230
+  </h5>
+
+  <p class="font-normal text-gray-700 dark:text-gray-400">
+    Biomechancis I involves studying two dimensional movement of humans, focusing on applying mathematical techniques to compute forces &amp; moments about bones, ligaments &amp; other biomechanical structural components.
+  </p>
+</div>
+
+      </div>
+    
+      
+      <div
+        x-show="selectedCategory==='All' || selectedCategory==='BMEG'"
+      >
+        
+
+
+
+
+<div
+  class="p-6 bg-white rounded-lg shadow-sm hover:bg-gray-100
+         dark:bg-gray-800 dark:hover:bg-gray-700"
+  style="border-left:4px solid #14B8A6;"
+>
+  
+
+  <h5
+    class="mb-2 text-2xl font-bold tracking-tight"
+    style="color: #14B8A6;"
+  >
+    BMEG245- Biomedical Engineering 245
+  </h5>
+
+  <p class="font-normal text-gray-700 dark:text-gray-400">
+    The Fundamental Units of Life: From Cels To Systems provides an introudction to cell structure &amp; function. The accompanying lab provided hands-on experience with Image Analysis, DNA Manipulation using Plasmids &amp; Informatics tools.
+  </p>
+</div>
+
+      </div>
+    
+      
+      <div
+        x-show="selectedCategory==='All' || selectedCategory==='BMEG'"
+      >
+        
+
+
+
+
+<div
+  class="p-6 bg-white rounded-lg shadow-sm hover:bg-gray-100
+         dark:bg-gray-800 dark:hover:bg-gray-700"
+  style="border-left:4px solid #14B8A6;"
+>
+  
+
+  <h5
+    class="mb-2 text-2xl font-bold tracking-tight"
+    style="color: #14B8A6;"
+  >
+    BMEG250- Biomedical Engineering 250
+  </h5>
+
+  <p class="font-normal text-gray-700 dark:text-gray-400">
+    Cellular Physiology &amp; Biophysics builds off of BMEG 245 and the introduction of cellular processes. It focuses on the mathematical &amp; digital modelling of differential equations that reflect biological systems such as drug diffusion.
+  </p>
+</div>
+
+      </div>
+    
+      
+      <div
+        x-show="selectedCategory==='All' || selectedCategory==='BMEG'"
+      >
+        
+
+
+
+
+<div
+  class="p-6 bg-white rounded-lg shadow-sm hover:bg-gray-100
+         dark:bg-gray-800 dark:hover:bg-gray-700"
+  style="border-left:4px solid #14B8A6;"
+>
+  
+
+  <h5
+    class="mb-2 text-2xl font-bold tracking-tight"
+    style="color: #14B8A6;"
+  >
+    BMEG257- Biomedical Engineering 257
+  </h5>
+
+  <p class="font-normal text-gray-700 dark:text-gray-400">
+    Biomedical Engineering Design I focuses on engineering design in the context of BMEG, and introduces relevant ethics &amp; sustainability principles.
+  </p>
+</div>
+
+      </div>
+    
+      
+      <div
+        x-show="selectedCategory==='All' || selectedCategory==='MATH'"
+      >
+        
+
+
+
+
+<div
+  class="p-6 bg-white rounded-lg shadow-sm hover:bg-gray-100
+         dark:bg-gray-800 dark:hover:bg-gray-700"
+  style="border-left:4px solid #6366F1;"
+>
+  
+
+  <h5
+    class="mb-2 text-2xl font-bold tracking-tight"
+    style="color: #6366F1;"
+  >
+    MATH253- Math 253
+  </h5>
+
+  <p class="font-normal text-gray-700 dark:text-gray-400">
+    Multivariable Calculus teaches students about partial &amp; directional derivatives, Lagrange multiplies, multiple integrals and other related concepts. 
+  </p>
+</div>
+
+      </div>
+    
+      
+      <div
+        x-show="selectedCategory==='All' || selectedCategory==='MATH'"
+      >
+        
+
+
+
+
+<div
+  class="p-6 bg-white rounded-lg shadow-sm hover:bg-gray-100
+         dark:bg-gray-800 dark:hover:bg-gray-700"
+  style="border-left:4px solid #6366F1;"
+>
+  
+
+  <h5
+    class="mb-2 text-2xl font-bold tracking-tight"
+    style="color: #6366F1;"
+  >
+    MATH256- Math 256
+  </h5>
+
+  <p class="font-normal text-gray-700 dark:text-gray-400">
+    Differential Equations focuses on linear ordinary differential equations while introducing Laplace Transforms, Fourier series &amp; the separation of variable technique for partial differential equations.
+  </p>
+</div>
+
+      </div>
+    
+      
+      <div
+        x-show="selectedCategory==='All' || selectedCategory==='MATH'"
+      >
+        
+
+
+
+
+<div
+  class="p-6 bg-white rounded-lg shadow-sm hover:bg-gray-100
+         dark:bg-gray-800 dark:hover:bg-gray-700"
+  style="border-left:4px solid #6366F1;"
+>
+  
+
+  <h5
+    class="mb-2 text-2xl font-bold tracking-tight"
+    style="color: #6366F1;"
+  >
+    MATH264- Math 264
+  </h5>
+
+  <p class="font-normal text-gray-700 dark:text-gray-400">
+    Vector Calculus for Electrical Engineering was taken alongside BMEG 220. This course teaches concepts such as divergence, curl, Gauss &amp; Stokes theorem as well as applications to electrostatics &amp; magentostatics.
+  </p>
+</div>
+
+      </div>
+    
+      
+      <div
+        x-show="selectedCategory==='All' || selectedCategory==='MATH'"
+      >
+        
+
+
+
+
+<div
+  class="p-6 bg-white rounded-lg shadow-sm hover:bg-gray-100
+         dark:bg-gray-800 dark:hover:bg-gray-700"
+  style="border-left:4px solid #6366F1;"
+>
+  
+
+  <h5
+    class="mb-2 text-2xl font-bold tracking-tight"
+    style="color: #6366F1;"
+  >
+    MATH253- Math 302
+  </h5>
+
+  <p class="font-normal text-gray-700 dark:text-gray-400">
+    Introduction to Probability is a course that teaches core notions of probability, random variables, limit theorems &amp; more.
+  </p>
+</div>
+
+      </div>
+    
+      
+      <div
+        x-show="selectedCategory==='All' || selectedCategory==='CPEN'"
+      >
+        
+
+
+
+
+<div
+  class="p-6 bg-white rounded-lg shadow-sm hover:bg-gray-100
+         dark:bg-gray-800 dark:hover:bg-gray-700"
+  style="border-left:4px solid #F43F5E;"
+>
+  
+
+  <h5
+    class="mb-2 text-2xl font-bold tracking-tight"
+    style="color: #F43F5E;"
+  >
+    CPEN221- Computer Engineering 221
+  </h5>
+
+  <p class="font-normal text-gray-700 dark:text-gray-400">
+    Software Construction I is a core course that teaches design, implementation &amp; reasoning about software systems. It delves into specification design, testing methodologies, object-oriented design through 3 major projects.
+  </p>
+</div>
+
+      </div>
+    
+      
+      <div
+        x-show="selectedCategory==='All' || selectedCategory==='MICB'"
+      >
+        
+
+
+
+
+<div
+  class="p-6 bg-white rounded-lg shadow-sm hover:bg-gray-100
+         dark:bg-gray-800 dark:hover:bg-gray-700"
+  style="border-left:4px solid #8B5CF6;"
+>
+  
+
+  <h5
+    class="mb-2 text-2xl font-bold tracking-tight"
+    style="color: #8B5CF6;"
+  >
+    MICB212- Microbiology 212
+  </h5>
+
+  <p class="font-normal text-gray-700 dark:text-gray-400">
+    Currently Enrolled: Introductory Immunology &amp; Virology teaches about the innate &amp; adaptive immune responses, allergies, virus structure &amp; replication cycle and some data analysis.
+  </p>
+</div>
+
+      </div>
+    
+      
+      <div
+        x-show="selectedCategory==='All' || selectedCategory==='CHEM'"
+      >
+        
+
+
+
+
+<div
+  class="p-6 bg-white rounded-lg shadow-sm hover:bg-gray-100
+         dark:bg-gray-800 dark:hover:bg-gray-700"
+  style="border-left:4px solid #10B981;"
+>
+  
+
+  <h5
+    class="mb-2 text-2xl font-bold tracking-tight"
+    style="color: #10B981;"
+  >
+    CHEM233- Chemistry 233
+  </h5>
+
+  <p class="font-normal text-gray-700 dark:text-gray-400">
+    Currently Enrolled: Introduction to Organic Chemistry builds off of CHEM123 and focuses on the structure, bonding &amp; physical properties of aliphatic &amp; aromatic compounds. It discusses chemical reactivity of common functional groups as well.
+  </p>
+</div>
+
+      </div>
+    
+  </div>
+</section>
 
     
 <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>

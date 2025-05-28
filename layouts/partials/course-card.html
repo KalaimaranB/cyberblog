@@ -1,0 +1,25 @@
+{{ $title   := .Title }}
+{{ $summary := .Summary }}
+{{ $img     := .Image }}
+{{ $hex     := .Hex }}
+
+<div
+  class="p-6 bg-white rounded-lg shadow-sm hover:bg-gray-100
+         dark:bg-gray-800 dark:hover:bg-gray-700"
+  {{ if $hex }}style="border-left:4px solid {{ $hex }};"{{ end }}
+>
+  {{ with $img }}
+    <img src="{{ . }}" alt="{{ $title }}" class="mb-4 w-full rounded" />
+  {{ end }}
+
+  <h5
+    class="mb-2 text-2xl font-bold tracking-tight"
+    {{ if $hex }}style="color: {{ $hex }};"{{ end }}
+  >
+    {{ $title }}
+  </h5>
+
+  <p class="font-normal text-gray-700 dark:text-gray-400">
+    {{ $summary }}
+  </p>
+</div>

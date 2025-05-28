@@ -8,8 +8,35 @@
     <loc>http://localhost:1313/software/</loc>
     <lastmod>2025-05-27T17:22:37-07:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/categories/all/</loc>
+    <lastmod>2025-05-27T17:10:00-07:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/categories/apsc/</loc>
+    <lastmod>2025-05-27T17:10:00-07:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/biomedical/</loc>
-    <lastmod>2025-05-27T17:22:24-07:00</lastmod>
+    <lastmod>2025-05-27T17:10:00-07:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/categories/bmeg/</loc>
+    <lastmod>2025-05-27T17:10:00-07:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/categories/</loc>
+    <lastmod>2025-05-27T17:10:00-07:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/categories/chem/</loc>
+    <lastmod>2025-05-27T17:10:00-07:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/categories/cpen/</loc>
+    <lastmod>2025-05-27T17:10:00-07:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/categories/math/</loc>
+    <lastmod>2025-05-27T17:10:00-07:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/categories/micb/</loc>
+    <lastmod>2025-05-27T17:10:00-07:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/categories/phys/</loc>
+    <lastmod>2025-05-27T17:10:00-07:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/</loc>
     <lastmod>2025-05-27T00:00:00+00:00</lastmod>
@@ -18,9 +45,6 @@
     <lastmod>2025-05-27T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/categories/blog/</loc>
-    <lastmod>2025-05-27T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/categories/</loc>
     <lastmod>2025-05-27T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/cloudgoat/</loc>

@@ -1,0 +1,49 @@
+{{ define "main" }}
+<section 
+  class="px-4 py-8" 
+  x-data="{ selectedCategory: 'All' }"
+>
+  <h1 class="text-3xl font-semibold mb-4 text-gray-900 dark:text-white">
+    My Degree So Far
+  </h1>
+
+  {{ $ctx := . }}  <!-- capture the page context -->
+
+  <!-- TABS -->
+  <div class="border-b border-gray-200 dark:border-gray-700 mb-6">
+    <ul class="flex flex-wrap -mb-px text-sm font-medium text-center text-gray-500 dark:text-gray-400">
+      {{ range $ctx.Params.categories }}
+      <li class="mr-2">
+        <button
+          @click="selectedCategory='{{ . }}'"
+          :class=" selectedCategory==='{{ . }}'
+            ? 'inline-flex items-center p-4 border-b-2 border-blue-600 text-blue-600 dark:text-blue-500 dark:border-blue-500'
+            : 'inline-flex items-center p-4 border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300' "
+          class="rounded-t-lg transition"
+        >
+          {{ . }}
+        </button>
+      </li>
+      {{ end }}
+    </ul>
+  </div>
+
+  <!-- GRID (gap-8 gives extra breathing room) -->
+  <div class="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+    {{ $ctx := . }}  
+    {{ range .Params.courses }}
+      {{ $hex := index $ctx.Params.categoryColors .category }}
+      <div
+        x-show="selectedCategory==='All' || selectedCategory==='{{ .category }}'"
+      >
+        {{ partial "course-card.html" (dict
+            "Title"   .title
+            "Summary" .summary
+            "Image"   .image
+            "Hex"     $hex
+        ) }}
+      </div>
+    {{ end }}
+  </div>
+</section>
+{{ end }}
