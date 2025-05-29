@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:sphere": "cd organic-sphere-custom && npm install && npx webpack --config webpack.config.js --mode production",
+    "dev": "npm run build:sphere && hugo server -D"
   },
   "keywords": [],
   "author": "",
@@ -14,9 +16,12 @@
     "autoprefixer": "^10.4.21",
     "postcss": "^8.5.3",
     "postcss-cli": "^11.0.1",
-    "tailwindcss": "^4.1.6"
+    "tailwindcss": "^4.1.6",
+    "webpack": "^5.99.9",
+    "webpack-cli": "^4.10.0"
   },
   "dependencies": {
-    "flowbite": "^3.1.2"
+    "flowbite": "^3.1.2",
+    "three": "^0.176.0"
   }
 }

@@ -1,0 +1,23 @@
+{{ define "main" }}
+  <canvas id="canvas"></canvas>
+
+  <style>
+    body { margin: 0; overflow: hidden; }
+    #canvas { width:100vw; height:100vh; display:block; }
+  </style>
+
+  <!-- ES-module shim + importmap -->
+  <script async src="https://unpkg.com/es-module-shims@1.6.3/dist/es-module-shims.min.js"></script>
+  <script type="importmap">
+  {
+    "imports": {
+      "three":        "https://unpkg.com/three@0.152.2/build/three.module.js",
+      "three/addons/":"https://unpkg.com/three@0.152.2/examples/jsm/"
+    }
+  }
+  </script>
+
+
+  <!-- Your minimal app -->
+  <script type="module" src="/js/main.js"></script>
+{{ end }}

@@ -57,5 +57,12 @@
       <guid>http://localhost:1313/posts/introtoaws_iam_enumeration/</guid>
       <description>A walkthrough of the Intro to AWS Pentesting IAM Enumeration with Pacu Challenge</description>
     </item>
+    <item>
+      <title>Who Am I? Challenge</title>
+      <link>http://localhost:1313/whoami/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/whoami/</guid>
+      <description></description>
+    </item>
   </channel>
 </rss>
