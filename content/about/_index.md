@@ -11,3 +11,5 @@ The cybersecurity world pulled me in pretty recently (only started in 2024 summe
 What I find most compelling is the remarkable parallel between biology and computer science, particularly the immune system and cybersecurity. Biological viruses carry payloads (their genomes), search for vulnerabilities (typically cell receptors), and commandeer their targets by exploiting the host's cellular machinery. Computer viruses follow a strikingly similar pattern in the digital realm. This symmetry between biological and digital systems continues to fascinate me as I advance in both fields.
 
 This portfolio site is going to host some of the programming projects I've completed as well as my walkthroughs on CyberSecurity topics. Maybe some work on Biomedical Engineering side will pop here soon too (who knows?)
+
+[Who Am I?](/whoami)
