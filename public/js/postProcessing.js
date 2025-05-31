@@ -35,7 +35,7 @@ export function createPostProcessing(renderer, scene, camera) {
   const bloom = new UnrealBloomPass(
     new THREE.Vector2(window.innerWidth, window.innerHeight),
     /*strength*/ 2.5,
-    /*radius*/   0.4,
+    /*radius*/   0.6,
     /*threshold*/0.8
   );
   composer.addPass(bloom);
