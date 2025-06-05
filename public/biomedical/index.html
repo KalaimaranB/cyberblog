@@ -131,127 +131,232 @@
     </div>
 </div>
     
-<section 
-  class="px-4 py-8" 
-  x-data="{ selectedCategory: 'All' }"
->
-  <h1 class="text-3xl font-semibold mb-4 text-gray-900 dark:text-white">
-    My Degree So Far
-  </h1>
+<main class="max-w-4xl mx-auto mt-8 mb-2">
+  
+  
+  
+  <section class="mb-12">
+    <h1 class="text-3xl font-semibold mb-4 text-gray-700 dark:text-gray-300">My Biomedical Journey</h1>
+    <p class="mb-8 text-gray-700 dark:text-gray-300">
+      What goes here? Time will tell. Gotta fix up UI first and make it look nice.
+    </p>
 
-    
+    <div class="flex flex-col md:flex-row items-center space-y-6 md:space-y-0">
+      
+      <div class="w-full md:w-1/2 h-64 md:h-80 rounded-md overflow-hidden md:mb-0 md:pr-6">
+        <canvas id="patch-canvas" class="w-full h-full"></canvas>
+      </div>
+
+      <div class="w-full md:w-1/2" style="margin-left: 1.5rem;">
+        <h2 class="text-2xl font-semibold mb-2 text-gray-700 dark:text-gray-300">Patch Medical Technologies</h2>
+        <p class="text-gray-700 dark:text-gray-300">
+          PMT is a startup at UBC focused on developing a novel automated delivery system for drug delivery. My role is
+          ... (approval pending)
+          A simple model will appear soon...
+        </p>
+      </div>
+
+    </div>
+
+
+
+
+
+  </section>
 
   
-  <div class="border-b border-gray-200 dark:border-gray-700 mb-6">
-    <ul class="flex flex-wrap -mb-px text-sm font-medium text-center text-gray-500 dark:text-gray-400">
+  
+  
+  <section class="px-4 py-8">
+    <h2 class="text-2xl font-semibold mb-4 text-gray-700 dark:text-gray-300">
+      Lab Work
+    </h2>
+    <div class="swiper labSwiper w-full max-w-4xl mx-auto h-64 mb-12">
+      <div class="swiper-wrapper">
+
+        
+        <div class="swiper-slide 
+            flex flex-row 
+            bg-gray-200 
+            dark:bg-gray-700 
+            overflow-hidden 
+            rounded-lg">
+          
+          <div class="w-1/3 h-full flex items-center justify-center">
+            <img src="../images/lab_work/BMEG245-ImageAnalysis1.png" alt="BMEG 245 Cell Analysis 1" class="h-32 w-auto object-contain" />
+          </div>
+
+          
+          <div class="w-2/3 p-6 flex items-center">
+            <ul class="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
+              <li>BMEG 245</li>
+              <li>Description to come...</li>
+            </ul>
+          </div>
+        </div>
+        <div class="swiper-slide 
+            flex flex-row 
+            bg-gray-200 
+            dark:bg-gray-700 
+            overflow-hidden 
+            rounded-lg">
+          
+          <div class="w-1/3 h-full flex items-center justify-center">
+            <img src="../images/lab_work/BMEG245-ImageAnalysis2.png" alt="BMEG 245 Cell Analysis 2" class="h-32 w-auto object-contain" />
+          </div>
+
+          
+          <div class="w-2/3 p-6 flex items-center">
+            <ul class="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
+              <li>BMEG 245</li>
+              <li>Description to come...</li>
+            </ul>
+          </div>
+        </div>
+        <div class="swiper-slide 
+            flex flex-row 
+            bg-gray-200 
+            dark:bg-gray-700 
+            overflow-hidden 
+            rounded-lg">
+          
+          <div class="w-1/3 h-full flex items-center justify-center">
+            <img src="../images/lab_work/BMEG245-Gel-Electrophoresis.png" alt="BMEG 245 Gel Electrophoresis" class="h-32 w-auto object-contain" />
+          </div>
+
+          
+          <div class="w-2/3 p-6 flex items-center">
+            <ul class="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
+              <li>BMEG 245</li>
+              <li>Description to come...</li>
+            </ul>
+          </div>
+        </div>
+        <div class="swiper-slide 
+            flex flex-row 
+            bg-gray-200 
+            dark:bg-gray-700 
+            overflow-hidden 
+            rounded-lg">
+          
+          <div class="w-1/3 h-full flex items-center justify-center">
+            <img src="../images/lab_work/BMEG102-GeneTransformation.png" alt="BMEG 102 Gene Transformation" class="h-32 w-auto object-contain" />
+          </div>
+
+          
+          <div class="w-2/3 p-6 flex items-center">
+            <ul class="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
+              <li>BMEG 102</li>
+              <li>Description to come...</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+
       
-      <li class="mr-2">
-        <button
-          @click="selectedCategory='All'"
-          :class=" selectedCategory==='All'
-            ? 'inline-flex items-center p-4 border-b-2 border-blue-600 text-blue-600 dark:text-blue-500 dark:border-blue-500'
-            : 'inline-flex items-center p-4 border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300' "
-          class="rounded-t-lg transition"
-        >
-          All
-        </button>
-      </li>
+      <div class="swiper-pagination"></div>
       
-      <li class="mr-2">
-        <button
-          @click="selectedCategory='MATH'"
-          :class=" selectedCategory==='MATH'
-            ? 'inline-flex items-center p-4 border-b-2 border-blue-600 text-blue-600 dark:text-blue-500 dark:border-blue-500'
-            : 'inline-flex items-center p-4 border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300' "
-          class="rounded-t-lg transition"
-        >
-          MATH
-        </button>
-      </li>
-      
-      <li class="mr-2">
-        <button
-          @click="selectedCategory='CHEM'"
-          :class=" selectedCategory==='CHEM'
-            ? 'inline-flex items-center p-4 border-b-2 border-blue-600 text-blue-600 dark:text-blue-500 dark:border-blue-500'
-            : 'inline-flex items-center p-4 border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300' "
-          class="rounded-t-lg transition"
-        >
-          CHEM
-        </button>
-      </li>
-      
-      <li class="mr-2">
-        <button
-          @click="selectedCategory='APSC'"
-          :class=" selectedCategory==='APSC'
-            ? 'inline-flex items-center p-4 border-b-2 border-blue-600 text-blue-600 dark:text-blue-500 dark:border-blue-500'
-            : 'inline-flex items-center p-4 border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300' "
-          class="rounded-t-lg transition"
-        >
-          APSC
-        </button>
-      </li>
-      
-      <li class="mr-2">
-        <button
-          @click="selectedCategory='BMEG'"
-          :class=" selectedCategory==='BMEG'
-            ? 'inline-flex items-center p-4 border-b-2 border-blue-600 text-blue-600 dark:text-blue-500 dark:border-blue-500'
-            : 'inline-flex items-center p-4 border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300' "
-          class="rounded-t-lg transition"
-        >
-          BMEG
-        </button>
-      </li>
-      
-      <li class="mr-2">
-        <button
-          @click="selectedCategory='CPEN'"
-          :class=" selectedCategory==='CPEN'
-            ? 'inline-flex items-center p-4 border-b-2 border-blue-600 text-blue-600 dark:text-blue-500 dark:border-blue-500'
-            : 'inline-flex items-center p-4 border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300' "
-          class="rounded-t-lg transition"
-        >
-          CPEN
-        </button>
-      </li>
-      
-      <li class="mr-2">
-        <button
-          @click="selectedCategory='MICB'"
-          :class=" selectedCategory==='MICB'
-            ? 'inline-flex items-center p-4 border-b-2 border-blue-600 text-blue-600 dark:text-blue-500 dark:border-blue-500'
-            : 'inline-flex items-center p-4 border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300' "
-          class="rounded-t-lg transition"
-        >
-          MICB
-        </button>
-      </li>
-      
-      <li class="mr-2">
-        <button
-          @click="selectedCategory='PHYS'"
-          :class=" selectedCategory==='PHYS'
-            ? 'inline-flex items-center p-4 border-b-2 border-blue-600 text-blue-600 dark:text-blue-500 dark:border-blue-500'
-            : 'inline-flex items-center p-4 border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300' "
-          class="rounded-t-lg transition"
-        >
-          PHYS
-        </button>
-      </li>
-      
-    </ul>
-  </div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    </div>
+  </section>
 
   
-  <div class="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-      
+  
+  
+  
+  <section class="px-4 py-8" x-data="{ selectedCategory: 'All' }" x-cloak>
+    <h2 class="text-2xl font-semibold mb-4 text-gray-700 dark:text-gray-300">Courses</h2>
+
     
+    <div class="border-b border-gray-700 mb-6">
+      <ul class="flex flex-wrap -mb-px text-sm font-medium text-center text-gray-500 dark:text-gray-400">
+        
+        
+        <li class="mr-2">
+          <button @click="selectedCategory='All'"
+            :class=" selectedCategory === 'All'
+              ? 'inline-flex items-center p-4 border-b-2 border-blue-500 text-gray-400 dark:text-gray-300'
+              : 'inline-flex items-center p-4 border-b-2 border-transparent hover:text-gray-600 hover:border-gray-500' " class="rounded-t-lg transition">
+            All
+          </button>
+        </li>
+        
+        <li class="mr-2">
+          <button @click="selectedCategory='MATH'"
+            :class=" selectedCategory === 'MATH'
+              ? 'inline-flex items-center p-4 border-b-2 border-blue-500 text-gray-400 dark:text-gray-300'
+              : 'inline-flex items-center p-4 border-b-2 border-transparent hover:text-gray-600 hover:border-gray-500' " class="rounded-t-lg transition">
+            MATH
+          </button>
+        </li>
+        
+        <li class="mr-2">
+          <button @click="selectedCategory='CHEM'"
+            :class=" selectedCategory === 'CHEM'
+              ? 'inline-flex items-center p-4 border-b-2 border-blue-500 text-gray-400 dark:text-gray-300'
+              : 'inline-flex items-center p-4 border-b-2 border-transparent hover:text-gray-600 hover:border-gray-500' " class="rounded-t-lg transition">
+            CHEM
+          </button>
+        </li>
+        
+        <li class="mr-2">
+          <button @click="selectedCategory='APSC'"
+            :class=" selectedCategory === 'APSC'
+              ? 'inline-flex items-center p-4 border-b-2 border-blue-500 text-gray-400 dark:text-gray-300'
+              : 'inline-flex items-center p-4 border-b-2 border-transparent hover:text-gray-600 hover:border-gray-500' " class="rounded-t-lg transition">
+            APSC
+          </button>
+        </li>
+        
+        <li class="mr-2">
+          <button @click="selectedCategory='BMEG'"
+            :class=" selectedCategory === 'BMEG'
+              ? 'inline-flex items-center p-4 border-b-2 border-blue-500 text-gray-400 dark:text-gray-300'
+              : 'inline-flex items-center p-4 border-b-2 border-transparent hover:text-gray-600 hover:border-gray-500' " class="rounded-t-lg transition">
+            BMEG
+          </button>
+        </li>
+        
+        <li class="mr-2">
+          <button @click="selectedCategory='CPEN'"
+            :class=" selectedCategory === 'CPEN'
+              ? 'inline-flex items-center p-4 border-b-2 border-blue-500 text-gray-400 dark:text-gray-300'
+              : 'inline-flex items-center p-4 border-b-2 border-transparent hover:text-gray-600 hover:border-gray-500' " class="rounded-t-lg transition">
+            CPEN
+          </button>
+        </li>
+        
+        <li class="mr-2">
+          <button @click="selectedCategory='MICB'"
+            :class=" selectedCategory === 'MICB'
+              ? 'inline-flex items-center p-4 border-b-2 border-blue-500 text-gray-400 dark:text-gray-300'
+              : 'inline-flex items-center p-4 border-b-2 border-transparent hover:text-gray-600 hover:border-gray-500' " class="rounded-t-lg transition">
+            MICB
+          </button>
+        </li>
+        
+        <li class="mr-2">
+          <button @click="selectedCategory='PHYS'"
+            :class=" selectedCategory === 'PHYS'
+              ? 'inline-flex items-center p-4 border-b-2 border-blue-500 text-gray-400 dark:text-gray-300'
+              : 'inline-flex items-center p-4 border-b-2 border-transparent hover:text-gray-600 hover:border-gray-500' " class="rounded-t-lg transition">
+            PHYS
+          </button>
+        </li>
+        
+      </ul>
+    </div>
+
+    
+    <div class="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
       
-      <div
-        x-show="selectedCategory==='All' || selectedCategory==='APSC'"
-      >
+      
+      
+      
+      <div x-show="selectedCategory === 'All' || selectedCategory === 'APSC'" x-transition
+        class="transition-opacity duration-300">
         
 
 
@@ -277,11 +382,11 @@
 </div>
 
       </div>
-    
       
-      <div
-        x-show="selectedCategory==='All' || selectedCategory==='APSC'"
-      >
+      
+      
+      <div x-show="selectedCategory === 'All' || selectedCategory === 'APSC'" x-transition
+        class="transition-opacity duration-300">
         
 
 
@@ -307,11 +412,11 @@
 </div>
 
       </div>
-    
       
-      <div
-        x-show="selectedCategory==='All' || selectedCategory==='MATH'"
-      >
+      
+      
+      <div x-show="selectedCategory === 'All' || selectedCategory === 'MATH'" x-transition
+        class="transition-opacity duration-300">
         
 
 
@@ -337,11 +442,11 @@
 </div>
 
       </div>
-    
       
-      <div
-        x-show="selectedCategory==='All' || selectedCategory==='MATH'"
-      >
+      
+      
+      <div x-show="selectedCategory === 'All' || selectedCategory === 'MATH'" x-transition
+        class="transition-opacity duration-300">
         
 
 
@@ -367,11 +472,11 @@
 </div>
 
       </div>
-    
       
-      <div
-        x-show="selectedCategory==='All' || selectedCategory==='APSC'"
-      >
+      
+      
+      <div x-show="selectedCategory === 'All' || selectedCategory === 'APSC'" x-transition
+        class="transition-opacity duration-300">
         
 
 
@@ -388,7 +493,7 @@
     class="mb-2 text-2xl font-bold tracking-tight"
     style="color: #EAB308;"
   >
-    MATH152 - Applied Science 100
+    MATH152 - Math 152
   </h5>
 
   <p class="font-normal text-gray-700 dark:text-gray-400">
@@ -397,11 +502,11 @@
 </div>
 
       </div>
-    
       
-      <div
-        x-show="selectedCategory==='All' || selectedCategory==='PHYS'"
-      >
+      
+      
+      <div x-show="selectedCategory === 'All' || selectedCategory === 'PHYS'" x-transition
+        class="transition-opacity duration-300">
         
 
 
@@ -427,11 +532,11 @@
 </div>
 
       </div>
-    
       
-      <div
-        x-show="selectedCategory==='All' || selectedCategory==='PHYS'"
-      >
+      
+      
+      <div x-show="selectedCategory === 'All' || selectedCategory === 'PHYS'" x-transition
+        class="transition-opacity duration-300">
         
 
 
@@ -457,11 +562,11 @@
 </div>
 
       </div>
-    
       
-      <div
-        x-show="selectedCategory==='All' || selectedCategory==='PHYS'"
-      >
+      
+      
+      <div x-show="selectedCategory === 'All' || selectedCategory === 'PHYS'" x-transition
+        class="transition-opacity duration-300">
         
 
 
@@ -487,11 +592,11 @@
 </div>
 
       </div>
-    
       
-      <div
-        x-show="selectedCategory==='All' || selectedCategory==='CHEM'"
-      >
+      
+      
+      <div x-show="selectedCategory === 'All' || selectedCategory === 'CHEM'" x-transition
+        class="transition-opacity duration-300">
         
 
 
@@ -517,11 +622,11 @@
 </div>
 
       </div>
-    
       
-      <div
-        x-show="selectedCategory==='All' || selectedCategory==='CHEM'"
-      >
+      
+      
+      <div x-show="selectedCategory === 'All' || selectedCategory === 'CHEM'" x-transition
+        class="transition-opacity duration-300">
         
 
 
@@ -547,11 +652,11 @@
 </div>
 
       </div>
-    
       
-      <div
-        x-show="selectedCategory==='All' || selectedCategory==='BMEG'"
-      >
+      
+      
+      <div x-show="selectedCategory === 'All' || selectedCategory === 'BMEG'" x-transition
+        class="transition-opacity duration-300">
         
 
 
@@ -577,11 +682,11 @@
 </div>
 
       </div>
-    
       
-      <div
-        x-show="selectedCategory==='All' || selectedCategory==='BMEG'"
-      >
+      
+      
+      <div x-show="selectedCategory === 'All' || selectedCategory === 'BMEG'" x-transition
+        class="transition-opacity duration-300">
         
 
 
@@ -607,11 +712,11 @@
 </div>
 
       </div>
-    
       
-      <div
-        x-show="selectedCategory==='All' || selectedCategory==='BMEG'"
-      >
+      
+      
+      <div x-show="selectedCategory === 'All' || selectedCategory === 'BMEG'" x-transition
+        class="transition-opacity duration-300">
         
 
 
@@ -637,11 +742,11 @@
 </div>
 
       </div>
-    
       
-      <div
-        x-show="selectedCategory==='All' || selectedCategory==='BMEG'"
-      >
+      
+      
+      <div x-show="selectedCategory === 'All' || selectedCategory === 'BMEG'" x-transition
+        class="transition-opacity duration-300">
         
 
 
@@ -667,11 +772,11 @@
 </div>
 
       </div>
-    
       
-      <div
-        x-show="selectedCategory==='All' || selectedCategory==='BMEG'"
-      >
+      
+      
+      <div x-show="selectedCategory === 'All' || selectedCategory === 'BMEG'" x-transition
+        class="transition-opacity duration-300">
         
 
 
@@ -697,11 +802,11 @@
 </div>
 
       </div>
-    
       
-      <div
-        x-show="selectedCategory==='All' || selectedCategory==='BMEG'"
-      >
+      
+      
+      <div x-show="selectedCategory === 'All' || selectedCategory === 'BMEG'" x-transition
+        class="transition-opacity duration-300">
         
 
 
@@ -727,11 +832,11 @@
 </div>
 
       </div>
-    
       
-      <div
-        x-show="selectedCategory==='All' || selectedCategory==='BMEG'"
-      >
+      
+      
+      <div x-show="selectedCategory === 'All' || selectedCategory === 'BMEG'" x-transition
+        class="transition-opacity duration-300">
         
 
 
@@ -757,11 +862,11 @@
 </div>
 
       </div>
-    
       
-      <div
-        x-show="selectedCategory==='All' || selectedCategory==='BMEG'"
-      >
+      
+      
+      <div x-show="selectedCategory === 'All' || selectedCategory === 'BMEG'" x-transition
+        class="transition-opacity duration-300">
         
 
 
@@ -787,11 +892,11 @@
 </div>
 
       </div>
-    
       
-      <div
-        x-show="selectedCategory==='All' || selectedCategory==='BMEG'"
-      >
+      
+      
+      <div x-show="selectedCategory === 'All' || selectedCategory === 'BMEG'" x-transition
+        class="transition-opacity duration-300">
         
 
 
@@ -817,11 +922,11 @@
 </div>
 
       </div>
-    
       
-      <div
-        x-show="selectedCategory==='All' || selectedCategory==='MATH'"
-      >
+      
+      
+      <div x-show="selectedCategory === 'All' || selectedCategory === 'MATH'" x-transition
+        class="transition-opacity duration-300">
         
 
 
@@ -847,11 +952,11 @@
 </div>
 
       </div>
-    
       
-      <div
-        x-show="selectedCategory==='All' || selectedCategory==='MATH'"
-      >
+      
+      
+      <div x-show="selectedCategory === 'All' || selectedCategory === 'MATH'" x-transition
+        class="transition-opacity duration-300">
         
 
 
@@ -877,11 +982,11 @@
 </div>
 
       </div>
-    
       
-      <div
-        x-show="selectedCategory==='All' || selectedCategory==='MATH'"
-      >
+      
+      
+      <div x-show="selectedCategory === 'All' || selectedCategory === 'MATH'" x-transition
+        class="transition-opacity duration-300">
         
 
 
@@ -907,11 +1012,11 @@
 </div>
 
       </div>
-    
       
-      <div
-        x-show="selectedCategory==='All' || selectedCategory==='MATH'"
-      >
+      
+      
+      <div x-show="selectedCategory === 'All' || selectedCategory === 'MATH'" x-transition
+        class="transition-opacity duration-300">
         
 
 
@@ -937,11 +1042,11 @@
 </div>
 
       </div>
-    
       
-      <div
-        x-show="selectedCategory==='All' || selectedCategory==='CPEN'"
-      >
+      
+      
+      <div x-show="selectedCategory === 'All' || selectedCategory === 'CPEN'" x-transition
+        class="transition-opacity duration-300">
         
 
 
@@ -967,11 +1072,11 @@
 </div>
 
       </div>
-    
       
-      <div
-        x-show="selectedCategory==='All' || selectedCategory==='MICB'"
-      >
+      
+      
+      <div x-show="selectedCategory === 'All' || selectedCategory === 'MICB'" x-transition
+        class="transition-opacity duration-300">
         
 
 
@@ -997,11 +1102,11 @@
 </div>
 
       </div>
-    
       
-      <div
-        x-show="selectedCategory==='All' || selectedCategory==='CHEM'"
-      >
+      
+      
+      <div x-show="selectedCategory === 'All' || selectedCategory === 'CHEM'" x-transition
+        class="transition-opacity duration-300">
         
 
 
@@ -1027,60 +1132,159 @@
 </div>
 
       </div>
+      
+    </div>
+  </section>
+
+</main>
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+
+
+
+<script src="https://unpkg.com/three@0.155.0/build/three.min.js"></script>
+<script defer>
+  document.addEventListener('DOMContentLoaded', () => {
     
-  </div>
-</section>
+    const canvas = document.getElementById('patch-canvas');
+    const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
+    renderer.setPixelRatio(window.devicePixelRatio);
+
+    function resizeCanvas() {
+      const width = canvas.parentElement.clientWidth;
+      const height = canvas.parentElement.clientHeight;
+      if (canvas.width !== width || canvas.height !== height) {
+        renderer.setSize(width, height, false);
+      }
+    }
+
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(
+      45,
+      canvas.clientWidth / canvas.clientHeight,
+      0.1,
+      100
+    );
+    camera.position.set(0, 0, 3);
+    scene.add(new THREE.AmbientLight(0xffffff, 0.8));
+
+    const geometry = new THREE.BoxGeometry(1.5, 0.5, 0.5);
+    const material = new THREE.MeshBasicMaterial({ color: 0x000000 });
+    const prism = new THREE.Mesh(geometry, material);
+    scene.add(prism);
+
+    function animatePatch() {
+      resizeCanvas();
+      camera.aspect = canvas.clientWidth / canvas.clientHeight;
+      camera.updateProjectionMatrix();
+      prism.rotation.y += 0.01;
+      prism.rotation.x += 0.005;
+      renderer.render(scene, camera);
+      requestAnimationFrame(animatePatch);
+    }
+    animatePatch();
+
+    window.addEventListener('resize', () => {
+      resizeCanvas();
+      camera.aspect = canvas.parentElement.clientWidth / canvas.parentElement.clientHeight;
+      camera.updateProjectionMatrix();
+    });
+
+    
+    new Swiper('.labSwiper', {
+      effect: 'slide',
+      slidesPerView: 1,
+      spaceBetween: 40,
+      centeredSlides: true,
+      loop: true,
+      autoplay: {
+        delay: 5000,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: '.labSwiper .swiper-pagination',
+        clickable: true,
+      },
+    });
+  });
+</script>
+
+
+
+
+<style>
+   
+  .swiper {
+    width: 100%;
+    height: 100%;
+  }
+
+   
+  .labSwiper .swiper-slide {
+    display: flex !important;
+    flex-direction: row;
+    border-radius: 1rem;
+     
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+  }
+
+   
+  .labSwiper .swiper-slide>div:first-child {
+    width: 45%;
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+    justify-content: center;
+  }
+
+  .labSwiper .swiper-slide>div:first-child img {
+    height: 20rem;
+     
+    width: auto;
+    object-fit: contain;
+  }
+
+   
+  .labSwiper .swiper-slide>div:nth-child(2) {
+    width: 55%;
+    padding: 1.5rem;
+     
+    display: flex;
+    align-items: center;
+  }
+
+  .labSwiper .swiper-slide ul {
+    list-style-type: disc;
+    padding-left: 1.25rem;
+     
+     
+  }
+
+  .labSwiper .swiper-slide li {
+    margin-bottom: 0.5rem;
+     
+    line-height: 1.5;
+  }
+
+   
+  .labSwiper .swiper-button-next,
+  .labSwiper .swiper-button-prev {
+    display: none !important;
+  }
+</style>
+
+
 
     
 <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
 <script src="../js/darkmode.js" defer></script>
-  
-
-
-  
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
-
-  <script defer>
-    document.addEventListener('DOMContentLoaded', () => {
-      new Swiper('.swiper', {
-        effect: 'coverflow',
-        grabCursor: true,
-        centeredSlides: true,
-
-        slidesPerView: 'auto',
-        spaceBetween: 30,
-        loop: true,
-
-        coverflowEffect: {
-          rotate: 30,
-          stretch: 0,
-          depth: 150,
-          modifier: 1,
-          slideShadows: true,
-        },
-
-        
-        pagination: {
-          el: '.swiper-pagination',
-          clickable: true,
-        },
-        
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
-        },
-
-        on: {
-          slideChange() {
-            
-            const idx = this.realIndex;
-            document.getElementById('cert-caption').innerText = certData[idx].description;
-          }
-        }
-      });
-    });
-  </script>
 
 
 

@@ -1,125 +1,122 @@
 {{/* layouts/section/cybersecurity.html */}}
 {{ define "main" }}
   <main class="pb-16">
+    {{/* 1. Load and parse certs.json */}}
+    {{ $jsonData := readFile "content/cybersecurity/certs.json" | transform.Unmarshal }}
 
-  {{/* Load and parse certs.json using Hugo's resource functions */}}
-  {{ $jsonData := readFile "content/cybersecurity/certs.json" | transform.Unmarshal }}
+    {{ partial "banner.html" . }}
 
-  {{ partial "banner.html" . }}
-
-  <!-- TryHackMe badge iframe, centered & same width as carousel -->
-  <!-- Outer wrapper: same max width + padding -->
-<div
-  class="max-w-4xl mx-auto my-8 px-6 py-8 relative"
-  style="height: 200px;"  /* 80px native height × 2 = 160px */
->
-  <!-- Center the badge both horizontally and vertically -->
-  <iframe
-    src="https://tryhackme.com/api/v2/badges/public-profile?userPublicId=3251752"
-    scrolling="no"
-    loading="lazy"
-    title="TryHackMe Badges"
-    style="
-      position: absolute;
-      top: 50%; left: 58%;
-      width: 400px;    /* badge’s native width */
-      height: 85px;    /* badge’s native height */
-      transform: translate(-50%, -50%) scale(2);
-      transform-origin: center center;
-      border: none;
-    "
-  ></iframe>
-</div>
-
-
-
-
-  <!-- Swiper Carousel Container: full width, fixed height -->
-  <div class="swiper w-full max-w-4xl mx-auto h-96">
-    <div class="swiper-wrapper">
-      {{ range $c := $jsonData }}
-        <div
-          class="swiper-slide flex justify-center items-center"
-          data-description="{{ $c.description }}"
-        >
-          <img
-            src="{{ printf "images/certificates/%s" $c.file | relURL }}"
-            alt="{{ $c.file }}"
-            class="h-full object-contain"
-          />
-        </div>
-      {{ end }}
-
+    <!-- 2. TryHackMe badge iframe, centered in a fixed-height wrapper -->
+    <div
+      class="max-w-4xl mx-auto my-8 px-6 py-8 relative"
+      style="height: 200px;"
+    >
+      <iframe
+        src="https://tryhackme.com/api/v2/badges/public-profile?userPublicId=3251752"
+        scrolling="no"
+        loading="lazy"
+        title="TryHackMe Badges"
+        style="
+          position: absolute;
+          top: 50%; left: 58%;
+          width: 400px;
+          height: 85px;
+          transform: translate(-50%, -50%) scale(2);
+          transform-origin: center center;
+          border: none;
+        "
+      ></iframe>
     </div>
 
-    <!-- Pagination -->
-    <div class="swiper-pagination"></div>
-    <!-- Navigation arrows -->
-    <div class="swiper-button-prev"></div>
-    <div class="swiper-button-next"></div>
-  </div>
+    <!-- 3. Swiper container with class="swiper cyberSwiper" -->
+    <div class="swiper cyberSwiper w-full max-w-4xl mx-auto h-96">
+      <div class="swiper-wrapper">
+        {{ range $c := $jsonData }}
+          <div
+            class="swiper-slide flex justify-center items-center"
+            data-description="{{ $c.description }}"
+          >
+            <img
+              src="{{ printf "images/certificates/%s" $c.file | relURL }}"
+              alt="{{ $c.file }}"
+              class="h-full object-contain"
+            />
+          </div>
+        {{ end }}
+      </div>
 
-  <!-- Dynamic caption below carousel -->
-  <div
-    id="cert-caption"
-    class="
-      max-w-4xl            /* match your carousel width */
-      mx-auto              /* center it */
-      mt-4
-      px-4 py-2
-      text-center
-      text-gray-700 dark:text-gray-300  /* light/dark text color */
-      rounded-lg                        /* match your card styling */
-      text-base md:text-lg              /* font size (base on mobile, larger on md+) */
-    "
-  >
-    {{ (index $jsonData 0).description }}
-  </div>
+      <!-- 3.1 Pagination -->
+      <div class="swiper-pagination"></div>
+      <!-- 3.2 Navigation arrows -->
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    </div>
 
-  
+    <!-- 4. Dynamic caption below carousel -->
+    <div
+      id="cert-caption"
+      class="
+        max-w-4xl
+        mx-auto
+        mt-4
+        px-4 py-2
+        text-center
+        text-gray-700 dark:text-gray-300
+        rounded-lg
+        text-base md:text-lg
+      "
+    >
+      {{ (index $jsonData 0).description }}
+    </div>
 
-    <!-- Expose JSON data to JavaScript and initialize Swiper -->
-<script defer>
-  document.addEventListener('DOMContentLoaded', () => {
-    const swiper = new Swiper('.swiper', {
-      effect: 'coverflow',
-      grabCursor: true,
-      centeredSlides: true,
-      slidesPerView: 'auto',
-      spaceBetween: 30,
-      loop: true,
-      coverflowEffect: {
-        rotate: 30,
-        stretch: 0,
-        depth: 150,
-        modifier: 1,
-        slideShadows: true,
-      },
-      pagination: { el: '.swiper-pagination', clickable: true },
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
+    <!-- 5. Main content (markdown) -->
+    <section class="mt-12 max-w-3xl mx-auto px-6 prose dark:prose-invert dark:text-white mb-16">
+      {{ .Content }}
+    </section>
+  </main>
+
+  <!-- ── 6. Include Swiper v11 CSS & JS (only once) ─────────────────────────────────── -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+  />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <!-- ── 7. Initialize ONLY .cyberSwiper (coverflow + certData) ───────────────────────── -->
+  <script defer>
+    document.addEventListener('DOMContentLoaded', () => {
+      const cyber = new Swiper('.cyberSwiper', {
+        effect: 'coverflow',
+        grabCursor: true,
+        centeredSlides: true,
+        slidesPerView: 'auto',
+        spaceBetween: 30,
+        loop: true,
+        coverflowEffect: {
+          rotate: 30,
+          stretch: 0,
+          depth: 150,
+          modifier: 1,
+          slideShadows: true,
+        },
+        pagination: {
+          el: '.cyberSwiper .swiper-pagination',
+          clickable: true,
+        },
+        navigation: {
+          nextEl: '.cyberSwiper .swiper-button-next',
+          prevEl: '.cyberSwiper .swiper-button-prev',
+        },
+      });
+
+      function updateCaption() {
+        const activeEl = document.querySelector('.cyberSwiper .swiper-slide-active');
+        const desc = activeEl?.dataset.description || '';
+        document.getElementById('cert-caption').innerText = desc;
+      }
+
+      cyber.on('init slideChange transitionEnd', updateCaption);
+      cyber.init();
     });
-
-    function updateCaption() {
-      const activeEl = document.querySelector('.swiper-slide-active');
-      const desc = activeEl?.dataset.description || '';
-      document.getElementById('cert-caption').innerText = desc;
-    }
-
-    // Update caption on init, slide change, and after transitions
-    swiper.on('init slideChange transitionEnd', updateCaption);
-    swiper.init();
-  });
-</script>
-
-
-
-<section class="mt-12 max-w-3xl mx-auto px-6 prose dark:prose-invert dark:text-white mb-16">
-  {{ .Content }}
-</section>
-
-
-</main>
+  </script>
 {{ end }}

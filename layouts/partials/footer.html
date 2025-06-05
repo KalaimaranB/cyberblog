@@ -2,52 +2,6 @@
 <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 {{ $js := resources.Get "js/darkmode.js" | js.Build }}
 <script src="{{ $js.RelPermalink }}" defer></script>
-  
-
-
-  <!-- Swiper JS bundle (includes modules like Coverflow) -->
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
-
-  <script defer>
-    document.addEventListener('DOMContentLoaded', () => {
-      new Swiper('.swiper', {
-        effect: 'coverflow',
-        grabCursor: true,
-        centeredSlides: true,
-
-        slidesPerView: 'auto',
-        spaceBetween: 30,
-        loop: true,
-
-        coverflowEffect: {
-          rotate: 30,
-          stretch: 0,
-          depth: 150,
-          modifier: 1,
-          slideShadows: true,
-        },
-
-        // pagination bullets
-        pagination: {
-          el: '.swiper-pagination',
-          clickable: true,
-        },
-        // nav arrows
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
-        },
-
-        on: {
-          slideChange() {
-            // `realIndex` matches our original array index
-            const idx = this.realIndex;
-            document.getElementById('cert-caption').innerText = certData[idx].description;
-          }
-        }
-      });
-    });
-  </script>
 
 
 

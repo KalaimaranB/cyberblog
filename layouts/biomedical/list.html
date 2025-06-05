@@ -1,49 +1,266 @@
 {{ define "main" }}
-<section 
-  class="px-4 py-8" 
-  x-data="{ selectedCategory: 'All' }"
->
-  <h1 class="text-3xl font-semibold mb-4 text-gray-900 dark:text-white">
-    My Degree So Far
-  </h1>
+<main class="max-w-4xl mx-auto mt-8 mb-2">
+  <!-- ──────────────────────────────────────────────────────────────────────────── -->
+  <!-- 1. Header & Three.js Canvas (Rotating Black Prism)                         -->
+  <!-- ──────────────────────────────────────────────────────────────────────────── -->
+  <section class="mb-12">
+    <h1 class="text-3xl font-semibold mb-4 text-gray-700 dark:text-gray-300">My Biomedical Journey</h1>
+    <p class="mb-8 text-gray-700 dark:text-gray-300">
+      What goes here? Time will tell. Gotta fix up UI first and make it look nice.
+    </p>
 
-  {{ $ctx := . }}  <!-- capture the page context -->
+    <div class="flex flex-col md:flex-row items-center space-y-6 md:space-y-0">
+      <!-- Canvas container: add md:pr-6 to push the text over -->
+      <div class="w-full md:w-1/2 h-64 md:h-80 rounded-md overflow-hidden md:mb-0 md:pr-6">
+        <canvas id="patch-canvas" class="w-full h-full"></canvas>
+      </div>
 
-  <!-- TABS -->
-  <div class="border-b border-gray-200 dark:border-gray-700 mb-6">
-    <ul class="flex flex-wrap -mb-px text-sm font-medium text-center text-gray-500 dark:text-gray-400">
-      {{ range $ctx.Params.categories }}
-      <li class="mr-2">
-        <button
-          @click="selectedCategory='{{ . }}'"
-          :class=" selectedCategory==='{{ . }}'
-            ? 'inline-flex items-center p-4 border-b-2 border-blue-600 text-blue-600 dark:text-blue-500 dark:border-blue-500'
-            : 'inline-flex items-center p-4 border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300' "
-          class="rounded-t-lg transition"
-        >
-          {{ . }}
-        </button>
-      </li>
-      {{ end }}
-    </ul>
-  </div>
+      <div class="w-full md:w-1/2" style="margin-left: 1.5rem;">
+        <h2 class="text-2xl font-semibold mb-2 text-gray-700 dark:text-gray-300">Patch Medical Technologies</h2>
+        <p class="text-gray-700 dark:text-gray-300">
+          PMT is a startup at UBC focused on developing a novel automated delivery system for drug delivery. My role is
+          ... (approval pending)
+          A simple model will appear soon...
+        </p>
+      </div>
 
-  <!-- GRID (gap-8 gives extra breathing room) -->
-  <div class="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-    {{ $ctx := . }}  
-    {{ range .Params.courses }}
+    </div>
+
+
+
+
+
+  </section>
+
+  <!-- ──────────────────────────────────────────────────────────────────────────── -->
+  <!-- 3. Lab Work Slider: each slide = left image + right bullet list              -->
+  <!-- ──────────────────────────────────────────────────────────────────────────── -->
+  <section class="px-4 py-8">
+    <h2 class="text-2xl font-semibold mb-4 text-gray-700 dark:text-gray-300">
+      Lab Work
+    </h2>
+    <div class="swiper labSwiper w-full max-w-4xl mx-auto h-64 mb-12">
+      <div class="swiper-wrapper">
+
+        <!-- Iterate over .Params.labWorkSlides instead of hard-coding -->
+        {{- range $index, $slide := .Params.labWorkSlides }}
+        <div class="swiper-slide 
+            flex flex-row 
+            bg-gray-200 
+            dark:bg-gray-700 
+            overflow-hidden 
+            rounded-lg">
+          <!-- Left: 1/3 width for the image -->
+          <div class="w-1/3 h-full flex items-center justify-center">
+            <img src="{{ $slide.image }}" alt="{{ $slide.alt }}" class="h-32 w-auto object-contain" />
+          </div>
+
+          <!-- Right: 2/3 width for bullet points -->
+          <div class="w-2/3 p-6 flex items-center">
+            <ul class="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
+              {{- range $bullet := $slide.bullets }}
+              <li>{{ $bullet }}</li>
+              {{- end }}
+            </ul>
+          </div>
+        </div>
+        {{- end }}
+
+      </div>
+
+      <!-- 3.1 Pagination Dots -->
+      <div class="swiper-pagination"></div>
+      <!-- 3.2 Navigation Arrows -->
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    </div>
+  </section>
+
+  <!-- ──────────────────────────────────────────────────────────────────────────── -->
+  <!-- 4. Courses Section (Tabs + Course Cards)                                     -->
+  <!-- ──────────────────────────────────────────────────────────────────────────── -->
+  <!-- 1. Wrap buttons + course grid in one Alpine component -->
+  <section class="px-4 py-8" x-data="{ selectedCategory: 'All' }" x-cloak>
+    <h2 class="text-2xl font-semibold mb-4 text-gray-700 dark:text-gray-300">Courses</h2>
+
+    <!-- 2. Category buttons -->
+    <div class="border-b border-gray-700 mb-6">
+      <ul class="flex flex-wrap -mb-px text-sm font-medium text-center text-gray-500 dark:text-gray-400">
+        {{ $ctx := . }}
+        {{ range $ctx.Params.categories }}
+        <li class="mr-2">
+          <button @click="selectedCategory='{{ . }}'"
+            :class=" selectedCategory === '{{ . }}'
+              ? 'inline-flex items-center p-4 border-b-2 border-blue-500 text-gray-400 dark:text-gray-300'
+              : 'inline-flex items-center p-4 border-b-2 border-transparent hover:text-gray-600 hover:border-gray-500' " class="rounded-t-lg transition">
+            {{ . }}
+          </button>
+        </li>
+        {{ end }}
+      </ul>
+    </div>
+
+    <!-- 3. Course grid: now within the same x-data scope -->
+    <div class="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+      {{ $ctx := . }}
+      {{ range $ctx.Params.courses }}
       {{ $hex := index $ctx.Params.categoryColors .category }}
-      <div
-        x-show="selectedCategory==='All' || selectedCategory==='{{ .category }}'"
-      >
+      <!-- x-show now has access to selectedCategory -->
+      <div x-show="selectedCategory === 'All' || selectedCategory === '{{ .category }}'" x-transition
+        class="transition-opacity duration-300">
         {{ partial "course-card.html" (dict
-            "Title"   .title
-            "Summary" .summary
-            "Image"   .image
-            "Hex"     $hex
+        "Title" .title
+        "Summary" .summary
+        "Image" .image
+        "Hex" $hex
         ) }}
       </div>
-    {{ end }}
-  </div>
-</section>
+      {{ end }}
+    </div>
+  </section>
+
+</main>
+
+<!-- ──────────────────────────────────────────────────────────────────────────── -->
+<!-- 5. Swiper v11 CSS & JS                                                     -->
+<!-- ──────────────────────────────────────────────────────────────────────────── -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<!-- ──────────────────────────────────────────────────────────────────────────── -->
+<!-- 6. Three.js & Rotating Prism Initialization (loads THREE before use)         -->
+<!-- ──────────────────────────────────────────────────────────────────────────── -->
+<script src="https://unpkg.com/three@0.155.0/build/three.min.js"></script>
+<script defer>
+  document.addEventListener('DOMContentLoaded', () => {
+    // 6.1 Three.js: Rotating Black Prism
+    const canvas = document.getElementById('patch-canvas');
+    const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
+    renderer.setPixelRatio(window.devicePixelRatio);
+
+    function resizeCanvas() {
+      const width = canvas.parentElement.clientWidth;
+      const height = canvas.parentElement.clientHeight;
+      if (canvas.width !== width || canvas.height !== height) {
+        renderer.setSize(width, height, false);
+      }
+    }
+
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(
+      45,
+      canvas.clientWidth / canvas.clientHeight,
+      0.1,
+      100
+    );
+    camera.position.set(0, 0, 3);
+    scene.add(new THREE.AmbientLight(0xffffff, 0.8));
+
+    const geometry = new THREE.BoxGeometry(1.5, 0.5, 0.5);
+    const material = new THREE.MeshBasicMaterial({ color: 0x000000 });
+    const prism = new THREE.Mesh(geometry, material);
+    scene.add(prism);
+
+    function animatePatch() {
+      resizeCanvas();
+      camera.aspect = canvas.clientWidth / canvas.clientHeight;
+      camera.updateProjectionMatrix();
+      prism.rotation.y += 0.01;
+      prism.rotation.x += 0.005;
+      renderer.render(scene, camera);
+      requestAnimationFrame(animatePatch);
+    }
+    animatePatch();
+
+    window.addEventListener('resize', () => {
+      resizeCanvas();
+      camera.aspect = canvas.parentElement.clientWidth / canvas.parentElement.clientHeight;
+      camera.updateProjectionMatrix();
+    });
+
+    // 6.2 Initialize labSwiper: show 1 slide at a time, no certData anywhere
+    new Swiper('.labSwiper', {
+      effect: 'slide',
+      slidesPerView: 1,
+      spaceBetween: 40,
+      centeredSlides: true,
+      loop: true,
+      autoplay: {
+        delay: 5000,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: '.labSwiper .swiper-pagination',
+        clickable: true,
+      },
+    });
+  });
+</script>
+
+<!-- ──────────────────────────────────────────────────────────────────────────── -->
+<!-- 7. Styling for labSwiper slides (image + bullets)                            -->
+<!-- ──────────────────────────────────────────────────────────────────────────── -->
+<style>
+  /* 7.1 Make the swiper container fill its parent */
+  .swiper {
+    width: 100%;
+    height: 100%;
+  }
+
+  /* 7.2 Each slide is a horizontal two-column card */
+  .labSwiper .swiper-slide {
+    display: flex !important;
+    flex-direction: row;
+    border-radius: 1rem;
+    /* rounded-lg */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+  }
+
+  /* 7.3 Left 1/3rd for the image */
+  .labSwiper .swiper-slide>div:first-child {
+    width: 45%;
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+    justify-content: center;
+  }
+
+  .labSwiper .swiper-slide>div:first-child img {
+    height: 20rem;
+    /* roughly “h-14” */
+    width: auto;
+    object-fit: contain;
+  }
+
+  /* 7.4 Right 2/3rd for the bullet points */
+  .labSwiper .swiper-slide>div:nth-child(2) {
+    width: 55%;
+    padding: 1.5rem;
+    /* p-6 */
+    display: flex;
+    align-items: center;
+  }
+
+  .labSwiper .swiper-slide ul {
+    list-style-type: disc;
+    padding-left: 1.25rem;
+    /* indent bullets */
+    /* color comes from Tailwind’s text-gray-700 dark:text-gray-300 */
+  }
+
+  .labSwiper .swiper-slide li {
+    margin-bottom: 0.5rem;
+    /* space between list items */
+    line-height: 1.5;
+  }
+
+  /* 7.5 Hide navigation arrows */
+  .labSwiper .swiper-button-next,
+  .labSwiper .swiper-button-prev {
+    display: none !important;
+  }
+</style>
+
+
 {{ end }}

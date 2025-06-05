@@ -40,7 +40,7 @@ courses:
     summary: "Integral Calculus with Applications is the 2nd of two mandatory math courses focused on teaching varying manual techniques for integral computations."
     category: "MATH"
 
-  - title: "MATH152 - Applied Science 100"
+  - title: "MATH152 - Math 152"
     summary: "Linear Systems is an introductory math course teaching 2D/3D geometry, vectors, matrices, eigenvalues & related concepts. "
     category: "APSC"
 
@@ -127,4 +127,28 @@ courses:
   - title: "CHEM233- Chemistry 233"
     summary: "Currently Enrolled: Introduction to Organic Chemistry builds off of CHEM123 and focuses on the structure, bonding & physical properties of aliphatic & aromatic compounds. It discusses chemical reactivity of common functional groups as well."
     category: "CHEM"
+
+    
+# 3) Lab Work Slider: each slide has an image + bullet list
+labWorkSlides:
+  - image: "/images/lab_work/BMEG245-ImageAnalysis1.png"
+    alt: "BMEG 245 Cell Analysis 1"
+    bullets:
+      - "BMEG 245"
+      - "Description to come..."
+  - image: "/images/lab_work/BMEG245-ImageAnalysis2.png"
+    alt: "BMEG 245 Cell Analysis 2"
+    bullets:
+      - "BMEG 245"
+      - "Description to come..."
+  - image: "/images/lab_work/BMEG245-Gel-Electrophoresis.png"
+    alt: "BMEG 245 Gel Electrophoresis"
+    bullets:
+      - "BMEG 245"
+      - "Description to come..."
+  - image: "/images/lab_work/BMEG102-GeneTransformation.png"
+    alt: "BMEG 102 Gene Transformation"
+    bullets:
+      - "BMEG 102"
+      - "Description to come..."
 ---
