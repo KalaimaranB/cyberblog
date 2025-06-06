@@ -42,7 +42,7 @@ courses:
 
   - title: "MATH152 - Math 152"
     summary: "Linear Systems is an introductory math course teaching 2D/3D geometry, vectors, matrices, eigenvalues & related concepts. "
-    category: "APSC"
+    category: "MATH"
 
   - title: "PHYS157 - Physics 157"
     summary: "Introductory Physics for Engineers I teaches core concepts including heat, thermodynamics, oscillations, waves & sound."
@@ -112,7 +112,7 @@ courses:
     summary: "Vector Calculus for Electrical Engineering was taken alongside BMEG 220. This course teaches concepts such as divergence, curl, Gauss & Stokes theorem as well as applications to electrostatics & magentostatics."
     category: "MATH"
 
-  - title: "MATH253- Math 302"
+  - title: "MATH302- Math 302"
     summary: "Introduction to Probability is a course that teaches core notions of probability, random variables, limit theorems & more."
     category: "MATH"
 
@@ -128,7 +128,7 @@ courses:
     summary: "Currently Enrolled: Introduction to Organic Chemistry builds off of CHEM123 and focuses on the structure, bonding & physical properties of aliphatic & aromatic compounds. It discusses chemical reactivity of common functional groups as well."
     category: "CHEM"
 
-    
+  
 # 3) Lab Work Slider: each slide has an image + bullet list
 labWorkSlides:
   - image: "/images/lab_work/BMEG245-ImageAnalysis1.png"

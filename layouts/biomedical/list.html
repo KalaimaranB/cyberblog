@@ -16,11 +16,9 @@
       </div>
 
       <div class="w-full md:w-1/2" style="margin-left: 1.5rem;">
-        <h2 class="text-2xl font-semibold mb-2 text-gray-700 dark:text-gray-300">Patch Medical Technologies</h2>
+        <h2 class="text-2xl font-semibold mb-2 text-gray-700 dark:text-gray-300">A Vancouver startup</h2>
         <p class="text-gray-700 dark:text-gray-300">
-          PMT is a startup at UBC focused on developing a novel automated delivery system for drug delivery. My role is
-          ... (approval pending)
-          A simple model will appear soon...
+          Details to come soon....
         </p>
       </div>
 
@@ -47,7 +45,7 @@
         <div class="swiper-slide 
             flex flex-row 
             bg-gray-200 
-            dark:bg-gray-700 
+            dark:bg-gray-900 
             overflow-hidden 
             rounded-lg">
           <!-- Left: 1/3 width for the image -->
@@ -130,55 +128,139 @@
 <!-- ──────────────────────────────────────────────────────────────────────────── -->
 <!-- 6. Three.js & Rotating Prism Initialization (loads THREE before use)         -->
 <!-- ──────────────────────────────────────────────────────────────────────────── -->
-<script src="https://unpkg.com/three@0.155.0/build/three.min.js"></script>
-<script defer>
-  document.addEventListener('DOMContentLoaded', () => {
-    // 6.1 Three.js: Rotating Black Prism
-    const canvas = document.getElementById('patch-canvas');
-    const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
-    renderer.setPixelRatio(window.devicePixelRatio);
+<!--
+  1) Make sure you have these scripts included in your HTML:
+     • three.min.js (R125+)
+     • OrbitControls.js  (optional, if you want mouse‐orbit)
+-->
+<canvas id="patch-canvas" style="width: 100%; height: 400px; display: block;"></canvas>
 
-    function resizeCanvas() {
-      const width = canvas.parentElement.clientWidth;
-      const height = canvas.parentElement.clientHeight;
-      if (canvas.width !== width || canvas.height !== height) {
-        renderer.setSize(width, height, false);
+<!-- Make sure these appear before your custom script: -->
+<script src="https://cdn.jsdelivr.net/npm/three@0.125.0/build/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.125.0/examples/js/controls/OrbitControls.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.125.0/examples/js/loaders/OBJLoader.js"></script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // —————————————————————————————————————————————
+    // 1) Basic Renderer / Scene / Camera / Light Setup
+    // —————————————————————————————————————————————
+    const canvas = document.getElementById('patch-canvas');
+    const renderer = new THREE.WebGLRenderer({
+      canvas,
+      antialias: true,
+      alpha: true
+    });
+    renderer.setPixelRatio(window.devicePixelRatio);
+    renderer.setClearColor(0x2a2f3a, 1); // dark slate background
+
+    function resizeRenderer() {
+      const w = canvas.parentElement.clientWidth;
+      const h = canvas.parentElement.clientHeight;
+      if (canvas.width !== w || canvas.height !== h) {
+        renderer.setSize(w, h, false);
       }
     }
 
     const scene = new THREE.Scene();
+
     const camera = new THREE.PerspectiveCamera(
-      45,
+      80,
       canvas.clientWidth / canvas.clientHeight,
       0.1,
       100
     );
-    camera.position.set(0, 0, 3);
-    scene.add(new THREE.AmbientLight(0xffffff, 0.8));
+    camera.position.set(0,0, 50);
+    camera.lookAt(0, -5, 0);
 
-    const geometry = new THREE.BoxGeometry(1.5, 0.5, 0.5);
-    const material = new THREE.MeshBasicMaterial({ color: 0x000000 });
-    const prism = new THREE.Mesh(geometry, material);
-    scene.add(prism);
+    // Add lights so that the black faces actually show up with shading
+    const ambient = new THREE.AmbientLight(0xffffff, 0.5);
+    scene.add(ambient);
 
-    function animatePatch() {
-      resizeCanvas();
+    const dirLight = new THREE.DirectionalLight(0xffffff, 0.5);
+    dirLight.position.set(5, 10, 5);
+    scene.add(dirLight);
+
+    // —————————————————————————————————————————————
+    // 2) Prepare Black Material + Loader + Pivot Group
+    // —————————————————————————————————————————————
+    // 2a) Create a single black material. Use MeshPhongMaterial so lighting shows some form.
+    const blackMat = new THREE.MeshPhongMaterial({
+      color: 0x000000,
+      side: THREE.DoubleSide, // render both sides of each face
+      wireframe: false       // ensure wireframe is OFF
+    });
+
+    // 2b) Create OBJLoader
+    const objLoader = new THREE.OBJLoader();
+
+    // 2c) Create a Group that will hold the loaded object (so we can rotate it)
+    const modelGroup = new THREE.Group();
+    scene.add(modelGroup);
+
+    // 2d) Path to your OBJ—Hugo must serve it from /models/RawBlender.obj
+    //const objURL = '/models/Output.obj';
+
+    // —————————————————————————————————————————————
+    // 3) Load the OBJ, Override Materials, Recompute Normals, Center It, and Add to Scene
+    // —————————————————————————————————————————————
+    /* objLoader.load(
+      objURL,
+      (loadedObject) => {
+        // Traverse all children; for each Mesh, replace its material with our blackMat
+        loadedObject.traverse((child) => {
+          if (child.isMesh) {
+            // Ensure the geometry has vertex normals so lighting works:
+            child.geometry.computeVertexNormals();
+
+            // Assign our solid black Phong material:
+            child.material = blackMat;
+          }
+        });
+
+        // Center the model by computing its bounding box
+        const bbox = new THREE.Box3().setFromObject(loadedObject);
+        const center = new THREE.Vector3();
+        bbox.getCenter(center);
+        loadedObject.position.sub(center);
+
+        // Add the loaded, centered, blackened object to our pivot group
+        modelGroup.add(loadedObject);
+      },
+      (xhr) => {
+        console.log(`OBJ ${(xhr.loaded / xhr.total * 100).toFixed(0)}% loaded`);
+      },
+      (err) => {
+        console.error('Error loading OBJ:', err);
+      }
+    ); */
+
+    // —————————————————————————————————————————————
+    // 4) Animation Loop: Rotate the modelGroup Continuously
+    // —————————————————————————————————————————————
+    function animate() {
+      resizeRenderer();
       camera.aspect = canvas.clientWidth / canvas.clientHeight;
       camera.updateProjectionMatrix();
-      prism.rotation.y += 0.01;
-      prism.rotation.x += 0.005;
-      renderer.render(scene, camera);
-      requestAnimationFrame(animatePatch);
-    }
-    animatePatch();
 
+
+      // Rotate the entire loaded model
+      //modelGroup.rotation.y += 0.002;
+      modelGroup.rotation.y += 0.003;
+
+      renderer.render(scene, camera);
+      requestAnimationFrame(animate);
+    }
+    animate();
+
+    // —————————————————————————————————————————————
+    // 5) Handle Window Resize
+    // —————————————————————————————————————————————
     window.addEventListener('resize', () => {
-      resizeCanvas();
+      resizeRenderer();
       camera.aspect = canvas.parentElement.clientWidth / canvas.parentElement.clientHeight;
       camera.updateProjectionMatrix();
     });
-
-    // 6.2 Initialize labSwiper: show 1 slide at a time, no certData anywhere
     new Swiper('.labSwiper', {
       effect: 'slide',
       slidesPerView: 1,
@@ -197,6 +279,10 @@
   });
 </script>
 
+
+
+
+
 <!-- ──────────────────────────────────────────────────────────────────────────── -->
 <!-- 7. Styling for labSwiper slides (image + bullets)                            -->
 <!-- ──────────────────────────────────────────────────────────────────────────── -->
@@ -212,8 +298,6 @@
     display: flex !important;
     flex-direction: row;
     border-radius: 1rem;
-    /* rounded-lg */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
     overflow: hidden;
   }
 

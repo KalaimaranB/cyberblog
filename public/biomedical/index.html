@@ -148,11 +148,9 @@
       </div>
 
       <div class="w-full md:w-1/2" style="margin-left: 1.5rem;">
-        <h2 class="text-2xl font-semibold mb-2 text-gray-700 dark:text-gray-300">Patch Medical Technologies</h2>
+        <h2 class="text-2xl font-semibold mb-2 text-gray-700 dark:text-gray-300">A Vancouver startup</h2>
         <p class="text-gray-700 dark:text-gray-300">
-          PMT is a startup at UBC focused on developing a novel automated delivery system for drug delivery. My role is
-          ... (approval pending)
-          A simple model will appear soon...
+          Details to come soon....
         </p>
       </div>
 
@@ -178,7 +176,7 @@
         <div class="swiper-slide 
             flex flex-row 
             bg-gray-200 
-            dark:bg-gray-700 
+            dark:bg-gray-900 
             overflow-hidden 
             rounded-lg">
           
@@ -197,7 +195,7 @@
         <div class="swiper-slide 
             flex flex-row 
             bg-gray-200 
-            dark:bg-gray-700 
+            dark:bg-gray-900 
             overflow-hidden 
             rounded-lg">
           
@@ -216,7 +214,7 @@
         <div class="swiper-slide 
             flex flex-row 
             bg-gray-200 
-            dark:bg-gray-700 
+            dark:bg-gray-900 
             overflow-hidden 
             rounded-lg">
           
@@ -235,7 +233,7 @@
         <div class="swiper-slide 
             flex flex-row 
             bg-gray-200 
-            dark:bg-gray-700 
+            dark:bg-gray-900 
             overflow-hidden 
             rounded-lg">
           
@@ -475,7 +473,7 @@
       
       
       
-      <div x-show="selectedCategory === 'All' || selectedCategory === 'APSC'" x-transition
+      <div x-show="selectedCategory === 'All' || selectedCategory === 'MATH'" x-transition
         class="transition-opacity duration-300">
         
 
@@ -485,13 +483,13 @@
 <div
   class="p-6 bg-white rounded-lg shadow-sm hover:bg-gray-100
          dark:bg-gray-800 dark:hover:bg-gray-700"
-  style="border-left:4px solid #EAB308;"
+  style="border-left:4px solid #6366F1;"
 >
   
 
   <h5
     class="mb-2 text-2xl font-bold tracking-tight"
-    style="color: #EAB308;"
+    style="color: #6366F1;"
   >
     MATH152 - Math 152
   </h5>
@@ -1033,7 +1031,7 @@
     class="mb-2 text-2xl font-bold tracking-tight"
     style="color: #6366F1;"
   >
-    MATH253- Math 302
+    MATH302- Math 302
   </h5>
 
   <p class="font-normal text-gray-700 dark:text-gray-400">
@@ -1147,55 +1145,107 @@
 
 
 
-<script src="https://unpkg.com/three@0.155.0/build/three.min.js"></script>
-<script defer>
+
+<canvas id="patch-canvas" style="width: 100%; height: 400px; display: block;"></canvas>
+
+
+<script src="https://cdn.jsdelivr.net/npm/three@0.125.0/build/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.125.0/examples/js/controls/OrbitControls.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.125.0/examples/js/loaders/OBJLoader.js"></script>
+
+<script>
   document.addEventListener('DOMContentLoaded', () => {
     
+    
+    
     const canvas = document.getElementById('patch-canvas');
-    const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
+    const renderer = new THREE.WebGLRenderer({
+      canvas,
+      antialias: true,
+      alpha: true
+    });
     renderer.setPixelRatio(window.devicePixelRatio);
+    renderer.setClearColor(0x2a2f3a, 1); 
 
-    function resizeCanvas() {
-      const width = canvas.parentElement.clientWidth;
-      const height = canvas.parentElement.clientHeight;
-      if (canvas.width !== width || canvas.height !== height) {
-        renderer.setSize(width, height, false);
+    function resizeRenderer() {
+      const w = canvas.parentElement.clientWidth;
+      const h = canvas.parentElement.clientHeight;
+      if (canvas.width !== w || canvas.height !== h) {
+        renderer.setSize(w, h, false);
       }
     }
 
     const scene = new THREE.Scene();
+
     const camera = new THREE.PerspectiveCamera(
-      45,
+      80,
       canvas.clientWidth / canvas.clientHeight,
       0.1,
       100
     );
-    camera.position.set(0, 0, 3);
-    scene.add(new THREE.AmbientLight(0xffffff, 0.8));
+    camera.position.set(0,0, 50);
+    camera.lookAt(0, -5, 0);
 
-    const geometry = new THREE.BoxGeometry(1.5, 0.5, 0.5);
-    const material = new THREE.MeshBasicMaterial({ color: 0x000000 });
-    const prism = new THREE.Mesh(geometry, material);
-    scene.add(prism);
+    
+    const ambient = new THREE.AmbientLight(0xffffff, 0.5);
+    scene.add(ambient);
 
-    function animatePatch() {
-      resizeCanvas();
-      camera.aspect = canvas.clientWidth / canvas.clientHeight;
-      camera.updateProjectionMatrix();
-      prism.rotation.y += 0.01;
-      prism.rotation.x += 0.005;
-      renderer.render(scene, camera);
-      requestAnimationFrame(animatePatch);
-    }
-    animatePatch();
+    const dirLight = new THREE.DirectionalLight(0xffffff, 0.5);
+    dirLight.position.set(5, 10, 5);
+    scene.add(dirLight);
 
-    window.addEventListener('resize', () => {
-      resizeCanvas();
-      camera.aspect = canvas.parentElement.clientWidth / canvas.parentElement.clientHeight;
-      camera.updateProjectionMatrix();
+    
+    
+    
+    
+    const blackMat = new THREE.MeshPhongMaterial({
+      color: 0x000000,
+      side: THREE.DoubleSide, 
+      wireframe: false       
     });
 
     
+    const objLoader = new THREE.OBJLoader();
+
+    
+    const modelGroup = new THREE.Group();
+    scene.add(modelGroup);
+
+    
+    
+
+    
+    
+    
+    
+
+
+    
+    
+    
+    function animate() {
+      resizeRenderer();
+      camera.aspect = canvas.clientWidth / canvas.clientHeight;
+      camera.updateProjectionMatrix();
+
+
+      
+      
+      modelGroup.rotation.y += 0.003;
+
+      renderer.render(scene, camera);
+      requestAnimationFrame(animate);
+    }
+    animate();
+
+    
+    
+    
+    window.addEventListener('resize', () => {
+      resizeRenderer();
+      camera.aspect = canvas.parentElement.clientWidth / canvas.parentElement.clientHeight;
+      camera.updateProjectionMatrix();
+    });
     new Swiper('.labSwiper', {
       effect: 'slide',
       slidesPerView: 1,
@@ -1217,6 +1267,10 @@
 
 
 
+
+
+
+
 <style>
    
   .swiper {
@@ -1229,8 +1283,6 @@
     display: flex !important;
     flex-direction: row;
     border-radius: 1rem;
-     
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
     overflow: hidden;
   }
 
