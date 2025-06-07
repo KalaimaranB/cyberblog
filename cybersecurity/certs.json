@@ -1,0 +1,139 @@
+[
+  {
+    "file": "THM-Hackfinity.png",
+    "description": "Hackfinity was an international CTF battle for students hosted by TryHackMe, featuring challenges in web applications, OSINT, and boot-to-root scenarios. It offers hands-on practice under time pressure and collaboration with peers.",
+    "skills": [
+      "Web Application Exploitation",
+      "OSINT Techniques",
+      "Boot-to-Root Challenges"
+    ],
+    "resource": "https://tryhackme.com/hackfinity"
+  },
+  {
+    "file": "ISC2-CC.png",
+    "description": "Certified in Cybersecurity (CC) from ISC² is an entry-level credential covering foundational security principles, business continuity, and network defense. It validates knowledge of access control concepts and prepared me for further specialization in cybersecurity.",
+    "skills": [
+      "Security Principles",
+      "Business Continuity",
+      "Disaster Recovery",
+      "Network Security",
+      "Access Control Concepts"
+    ],
+    "resource": "https://www.isc2.org/certifications/cc"
+  },
+  {
+    "file": "THM-AdventOfCyber.png",
+    "description": "Advent of Cyber is TryHackMe’s annual December event delivering 24 daily challenges that introduce red and blue teaming fundamentals. I learned to analyze logs, perform Wi-Fi attacks, and practice defensive monitoring in a festive format.",
+    "skills": [
+      "Red Teaming Basics",
+      "Blue Teaming Strategies",
+      "Log Analysis",
+      "Wi-Fi Attacks"
+    ],
+    "resource": "https://tryhackme.com/room/adventofcyber2024"
+  },
+  {
+    "file": "THM-Pathway-Cyber101.png",
+    "description": "Cyber Security 101 is a beginner-friendly pathway that builds core skills in Linux, Windows, and networking fundamentals. Labs guide you through Metasploit usage and essential red and blue team toolsets.",
+    "skills": [
+      "Linux Fundamentals",
+      "Windows Fundamentals",
+      "Networking Fundamentals",
+      "Metasploit",
+      "Red & Blue Team Tools"
+    ],
+    "resource": "https://tryhackme.com/path/outline/cybersecurity101"
+  },
+  {
+    "file": "THM-Pathway-DevSecOps.png",
+    "description": "DevSecOps on TryHackMe focuses on integrating security into CI/CD pipelines, containerization, and infrastructure as code. I explored Docker, Kubernetes, and secure IaC practices through hands-on labs.",
+    "skills": [
+      "CI/CD Security",
+      "Docker Security",
+      "Kubernetes Security",
+      "Infrastructure as Code (IaC)"
+    ],
+    "resource": "https://tryhackme.com/path/outline/devsecops"
+  },
+  {
+    "file": "SimplyCyber-HackingMethod.png",
+    "description": "The Hacker Methodology course on TryHackMe walks through a structured ethical hacking workflow using Kali Linux. I learned reconnaissance, scanning & exploitation techniques.",
+    "skills": [
+      "Kali Linux Basics",
+      "Ethical Hacking Methodology",
+      "Reconnaissance Techniques",
+      "Vulnerability Scanning",
+      "Exploitation Strategies"
+    ],
+    "resource": "https://academy.simplycyber.io/p/introduction-to-hacking-methodology"
+  },
+  {
+    "file": "THM-Pathway-JrPenTester.png",
+    "description": "The Junior Penetration Tester pathway provided practical training in web hacking, network scanning, and use of offensive tools. Modules cover Burp Suite, Nmap enumeration, and Metasploit exploitation workflows.",
+    "skills": [
+      "Web Hacking",
+      "Burp Suite",
+      "Nmap",
+      "Metasploit"
+    ],
+    "resource": "https://tryhackme.com/path/outline/jrpenetrationtester"
+  },
+  {
+    "file": "Google-Cybersecurity.png",
+    "description": "Google’s Cloud Cybersecurity Professional Certificate on offered a self-paced, 5 part program teaching core concepts in cloud security, threat analysis & incident response.",
+    "skills": [
+      "Network Security",
+      "Threat Analysis",
+      "Cloud Security",
+      "Python for Cybersecurity",
+      "SIEM Tools"
+    ],
+    "resource": "https://www.cloudskillsboost.google/paths/419"
+  },
+  {
+    "file": "THM-Pathway-SecurityEngineer.png",
+    "description": "Security Engineer Training on TryHackMe explored secure software development, system hardening, and incident management. The pathway includes modules on SAST/DAST and operational best practices for robust defense.",
+    "skills": [
+      "Secure Software Development",
+      "System Hardening",
+      "SAST/DAST",
+      "Incident Management"
+    ],
+    "resource": "https://tryhackme.com/path/outline/security-engineer-training"
+  },
+  {
+    "file": "SimplyCyber-AWSPentesting.png",
+    "description": "Attacking and Defending AWS is a hands-on path teaching how to secure and exploit AWS environments. Labs cover EC2 misconfigurations, S3 security, Lambda vulnerabilities, and remediation strategies.",
+    "skills": [
+      "AWS Pentesting",
+      "EC2 Security",
+      "S3 Security",
+      "Lambda Function Security"
+    ],
+    "resource": "https://academy.simplycyber.io/p/introduction-to-aws-pentesting"
+  },
+  {
+    "file": "THM-Pathway-WebFundamentals.png",
+    "description": "Web Fundamentals introduces web application structures and teaches exploitation techniques for common vulnerabilities. I practiced IDOR, SSRF, and SQL injection attacks in realistic lab environments.",
+    "skills": [
+      "Web Application Fundamentals",
+      "Exploitation Techniques",
+      "IDOR",
+      "SSRF",
+      "SQL Injection"
+    ],
+    "resource": "https://tryhackme.com/path/outline/web"
+  },
+  {
+    "file": "THM-Pathway-WebAppPenTester.png",
+    "description": "Web Application Fundamentals builds on the basics to cover advanced web vulnerabilities and exploitation techniques. I learned about various attack vectors to target web applications.",
+    "skills": [
+      "Injection attacks",
+      "Server Side Attacks",
+      "Client Side Attacks",
+      "Introduction to authentication bypass",
+      "Introduction to HTTP smuggling"
+    ],
+    "resource": "https://tryhackme.com/path/outline/webapppentesting"
+  }
+]

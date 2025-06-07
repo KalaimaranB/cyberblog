@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Organic Audio-Driven Sphere</title>
+  <style>
+    body { margin: 0; overflow: hidden; background: #000; }
+    canvas { display: block; }
+    audio { position: absolute; top: 10px; left: 10px; z-index: 1; }
+  </style>
+</head>
+<body>
+  <!-- Audio element: place your MP3 in Hugo's static folder: /static/Kaththi Theme Instrumental.mp3 -->
+  <audio id="audio" src="/Kaththi Theme Instrumental.mp3" controls autoplay></audio>
+  <!-- Three.js canvas -->
+  <canvas id="canvas"></canvas>
+
+  <script type="module">
+    import * as THREE from 'https://unpkg.com/three@0.152.2/build/three.module.js';
+    import { OrbitControls } from 'https://unpkg.com/three@0.152.2/examples/jsm/controls/OrbitControls.js';
+
+    // --- Scene Setup ---
+    const canvas   = document.getElementById('canvas');
+    const scene    = new THREE.Scene();
+    const camera   = new THREE.PerspectiveCamera(45, innerWidth/innerHeight, 0.1, 100);
+    camera.position.set(0, 0, 5);
+    const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
+    renderer.setSize(innerWidth, innerHeight);
+
+    // --- Orbit Controls (optional) ---
+    const controls = new OrbitControls(camera, renderer.domElement);
+    controls.enableDamping = true;
+
+    // --- Audio Setup ---
+    const audioEl = document.getElementById('audio');
+    const audioCtx = new AudioContext();
+    const track = audioCtx.createMediaElementSource(audioEl);
+    const analyser = audioCtx.createAnalyser();
+    analyser.fftSize = 256;
+    track.connect(analyser).connect(audioCtx.destination);
+    const dataArray = new Uint8Array(analyser.frequencyBinCount);
+
+    // --- Organic Sphere Geometry + Material ---
+    const resolution = 128;
+    const geometry = new THREE.SphereGeometry(1.5, resolution, resolution);
+    // Save original positions
+    const posAttr = geometry.attributes.position;
+    const original = new Float32Array(posAttr.array);
+
+    const material = new THREE.MeshStandardMaterial({
+      color: 0x0066ff,
+      emissive: 0x002244,
+      roughness: 0.35,
+      metalness: 0.1,
+      transparent: true,
+      opacity: 0.9,
+      side: THREE.DoubleSide
+    });
+    const sphere = new THREE.Mesh(geometry, material);
+    scene.add(sphere);
+
+    // Lights
+    scene.add(new THREE.PointLight(0xffffff, 1, 50).position.set(5,5,5));
+    scene.add(new THREE.AmbientLight(0x222222));
+
+    // --- Animation Loop ---
+    function animate() {
+      requestAnimationFrame(animate);
+      analyser.getByteFrequencyData(dataArray);
+
+      // Compute average bass (first few bins)
+      let bass = 0;
+      for(let i = 0; i < 10; i++) bass += dataArray[i];
+      bass = bass / 10 / 255; // normalize 0..1
+
+      // Deform vertices: use bass + per-vertex noise
+      const now = performance.now() * 0.0005;
+      for(let i = 0; i < posAttr.count; i++) {
+        const ix = i*3, iy = i*3+1, iz = i*3+2;
+        const ox = original[ix], oy = original[iy], oz = original[iz];
+        // spherical noise
+        const theta = ox*5 + now + bass*2;
+        const phi   = oy*5 - now + bass*2;
+        const noise = Math.sin(theta) * Math.cos(phi);
+        const displacement = 1 + noise * 0.15 * (0.3 + bass);
+        posAttr.array[ix] = ox * displacement;
+        posAttr.array[iy] = oy * displacement;
+        posAttr.array[iz] = oz * displacement;
+      }
+      posAttr.needsUpdate = true;
+
+      // Rotate sphere slowly
+      sphere.rotation.y += 0.002 + bass * 0.005;
+      controls.update();
+      renderer.render(scene, camera);
+    }
+
+    // resume audio context on user interaction
+    document.body.addEventListener('click', () => audioCtx.resume());
+
+    animate();
+    window.addEventListener('resize', ()=>{
+      camera.aspect = innerWidth/innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(innerWidth, innerHeight);
+    });
+  </script>
+</body>
+</html>
