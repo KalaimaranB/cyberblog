@@ -1,10 +1,19 @@
 {{/* layouts/section/cybersecurity.html */}}
 {{ define "main" }}
-  <main class="pb-0">
+  <main class="pb-16">
+
+
     {{/* Load and parse certs.json */}}
     {{ $jsonData := readFile "content/cybersecurity/certs.json" | transform.Unmarshal }}
 
     {{ partial "banner.html" . }}
+
+
+    <!-- Main markdown content -->
+    <section class="mt-12 max-w-3xl mx-auto px-6 prose dark:prose-invert dark:text-white mb-16">
+      {{ .Content }}
+      <p></p>
+    </section>
 
     <!-- TryHackMe badge -->
     <div class="max-w-4xl mx-auto my-8 px-6 py-8 relative" style="height: 200px;">
@@ -14,6 +23,7 @@
         style="position:absolute; top:50%; left:58%; width:400px; height:85px; transform:translate(-50%,-50%) scale(2); border:none;"
       ></iframe>
     </div>
+
 
     <!-- Carousel: grid layout to enforce side-by-side -->
     <div class="max-w-4xl mx-auto">
@@ -76,17 +86,6 @@
         {{ (index $jsonData 0).description }}
       </div>
     </div>
-
-
-
-
-
-
-    <!-- Main markdown content -->
-    <section class="mt-12 max-w-3xl mx-auto px-6 prose dark:prose-invert dark:text-white mb-16">
-      {{ .Content }}
-      <p></p>
-    </section>
   </main>
 
   <!-- Swiper CSS & JS -->
