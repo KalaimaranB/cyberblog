@@ -12,18 +12,14 @@
 <link rel="mask-icon" href="../favicon/safari-pinned-tab.svg" color="#5bbad5">
 
 
-
 <link
   rel="stylesheet"
   href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
 />
-
 <link
   rel="stylesheet"
   href="https://cdn.jsdelivr.net/npm/swiper@11/swiper/css/effect-coverflow.min.css"
 />
-
-<link rel="stylesheet" href="../css/custom-swiper.css">
 
 
 
@@ -60,6 +56,9 @@
 
 <link rel="stylesheet" href="/css/style.min.0a202f217b79b733be0a4bee09017a95c0ee1defd72592123773a706d3fe0e1f.css" integrity="sha256-CiAvIXt5tzO+CkvuCQF6lcDuHe/XJZISN3OnBtP+Dh8=" />
 
+
+
+<link rel="stylesheet" href="../css/custom-swiper.css">
 </head>
 
 <body class="bg-zinc-100 dark:bg-gray-800">
@@ -111,12 +110,6 @@
             
             
             
-            <a class="px-4 py-2 mt-2 text-sm font-semibold rounded-lg md:mt-0 md:ml-4 hover:text-white focus:text-white hover:bg-primary-600 focus:bg-primary-700 focus:outline-none focus:shadow-outline" href="http://localhost:1313/posts/" title="Walkthroughs">
-                Walkthroughs
-            </a>
-            
-            
-            
             <button id="theme-toggle" type="button" class="p-2 text-sm text-gray-500 rounded-lg md: dark:text-gray-400 md:hover:bg-gray-100 dark:md:hover:bg-gray-700 md:focus:outline-none md:focus:ring-4 md:focus:ring-gray-200 dark:md:focus:ring-gray-700 md:ml-2 xs:hidden">
                 <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                     <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z">
@@ -131,7 +124,7 @@
     </div>
 </div>
     
-  <main class="pb-16">
+  <main class="pb-0">
     
     
 
@@ -145,202 +138,631 @@
 
 
     
-    <div
-      class="max-w-4xl mx-auto my-8 px-6 py-8 relative"
-      style="height: 200px;"
-    >
+    <div class="max-w-4xl mx-auto my-8 px-6 py-8 relative" style="height: 200px;">
       <iframe
         src="https://tryhackme.com/api/v2/badges/public-profile?userPublicId=3251752"
-        scrolling="no"
-        loading="lazy"
-        title="TryHackMe Badges"
-        style="
-          position: absolute;
-          top: 50%; left: 58%;
-          width: 400px;
-          height: 85px;
-          transform: translate(-50%, -50%) scale(2);
-          transform-origin: center center;
-          border: none;
-        "
+        scrolling="no" loading="lazy" title="TryHackMe Badges"
+        style="position:absolute; top:50%; left:58%; width:400px; height:85px; transform:translate(-50%,-50%) scale(2); border:none;"
       ></iframe>
     </div>
 
     
-    <div class="swiper cyberSwiper w-full max-w-4xl mx-auto h-96">
-      <div class="swiper-wrapper">
+    <div class="max-w-4xl mx-auto">
+      <div class="swiper cyberSwiper w-full h-[400px] dark:bg-gray-900 bg-gray-200 overflow-hidden rounded-lg">
+        <div class="swiper-wrapper h-full items-center">
+          
+            <div class="swiper-slide h-full flex items-center justify-center p-4"
+                data-description="Hackfinity was an international CTF battle for students hosted by TryHackMe, featuring challenges in web applications, OSINT, and boot-to-root scenarios. It offers hands-on practice under time pressure and collaboration with peers.">
+              <div class="flex items-center w-full space-x-6 h-full">
+                
+                
+                <div class="w-full md:w-2/3 h-full flex items-center justify-center">
+                  <img
+                    src="../images/certificates/THM-Hackfinity.png"
+                    alt="THM-Hackfinity.png"
+                    class="object-contain h-full w-auto rounded"
+                  />
+                </div>
+                
+                
+                <div class="w-full md:w-1/3 h-full text-gray-800 dark:text-gray-300 overflow-auto">
+                  <h2 class="font-bold mb-2">Skills Gained</h2>
+                  <ul class="list-disc list-inside space-y-1 text-base">
+                    
+                      <li>Web Application Exploitation</li>
+                    
+                      <li>OSINT Techniques</li>
+                    
+                      <li>Boot-to-Root Challenges</li>
+                    
+                  </ul>
+                  
+                  
+                    <p class="mt-4 italic">
+                      <a
+                        href="https://tryhackme.com/hackfinity"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="text-blue-400 hover:underline"
+                      >
+                        Learn more!
+                      </a>
+                    </p>
+                  
+                </div>
+
+
+              </div>
+            </div>
+          
+            <div class="swiper-slide h-full flex items-center justify-center p-4"
+                data-description="Certified in Cybersecurity (CC) from ISC² is an entry-level credential covering foundational security principles, business continuity, and network defense. It validates knowledge of access control concepts and prepared me for further specialization in cybersecurity.">
+              <div class="flex items-center w-full space-x-6 h-full">
+                
+                
+                <div class="w-full md:w-2/3 h-full flex items-center justify-center">
+                  <img
+                    src="../images/certificates/ISC2-CC.png"
+                    alt="ISC2-CC.png"
+                    class="object-contain h-full w-auto rounded"
+                  />
+                </div>
+                
+                
+                <div class="w-full md:w-1/3 h-full text-gray-800 dark:text-gray-300 overflow-auto">
+                  <h2 class="font-bold mb-2">Skills Gained</h2>
+                  <ul class="list-disc list-inside space-y-1 text-base">
+                    
+                      <li>Security Principles</li>
+                    
+                      <li>Business Continuity</li>
+                    
+                      <li>Disaster Recovery</li>
+                    
+                      <li>Network Security</li>
+                    
+                      <li>Access Control Concepts</li>
+                    
+                  </ul>
+                  
+                  
+                    <p class="mt-4 italic">
+                      <a
+                        href="https://www.isc2.org/certifications/cc"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="text-blue-400 hover:underline"
+                      >
+                        Learn more!
+                      </a>
+                    </p>
+                  
+                </div>
+
+
+              </div>
+            </div>
+          
+            <div class="swiper-slide h-full flex items-center justify-center p-4"
+                data-description="Advent of Cyber is TryHackMe’s annual December event delivering 24 daily challenges that introduce red and blue teaming fundamentals. I learned to analyze logs, perform Wi-Fi attacks, and practice defensive monitoring in a festive format.">
+              <div class="flex items-center w-full space-x-6 h-full">
+                
+                
+                <div class="w-full md:w-2/3 h-full flex items-center justify-center">
+                  <img
+                    src="../images/certificates/THM-AdventOfCyber.png"
+                    alt="THM-AdventOfCyber.png"
+                    class="object-contain h-full w-auto rounded"
+                  />
+                </div>
+                
+                
+                <div class="w-full md:w-1/3 h-full text-gray-800 dark:text-gray-300 overflow-auto">
+                  <h2 class="font-bold mb-2">Skills Gained</h2>
+                  <ul class="list-disc list-inside space-y-1 text-base">
+                    
+                      <li>Red Teaming Basics</li>
+                    
+                      <li>Blue Teaming Strategies</li>
+                    
+                      <li>Log Analysis</li>
+                    
+                      <li>Wi-Fi Attacks</li>
+                    
+                  </ul>
+                  
+                  
+                    <p class="mt-4 italic">
+                      <a
+                        href="https://tryhackme.com/room/adventofcyber2024"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="text-blue-400 hover:underline"
+                      >
+                        Learn more!
+                      </a>
+                    </p>
+                  
+                </div>
+
+
+              </div>
+            </div>
+          
+            <div class="swiper-slide h-full flex items-center justify-center p-4"
+                data-description="Cyber Security 101 is a beginner-friendly pathway that builds core skills in Linux, Windows, and networking fundamentals. Labs guide you through Metasploit usage and essential red and blue team toolsets.">
+              <div class="flex items-center w-full space-x-6 h-full">
+                
+                
+                <div class="w-full md:w-2/3 h-full flex items-center justify-center">
+                  <img
+                    src="../images/certificates/THM-Pathway-Cyber101.png"
+                    alt="THM-Pathway-Cyber101.png"
+                    class="object-contain h-full w-auto rounded"
+                  />
+                </div>
+                
+                
+                <div class="w-full md:w-1/3 h-full text-gray-800 dark:text-gray-300 overflow-auto">
+                  <h2 class="font-bold mb-2">Skills Gained</h2>
+                  <ul class="list-disc list-inside space-y-1 text-base">
+                    
+                      <li>Linux Fundamentals</li>
+                    
+                      <li>Windows Fundamentals</li>
+                    
+                      <li>Networking Fundamentals</li>
+                    
+                      <li>Metasploit</li>
+                    
+                      <li>Red &amp; Blue Team Tools</li>
+                    
+                  </ul>
+                  
+                  
+                    <p class="mt-4 italic">
+                      <a
+                        href="https://tryhackme.com/path/outline/cybersecurity101"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="text-blue-400 hover:underline"
+                      >
+                        Learn more!
+                      </a>
+                    </p>
+                  
+                </div>
+
+
+              </div>
+            </div>
+          
+            <div class="swiper-slide h-full flex items-center justify-center p-4"
+                data-description="DevSecOps on TryHackMe focuses on integrating security into CI/CD pipelines, containerization, and infrastructure as code. I explored Docker, Kubernetes, and secure IaC practices through hands-on labs.">
+              <div class="flex items-center w-full space-x-6 h-full">
+                
+                
+                <div class="w-full md:w-2/3 h-full flex items-center justify-center">
+                  <img
+                    src="../images/certificates/THM-Pathway-DevSecOps.png"
+                    alt="THM-Pathway-DevSecOps.png"
+                    class="object-contain h-full w-auto rounded"
+                  />
+                </div>
+                
+                
+                <div class="w-full md:w-1/3 h-full text-gray-800 dark:text-gray-300 overflow-auto">
+                  <h2 class="font-bold mb-2">Skills Gained</h2>
+                  <ul class="list-disc list-inside space-y-1 text-base">
+                    
+                      <li>CI/CD Security</li>
+                    
+                      <li>Docker Security</li>
+                    
+                      <li>Kubernetes Security</li>
+                    
+                      <li>Infrastructure as Code (IaC)</li>
+                    
+                  </ul>
+                  
+                  
+                    <p class="mt-4 italic">
+                      <a
+                        href="https://tryhackme.com/path/outline/devsecops"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="text-blue-400 hover:underline"
+                      >
+                        Learn more!
+                      </a>
+                    </p>
+                  
+                </div>
+
+
+              </div>
+            </div>
+          
+            <div class="swiper-slide h-full flex items-center justify-center p-4"
+                data-description="The Hacker Methodology course on TryHackMe walks through a structured ethical hacking workflow using Kali Linux. I learned reconnaissance, scanning &amp; exploitation techniques.">
+              <div class="flex items-center w-full space-x-6 h-full">
+                
+                
+                <div class="w-full md:w-2/3 h-full flex items-center justify-center">
+                  <img
+                    src="../images/certificates/SimplyCyber-HackingMethod.png"
+                    alt="SimplyCyber-HackingMethod.png"
+                    class="object-contain h-full w-auto rounded"
+                  />
+                </div>
+                
+                
+                <div class="w-full md:w-1/3 h-full text-gray-800 dark:text-gray-300 overflow-auto">
+                  <h2 class="font-bold mb-2">Skills Gained</h2>
+                  <ul class="list-disc list-inside space-y-1 text-base">
+                    
+                      <li>Kali Linux Basics</li>
+                    
+                      <li>Ethical Hacking Methodology</li>
+                    
+                      <li>Reconnaissance Techniques</li>
+                    
+                      <li>Vulnerability Scanning</li>
+                    
+                      <li>Exploitation Strategies</li>
+                    
+                  </ul>
+                  
+                  
+                    <p class="mt-4 italic">
+                      <a
+                        href="https://academy.simplycyber.io/p/introduction-to-hacking-methodology"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="text-blue-400 hover:underline"
+                      >
+                        Learn more!
+                      </a>
+                    </p>
+                  
+                </div>
+
+
+              </div>
+            </div>
+          
+            <div class="swiper-slide h-full flex items-center justify-center p-4"
+                data-description="The Junior Penetration Tester pathway provided practical training in web hacking, network scanning, and use of offensive tools. Modules cover Burp Suite, Nmap enumeration, and Metasploit exploitation workflows.">
+              <div class="flex items-center w-full space-x-6 h-full">
+                
+                
+                <div class="w-full md:w-2/3 h-full flex items-center justify-center">
+                  <img
+                    src="../images/certificates/THM-Pathway-JrPenTester.png"
+                    alt="THM-Pathway-JrPenTester.png"
+                    class="object-contain h-full w-auto rounded"
+                  />
+                </div>
+                
+                
+                <div class="w-full md:w-1/3 h-full text-gray-800 dark:text-gray-300 overflow-auto">
+                  <h2 class="font-bold mb-2">Skills Gained</h2>
+                  <ul class="list-disc list-inside space-y-1 text-base">
+                    
+                      <li>Web Hacking</li>
+                    
+                      <li>Burp Suite</li>
+                    
+                      <li>Nmap</li>
+                    
+                      <li>Metasploit</li>
+                    
+                  </ul>
+                  
+                  
+                    <p class="mt-4 italic">
+                      <a
+                        href="https://tryhackme.com/path/outline/jrpenetrationtester"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="text-blue-400 hover:underline"
+                      >
+                        Learn more!
+                      </a>
+                    </p>
+                  
+                </div>
+
+
+              </div>
+            </div>
+          
+            <div class="swiper-slide h-full flex items-center justify-center p-4"
+                data-description="Google’s Cloud Cybersecurity Professional Certificate on offered a self-paced, 5 part program teaching core concepts in cloud security, threat analysis &amp; incident response.">
+              <div class="flex items-center w-full space-x-6 h-full">
+                
+                
+                <div class="w-full md:w-2/3 h-full flex items-center justify-center">
+                  <img
+                    src="../images/certificates/Google-Cybersecurity.png"
+                    alt="Google-Cybersecurity.png"
+                    class="object-contain h-full w-auto rounded"
+                  />
+                </div>
+                
+                
+                <div class="w-full md:w-1/3 h-full text-gray-800 dark:text-gray-300 overflow-auto">
+                  <h2 class="font-bold mb-2">Skills Gained</h2>
+                  <ul class="list-disc list-inside space-y-1 text-base">
+                    
+                      <li>Network Security</li>
+                    
+                      <li>Threat Analysis</li>
+                    
+                      <li>Cloud Security</li>
+                    
+                      <li>Python for Cybersecurity</li>
+                    
+                      <li>SIEM Tools</li>
+                    
+                  </ul>
+                  
+                  
+                    <p class="mt-4 italic">
+                      <a
+                        href="https://www.cloudskillsboost.google/paths/419"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="text-blue-400 hover:underline"
+                      >
+                        Learn more!
+                      </a>
+                    </p>
+                  
+                </div>
+
+
+              </div>
+            </div>
+          
+            <div class="swiper-slide h-full flex items-center justify-center p-4"
+                data-description="Security Engineer Training on TryHackMe explored secure software development, system hardening, and incident management. The pathway includes modules on SAST/DAST and operational best practices for robust defense.">
+              <div class="flex items-center w-full space-x-6 h-full">
+                
+                
+                <div class="w-full md:w-2/3 h-full flex items-center justify-center">
+                  <img
+                    src="../images/certificates/THM-Pathway-SecurityEngineer.png"
+                    alt="THM-Pathway-SecurityEngineer.png"
+                    class="object-contain h-full w-auto rounded"
+                  />
+                </div>
+                
+                
+                <div class="w-full md:w-1/3 h-full text-gray-800 dark:text-gray-300 overflow-auto">
+                  <h2 class="font-bold mb-2">Skills Gained</h2>
+                  <ul class="list-disc list-inside space-y-1 text-base">
+                    
+                      <li>Secure Software Development</li>
+                    
+                      <li>System Hardening</li>
+                    
+                      <li>SAST/DAST</li>
+                    
+                      <li>Incident Management</li>
+                    
+                  </ul>
+                  
+                  
+                    <p class="mt-4 italic">
+                      <a
+                        href="https://tryhackme.com/path/outline/security-engineer-training"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="text-blue-400 hover:underline"
+                      >
+                        Learn more!
+                      </a>
+                    </p>
+                  
+                </div>
+
+
+              </div>
+            </div>
+          
+            <div class="swiper-slide h-full flex items-center justify-center p-4"
+                data-description="Attacking and Defending AWS is a hands-on path teaching how to secure and exploit AWS environments. Labs cover EC2 misconfigurations, S3 security, Lambda vulnerabilities, and remediation strategies.">
+              <div class="flex items-center w-full space-x-6 h-full">
+                
+                
+                <div class="w-full md:w-2/3 h-full flex items-center justify-center">
+                  <img
+                    src="../images/certificates/SimplyCyber-AWSPentesting.png"
+                    alt="SimplyCyber-AWSPentesting.png"
+                    class="object-contain h-full w-auto rounded"
+                  />
+                </div>
+                
+                
+                <div class="w-full md:w-1/3 h-full text-gray-800 dark:text-gray-300 overflow-auto">
+                  <h2 class="font-bold mb-2">Skills Gained</h2>
+                  <ul class="list-disc list-inside space-y-1 text-base">
+                    
+                      <li>AWS Pentesting</li>
+                    
+                      <li>EC2 Security</li>
+                    
+                      <li>S3 Security</li>
+                    
+                      <li>Lambda Function Security</li>
+                    
+                  </ul>
+                  
+                  
+                    <p class="mt-4 italic">
+                      <a
+                        href="https://academy.simplycyber.io/p/introduction-to-aws-pentesting"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="text-blue-400 hover:underline"
+                      >
+                        Learn more!
+                      </a>
+                    </p>
+                  
+                </div>
+
+
+              </div>
+            </div>
+          
+            <div class="swiper-slide h-full flex items-center justify-center p-4"
+                data-description="Web Fundamentals introduces web application structures and teaches exploitation techniques for common vulnerabilities. I practiced IDOR, SSRF, and SQL injection attacks in realistic lab environments.">
+              <div class="flex items-center w-full space-x-6 h-full">
+                
+                
+                <div class="w-full md:w-2/3 h-full flex items-center justify-center">
+                  <img
+                    src="../images/certificates/THM-Pathway-WebFundamentals.png"
+                    alt="THM-Pathway-WebFundamentals.png"
+                    class="object-contain h-full w-auto rounded"
+                  />
+                </div>
+                
+                
+                <div class="w-full md:w-1/3 h-full text-gray-800 dark:text-gray-300 overflow-auto">
+                  <h2 class="font-bold mb-2">Skills Gained</h2>
+                  <ul class="list-disc list-inside space-y-1 text-base">
+                    
+                      <li>Web Application Fundamentals</li>
+                    
+                      <li>Exploitation Techniques</li>
+                    
+                      <li>IDOR</li>
+                    
+                      <li>SSRF</li>
+                    
+                      <li>SQL Injection</li>
+                    
+                  </ul>
+                  
+                  
+                    <p class="mt-4 italic">
+                      <a
+                        href="https://tryhackme.com/path/outline/web"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="text-blue-400 hover:underline"
+                      >
+                        Learn more!
+                      </a>
+                    </p>
+                  
+                </div>
+
+
+              </div>
+            </div>
+          
+            <div class="swiper-slide h-full flex items-center justify-center p-4"
+                data-description="Web Application Fundamentals builds on the basics to cover advanced web vulnerabilities and exploitation techniques. I learned about various attack vectors to target web applications.">
+              <div class="flex items-center w-full space-x-6 h-full">
+                
+                
+                <div class="w-full md:w-2/3 h-full flex items-center justify-center">
+                  <img
+                    src="../images/certificates/THM-Pathway-WebAppPenTester.png"
+                    alt="THM-Pathway-WebAppPenTester.png"
+                    class="object-contain h-full w-auto rounded"
+                  />
+                </div>
+                
+                
+                <div class="w-full md:w-1/3 h-full text-gray-800 dark:text-gray-300 overflow-auto">
+                  <h2 class="font-bold mb-2">Skills Gained</h2>
+                  <ul class="list-disc list-inside space-y-1 text-base">
+                    
+                      <li>Injection attacks</li>
+                    
+                      <li>Server Side Attacks</li>
+                    
+                      <li>Client Side Attacks</li>
+                    
+                      <li>Introduction to authentication bypass</li>
+                    
+                      <li>Introduction to HTTP smuggling</li>
+                    
+                  </ul>
+                  
+                  
+                    <p class="mt-4 italic">
+                      <a
+                        href="https://tryhackme.com/path/outline/webapppentesting"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="text-blue-400 hover:underline"
+                      >
+                        Learn more!
+                      </a>
+                    </p>
+                  
+                </div>
+
+
+              </div>
+            </div>
+          
+        </div>
+
         
-          <div
-            class="swiper-slide flex justify-center items-center"
-            data-description="The first CTF I competed in, Hackfinity was an international event run by TryHackMe for students. The tasks I completed were on Web Applications, OSINT, Boot2Root among others."
-          >
-            <img
-              src="../images/certificates/THM-Hackfinity.png"
-              alt="THM-Hackfinity.png"
-              class="h-full object-contain"
-            />
-          </div>
-        
-          <div
-            class="swiper-slide flex justify-center items-center"
-            data-description="An introductory certification that teaches foundational concepts such as Business continuity, Disaster Recovery &amp; Network Security."
-          >
-            <img
-              src="../images/certificates/ISC2-CC.png"
-              alt="ISC2-CC.png"
-              class="h-full object-contain"
-            />
-          </div>
-        
-          <div
-            class="swiper-slide flex justify-center items-center"
-            data-description="Advent of Cyber is a yearly event run by TryHackMe where you I learned about red &amp; blue teaming concepts like Log Analysis, Wifi attacks and more."
-          >
-            <img
-              src="../images/certificates/THM-AdventOfCyber.png"
-              alt="THM-AdventOfCyber.png"
-              class="h-full object-contain"
-            />
-          </div>
-        
-          <div
-            class="swiper-slide flex justify-center items-center"
-            data-description="A pathway teaching Cybersecurity basics including Linux, Windows, Networking, Metasploit, Red &amp; Blue Team tools among others."
-          >
-            <img
-              src="../images/certificates/THM-Pathway-Cyber101.png"
-              alt="THM-Pathway-Cyber101.png"
-              class="h-full object-contain"
-            />
-          </div>
-        
-          <div
-            class="swiper-slide flex justify-center items-center"
-            data-description="A pathway focused on secure pipeliens, Iac &amp; Containerization where I learned about CI/CD, Docker/Kubernetes &amp; IaC basics. "
-          >
-            <img
-              src="../images/certificates/THM-Pathway-DevSecOps.png"
-              alt="THM-Pathway-DevSecOps.png"
-              class="h-full object-contain"
-            />
-          </div>
-        
-          <div
-            class="swiper-slide flex justify-center items-center"
-            data-description="A course run by Tyler, an OSCP certified professional, where he teaches basic Kali &amp; methodology for ethical hacking."
-          >
-            <img
-              src="../images/certificates/SimplyCyber-HackingMethod.png"
-              alt="SimplyCyber-HackingMethod.png"
-              class="h-full object-contain"
-            />
-          </div>
-        
-          <div
-            class="swiper-slide flex justify-center items-center"
-            data-description="A pathway focused on technical skills where I learned about Web Hacking, BurpSuite, Nmap, Metasploit and other tools."
-          >
-            <img
-              src="../images/certificates/THM-Pathway-JrPenTester.png"
-              alt="THM-Pathway-JrPenTester.png"
-              class="h-full object-contain"
-            />
-          </div>
-        
-          <div
-            class="swiper-slide flex justify-center items-center"
-            data-description="A certificate by Google teaching foundational Cybersecurity concepts focused on network security and threat analysis from a Cloud perspective."
-          >
-            <img
-              src="../images/certificates/Google-Cybersecurity.png"
-              alt="Google-Cybersecurity.png"
-              class="h-full object-contain"
-            />
-          </div>
-        
-          <div
-            class="swiper-slide flex justify-center items-center"
-            data-description="A pathway focused on understanding secure software development, system hardening, SAST/DAST &amp; Incident management."
-          >
-            <img
-              src="../images/certificates/THM-Pathway-SecurityEngineer.png"
-              alt="THM-Pathway-SecurityEngineer.png"
-              class="h-full object-contain"
-            />
-          </div>
-        
-          <div
-            class="swiper-slide flex justify-center items-center"
-            data-description="A course run by Tyler, an OSCP certified professional, where he teaches how to pentest AWS environments, including EC2, S3 Lambda functions and more."
-          >
-            <img
-              src="../images/certificates/SimplyCyber-AWSPentesting.png"
-              alt="SimplyCyber-AWSPentesting.png"
-              class="h-full object-contain"
-            />
-          </div>
-        
-          <div
-            class="swiper-slide flex justify-center items-center"
-            data-description="A pathway focused on understanding how web applications work and how to exploit them, including IDOR, SSRF, and SQL vulnerabilities."
-          >
-            <img
-              src="../images/certificates/THM-Pathway-WebFundamentals.png"
-              alt="THM-Pathway-WebFundamentals.png"
-              class="h-full object-contain"
-            />
-          </div>
-        
+        <div class="swiper-button-prev text-white"></div>
+        <div class="swiper-button-next text-white"></div>
+        <div class="swiper-pagination bottom-4"></div>
       </div>
 
       
-      <div class="swiper-pagination"></div>
-      
-      <div class="swiper-button-prev"></div>
-      <div class="swiper-button-next"></div>
+      <div
+        id="cert-caption"
+        class="mt-4 text-center text-gray-800 dark:text-gray-300 text-base md:text-lg break-normal"
+      >
+        Hackfinity was an international CTF battle for students hosted by TryHackMe, featuring challenges in web applications, OSINT, and boot-to-root scenarios. It offers hands-on practice under time pressure and collaboration with peers.
+      </div>
     </div>
 
-    
-    <div
-      id="cert-caption"
-      class="
-        max-w-4xl
-        mx-auto
-        mt-4
-        px-4 py-2
-        text-center
-        text-gray-700 dark:text-gray-300
-        rounded-lg
-        text-base md:text-lg
-      "
-    >
-      The first CTF I competed in, Hackfinity was an international event run by TryHackMe for students. The tasks I completed were on Web Applications, OSINT, Boot2Root among others.
-    </div>
+
+
+
+
 
     
     <section class="mt-12 max-w-3xl mx-auto px-6 prose dark:prose-invert dark:text-white mb-16">
       <p>Still thinking about what should go here&hellip;.</p>
+<p>I&rsquo;ve been working on some walkthroughs after completing the AWS intro course. Here they are.</p>
+<p><a href="../posts">View all AWS walkthrough →</a></p>
 
+      <p></p>
     </section>
   </main>
 
   
-  <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-  />
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+
 
   
   <script defer>
     document.addEventListener('DOMContentLoaded', () => {
-      const cyber = new Swiper('.cyberSwiper', {
+      const swiper = new Swiper('.cyberSwiper', {
         effect: 'coverflow',
         grabCursor: true,
         centeredSlides: true,
-        slidesPerView: 'auto',
+        slidesPerView: 1,
         spaceBetween: 30,
         loop: true,
+        autoplay: {
+          delay: 5000,
+          disableOnInteraction: false,
+        },
         coverflowEffect: {
           rotate: 30,
           stretch: 0,
@@ -348,31 +770,31 @@
           modifier: 1,
           slideShadows: true,
         },
-        pagination: {
-          el: '.cyberSwiper .swiper-pagination',
-          clickable: true,
-        },
         navigation: {
           nextEl: '.cyberSwiper .swiper-button-next',
           prevEl: '.cyberSwiper .swiper-button-prev',
         },
+        pagination: {
+          el: '.cyberSwiper .swiper-pagination',
+          clickable: true,
+        }
       });
 
+      const captionEl = document.getElementById('cert-caption');
       function updateCaption() {
-        const activeEl = document.querySelector('.cyberSwiper .swiper-slide-active');
-        const desc = activeEl?.dataset.description || '';
-        document.getElementById('cert-caption').innerText = desc;
+        const active = document.querySelector('.cyberSwiper .swiper-slide-active');
+        captionEl.innerText = active ? active.dataset.description : '';
       }
 
-      cyber.on('init slideChange transitionEnd', updateCaption);
-      cyber.init();
+      swiper.on('init slideChange transitionEnd', updateCaption);
+      swiper.init();
     });
   </script>
 
     
-<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
 <script src="../js/darkmode.js" defer></script>
+<script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
 
 
 
@@ -394,10 +816,6 @@
             
             <div class="px-5 py-2">
                 <a href="http://localhost:1313/cybersecurity/" class="text-base text-gray-400 hover:text-gray-300">Cybersecurity</a>
-            </div>
-            
-            <div class="px-5 py-2">
-                <a href="http://localhost:1313/posts/" class="text-base text-gray-400 hover:text-gray-300">Walkthroughs</a>
             </div>
             
         </nav>

@@ -75,11 +75,6 @@ canonifyURLs = false       # don’t prepend baseURL
     url        = "/cybersecurity/"
     weight     = 5
 
-  [[menu.main]]
-    identifier = "walkthroughs"
-    name       = "Walkthroughs"
-    url        = "/posts/"
-    weight     = 6
 
 
 
@@ -107,8 +102,3 @@ canonifyURLs = false       # don’t prepend baseURL
     url        = "/cybersecurity/"
     weight     = 40
 
-  [[menu.footer]]
-    identifier = "walkthroughs"
-    name       = "Walkthroughs"
-    url        = "/posts/"
-    weight     = 50
