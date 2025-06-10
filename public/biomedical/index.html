@@ -2,39 +2,32 @@
 <html lang="en">
 
 <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
-    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="../favicon/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="../favicon/favicon-16x16.png">
-<link rel="manifest" href="../favicon/site.webmanifest">
-<link rel="mask-icon" href="../favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="../favicon/favicon-16x16.png" />
+  <link rel="manifest" href="../favicon/site.webmanifest" />
+  <link rel="mask-icon" href="../favicon/safari-pinned-tab.svg" color="#5bbad5" />
 
-<link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-/>
-<link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper/css/effect-coverflow.min.css"
-/>
+  
+  <meta name="msapplication-TileColor" content="#da532c" />
+  <meta name="theme-color" content="#ffffff" />
 
-
-
-
-<meta name="msapplication-TileColor" content="#da532c">
-<meta name="theme-color" content="#ffffff">
-<title itemprop="name"> Biomedical | Personal Portfolio 
+  
+  <title itemprop="name"> Biomedical 🧬 | Personal Portfolio 
 </title>
-<meta name="description" content="A biomedical engineering student and cybersecurity enthusiast" />
-<meta property="og:title" content="Biomedical | Personal Portfolio" />
-<meta name="twitter:title" content="Biomedical | Personal Portfolio" />
-<meta itemprop="name" content="Biomedical | Personal Portfolio" />
-<meta name="application-name" content="Biomedical | Personal Portfolio" />
+<meta name="description" content="My work in the Biomedical Engineering field" />
+<meta property="og:title" content="Biomedical 🧬 | Personal Portfolio" />
+<meta name="twitter:title" content="Biomedical 🧬 | Personal Portfolio" />
+<meta itemprop="name" content="Biomedical 🧬 | Personal Portfolio" />
+<meta name="application-name" content="Biomedical 🧬 | Personal Portfolio" />
 <meta property="og:description"
-      content="A biomedical engineering student and cybersecurity enthusiast" />
+      content="My work in the Biomedical Engineering field" />
 <meta property="og:site_name" content="Personal Portfolio" />
 <meta property="og:url" content="http://localhost:1313/biomedical/" />
 <meta property="og:locale" content="en">
@@ -42,33 +35,60 @@
 <meta property="og:image:secure_url" content="http://localhost:1313/" />
 <meta property="og:type" content="article" />
 
-<script>
-    
-    if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-        document.documentElement.classList.add('dark');
+
+  
+  <script>
+    if (
+      localStorage.getItem('color-theme') === 'dark' ||
+      (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
+    ) {
+      document.documentElement.classList.add('dark');
     } else {
-        document.documentElement.classList.remove('dark')
+      document.documentElement.classList.remove('dark');
     }
-</script>
+  </script>
 
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper/css/effect-coverflow.min.css" />
 
+  
+  
+  
+    
+    <link rel="stylesheet" href="/css/style.min.0a202f217b79b733be0a4bee09017a95c0ee1defd72592123773a706d3fe0e1f.css" integrity="sha256-CiAvIXt5tzO+CkvuCQF6lcDuHe/XJZISN3OnBtP+Dh8=" />
+  
 
+  
+  <link rel="stylesheet" href="../css/custom-swiper.css" />
+</head>
 
-<link rel="stylesheet" href="/css/style.min.0a202f217b79b733be0a4bee09017a95c0ee1defd72592123773a706d3fe0e1f.css" integrity="sha256-CiAvIXt5tzO+CkvuCQF6lcDuHe/XJZISN3OnBtP+Dh8=" />
-
-
-
-<link rel="stylesheet" href="../css/custom-swiper.css">
 </head>
 
 <body class="bg-zinc-100 dark:bg-gray-800">
-    <div class="top-0 z-50 w-full text-gray-200 bg-gray-900 border-2 border-gray-900 md:sticky border-b-stone-200/10">
+    <div class="top-0 z-50 w-full text-gray-700 bg-gray-300 border-b border-gray-300 dark:text-gray-300 dark:bg-gray-900 dark:border-gray-700 md:sticky">
     <div x-data="{ open: false }" class="flex flex-col max-w-full px-4 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
         <div class="flex flex-row items-center justify-between p-4">
-            <a href="../" class="flex text-gray-100 transition duration-1000 ease-in-out group">
-                <img src="../images/cyber-immuno-fusion.png" class="transition-opacity h-9 w-9 group-hover:opacity-50 group-focus:opacity-70" alt="Personal Portfolio Logo" />
-                <div class="mt-1 ml-3 text-xl font-black tracking-tight text-gray-100 uppercase transition-colors group-hover:text-gray-400/60">
-                    Personal Portfolio</div>
+            <a href="../"
+            class="flex
+                    text-gray-700 dark:text-gray-300
+                    transition-colors
+                    hover:text-gray-900 dark:hover:text-white"
+            >
+            <img
+                src="../images/cyber-immuno-fusion.png"
+                class="transition-opacity h-9 w-9
+                    hover:opacity-50 focus:opacity-70"
+                alt="Personal Portfolio Logo"
+            />
+            <div
+                class="mt-1 ml-3 text-xl font-black tracking-tight
+                    text-gray-700 dark:text-gray-300 uppercase
+                    transition-colors
+                    hover:text-gray-400 dark:hover:text-white"
+            >
+                Personal Portfolio
+            </div>
             </a>
             <button class="rounded-lg md:hidden focus:outline-none focus:shadow-outline" @click="open = !open" role="navigation" aria-expanded="false" aria-label="Main" aria-controls="menuItems">
                 <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
@@ -124,17 +144,38 @@
     </div>
 </div>
     
+<header class="mb-4 bg-primary-600">
+  <span class="py-96">
+    <h1 class="py-16 text-5xl font-black text-center text-white capitalize">
+      Biomedical 🧬
+    </h1>
+  </span>
+</header>
 
 <main class="max-w-4xl mx-auto mt-8 mb-2">
-  
-  
-  
-  <section class="mb-12">
-    <h1 class="text-3xl font-semibold mb-4 text-gray-700 dark:text-gray-300">My Biomedical Journey</h1>
-    <p class="mb-8 text-gray-700 dark:text-gray-300">
-      What goes here? Time will tell. Gotta fix up UI first and make it look nice.
-    </p>
 
+  
+  
+  
+  <section class="py-8 px-6 bg-white dark:bg-gray-900 rounded-lg shadow mb-8">
+    <h1 class="text-3xl font-semibold mb-4 text-gray-700 dark:text-gray-300">My Biomedical Journey</h1>
+    
+    <div class="intro text-gray-700 dark:text-gray-300">
+      
+      
+        <p class="indent-8 mb-6">Biomedical Engineering sits at the intersection of medical science and engineering. My childhood dream was to become a doctor, but in high school I found another passion—computer programming. Not wanting to choose one over the other, I found biomedical engineering to be the perfect blend: building software and devices that can impact patient care at scale.</p>
+      
+        <p class="indent-8 mb-6">
+Currently, I’m volunteering with [an unnameable organization for now] to develop a [something confidential] (details below). At UBC, every BMEG degree is unique to the individual as you&#39;re encouraged to take courses across nearly 10 majors. Since my passion is for cellular engineering and bioinformatics, my studies span hands-on lab modules (see Lab Work below) and software projects (see Software page). My full list of courses that I&#39;ve taken so far is also available. </p>
+      
+        <p class="indent-8 mb-6">
+My long-term goal is a career in synthetic immunology, where I’ll engineer immune cells for personalized therapies. I believe custom cell therapies are the future of medicine, and I’m excited to gain both wet-lab experience in cell engineering and computational expertise to model and optimize cellular processes.
+</p>
+      
+    </div>
+  </section>
+
+  <section class="mb-8">
     <div class="flex flex-col md:flex-row items-center space-y-6 md:space-y-0">
       
       <div class="w-full md:w-1/2 h-64 md:h-80 rounded-md overflow-hidden md:mb-0 md:pr-6">
@@ -147,13 +188,7 @@
           Details to come soon....
         </p>
       </div>
-
     </div>
-
-
-
-
-
   </section>
 
   
@@ -179,12 +214,18 @@
           </div>
 
           
-          <div class="w-2/3 p-6 flex items-center">
-            <ul class="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
-              <li>BMEG 245</li>
-              <li>Description to come...</li>
+          <div class="w-2/3 p-6 flex flex-col items-center justify-center space-y-2">
+            <h3 class="text-xl font-semibold text-gray-700 dark:text-gray-300">
+              BMEG 245
+            </h3>
+            <ul class="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-1">
+                <li>Lab goal: Understand cell culturation &amp; experiment preparation</li>
+                <li>Practical skills involved pipetting &amp; cell staining</li>
+                <li>Part 1 of a 2 day lab</li>
+                <li>Steps included using PBS to wash cells &amp; dying cells with phalloidin &amp; Hoechst solution</li>
             </ul>
           </div>
+
         </div>
         <div class="swiper-slide 
             flex flex-row 
@@ -198,12 +239,18 @@
           </div>
 
           
-          <div class="w-2/3 p-6 flex items-center">
-            <ul class="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
-              <li>BMEG 245</li>
-              <li>Description to come...</li>
+          <div class="w-2/3 p-6 flex flex-col items-center justify-center space-y-2">
+            <h3 class="text-xl font-semibold text-gray-700 dark:text-gray-300">
+              BMEG 245
+            </h3>
+            <ul class="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-1">
+                <li>Lab goal: Generating composite images &amp; quantification of nuclear morphology</li>
+                <li>Practical skills involved using Fiji for image analysis</li>
+                <li>Part 2 of a 2 day lab</li>
+                <li>Lab focused on image editing to increase anlaysis accuracy &amp; data analysis of cell count &amp; actin profile across cell types</li>
             </ul>
           </div>
+
         </div>
         <div class="swiper-slide 
             flex flex-row 
@@ -217,12 +264,18 @@
           </div>
 
           
-          <div class="w-2/3 p-6 flex items-center">
-            <ul class="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
-              <li>BMEG 245</li>
-              <li>Description to come...</li>
+          <div class="w-2/3 p-6 flex flex-col items-center justify-center space-y-2">
+            <h3 class="text-xl font-semibold text-gray-700 dark:text-gray-300">
+              BMEG 245
+            </h3>
+            <ul class="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-1">
+                <li>Lab goal: Understanding how plasmids are prepared for experimentation</li>
+                <li>Practical skills involved asepctic technique &amp; utilizing/interpreting agarose gels</li>
+                <li>High risk steps (eg. agorose melting) performed by instructors</li>
+                <li>Steps included using mini bench centrifuges, preparing gel box, loading samples &amp; running gel.</li>
             </ul>
           </div>
+
         </div>
         <div class="swiper-slide 
             flex flex-row 
@@ -236,12 +289,18 @@
           </div>
 
           
-          <div class="w-2/3 p-6 flex items-center">
-            <ul class="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
-              <li>BMEG 102</li>
-              <li>Description to come...</li>
+          <div class="w-2/3 p-6 flex flex-col items-center justify-center space-y-2">
+            <h3 class="text-xl font-semibold text-gray-700 dark:text-gray-300">
+              BMEG 102
+            </h3>
+            <ul class="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-1">
+                <li>Lab goal: Performing bacterical transformation to generate a recombinant strain</li>
+                <li>Practical skills involved pipetting &amp; using inoculation loop</li>
+                <li>Introductory first year lab for BMEG</li>
+                <li>Steps included preparing microtubles with transformation solution, using heated inoculation loop for bacteria transfer &amp; heat shock method of bacterial transformation.</li>
             </ul>
           </div>
+
         </div>
 
       </div>
@@ -365,7 +424,7 @@
     class="mb-2 text-2xl font-bold tracking-tight"
     style="color: #EAB308;"
   >
-    APSC100 - Applied Science 100
+    APSC100 - Introduction to Engineering I
   </h5>
 
   <p class="font-normal text-gray-700 dark:text-gray-400">
@@ -395,7 +454,7 @@
     class="mb-2 text-2xl font-bold tracking-tight"
     style="color: #EAB308;"
   >
-    APSC160 - Applied Science 160
+    APSC160 - Introduction to Computation in Engineering Design
   </h5>
 
   <p class="font-normal text-gray-700 dark:text-gray-400">
@@ -425,7 +484,7 @@
     class="mb-2 text-2xl font-bold tracking-tight"
     style="color: #6366F1;"
   >
-    MATH100 - Math 100
+    MATH100 - Differential Calculus with Applications
   </h5>
 
   <p class="font-normal text-gray-700 dark:text-gray-400">
@@ -455,7 +514,7 @@
     class="mb-2 text-2xl font-bold tracking-tight"
     style="color: #6366F1;"
   >
-    MATH101 - Math 101
+    MATH101 - Math Integral Calculus with Applications
   </h5>
 
   <p class="font-normal text-gray-700 dark:text-gray-400">
@@ -485,7 +544,7 @@
     class="mb-2 text-2xl font-bold tracking-tight"
     style="color: #6366F1;"
   >
-    MATH152 - Math 152
+    MATH152 - Linear Systems
   </h5>
 
   <p class="font-normal text-gray-700 dark:text-gray-400">
@@ -515,7 +574,7 @@
     class="mb-2 text-2xl font-bold tracking-tight"
     style="color: #D946EF;"
   >
-    PHYS157 - Physics 157
+    PHYS157 - Introductory Physics for Engineers I
   </h5>
 
   <p class="font-normal text-gray-700 dark:text-gray-400">
@@ -545,7 +604,7 @@
     class="mb-2 text-2xl font-bold tracking-tight"
     style="color: #D946EF;"
   >
-    PHYS158 - Physics 158
+    PHYS158 - Introductory Physics for Engineers II
   </h5>
 
   <p class="font-normal text-gray-700 dark:text-gray-400">
@@ -575,7 +634,7 @@
     class="mb-2 text-2xl font-bold tracking-tight"
     style="color: #D946EF;"
   >
-    PHYS170- Physics 170
+    PHYS170- Mechanics I
   </h5>
 
   <p class="font-normal text-gray-700 dark:text-gray-400">
@@ -605,7 +664,7 @@
     class="mb-2 text-2xl font-bold tracking-tight"
     style="color: #10B981;"
   >
-    CHEM121 - Chemistry 121
+    CHEM121 - Structure and Bonding in Chemistry
   </h5>
 
   <p class="font-normal text-gray-700 dark:text-gray-400">
@@ -635,7 +694,7 @@
     class="mb-2 text-2xl font-bold tracking-tight"
     style="color: #10B981;"
   >
-    CHEM123 - Chemistry 123
+    CHEM123 - Thermodynamics, Kinetics and Organic Chemistry
   </h5>
 
   <p class="font-normal text-gray-700 dark:text-gray-400">
@@ -665,7 +724,7 @@
     class="mb-2 text-2xl font-bold tracking-tight"
     style="color: #14B8A6;"
   >
-    BMEG101 - Biomedical Engineering 101
+    BMEG101 - Introduction to Biomedical Engineering
   </h5>
 
   <p class="font-normal text-gray-700 dark:text-gray-400">
@@ -695,7 +754,7 @@
     class="mb-2 text-2xl font-bold tracking-tight"
     style="color: #14B8A6;"
   >
-    BMEG102 - Biomedical Engineering 102
+    BMEG102 - Biomedical Engineering Lab
   </h5>
 
   <p class="font-normal text-gray-700 dark:text-gray-400">
@@ -725,7 +784,7 @@
     class="mb-2 text-2xl font-bold tracking-tight"
     style="color: #14B8A6;"
   >
-    BMEG201- Biomedical Engineering 201
+    BMEG201- Technical Communication for Biomedical Engineers
   </h5>
 
   <p class="font-normal text-gray-700 dark:text-gray-400">
@@ -755,7 +814,7 @@
     class="mb-2 text-2xl font-bold tracking-tight"
     style="color: #14B8A6;"
   >
-    BMEG210- Biomedical Engineering 210
+    BMEG210- Thermodynamics in Biomedical Engineering
   </h5>
 
   <p class="font-normal text-gray-700 dark:text-gray-400">
@@ -785,7 +844,7 @@
     class="mb-2 text-2xl font-bold tracking-tight"
     style="color: #14B8A6;"
   >
-    BMEG220- Biomedical Engineering 220
+    BMEG220- Circuits and Electromagnetics with Application to Biomedical Engineering
   </h5>
 
   <p class="font-normal text-gray-700 dark:text-gray-400">
@@ -815,7 +874,7 @@
     class="mb-2 text-2xl font-bold tracking-tight"
     style="color: #14B8A6;"
   >
-    BMEG230- Biomedical Engineering 230
+    BMEG230- Biomechanics I
   </h5>
 
   <p class="font-normal text-gray-700 dark:text-gray-400">
@@ -845,7 +904,7 @@
     class="mb-2 text-2xl font-bold tracking-tight"
     style="color: #14B8A6;"
   >
-    BMEG245- Biomedical Engineering 245
+    BMEG245- The Fundamental Units of Life: From Cells To Systems
   </h5>
 
   <p class="font-normal text-gray-700 dark:text-gray-400">
@@ -875,7 +934,7 @@
     class="mb-2 text-2xl font-bold tracking-tight"
     style="color: #14B8A6;"
   >
-    BMEG250- Biomedical Engineering 250
+    BMEG250- Cellular Physiology and Biophysics
   </h5>
 
   <p class="font-normal text-gray-700 dark:text-gray-400">
@@ -905,7 +964,7 @@
     class="mb-2 text-2xl font-bold tracking-tight"
     style="color: #14B8A6;"
   >
-    BMEG257- Biomedical Engineering 257
+    BMEG257- Biomedical Engineering Design I
   </h5>
 
   <p class="font-normal text-gray-700 dark:text-gray-400">
@@ -935,7 +994,7 @@
     class="mb-2 text-2xl font-bold tracking-tight"
     style="color: #6366F1;"
   >
-    MATH253- Math 253
+    MATH253- Multivariable Calculus
   </h5>
 
   <p class="font-normal text-gray-700 dark:text-gray-400">
@@ -965,7 +1024,7 @@
     class="mb-2 text-2xl font-bold tracking-tight"
     style="color: #6366F1;"
   >
-    MATH256- Math 256
+    MATH256- Differential Equations
   </h5>
 
   <p class="font-normal text-gray-700 dark:text-gray-400">
@@ -995,7 +1054,7 @@
     class="mb-2 text-2xl font-bold tracking-tight"
     style="color: #6366F1;"
   >
-    MATH264- Math 264
+    MATH264- Vector Calculus for Electrical Engineering
   </h5>
 
   <p class="font-normal text-gray-700 dark:text-gray-400">
@@ -1025,7 +1084,7 @@
     class="mb-2 text-2xl font-bold tracking-tight"
     style="color: #6366F1;"
   >
-    MATH302- Math 302
+    MATH302- Introduction to Probability
   </h5>
 
   <p class="font-normal text-gray-700 dark:text-gray-400">
@@ -1055,7 +1114,7 @@
     class="mb-2 text-2xl font-bold tracking-tight"
     style="color: #F43F5E;"
   >
-    CPEN221- Computer Engineering 221
+    CPEN221- Software Construction I
   </h5>
 
   <p class="font-normal text-gray-700 dark:text-gray-400">
@@ -1085,7 +1144,7 @@
     class="mb-2 text-2xl font-bold tracking-tight"
     style="color: #8B5CF6;"
   >
-    MICB212- Microbiology 212
+    MICB212- Introductory Immunology &amp; Virology
   </h5>
 
   <p class="font-normal text-gray-700 dark:text-gray-400">
@@ -1115,7 +1174,7 @@
     class="mb-2 text-2xl font-bold tracking-tight"
     style="color: #10B981;"
   >
-    CHEM233- Chemistry 233
+    CHEM233- Organic Chemistry for the Biological Sciences
   </h5>
 
   <p class="font-normal text-gray-700 dark:text-gray-400">
@@ -1152,14 +1211,10 @@
     
     
     
-    const canvas = document.getElementById('patch-canvas');
-    const renderer = new THREE.WebGLRenderer({
-      canvas,
-      antialias: true,
-      alpha: true
-    });
+    const canvas   = document.getElementById('patch-canvas');
+    const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
     renderer.setPixelRatio(window.devicePixelRatio);
-    renderer.setClearColor(0x2a2f3a, 1); 
+    renderer.setClearColor(0x2a2f3a, 1);
 
     function resizeRenderer() {
       const w = canvas.parentElement.clientWidth;
@@ -1172,46 +1227,29 @@
     const scene = new THREE.Scene();
 
     const camera = new THREE.PerspectiveCamera(
-      80,
+      30,
       canvas.clientWidth / canvas.clientHeight,
       0.1,
       100
     );
-    camera.position.set(0,0, 50);
-    camera.lookAt(0, -5, 0);
+    camera.position.set(0, 0, 50);
+    camera.lookAt(0, 0, 0);
 
     
-    const ambient = new THREE.AmbientLight(0xffffff, 0.5);
-    scene.add(ambient);
-
+    scene.add(new THREE.AmbientLight(0xffffff, 0.5));
     const dirLight = new THREE.DirectionalLight(0xffffff, 0.5);
     dirLight.position.set(5, 10, 5);
     scene.add(dirLight);
 
-    
-    
-    
-    
-    const blackMat = new THREE.MeshPhongMaterial({
-      color: 0x000000,
-      side: THREE.DoubleSide, 
-      wireframe: false       
-    });
-
-    
-    const objLoader = new THREE.OBJLoader();
-
-    
-    const modelGroup = new THREE.Group();
-    scene.add(modelGroup);
-
-    
-    
 
     
     
     
     
+    const boxGeo  = new THREE.BoxGeometry(20, 10, 5);
+    const boxMat  = new THREE.MeshPhongMaterial({ color: 0x000000, side: THREE.DoubleSide });
+    const boxMesh = new THREE.Mesh(boxGeo, boxMat);
+    scene.add(boxMesh);
 
 
     
@@ -1222,10 +1260,9 @@
       camera.aspect = canvas.clientWidth / canvas.clientHeight;
       camera.updateProjectionMatrix();
 
-
       
-      
-      modelGroup.rotation.y += 0.003;
+      boxMesh.rotation.y += 0.01;
+      boxMesh.rotation.x += 0.005;
 
       renderer.render(scene, camera);
       requestAnimationFrame(animate);
@@ -1257,10 +1294,6 @@
     });
   });
 </script>
-
-
-
-
 
 
 
@@ -1332,38 +1365,60 @@
 <script src="../js/darkmode.js" defer></script>
 <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
 
+<footer class="bg-gray-200 dark:bg-gray-900 border-t border-gray-300 dark:border-gray-700">
+  <div class="max-w-md px-4 py-12 mx-auto overflow-hidden sm:max-w-3xl sm:px-6 lg:max-w-7xl lg:px-8">
 
+    
+    <nav class="flex flex-wrap justify-center -mx-5 -my-2" aria-label="Footer">
+      
+      <div class="px-5 py-2">
+        <a href="http://localhost:1313/about/"
+           class="text-base text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">
+          About
+        </a>
+      </div>
+      
+      <div class="px-5 py-2">
+        <a href="http://localhost:1313/biomedical/"
+           class="text-base text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">
+          Biomedical
+        </a>
+      </div>
+      
+      <div class="px-5 py-2">
+        <a href="http://localhost:1313/software/"
+           class="text-base text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">
+          Software
+        </a>
+      </div>
+      
+      <div class="px-5 py-2">
+        <a href="http://localhost:1313/cybersecurity/"
+           class="text-base text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">
+          Cybersecurity
+        </a>
+      </div>
+      
+    </nav>
 
-<footer class="bg-gray-900">
-    <div class="max-w-md px-4 py-12 mx-auto overflow-hidden sm:max-w-3xl sm:px-6 lg:max-w-7xl lg:px-8">
-        <nav class="flex flex-wrap justify-center -mx-5 -my-2" aria-label="Footer">
-            
-            <div class="px-5 py-2">
-                <a href="http://localhost:1313/about/" class="text-base text-gray-400 hover:text-gray-300">About</a>
-            </div>
-            
-            <div class="px-5 py-2">
-                <a href="http://localhost:1313/biomedical/" class="text-base text-gray-400 hover:text-gray-300">Biomedical</a>
-            </div>
-            
-            <div class="px-5 py-2">
-                <a href="http://localhost:1313/software/" class="text-base text-gray-400 hover:text-gray-300">Software</a>
-            </div>
-            
-            <div class="px-5 py-2">
-                <a href="http://localhost:1313/cybersecurity/" class="text-base text-gray-400 hover:text-gray-300">Cybersecurity</a>
-            </div>
-            
-        </nav>
-        <p class="mt-8 text-base text-center text-gray-400">&copy; 2025
-            Personal Portfolio. All rights
-            reserved.</p>
-        <p class="mt-2 text-base text-center text-gray-400">Theme made with &#x2764;&#xfe0f; by <a
-               href="https://nusserstudios.com" class="hover:underline hover:text-primary-600"><span
-                      class="font-black uppercase">Nusser</span> <span class="font-light uppercase">Studios.</span></a>
-        </p>
-    </div>
+    
+    <p class="mt-8 text-base text-center text-gray-600 dark:text-gray-400">
+      &copy; 2025 Personal Portfolio. All rights reserved.
+    </p>
+
+    
+    <p class="mt-2 text-base text-center text-gray-800 dark:text-gray-300">
+      Theme made with ❤️ by
+      <a href="https://nusserstudios.com"
+         class="hover:underline text-gray-800 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors">
+        <span class="font-black uppercase">Nusser</span>
+        <span class="font-light uppercase">Studios.</span>
+      </a>
+    </p>
+
+  </div>
 </footer>
+
 </body>
 
 </html>

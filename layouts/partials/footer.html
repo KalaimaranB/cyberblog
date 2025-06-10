@@ -3,23 +3,35 @@
 <script src="{{ $js.RelPermalink }}" defer></script>
 <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
 
+<footer class="bg-gray-200 dark:bg-gray-900 border-t border-gray-300 dark:border-gray-700">
+  <div class="max-w-md px-4 py-12 mx-auto overflow-hidden sm:max-w-3xl sm:px-6 lg:max-w-7xl lg:px-8">
 
+    <!-- Navigation links -->
+    <nav class="flex flex-wrap justify-center -mx-5 -my-2" aria-label="Footer">
+      {{ range site.Menus.footer }}
+      <div class="px-5 py-2">
+        <a href="{{ .URL | absLangURL }}"
+           class="text-base text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">
+          {{ .Name }}
+        </a>
+      </div>
+      {{ end }}
+    </nav>
 
-<footer class="bg-gray-900">
-    <div class="max-w-md px-4 py-12 mx-auto overflow-hidden sm:max-w-3xl sm:px-6 lg:max-w-7xl lg:px-8">
-        <nav class="flex flex-wrap justify-center -mx-5 -my-2" aria-label="Footer">
-            {{ range site.Menus.footer }}
-            <div class="px-5 py-2">
-                <a href="{{ .URL | absLangURL }}" class="text-base text-gray-400 hover:text-gray-300">{{ .Name }}</a>
-            </div>
-            {{ end }}
-        </nav>
-        <p class="mt-8 text-base text-center text-gray-400">&copy; {{ now.Format "2006" }}
-            {{ .Site.Title }}. All rights
-            reserved.</p>
-        <p class="mt-2 text-base text-center text-gray-400">Theme made with &#x2764;&#xfe0f; by <a
-               href="https://nusserstudios.com" class="hover:underline hover:text-primary-600"><span
-                      class="font-black uppercase">Nusser</span> <span class="font-light uppercase">Studios.</span></a>
-        </p>
-    </div>
+    <!-- Site copyright -->
+    <p class="mt-8 text-base text-center text-gray-600 dark:text-gray-400">
+      &copy; {{ now.Format "2006" }} {{ .Site.Title }}. All rights reserved.
+    </p>
+
+    <!-- Theme attribution -->
+    <p class="mt-2 text-base text-center text-gray-800 dark:text-gray-300">
+      Theme made with ❤️ by
+      <a href="https://nusserstudios.com"
+         class="hover:underline text-gray-800 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors">
+        <span class="font-black uppercase">Nusser</span>
+        <span class="font-light uppercase">Studios.</span>
+      </a>
+    </p>
+
+  </div>
 </footer>

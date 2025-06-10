@@ -6,6 +6,4 @@ title = 'Software'
 
 [My old site with projects](https://sites.google.com/view/kalaimaranb/home)
 
-https://sites.google.com/view/kalaimaranb/home
-
 It will be moved here eventually...
