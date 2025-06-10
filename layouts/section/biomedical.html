@@ -36,49 +36,52 @@
   <!-- 3. Lab Work Slider: each slide = left image + right bullet list              -->
   <!-- ──────────────────────────────────────────────────────────────────────────── -->
   <section class="px-4 py-8">
-    <h2 class="text-2xl font-semibold mb-4 text-gray-700 dark:text-gray-300">
-      Lab Work
-    </h2>
-    <div class="swiper labSwiper w-full max-w-4xl mx-auto h-64 mb-12">
-      <div class="swiper-wrapper">
+  <h2 class="text-2xl font-semibold mb-4 text-gray-700 dark:text-gray-300">
+    Lab Work
+  </h2>
 
-        <!-- Iterate over .Params.labWorkSlides instead of hard-coding -->
-        {{- range $index, $slide := .Params.labWorkSlides }}
-        <div class="swiper-slide 
-            flex flex-row 
-            bg-gray-200 
-            dark:bg-gray-900 
-            overflow-hidden 
-            rounded-lg">
-          <!-- Left: 1/3 width for the image -->
-          <div class="w-1/3 h-full flex items-center justify-center">
-            <img src="{{ $slide.image }}" alt="{{ $slide.alt }}" class="h-32 w-auto object-contain" />
-          </div>
+  <!-- Swiper container (no fixed height!) -->
+  <div class="swiper labSwiper w-full max-w-4xl mx-auto mb-12">
+    <div class="swiper-wrapper">
 
-          <!-- Right: 2/3 width for bullet points -->
-          <div class="w-2/3 p-6 flex flex-col items-center justify-center space-y-2">
-            <h3 class="text-xl font-semibold text-gray-700 dark:text-gray-300">
-              {{ $slide.source }}
-            </h3>
-            <ul class="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-1">
-              {{- range $bullet := $slide.bullets }}
-                <li>{{ $bullet }}</li>
-              {{- end }}
-            </ul>
-          </div>
-
+      {{- range $index, $slide := .Params.labWorkSlides }}
+      <div class="swiper-slide 
+                  flex flex-col md:flex-row      /* base: column; md+: row */
+                  bg-gray-200 dark:bg-gray-900 
+                  overflow-hidden rounded-lg">
+        
+        <!-- Image: full-width on mobile, 1/3 on md+ -->
+        <div class="w-full md:w-1/3 flex items-center justify-center p-4">
+          <img 
+            src="{{ $slide.image }}" 
+            alt="{{ $slide.alt }}" 
+            class="object-contain h-32 w-auto" 
+          />
         </div>
-        {{- end }}
+
+        <!-- Text: full-width on mobile, 2/3 on md+ -->
+        <div class="w-full md:w-2/3 p-6 flex flex-col justify-center">
+          <h3 class="text-xl font-semibold text-gray-700 dark:text-gray-300 mb-2">
+            {{ $slide.source }}
+          </h3>
+          <ul class="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-300">
+            {{- range $bullet := $slide.bullets }}
+              <li>{{ $bullet }}</li>
+            {{- end }}
+          </ul>
+        </div>
 
       </div>
+      {{- end }}
 
-      <!-- 3.1 Pagination Dots -->
-      <div class="swiper-pagination"></div>
-      <!-- 3.2 Navigation Arrows -->
-      <div class="swiper-button-prev"></div>
-      <div class="swiper-button-next"></div>
     </div>
-  </section>
+
+    <!-- controls -->
+    <div class="swiper-pagination"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+  </div>
+</section>
 
   <!-- ──────────────────────────────────────────────────────────────────────────── -->
   <!-- 4. Courses Section (Tabs + Course Cards)                                     -->
