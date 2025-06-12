@@ -6,7 +6,7 @@ draft: false
 ---
 ⚡ Going into cybersecurity was truly a chance event - a couple of my friends mentioned the field and I thought I might explore. I started with a couple intro certs from Google & ISC2 to learn about the field. Penetration testing seemed like a pretty fun job so I looked into learning platforms and TryHackMe stood out. A platform built to bring you from zero to a hacker (not just a script kiddie) by teaching everything from analyzing networks to using real tools.
 
-🔍 Over the past year, I've spent many hours workign through TryHackeMe's learning paths and am finally closing in on the final Red Teaming modules. I plan on validating my experience by taking the PT1 (Penetration Testing Level 1) certificatin to show my knowledge on web-app pentesting, Active Directory exploits & network-level attacks.
+🔍 Over the past year, I've spent many hours working through TryHackeMe's learning paths and am finally closing in on the final Red Teaming modules. I plan on validating my experience by taking the PT1 (Penetration Testing Level 1) certificatin to show my knowledge on web-app pentesting, Active Directory exploits & network-level attacks.
 
 👇 Here’s what you’ll find on this page:
 
