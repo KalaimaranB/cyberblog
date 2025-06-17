@@ -6,13 +6,20 @@
     <description>Recent content in All Posts on Personal Portfolio</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 12 Jun 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 17 Jun 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Cloudgoat SQS Flag Shop</title>
+      <link>http://localhost:1313/posts/sqsflagshop_cloudgoat-walkthrough/</link>
+      <pubDate>Tue, 17 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/sqsflagshop_cloudgoat-walkthrough/</guid>
+      <description>A walkthrough of the final easy SQS Flagshop Cloudgoat challenge</description>
+    </item>
+    <item>
       <title>Cloudgoat IAM Privesc By Rollback</title>
-      <link>http://localhost:1313/posts/iam_privesc_by_rollback_walkthrough-copy/</link>
+      <link>http://localhost:1313/posts/iam_privesc_by_rollback_walkthrough/</link>
       <pubDate>Thu, 12 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/iam_privesc_by_rollback_walkthrough-copy/</guid>
+      <guid>http://localhost:1313/posts/iam_privesc_by_rollback_walkthrough/</guid>
       <description>A walkthrough of the IAM Privesc by Rollback easy Cloudgoat challenge</description>
     </item>
     <item>

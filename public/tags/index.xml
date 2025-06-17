@@ -6,20 +6,27 @@
     <description>Recent content in Tags on Personal Portfolio</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 12 Jun 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 17 Jun 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>AWS Pentesting</title>
       <link>http://localhost:1313/tags/aws-pentesting/</link>
-      <pubDate>Thu, 12 Jun 2025 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 17 Jun 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/aws-pentesting/</guid>
       <description></description>
     </item>
     <item>
       <title>Cloudgoat</title>
       <link>http://localhost:1313/tags/cloudgoat/</link>
-      <pubDate>Thu, 12 Jun 2025 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 17 Jun 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/cloudgoat/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>SQS</title>
+      <link>http://localhost:1313/tags/sqs/</link>
+      <pubDate>Tue, 17 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/sqs/</guid>
       <description></description>
     </item>
     <item>
