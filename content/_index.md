@@ -2,7 +2,6 @@
 title: "About Me 👋"
 draft: false
 images:
-images:
   - src: "/images/about/coding_club.png"
     caption: "Coding Club"
     text: "I recognized a lack of programming opportunities for students during elementary school, which led me to start a programming club at the age of 12. Using Khan Academy as a platform, I taught JavaScript to fellow classmates through weekly sessions. Over time, the club grew to include around 20 students, many of whom developed a genuine interest in coding. I continued the program intermittently throughout high school, with a temporary pause during the COVID-19 pandemic. This early teaching experience evolved into a continued passion—I now serve as a teaching assistant for UBC’s first-year engineering programming course, where I help mentor and guide new students in programming fundamentals."

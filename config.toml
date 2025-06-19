@@ -39,9 +39,9 @@ canonifyURLs = false       # don’t prepend baseURL
     ]
 
   [params.P4]
-    Heading = "Latest From the Blog"
+    Heading = "Latest Walkthroughs"
     Content = [
-      { text = "Keep up with my newest posts! (a very much in progress site...)" }
+      { text = "Here are my latest AWS Cloudgoat walkthroughs (very much in progress)" }
     ]
 [menu]
 
@@ -52,9 +52,9 @@ canonifyURLs = false       # don’t prepend baseURL
     weight     = 1
 
   [[menu.main]]
-    identifier = "about"
-    name       = "About"
-    url        = "/about/"
+    identifier = "engineer"
+    name       = "Engineer"
+    url        = "/engineer/"
     weight     = 2
 
   [[menu.main]]
@@ -79,9 +79,9 @@ canonifyURLs = false       # don’t prepend baseURL
 
 
   [[menu.footer]]
-    identifier = "about"
-    name       = "About"
-    url        = "/about/"
+    identifier = "engineer"
+    name       = "Engineer"
+    url        = "/engineer/"
     weight     = 10
 
   [[menu.footer]]
