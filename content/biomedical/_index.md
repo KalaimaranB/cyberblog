@@ -133,11 +133,11 @@ courses:
     category: "CPEN"
   
   - title: "MICB212- Introductory Immunology & Virology"
-    summary: "Currently Enrolled: Introductory Immunology & Virology teaches about the innate & adaptive immune responses, allergies, virus structure & replication cycle and some data analysis."
+    summary: "Introductory Immunology & Virology teaches about the innate & adaptive immune responses, allergies, virus structure & replication cycle and some data analysis."
     category: "MICB"
   
   - title: "CHEM233- Organic Chemistry for the Biological Sciences"
-    summary: "Currently Enrolled: Introduction to Organic Chemistry builds off of CHEM123 and focuses on the structure, bonding & physical properties of aliphatic & aromatic compounds. It discusses chemical reactivity of common functional groups as well."
+    summary: "Introduction to Organic Chemistry builds off of CHEM123 and focuses on the structure, bonding & physical properties of aliphatic & aromatic compounds. It discusses chemical reactivity of common functional groups as well."
     category: "CHEM"
 
   

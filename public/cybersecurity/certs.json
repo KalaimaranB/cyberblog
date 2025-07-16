@@ -10,6 +10,16 @@
     "resource": "https://tryhackme.com/hackfinity"
   },
   {
+    "file": "THM-Industrial-Intrusion.png",
+    "description": "Industrial Intrusion was my second international CTF hosted by TryHackMe with over 25k competitors. It involved some industrial systems like MOBUS, as well as traditional CTF challenges such as reverse engineering, web exploitation, and cryptography.",
+    "skills": [
+      "Reverse-Engineering",
+      "Industrial Systems",
+      "Boot-to-Root Challenges"
+    ],
+    "resource": "https://tryhackme.com/industrial-intrusion"
+  },
+  {
     "file": "ISC2-CC.png",
     "description": "Certified in Cybersecurity (CC) from ISC² is an entry-level credential covering foundational security principles, business continuity, and network defense. It validates knowledge of access control concepts and prepared me for further specialization in cybersecurity.",
     "skills": [
@@ -135,5 +145,17 @@
       "Introduction to HTTP smuggling"
     ],
     "resource": "https://tryhackme.com/path/outline/webapppentesting"
+  },
+  {
+    "file": "SimplyCyber-Phishing.png",
+    "description": "A course by Tyler teaching how to launch phishing attacks using both GoPhish and Evilginx2. It covers the setup, execution, and evasion techniques for phishing campaigns. It also covers spoofing and other releavent techniques.",
+    "skills": [
+      "Phishing Techniques",
+      "GoPhish Setup & Usage",
+      "Evilginx2 Setup & Usage",
+      "Spoofing/Vishing Techniques",
+      "Evasion Techniques"
+    ],
+    "resource": "https://academy.simplycyber.io/p/hands-on-phishing"
   }
 ]
