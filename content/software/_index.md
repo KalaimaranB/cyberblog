@@ -14,11 +14,23 @@ languages:
         image: "/images/software_projects/Atoms2-draft.png"
         position: "left"
         description: |
-          One of the first projects of mine. Details to come soon...
+          One of the first projects of mine that I made in Khan Academy. Details to come soon...
+
+      - title: "Tanks!"
+        image: "/images/software_projects/Tank-Game.png"
+        position: "left"
+        description: |
+          Another projects of mine. Details to come soon...
 
   - id: "csharp"
     name: "C#"
     icon: "/images/software/csharp-logo.png"
+    projects:
+      - title: "Rescue Helicopter!"
+        description: |
+          One of my games that I made in Unity, play it below! (details to come...)
+    
+    
   - id: "python"
     name: "Python"
     icon: "/images/software/python-logo.png"

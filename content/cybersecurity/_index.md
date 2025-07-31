@@ -13,5 +13,6 @@ draft: false
 1. **TryHackMe Profile Card** – Click below to see every task I’ve completed and the skills I’ve earned on TryHackMe.
 2. **Completion Certificates** – Each links back to its source for you to dive deeper.
 3. **AWS Cloud Pentesting Walkthroughs** – I’ve started with an Intro to AWS Pentesting course and personal write-ups; next up is the full CloudGoat series. Find all walkthroughs [here](/posts).
+4. **Pentest report on Wreath** - I just recently completed the Wreath network on TryHackMe and am writing a full report on the process. Will be available here soon...
 
 🌐 My long term goal in this field is to learn about how to integrate AI & Cloud tools to help automate the Penetration Tester's workflow.
