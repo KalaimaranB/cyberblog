@@ -79,17 +79,57 @@
       ></iframe>
     </div>
 
-    <p class="mt-6 text-center text-gray-600 dark:text-gray-400 text-sm">
+    <p class="mt-2 text-center text-gray-600 dark:text-gray-400 text-sm">
+      Best experienced on desktop. May take a few seconds to load. Press inside the screen then outside to pause.
+    </p>
+  </section>
+
+  <section class="mt-16 max-w-3xl mx-auto px-6 dark:text-white mb-24">
+    <h2 class="mt-6 text-2xl font-semibold mb-2 prose dark:prose-invert">{{ index $cs.projects 1 "title" }}</h2>
+    <p class="mb-4">{{ index $cs.projects 1 "description" | markdownify }}</p>
+
+    <div class="mx-auto" style="width: 720px; height: 430px; overflow: hidden;">
+      <iframe
+        src="/meiosis-explainer/index.html"
+        style="transform: scale(0.75); transform-origin: top left; width: 960px; height: 600px; border: none;"
+        width="960"
+        height="600"
+        frameborder="0"
+        allowfullscreen
+      ></iframe>
+    </div>
+
+    <p class="mt-2 text-center text-gray-600 dark:text-gray-400 text-sm">
       Best experienced on desktop. May take a few seconds to load.
     </p>
   </section>
 
   <!-- Python Section -->
+  <!-- Python Section -->
   {{ $py := index .Params.languages 2 }}
   <section id="{{ $py.id }}" class="mt-16 max-w-3xl mx-auto px-6 dark:text-white mb-24">
-    <h2 class="text-2xl font-semibold mb-8 mt-8 prose dark:prose-invert">{{ $py.name }} Projects</h2>
-    <p class="prose dark:prose-invert">No projects listed yet.</p>
+    <h2 class="text-3xl font-semibold mb-8 mt-8 prose dark:prose-invert">{{ $py.name }} Projects</h2>
+
+    <h2 class="text-2xl font-semibold mb-2 mt-8 prose dark:prose-invert">{{ index $py.projects 0 "title" }}</h2>
+    <p class="mb-6">{{ index $py.projects 0 "description" | markdownify }}</p>
+
+    <!-- PDF Embed -->
+    <div class="w-full border border-gray-300 rounded-lg overflow-hidden shadow-lg"
+        style="height: 900px;">
+      <iframe src="/sample-protein-report.pdf" 
+              class="w-full h-full"
+              style="height: 100%; width: 100%;"
+              frameborder="0">
+      </iframe>
+    </div>
   </section>
+  <br></br>
+  <section class="mt-16 max-w-3xl mx-auto px-6 dark:text-white mb-24">
+    <p>More projects to be added soon...</p>
+  </section>
+  
+  
+
 
 </main>
 {{ end }}
