@@ -8,6 +8,8 @@ intro: |
 
   Now at UBC as a Biomedical Engineering student, I continue to integrate programming into my studies and work. Protein Analyzer was one of my first projects to support biomedical research, automating parts of the manual research we performed in BMEG courses. I also completed my first formal computer engineering courses, APSC 160 and CPEN 221, where I gained a strong foundation in software design, documentation, and optimization. Today, I apply these skills at Medic Foundation, developing and maintaining a web application to facilitate volunteer‑to‑senior connections in the Lower Mainland - bridging my passion for software and biomedical impact.
 
+  Below you can see a select few of my projects that I have completed, starting from early high school to my current projects.
+
   
 languages:
   - id: "javascript"
@@ -53,7 +55,18 @@ languages:
   - id: "java"
     name: "Java"
     icon: "/images/software/java-logo.png"
+    projects:
+      - title: "Buffers, Concurrency and Wikipedia"
+        image: "/images/software_projects/CPEN-221-MP3.jpeg"
+        description: |
+          This is one of my Java projects that I completed in CPEN 221 (Software Design) in my 2nd year at UBC. The project involved building a concurent & secure backend service for interacting with wikipedia. We were instructed to implement a custom FSFT Buffer to handle caching and ensuring it is thread safe by using Java's built in concurrency types. I designed a mediator that acted as a central hub to make requests to, which utilized the buffer and collect statistics for zeitgeist & peakLoad. I then created a server (and client for testing) that worked tasks concurrently using thread pools. For security, user authentication was implemented using salted passwords & utilizing a shared symmetric key. As a final challenge, I utilized ANTLR to parse a defined grammar that would allow more custom queries against Wikipedia data. As this is a course project, the code can not be published, but private access can be granted upon request. This project showcases many of programming concepts including: working with external libraries, caching, safe & secure concurrent operations and secure programming princples. 
+
+
   - id: "medic"
     name: "Medic"
     icon: "/images/software/medic-logo.png"
+    projects:
+      - title: "MEDIC Application"
+        description: |
+          As IT Director and later Co‑Director at [**MEDIC Foundation**](https://medicfoundation.org), a UBC‑based non‑profit, I led the design and development of a new web application to connect volunteers with seniors in the Lower Mainland. Our platform allows users to register online and automatically matches volunteers with seniors based on location, personality, and interests. This project is a full‑stack build from scratch, leveraging Supabase for the backend and Next.js for the frontend. While we used LLMs to accelerate raw code generation, my responsibilities included: System architecture & design; Code review, debugging, and security hardening; Implementing security practices like CORS policies and least‑privilege access; Stakeholder communication to align technical features with community needs. Through this project, I’ve applied cybersecurity knowledge from hands‑on training directly to a real‑world deployment, while deepening my experience in web development, cloud storage efficiency & performance optimizations, and engineering project management. The platform is scheduled for public release in 2026 and will be available here soon.
 ---

@@ -8,13 +8,13 @@ introContent: |
   Biomedical Engineering sits at the intersection of medical science and engineering. My childhood dream was to become a doctor, but in high school I found another passion—computer programming. Not wanting to choose one over the other, I found biomedical engineering to be the perfect blend: building software and devices that can impact patient care at scale.
 
 
-  Currently, I’m volunteering with [an unnameable organization for now] to develop a [something confidential] (details below). At UBC, every BMEG degree is unique to the individual as you're encouraged to take courses across nearly 10 majors. Since my passion is for cellular engineering and bioinformatics, my studies span hands-on lab modules (see Lab Work below) and software projects (see Software page). My full list of courses that I've taken so far is also available. 
+  Currently, I’m working at a Vancouver based startup to develop a drug delivery device (details below). At UBC, every BMEG degree is unique to the individual as you're encouraged to take courses across nearly 10 majors. Since my passion is for cellular engineering and bioinformatics, my studies span hands-on lab modules (see Lab Work below) and software projects (see Software page). My full list of courses that I've taken so far is also available. 
 
 
   My long-term goal is a career in synthetic immunology, where I’ll engineer immune cells for personalized therapies. I believe custom cell therapies are the future of medicine, and I’m excited to gain both wet-lab experience in cell engineering and computational expertise to model and optimize cellular processes.
 
 
-# 1) List all the categories you’ll use (include “All” for the master tab)
+# 1) All the categories I use (include “All” for the master tab)
 categories:
   - "All"
   - "MATH"
@@ -34,7 +34,7 @@ categoryColors:
   MICB: "#8B5CF6"      # violet-500
   PHYS: "#D946EF"      # fuchsia-500
 
-# 2) Tag each course with one of those
+# 2) Tagging each course with one of those
 courses:
   - title: "APSC100 - Introduction to Engineering I"
     summary: "An introduction to engineering, including topics like: roles, responsibilities, diciplines, sustainability, prototyping, CAD & ethics"

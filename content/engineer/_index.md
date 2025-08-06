@@ -2,8 +2,6 @@
 title: "Engineer 🛠"
 draft: false
 ---
-# ***Page under construction 🚧***
+# **Page under construction 🚧**
 
-Some engineering projects to come...
-
-A flying pineapple 🍍🍍🍍
+Currently working on reverse engineering a drone for customization (to make a flying pineapple 🍍🍍🍍). Details to come soon...

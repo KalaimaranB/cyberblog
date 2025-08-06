@@ -105,7 +105,6 @@
   </section>
 
   <!-- Python Section -->
-  <!-- Python Section -->
   {{ $py := index .Params.languages 2 }}
   <section id="{{ $py.id }}" class="mt-16 max-w-3xl mx-auto px-6 dark:text-white mb-24">
     <h2 class="text-3xl font-semibold mb-8 mt-8 prose dark:prose-invert">{{ $py.name }} Projects</h2>
@@ -123,11 +122,35 @@
       </iframe>
     </div>
   </section>
-  <br></br>
-  <section class="mt-16 max-w-3xl mx-auto px-6 dark:text-white mb-24">
-    <p>More projects to be added soon...</p>
+
+
+  <!-- Java Section -->
+  {{ $ja := index .Params.languages 3 }}
+  <section id="{{ $py.id }}" class="mt-16 max-w-3xl mx-auto px-6 dark:text-white mb-24">
+    <h2 class="text-3xl font-semibold mb-8 mt-8 prose dark:prose-invert">{{ $ja.name }} Projects</h2>
+
+    <h2 class="text-2xl font-semibold mb-2 mt-8 prose dark:prose-invert">{{ index $ja.projects 0 "title" }}</h2>
+    <img
+        src="{{ index $ja.projects 0 "image" }}"
+        alt="{{ index $ja.projects 0 "title" }} screenshot"
+        class="w-full max-w-md object-contain rounded-lg shadow mx-auto block mb-4"
+      />
+    
+    <p class="mb-6">{{ index $ja.projects 0 "description" | markdownify }}</p>
   </section>
-  
+
+
+  <!-- MEDIC Section -->
+  {{ $me := index .Params.languages 4 }}
+  <section id="{{ $me.id }}" class="mt-16 max-w-3xl mx-auto px-6 dark:text-white mb-24">
+    <h2 class="text-3xl font-semibold mb-8 mt-8 prose dark:prose-invert">{{ $me.name }} Projects</h2>
+
+    <h2 class="text-2xl font-semibold mb-2 mt-8 prose dark:prose-invert">{{ index $me.projects 0 "title" }}</h2>
+    
+    <p class="mb-6">{{ index $me.projects 0 "description" | markdownify }}</p>
+  </section>
+
+
   
 
 
