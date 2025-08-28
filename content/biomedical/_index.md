@@ -24,6 +24,8 @@ categories:
   - "CPEN"
   - "MICB"
   - "PHYS"
+  - "BIOC"
+  - "CPSC"
 
 categoryColors:
   MATH: "#6366F1"      # indigo-500
@@ -33,6 +35,8 @@ categoryColors:
   CPEN: "#F43F5E"      # rose-500
   MICB: "#8B5CF6"      # violet-500
   PHYS: "#D946EF"      # fuchsia-500
+  BIOC: "#F97316"   # orange-500
+  CPSC: "#0EA5E9"   # sky-500
 
 # 2) Tagging each course with one of those
 courses:
@@ -139,6 +143,59 @@ courses:
   - title: "CHEM233- Organic Chemistry for the Biological Sciences"
     summary: "Introduction to Organic Chemistry builds off of CHEM123 and focuses on the structure, bonding & physical properties of aliphatic & aromatic compounds. It discusses chemical reactivity of common functional groups as well."
     category: "CHEM"
+
+  - title: "BMEG426- Synthetic Biology"
+    summary: "Synthetic Biology is a 2 week intensive biology lab focused course and focuses on cellular design & engineering in mammalian cells. The course provided experience in running PCR, gel electrophoresis, golden gate, gibson reactions and many more."
+    category: "BMEG"
+
+  - title: "BMEG310- Introduction to Bioinformatics"
+    summary: "Currently enrolled"
+    category: "BMEG"
+
+  - title: "BMEG371- Transport Phenomena within Cells and Tissues"
+    summary: "Currently enrolled"
+    category: "BMEG"
+
+  - title: "MICB302- Immunology"
+    summary: "Currently enrolled"
+    category: "MICB"
+
+  - title: "BIOC202- Introductory Medical Biochemistry"
+    summary: "Currently enrolled"
+    category: "BIOC"
+
+  - title: "CHEM235- Organic Chemistry Laboratory"
+    summary: "Currently enrolled"
+    category: "CHEM"
+
+  - title: "CPSC121- Models of Computation"
+    summary: "Currently enrolled"
+    category: "CPSC"
+
+  - title: "BMEG321- Biomedical Instrumentation"
+    summary: "Currently enrolled"
+    category: "BMEG"
+
+  - title: "BMEG350- THuman Structure/Function from Cells to Systems"
+    summary: "Currently enrolled"
+    category: "BMEG"
+
+  - title: "BMEG357- Biomedical Engineering Design II"
+    summary: "Currently enrolled"
+    category: "BMEG"
+
+  - title: "MICB323- Molecular Immunology and Virology Laboratory"
+    summary: "Currently enrolled"
+    category: "MICB"
+
+  - title: "CPSC221- Basic Algorithms and Data Structures"
+    summary: "Currently enrolled"
+    category: "CPSC"
+
+  - title: "CPSC330- Applied Machine Learning"
+    summary: "Currently enrolled"
+    category: "CPSC"
+
 
   
 # 3) Lab Work Slider: each slide has an image + bullet list

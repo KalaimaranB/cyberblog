@@ -408,6 +408,24 @@ My long-term goal is a career in synthetic immunology, where I’ll engineer imm
           </button>
         </li>
         
+        <li class="mr-2">
+          <button @click="selectedCategory='BIOC'"
+            :class=" selectedCategory === 'BIOC'
+              ? 'inline-flex items-center p-4 border-b-2 border-blue-500 text-gray-400 dark:text-gray-300'
+              : 'inline-flex items-center p-4 border-b-2 border-transparent hover:text-gray-600 hover:border-gray-500' " class="rounded-t-lg transition">
+            BIOC
+          </button>
+        </li>
+        
+        <li class="mr-2">
+          <button @click="selectedCategory='CPSC'"
+            :class=" selectedCategory === 'CPSC'
+              ? 'inline-flex items-center p-4 border-b-2 border-blue-500 text-gray-400 dark:text-gray-300'
+              : 'inline-flex items-center p-4 border-b-2 border-transparent hover:text-gray-600 hover:border-gray-500' " class="rounded-t-lg transition">
+            CPSC
+          </button>
+        </li>
+        
       </ul>
     </div>
 
@@ -1190,6 +1208,396 @@ My long-term goal is a career in synthetic immunology, where I’ll engineer imm
 
   <p class="font-normal text-gray-700 dark:text-gray-400">
     Introduction to Organic Chemistry builds off of CHEM123 and focuses on the structure, bonding &amp; physical properties of aliphatic &amp; aromatic compounds. It discusses chemical reactivity of common functional groups as well.
+  </p>
+</div>
+
+      </div>
+      
+      
+      
+      <div x-show="selectedCategory === 'All' || selectedCategory === 'BMEG'" x-transition
+        class="transition-opacity duration-300">
+        
+
+
+
+
+<div
+  class="p-6 bg-white rounded-lg shadow-sm hover:bg-gray-100
+         dark:bg-gray-800 dark:hover:bg-gray-700"
+  style="border-left:4px solid #14B8A6;"
+>
+  
+
+  <h5
+    class="mb-2 text-2xl font-bold tracking-tight"
+    style="color: #14B8A6;"
+  >
+    BMEG426- Synthetic Biology
+  </h5>
+
+  <p class="font-normal text-gray-700 dark:text-gray-400">
+    Synthetic Biology is a 2 week intensive biology lab focused course and focuses on cellular design &amp; engineering in mammalian cells. The course provided experience in running PCR, gel electrophoresis, golden gate, gibson reactions and many more.
+  </p>
+</div>
+
+      </div>
+      
+      
+      
+      <div x-show="selectedCategory === 'All' || selectedCategory === 'BMEG'" x-transition
+        class="transition-opacity duration-300">
+        
+
+
+
+
+<div
+  class="p-6 bg-white rounded-lg shadow-sm hover:bg-gray-100
+         dark:bg-gray-800 dark:hover:bg-gray-700"
+  style="border-left:4px solid #14B8A6;"
+>
+  
+
+  <h5
+    class="mb-2 text-2xl font-bold tracking-tight"
+    style="color: #14B8A6;"
+  >
+    BMEG310- Introduction to Bioinformatics
+  </h5>
+
+  <p class="font-normal text-gray-700 dark:text-gray-400">
+    Currently enrolled
+  </p>
+</div>
+
+      </div>
+      
+      
+      
+      <div x-show="selectedCategory === 'All' || selectedCategory === 'BMEG'" x-transition
+        class="transition-opacity duration-300">
+        
+
+
+
+
+<div
+  class="p-6 bg-white rounded-lg shadow-sm hover:bg-gray-100
+         dark:bg-gray-800 dark:hover:bg-gray-700"
+  style="border-left:4px solid #14B8A6;"
+>
+  
+
+  <h5
+    class="mb-2 text-2xl font-bold tracking-tight"
+    style="color: #14B8A6;"
+  >
+    BMEG371- Transport Phenomena within Cells and Tissues
+  </h5>
+
+  <p class="font-normal text-gray-700 dark:text-gray-400">
+    Currently enrolled
+  </p>
+</div>
+
+      </div>
+      
+      
+      
+      <div x-show="selectedCategory === 'All' || selectedCategory === 'MICB'" x-transition
+        class="transition-opacity duration-300">
+        
+
+
+
+
+<div
+  class="p-6 bg-white rounded-lg shadow-sm hover:bg-gray-100
+         dark:bg-gray-800 dark:hover:bg-gray-700"
+  style="border-left:4px solid #8B5CF6;"
+>
+  
+
+  <h5
+    class="mb-2 text-2xl font-bold tracking-tight"
+    style="color: #8B5CF6;"
+  >
+    MICB302- Immunology
+  </h5>
+
+  <p class="font-normal text-gray-700 dark:text-gray-400">
+    Currently enrolled
+  </p>
+</div>
+
+      </div>
+      
+      
+      
+      <div x-show="selectedCategory === 'All' || selectedCategory === 'BIOC'" x-transition
+        class="transition-opacity duration-300">
+        
+
+
+
+
+<div
+  class="p-6 bg-white rounded-lg shadow-sm hover:bg-gray-100
+         dark:bg-gray-800 dark:hover:bg-gray-700"
+  style="border-left:4px solid #F97316;"
+>
+  
+
+  <h5
+    class="mb-2 text-2xl font-bold tracking-tight"
+    style="color: #F97316;"
+  >
+    BIOC202- Introductory Medical Biochemistry
+  </h5>
+
+  <p class="font-normal text-gray-700 dark:text-gray-400">
+    Currently enrolled
+  </p>
+</div>
+
+      </div>
+      
+      
+      
+      <div x-show="selectedCategory === 'All' || selectedCategory === 'CHEM'" x-transition
+        class="transition-opacity duration-300">
+        
+
+
+
+
+<div
+  class="p-6 bg-white rounded-lg shadow-sm hover:bg-gray-100
+         dark:bg-gray-800 dark:hover:bg-gray-700"
+  style="border-left:4px solid #10B981;"
+>
+  
+
+  <h5
+    class="mb-2 text-2xl font-bold tracking-tight"
+    style="color: #10B981;"
+  >
+    CHEM235- Organic Chemistry Laboratory
+  </h5>
+
+  <p class="font-normal text-gray-700 dark:text-gray-400">
+    Currently enrolled
+  </p>
+</div>
+
+      </div>
+      
+      
+      
+      <div x-show="selectedCategory === 'All' || selectedCategory === 'CPSC'" x-transition
+        class="transition-opacity duration-300">
+        
+
+
+
+
+<div
+  class="p-6 bg-white rounded-lg shadow-sm hover:bg-gray-100
+         dark:bg-gray-800 dark:hover:bg-gray-700"
+  style="border-left:4px solid #0EA5E9;"
+>
+  
+
+  <h5
+    class="mb-2 text-2xl font-bold tracking-tight"
+    style="color: #0EA5E9;"
+  >
+    CPSC121- Models of Computation
+  </h5>
+
+  <p class="font-normal text-gray-700 dark:text-gray-400">
+    Currently enrolled
+  </p>
+</div>
+
+      </div>
+      
+      
+      
+      <div x-show="selectedCategory === 'All' || selectedCategory === 'BMEG'" x-transition
+        class="transition-opacity duration-300">
+        
+
+
+
+
+<div
+  class="p-6 bg-white rounded-lg shadow-sm hover:bg-gray-100
+         dark:bg-gray-800 dark:hover:bg-gray-700"
+  style="border-left:4px solid #14B8A6;"
+>
+  
+
+  <h5
+    class="mb-2 text-2xl font-bold tracking-tight"
+    style="color: #14B8A6;"
+  >
+    BMEG321- Biomedical Instrumentation
+  </h5>
+
+  <p class="font-normal text-gray-700 dark:text-gray-400">
+    Currently enrolled
+  </p>
+</div>
+
+      </div>
+      
+      
+      
+      <div x-show="selectedCategory === 'All' || selectedCategory === 'BMEG'" x-transition
+        class="transition-opacity duration-300">
+        
+
+
+
+
+<div
+  class="p-6 bg-white rounded-lg shadow-sm hover:bg-gray-100
+         dark:bg-gray-800 dark:hover:bg-gray-700"
+  style="border-left:4px solid #14B8A6;"
+>
+  
+
+  <h5
+    class="mb-2 text-2xl font-bold tracking-tight"
+    style="color: #14B8A6;"
+  >
+    BMEG350- THuman Structure/Function from Cells to Systems
+  </h5>
+
+  <p class="font-normal text-gray-700 dark:text-gray-400">
+    Currently enrolled
+  </p>
+</div>
+
+      </div>
+      
+      
+      
+      <div x-show="selectedCategory === 'All' || selectedCategory === 'BMEG'" x-transition
+        class="transition-opacity duration-300">
+        
+
+
+
+
+<div
+  class="p-6 bg-white rounded-lg shadow-sm hover:bg-gray-100
+         dark:bg-gray-800 dark:hover:bg-gray-700"
+  style="border-left:4px solid #14B8A6;"
+>
+  
+
+  <h5
+    class="mb-2 text-2xl font-bold tracking-tight"
+    style="color: #14B8A6;"
+  >
+    BMEG357- Biomedical Engineering Design II
+  </h5>
+
+  <p class="font-normal text-gray-700 dark:text-gray-400">
+    Currently enrolled
+  </p>
+</div>
+
+      </div>
+      
+      
+      
+      <div x-show="selectedCategory === 'All' || selectedCategory === 'MICB'" x-transition
+        class="transition-opacity duration-300">
+        
+
+
+
+
+<div
+  class="p-6 bg-white rounded-lg shadow-sm hover:bg-gray-100
+         dark:bg-gray-800 dark:hover:bg-gray-700"
+  style="border-left:4px solid #8B5CF6;"
+>
+  
+
+  <h5
+    class="mb-2 text-2xl font-bold tracking-tight"
+    style="color: #8B5CF6;"
+  >
+    MICB323- Molecular Immunology and Virology Laboratory
+  </h5>
+
+  <p class="font-normal text-gray-700 dark:text-gray-400">
+    Currently enrolled
+  </p>
+</div>
+
+      </div>
+      
+      
+      
+      <div x-show="selectedCategory === 'All' || selectedCategory === 'CPSC'" x-transition
+        class="transition-opacity duration-300">
+        
+
+
+
+
+<div
+  class="p-6 bg-white rounded-lg shadow-sm hover:bg-gray-100
+         dark:bg-gray-800 dark:hover:bg-gray-700"
+  style="border-left:4px solid #0EA5E9;"
+>
+  
+
+  <h5
+    class="mb-2 text-2xl font-bold tracking-tight"
+    style="color: #0EA5E9;"
+  >
+    CPSC221- Basic Algorithms and Data Structures
+  </h5>
+
+  <p class="font-normal text-gray-700 dark:text-gray-400">
+    Currently enrolled
+  </p>
+</div>
+
+      </div>
+      
+      
+      
+      <div x-show="selectedCategory === 'All' || selectedCategory === 'CPSC'" x-transition
+        class="transition-opacity duration-300">
+        
+
+
+
+
+<div
+  class="p-6 bg-white rounded-lg shadow-sm hover:bg-gray-100
+         dark:bg-gray-800 dark:hover:bg-gray-700"
+  style="border-left:4px solid #0EA5E9;"
+>
+  
+
+  <h5
+    class="mb-2 text-2xl font-bold tracking-tight"
+    style="color: #0EA5E9;"
+  >
+    CPSC330- Applied Machine Learning
+  </h5>
+
+  <p class="font-normal text-gray-700 dark:text-gray-400">
+    Currently enrolled
   </p>
 </div>
 
