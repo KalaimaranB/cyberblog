@@ -30,6 +30,13 @@
       <description></description>
     </item>
     <item>
+      <title>BIOC</title>
+      <link>http://localhost:1313/categories/bioc/</link>
+      <pubDate>Sat, 17 May 2025 00:00:00 -0700</pubDate>
+      <guid>http://localhost:1313/categories/bioc/</guid>
+      <description></description>
+    </item>
+    <item>
       <title>BMEG</title>
       <link>http://localhost:1313/categories/bmeg/</link>
       <pubDate>Sat, 17 May 2025 00:00:00 -0700</pubDate>
@@ -48,6 +55,13 @@
       <link>http://localhost:1313/categories/cpen/</link>
       <pubDate>Sat, 17 May 2025 00:00:00 -0700</pubDate>
       <guid>http://localhost:1313/categories/cpen/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>CPSC</title>
+      <link>http://localhost:1313/categories/cpsc/</link>
+      <pubDate>Sat, 17 May 2025 00:00:00 -0700</pubDate>
+      <guid>http://localhost:1313/categories/cpsc/</guid>
       <description></description>
     </item>
     <item>

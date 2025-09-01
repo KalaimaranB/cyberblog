@@ -8,10 +8,15 @@ introContent: |
   Biomedical Engineering sits at the intersection of medical science and engineering. My childhood dream was to become a doctor, but in high school I found another passion—computer programming. Not wanting to choose one over the other, I found biomedical engineering to be the perfect blend: building software and devices that can impact patient care at scale.
 
 
-  Currently, I’m working at a Vancouver based startup to develop a drug delivery device (details below). At UBC, every BMEG degree is unique to the individual as you're encouraged to take courses across nearly 10 majors. Since my passion is for cellular engineering and bioinformatics, my studies span hands-on lab modules (see Lab Work below) and software projects (see Software page). My full list of courses that I've taken so far is also available. 
+  Currently, I'm working for a Vancouver based startup to develop an automated drug delivery device (details below). At UBC, every BMEG degree is unique to the individual as you're encouraged to take courses across nearly 10 different discplines. As my passion is for cellular engineering & bioinformatics, my studies span both lab, theory & software work. Details on my lab work are available below as well as all the courses I've taken at UBC with the software work available on it's own page. 
 
 
   My long-term goal is a career in synthetic immunology, where I’ll engineer immune cells for personalized therapies. I believe custom cell therapies are the future of medicine, and I’m excited to gain both wet-lab experience in cell engineering and computational expertise to model and optimize cellular processes.
+
+
+startupDescription: |
+   I am one of the founding members for Patch, a biotech company based in Vancouver. It was founded by one of my colleagues in SBME at UBC along with a small team of engineers across various disciplines. My role is focused on simulations for the model and assisting the design engineer as needed. This priamarily meant utilizing Solidworks to create fluid & static simulation for our product. I also am responsible for our private cloud in Oracle. My role for the cloud was primarly to set up a cloud vm & network to help host some of our automation tools. The website will be released soon and linked here once set. 
+
 
 
 # 1) All the categories I use (include “All” for the master tab)
@@ -35,8 +40,8 @@ categoryColors:
   CPEN: "#F43F5E"      # rose-500
   MICB: "#8B5CF6"      # violet-500
   PHYS: "#D946EF"      # fuchsia-500
-  BIOC: "#F97316"   # orange-500
-  CPSC: "#0EA5E9"   # sky-500
+  BIOC: "#F97316"      # orange-500
+  CPSC: "#0EA5E9"      # sky-500
 
 # 2) Tagging each course with one of those
 courses:
@@ -145,55 +150,55 @@ courses:
     category: "CHEM"
 
   - title: "BMEG426- Synthetic Biology"
-    summary: "Synthetic Biology is a 2 week intensive biology lab focused course and focuses on cellular design & engineering in mammalian cells. The course provided experience in running PCR, gel electrophoresis, golden gate, gibson reactions and many more."
+    summary: "Synthetic Biology is a 2 week intensive biology lab focused course and focuses on cellular design & engineering in mammalian cells. The course provided experience in running PCR, gel electrophoresis, golden gate, gibson reactions and many more. A presentation on content covered in the course will be available here soon."
     category: "BMEG"
 
   - title: "BMEG310- Introduction to Bioinformatics"
-    summary: "Currently enrolled"
+    summary: "Currently enrolled - This course is focused on using R to analyze bioinformatics databases for solving problems in genomics, proteomics among other things. "
     category: "BMEG"
 
   - title: "BMEG371- Transport Phenomena within Cells and Tissues"
-    summary: "Currently enrolled"
+    summary: "Currently enrolled - This course is focused on fluid flows analysis within both healtyh and diseaseed cells along with tissues through mathematics."
     category: "BMEG"
 
   - title: "MICB302- Immunology"
-    summary: "Currently enrolled"
+    summary: "Currently enrolled - This course was focused of the mechanisms of both innate & adaptive immune responses. This included content on the development of T & B lymphocytes, antigen processing/presentation and more. "
     category: "MICB"
 
   - title: "BIOC202- Introductory Medical Biochemistry"
-    summary: "Currently enrolled"
+    summary: "Currently enrolled - This course is an introduction to proteins & enzymes at the atomic level. The course emphasizes human biochemistry & designed for students in the health science fields. "
     category: "BIOC"
 
   - title: "CHEM235- Organic Chemistry Laboratory"
-    summary: "Currently enrolled"
+    summary: "Currently enrolled - An organic chemistry lab focused on implementing practically chemistry principles learned in CHEM 233."
     category: "CHEM"
 
   - title: "CPSC121- Models of Computation"
-    summary: "Currently enrolled"
+    summary: "Currently enrolled - A course focused on the physical & mathematical structure of computation including boolean algebra, finite state machines, sets and relations among other concepts."
     category: "CPSC"
 
   - title: "BMEG321- Biomedical Instrumentation"
-    summary: "Currently enrolled"
+    summary: "Currently enrolled - This course covers the fundamental principles of medical instruments of nervous, respiratory & circulatory systems. It also covers medical imaging & robotic surgery. "
     category: "BMEG"
 
-  - title: "BMEG350- THuman Structure/Function from Cells to Systems"
-    summary: "Currently enrolled"
+  - title: "BMEG350- Human Structure/Function from Cells to Systems"
+    summary: "Currently enrolled - This is a fundamental biology course for BMEG that covers topics like human anatomy, physiology & histology. The course includes a cadaver lab to complement the theory learned in the course. "
     category: "BMEG"
 
   - title: "BMEG357- Biomedical Engineering Design II"
-    summary: "Currently enrolled"
+    summary: "Currently enrolled - This is a design course for BMEG focused on the design process for clinical clients & verifying prototypes with end users. "
     category: "BMEG"
 
   - title: "MICB323- Molecular Immunology and Virology Laboratory"
-    summary: "Currently enrolled"
+    summary: "Currently enrolled - This lab course covered the genetic manipulation of bacteria along with immunological & virological procedures. Protocols taught in the course include SDS-Page, Western blotting, ELISAs among others. "
     category: "MICB"
 
   - title: "CPSC221- Basic Algorithms and Data Structures"
-    summary: "Currently enrolled"
+    summary: "Currently enrolled - This course is focused on the design & analysis of basic algorithims along with data structures. It covers searching & sorting algorithims along with basic data structures, graphs & concurrency."
     category: "CPSC"
 
   - title: "CPSC330- Applied Machine Learning"
-    summary: "Currently enrolled"
+    summary: "Currently enrolled - This course discusses applications of machine learning tools focused on solving practical problems. Topics include data cleaning, feature extraction supervised/unsupervised machine learning. "
     category: "CPSC"
 
 

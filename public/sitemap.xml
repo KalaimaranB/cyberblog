@@ -74,6 +74,9 @@
     <loc>http://localhost:1313/categories/apsc/</loc>
     <lastmod>2025-05-17T00:00:00-07:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/categories/bioc/</loc>
+    <lastmod>2025-05-17T00:00:00-07:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/biomedical/</loc>
     <lastmod>2025-05-17T00:00:00-07:00</lastmod>
   </url><url>
@@ -84,6 +87,9 @@
     <lastmod>2025-05-17T00:00:00-07:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/categories/cpen/</loc>
+    <lastmod>2025-05-17T00:00:00-07:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/categories/cpsc/</loc>
     <lastmod>2025-05-17T00:00:00-07:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/cybersecurity/</loc>
