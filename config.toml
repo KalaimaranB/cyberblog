@@ -51,11 +51,6 @@ canonifyURLs = false       # don’t prepend baseURL
     url        = "/"
     weight     = 1
 
-  [[menu.main]]
-    identifier = "engineer"
-    name       = "Engineer"
-    url        = "/engineer/"
-    weight     = 2
 
   [[menu.main]]
     identifier = "biomedical"
@@ -77,12 +72,6 @@ canonifyURLs = false       # don’t prepend baseURL
 
 
 
-
-  [[menu.footer]]
-    identifier = "engineer"
-    name       = "Engineer"
-    url        = "/engineer/"
-    weight     = 10
 
   [[menu.footer]]
     identifier = "biomedical"

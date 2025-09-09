@@ -19,7 +19,7 @@
     {{ $title }}
   </h5>
 
-  <p class="font-normal text-gray-700 dark:text-gray-400">
-    {{ $summary }}
-  </p>
+  <div class="font-normal text-gray-700 dark:text-gray-400 prose prose-sm dark:prose-invert">
+    {{ $summary | markdownify }}
+  </div>
 </div>

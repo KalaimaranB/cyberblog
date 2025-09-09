@@ -15,7 +15,7 @@ introContent: |
 
 
 startupDescription: |
-   I am one of the founding members for Patch, a biotech company based in Vancouver. It was founded by one of my colleagues in SBME at UBC along with a small team of engineers across various disciplines. My role is focused on simulations for the model and assisting the design engineer as needed. This priamarily meant utilizing Solidworks to create fluid & static simulation for our product. I also am responsible for our private cloud in Oracle. My role for the cloud was primarly to set up a cloud vm & network to help host some of our automation tools. The website will be released soon and linked here once set. 
+   I am one of the founding members for Patch, a biotech company based in Vancouver. It was founded by one of my colleagues in SBME at UBC along with a small team of engineers across various disciplines. My role is focused on simulations for the model and assisting the design engineer as needed. This priamarily meant utilizing Solidworks to create fluid & static simulation for our product. I also am responsible for our private cloud in Oracle. My role for the cloud was primarly to set up a cloud vm & network to help host some of our automation tools. The website for more information is linked [here](https://patch-med.base44.app/). 
 
 
 
@@ -150,7 +150,7 @@ courses:
     category: "CHEM"
 
   - title: "BMEG426- Synthetic Biology"
-    summary: "Synthetic Biology is a 2 week intensive biology lab focused course and focuses on cellular design & engineering in mammalian cells. The course provided experience in running PCR, gel electrophoresis, golden gate, gibson reactions and many more. A presentation on content covered in the course will be available here soon."
+    summary: "Synthetic Biology is a 2 week intensive biology lab focused course and focuses on cellular design & engineering in mammalian cells. The course provided experience in running PCR, gel electrophoresis, golden gate, gibson reactions and many more individually and in partners. A presentation on content covered in the course is available [here](/bmeg426-presentation.pptx)."
     category: "BMEG"
 
   - title: "BMEG310- Introduction to Bioinformatics"
@@ -241,4 +241,22 @@ labWorkSlides:
       - "Practical skills involved pipetting & using inoculation loop"
       - "Introductory first year lab for BMEG"
       - "Steps included preparing microtubles with transformation solution, using heated inoculation loop for bacteria transfer & heat shock method of bacterial transformation."
+
+  - image: "/images/lab_work/BMEG426-Cultures.jpg"
+    alt: "BMEG 426 Bacterial Cultures"
+    source: "BMEG 426"
+    bullets:
+      - "Lab goal: Performing bacterical transformation to insert plasmid of interest"
+      - "Practical skills involved pipetting, heat shock, bacterial transfer"
+      - "Part of 2 week intensive synthetic biology bootcmp"
+      - "Steps included preparing solutions with plasmid of interest, preparing bacteria for shock and allowing for growth. We transferred a single colony to a liquid culture for bulk growth."
+
+
+  - image: "/images/lab_work/BMEG426-Imaging.jpg"
+    alt: "BMEG 426 Final Results"
+    source: "BMEG 426"
+    bullets:
+      - "Lab goal: To engineer a plasmid that HCT-116 cells can transcribe to produce the protein of interest"
+      - "Final results from BMEG 426 Synthetic Biology course with cells expressing a cytoplasm stain with GFP"
+      - "This lab was a hands-on self guided course done mostly individually or in parnters. Details are in the course card below."
 ---

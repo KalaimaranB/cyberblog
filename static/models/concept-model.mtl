@@ -1,0 +1,6 @@
+newmtl shiny_black
+Ka 0.1 0.1 0.1     # faint ambient grey
+Kd 0.2 0.2 0.2     # diffuse dark grey
+Ks 0.8 0.8 0.8     # strong specular (white-ish highlight)
+d 1                # fully opaque
+Ns 100             # shininess (higher = sharper)
