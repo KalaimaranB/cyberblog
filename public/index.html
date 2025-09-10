@@ -168,7 +168,7 @@
     </div>
 
     
-    <div class="relative w-full bg-gray-900">  
+    <div id="wrapper" class="relative w-full">  
       
       <div
         id="bg-image"
@@ -183,13 +183,11 @@
           Who am I?
         </h1>
         <section class="mt-12 max-w-3xl mx-auto px-6 prose text-gray-900 dark:text-gray-200 mb-8">
-          <p>From a young age, the eventual goal was always to become a doctor. I loved biology, and invested lots of time reading books and learning about the human body, hence the doctor ambition was quite natural. Till late highschool, I was firmly set on this path.</p>
-<p>However, I also started to learn computer programming in elementary school, but it wasn&rsquo;t until high school that I dove deep and taught myself C# and Unity. I started by building small projects &amp; learning early fundamentals of software and game development. Though it started only as a hobby, I learned quickly that I really enjoyed programming, just as much I valued medical science.</p>
-<p>I could not bring myself to choose between the two, which is what led me to Biomedical Engineering at UBC. BMEG allows my to pursue both interests simultaneously: understanding biological systems while using software to simulate and eventually repgoram them.</p>
-<p>My academic focus is in cellular engineering &amp; bioinformatics, particularly in the immunology field. I&rsquo;m particularly interested in using computational models to predict immune cell reactions to help optimize the synthetic biology. I hope to work in both lab &amp; software projects to help develop technology that can can provide personalized immune-system specific therapeutics.</p>
-<p>In the summer of 2024, I entered a new domain entirely: cybersecurity. What began simply as curiosity (similar to how I got into coding I suppose), it became something I&rsquo;m devoting considerable time to now. I&rsquo;ve earned foundational certifications from ISC² &amp; Google and am working through practical challenges on TryHackMe. I&rsquo;ve focused particularly on penetration testing and now am among the top 300 users in Canada.</p>
-<p>The two distinct fields - biology &amp; cybersecurity - seem to have similarities at the most fundamental level, a level of symmetry between the two. My specific interest in biology is synthetic immune cell engineering, while in cybersecurity it&rsquo;s red teaming into cloud environments. Fundamentally, my interest lies in understanding how malware/viruses work in different environments and designing solutions to defend against a variety of threats.</p>
-<p>In a way, pursuing these 3 fields show what my underling passion is for: understanding complex systems &amp; buildings tools to make them more adapative to have a positive impact on people. It&rsquo;s the same passion that motivates me to move through these 3 fields as just different paths to reach the same end goal.</p>
+          <p>My work sits at the intersection of biology, software, and security. I&rsquo;m driven by a fundamental curiosity about how complex systems work—and how to make them more resilient.</p>
+<p>This passion led me to Biomedical Engineering at the University of British Columbia (UBC), where I specialize in cellular engineering and bioinformatics. My specific focus in on the immune system, in particulary using computational models to predict cellular reactions &amp; engineerng synthetic biology. I enjoy working in both wet lab and computational environments, bridging the gap between biological theory and practical application.</p>
+<p>My proficiency in Python and C# forms the foundation of my approach to both biology and cybersecurity. Understanding programming languages gives me a way to think about DNA itself — how simple instructions can combine to create complex behaviors and higher-order systems. I can apply the same mindset in cybersecurity, as understanding the code underneath helps me understand the software at a stronger level. Programming is the bridge between these worlds: it trains me to look beneath the surface, whether in biological or digital systems, to uncover how they truly work.</p>
+<p>This fascination with system defense naturally extended into the digital realm. I&rsquo;ve immersed myself in cybersecurity, earning certifications from Google and (ISC)² and developing practical expertise in penetration testing. As one of the top 300 users on TryHackMe in Canada, I actively hone my skills in identifying and exploiting vulnerabilities.</p>
+<p>To me, synthetic immunology and cybersecurity are two sides of the same coin. One deals with biological pathogens, the other with digital malware. Both require a deep understanding of a system&rsquo;s architecture, its potential weaknesses, and the strategies to defend it. My goal is to leverage this cross-disciplinary perspective to build adaptive technologies that protect and enhance human health.</p>
 <p><a href="./whoami">A project in the works&hellip;</a></p>
 
         </section>
@@ -335,8 +333,8 @@
     <script>
       function setBackgroundImage() {
         const bgDiv = document.getElementById("bg-image");
+        const wrapper = document.getElementById("wrapper");
 
-        
         const isDark =
           document.documentElement.classList.contains("dark") ||
           window.matchMedia("(prefers-color-scheme: dark)").matches;
@@ -344,9 +342,13 @@
         if (isDark) {
           bgDiv.style.backgroundImage = "url('/images/cyber-immuno-fusion.png')";
           bgDiv.style.opacity = "0.4";
+
+          wrapper.style.backgroundColor = "#111827"; 
         } else {
           bgDiv.style.backgroundImage = "url('/images/light-cyber-immuno-fusion.png')";
-          bgDiv.style.opacity = "0.9";
+          bgDiv.style.opacity = "0.4";
+
+          wrapper.style.backgroundColor = "#f9fafb"; 
         }
       }
 

@@ -27,7 +27,7 @@
     </div>
 
     <!-- Wrapper with your site background color -->
-    <div class="relative w-full bg-gray-900">  <!-- replace with your site bg -->
+    <div id="wrapper" class="relative w-full">  <!-- replace with your site bg -->
       <!-- Semi-transparent image -->
       <div
         id="bg-image"
@@ -154,8 +154,8 @@
     <script>
       function setBackgroundImage() {
         const bgDiv = document.getElementById("bg-image");
+        const wrapper = document.getElementById("wrapper");
 
-        // Works for both "class" and "media" modes
         const isDark =
           document.documentElement.classList.contains("dark") ||
           window.matchMedia("(prefers-color-scheme: dark)").matches;
@@ -163,20 +163,24 @@
         if (isDark) {
           bgDiv.style.backgroundImage = "url('/images/cyber-immuno-fusion.png')";
           bgDiv.style.opacity = "0.4";
+
+          wrapper.style.backgroundColor = "#111827"; // Tailwind's gray-900
         } else {
           bgDiv.style.backgroundImage = "url('/images/light-cyber-immuno-fusion.png')";
-          bgDiv.style.opacity = "0.9";
+          bgDiv.style.opacity = "0.4";
+
+          wrapper.style.backgroundColor = "#f9fafb"; // Tailwind's gray-50
         }
       }
 
       // Run on load
       document.addEventListener("DOMContentLoaded", setBackgroundImage);
 
-      // Watch for <html> class changes (class-based dark mode)
+      // Watch for <html> class changes
       const observer = new MutationObserver(setBackgroundImage);
       observer.observe(document.documentElement, { attributes: true, attributeFilter: ["class"] });
 
-      // Watch for system dark mode changes (media-based dark mode)
+      // Watch for system dark mode changes
       window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", setBackgroundImage);
     </script>
 
