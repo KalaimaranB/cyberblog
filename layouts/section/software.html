@@ -1,15 +1,14 @@
 {{ define "main" }}
-<main class="pb-16">
-
-  {{ partial "banner.html" . }}
+{{ partial "banner.html" . }}
+<main class="max-w-4xl mx-auto mt-8 mb-2 px-4 sm:px-6 lg:px-8">
 
   <!-- Intro -->
-  <section class="mt-12 max-w-3xl mx-auto px-6 prose dark:prose-invert dark:text-white mb-24">
+  <section class="max-w-3xl mt-12 mx-auto prose dark:prose-invert dark:text-white mb-16">
     {{ .Params.intro | markdownify }}
   </section>
 
   <!-- Language Tabs -->
-  <div class="mt-8 max-w-3xl mx-auto px-6 border-b border-gray-200 dark:border-gray-700">
+  <div class="mt-12 mx-auto px-6 border-b border-gray-200 dark:border-gray-700">
     <ul class="flex text-sm font-medium text-center text-gray-500 dark:text-gray-400">
       {{ range .Params.languages }}
         <li class="flex-1">
@@ -31,7 +30,7 @@
 
   <!-- JavaScript Section -->
   {{ $js := index .Params.languages 0 }}
-  <section id="{{ $js.id }}" class="mt-16 max-w-3xl mx-auto px-6 dark:text-white mb-24">
+  <section id="{{ $js.id }}" class="mt-16 mx-auto px-6 dark:text-white mb-24">
     <h2 class="text-3xl font-semibold mb-8 mt-8 prose dark:prose-invert">{{ $js.name }} Projects</h2>
 
     <!-- Project: Atoms 2! -->
@@ -59,12 +58,12 @@
 
   <!-- C# Section -->
   {{ $cs := index .Params.languages 1 }}
-  <section id="{{ $cs.id }}" class="mt-16 max-w-3xl mx-auto px-6 dark:text-white mb-24">
+  <section id="{{ $cs.id }}" class="mt-16 mx-auto px-6 dark:text-white mb-24">
     <h2 class="text-3xl font-semibold mb-8 mt-8 prose dark:prose-invert">{{ $cs.name }} Projects</h2>
   </section>
 
   <!-- Unity Game Embed -->
-  <section class="mt-16 max-w-3xl mx-auto px-6 dark:text-white mb-24">
+  <section class="mt-16 mx-auto px-6 dark:text-white mb-24">
     <h2 class="text-2xl font-semibold mb-4 prose dark:prose-invert">{{ index $cs.projects 0 "title" }}</h2>
     <p class="mb-6">{{ index $cs.projects 0 "description" | markdownify }}</p>
 
@@ -84,7 +83,7 @@
     </p>
   </section>
 
-  <section class="mt-16 max-w-3xl mx-auto px-6 dark:text-white mb-24">
+  <section class="mt-16 mx-auto px-6 dark:text-white mb-24">
     <h2 class="mt-6 text-2xl font-semibold mb-2 prose dark:prose-invert">{{ index $cs.projects 1 "title" }}</h2>
     <p class="mb-4">{{ index $cs.projects 1 "description" | markdownify }}</p>
 
@@ -106,7 +105,7 @@
 
   <!-- Python Section -->
   {{ $py := index .Params.languages 2 }}
-  <section id="{{ $py.id }}" class="mt-16 max-w-3xl mx-auto px-6 dark:text-white mb-24">
+  <section id="{{ $py.id }}" class="mt-16 mx-auto px-6 dark:text-white mb-24">
     <h2 class="text-3xl font-semibold mb-8 mt-8 prose dark:prose-invert">{{ $py.name }} Projects</h2>
 
     <h2 class="text-2xl font-semibold mb-2 mt-8 prose dark:prose-invert">{{ index $py.projects 0 "title" }}</h2>
@@ -126,7 +125,7 @@
 
   <!-- Java Section -->
   {{ $ja := index .Params.languages 3 }}
-  <section id="{{ $py.id }}" class="mt-16 max-w-3xl mx-auto px-6 dark:text-white mb-24">
+  <section id="{{ $py.id }}" class="mt-16 mx-auto px-6 dark:text-white mb-24">
     <h2 class="text-3xl font-semibold mb-8 mt-8 prose dark:prose-invert">{{ $ja.name }} Projects</h2>
 
     <h2 class="text-2xl font-semibold mb-2 mt-8 prose dark:prose-invert">{{ index $ja.projects 0 "title" }}</h2>
@@ -142,7 +141,7 @@
 
   <!-- MEDIC Section -->
   {{ $me := index .Params.languages 4 }}
-  <section id="{{ $me.id }}" class="mt-16 max-w-3xl mx-auto px-6 dark:text-white mb-24">
+  <section id="{{ $me.id }}" class="mt-16 mx-auto px-6 dark:text-white mb-24">
     <h2 class="text-3xl font-semibold mb-8 mt-8 prose dark:prose-invert">{{ $me.name }} Projects</h2>
 
     <h2 class="text-2xl font-semibold mb-2 mt-8 prose dark:prose-invert">{{ index $me.projects 0 "title" }}</h2>

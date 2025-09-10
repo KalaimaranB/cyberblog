@@ -16,7 +16,7 @@
                 </div>
                 <div class="col-span-6">
                     <img
-                        src="{{ "/images/cyber-immuno-fusion.png" | relURL }}"
+                        src="{{ "/images/profile.jpg" | relURL }}"
                         alt="Cyber-Immuno Fusion"
                         class="w-full max-w-xl mx-auto rounded-lg"
                     />
@@ -26,16 +26,26 @@
         </div>
     </div>
 
-    <!-- More main page content here... -->
-     <h1 class="text-3xl font-black tracking-tight text-primary-500 dark:text-primary-300 sm:text-4xl text-center mt-12">
-        Who am I?
-     </h1>
+    <!-- Wrapper with your site background color -->
+    <div class="relative w-full bg-gray-900">  <!-- replace with your site bg -->
+      <!-- Semi-transparent image -->
+      <div
+        id="bg-image"
+        class="absolute inset-0 z-0 bg-center bg-cover bg-no-repeat"
+      ></div>
 
-      <section class="mt-12 max-w-3xl mx-auto px-6 prose dark:prose-invert dark:text-white mb-8">
-            {{ .Content }}
+
+      <!-- Foreground content -->
+      <div class="relative z-10 pt-8">
+
+        <h1 class="text-3xl font-black text-primary-500 dark:text-primary-300 sm:text-4xl text-center">
+          Who am I?
+        </h1>
+        <section class="mt-12 max-w-3xl mx-auto px-6 prose text-gray-900 dark:text-gray-200 mb-8">
+          {{ .Content }}
         </section>
-
-        <!-- Carousel: only show if you defined images in front-matter -->
+        <!-- carousel here -->
+                 <!-- Carousel: only show if you defined images in front-matter -->
   {{ if .Params.images }}
     <!-- Swiper CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
@@ -73,6 +83,11 @@
         </div>
       </div>
     </div>
+      </div>
+    </div>
+
+
+
 
     <!-- Swiper styles for progress -->
     <style>
@@ -136,10 +151,40 @@
         });
       });
     </script>
+    <script>
+      function setBackgroundImage() {
+        const bgDiv = document.getElementById("bg-image");
+
+        // Works for both "class" and "media" modes
+        const isDark =
+          document.documentElement.classList.contains("dark") ||
+          window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+        if (isDark) {
+          bgDiv.style.backgroundImage = "url('/images/cyber-immuno-fusion.png')";
+          bgDiv.style.opacity = "0.4";
+        } else {
+          bgDiv.style.backgroundImage = "url('/images/light-cyber-immuno-fusion.png')";
+          bgDiv.style.opacity = "0.9";
+        }
+      }
+
+      // Run on load
+      document.addEventListener("DOMContentLoaded", setBackgroundImage);
+
+      // Watch for <html> class changes (class-based dark mode)
+      const observer = new MutationObserver(setBackgroundImage);
+      observer.observe(document.documentElement, { attributes: true, attributeFilter: ["class"] });
+
+      // Watch for system dark mode changes (media-based dark mode)
+      window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", setBackgroundImage);
+    </script>
+
+
   {{ end }}
 
     <!-- Blog section -->
-    <div class="relative px-1 pt-8 pb-4 bg-transparent lg:px-8 lg:pt-12 lg:mb-4 md:mt-12">
+    <div class="relative px-1 pt-8 pb-4 bg-transparent lg:px-8 lg:pt-12 lg:mb-4">
         <div class="absolute inset-0">
             <div class="bg-gray-200 dark:bg-gray-900/50 h-1/3 sm:h-2/3"></div>
         </div>
