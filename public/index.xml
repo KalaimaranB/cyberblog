@@ -2,80 +2,80 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>About Me 👋 on Personal Portfolio</title>
-    <link>http://localhost:1313/</link>
+    <link>//localhost:1313/</link>
     <description>Recent content in About Me 👋 on Personal Portfolio</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 17 Jun 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="//localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Cloudgoat SQS Flag Shop</title>
-      <link>http://localhost:1313/posts/sqsflagshop_cloudgoat-walkthrough/</link>
+      <link>//localhost:1313/posts/sqsflagshop_cloudgoat-walkthrough/</link>
       <pubDate>Tue, 17 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/sqsflagshop_cloudgoat-walkthrough/</guid>
+      <guid>//localhost:1313/posts/sqsflagshop_cloudgoat-walkthrough/</guid>
       <description>A walkthrough of the final easy SQS Flagshop Cloudgoat challenge</description>
     </item>
     <item>
       <title>Cloudgoat IAM Privesc By Rollback</title>
-      <link>http://localhost:1313/posts/iam_privesc_by_rollback_walkthrough/</link>
+      <link>//localhost:1313/posts/iam_privesc_by_rollback_walkthrough/</link>
       <pubDate>Thu, 12 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/iam_privesc_by_rollback_walkthrough/</guid>
+      <guid>//localhost:1313/posts/iam_privesc_by_rollback_walkthrough/</guid>
       <description>A walkthrough of the IAM Privesc by Rollback easy Cloudgoat challenge</description>
     </item>
     <item>
       <title>Cloudgoat IAM Privesc By Key Rotation</title>
-      <link>http://localhost:1313/posts/iam_privesc_by_key_rotation_walkthrough/</link>
+      <link>//localhost:1313/posts/iam_privesc_by_key_rotation_walkthrough/</link>
       <pubDate>Tue, 27 May 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/iam_privesc_by_key_rotation_walkthrough/</guid>
+      <guid>//localhost:1313/posts/iam_privesc_by_key_rotation_walkthrough/</guid>
       <description>A walkthrough of the IAM Privesc by Key Rotation easy Cloudgoat challenge</description>
     </item>
     <item>
       <title>Cloudgoat SNS Secrets</title>
-      <link>http://localhost:1313/posts/snssecrets_cloudgoat-walkthrough/</link>
+      <link>//localhost:1313/posts/snssecrets_cloudgoat-walkthrough/</link>
       <pubDate>Wed, 21 May 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/snssecrets_cloudgoat-walkthrough/</guid>
+      <guid>//localhost:1313/posts/snssecrets_cloudgoat-walkthrough/</guid>
       <description>A walkthrough of the SNS Secrets easy Cloudgoat challenge</description>
     </item>
     <item>
       <title>Cloudgoat Beanstalk Secrets</title>
-      <link>http://localhost:1313/posts/beanstalksecrets_cloudgoat-walkthrough/</link>
+      <link>//localhost:1313/posts/beanstalksecrets_cloudgoat-walkthrough/</link>
       <pubDate>Tue, 20 May 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/beanstalksecrets_cloudgoat-walkthrough/</guid>
+      <guid>//localhost:1313/posts/beanstalksecrets_cloudgoat-walkthrough/</guid>
       <description>A walkthrough of the Beanstalk Secrets easy Cloudgoat challenge</description>
     </item>
     <item>
       <title>Cloudgoat Lambda Privesc</title>
-      <link>http://localhost:1313/posts/lambdaprivsec_cloudgoat-walkthrough/</link>
+      <link>//localhost:1313/posts/lambdaprivsec_cloudgoat-walkthrough/</link>
       <pubDate>Mon, 19 May 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/lambdaprivsec_cloudgoat-walkthrough/</guid>
+      <guid>//localhost:1313/posts/lambdaprivsec_cloudgoat-walkthrough/</guid>
       <description>A walkthrough of the Lambda Privesc easy Cloudgoat challenge</description>
     </item>
     <item>
       <title>Cloudgoat EC2 SSRF Walkthrough</title>
-      <link>http://localhost:1313/posts/ec2_ssrf_cloudgoat_walkthrough/</link>
+      <link>//localhost:1313/posts/ec2_ssrf_cloudgoat_walkthrough/</link>
       <pubDate>Sun, 18 May 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/ec2_ssrf_cloudgoat_walkthrough/</guid>
+      <guid>//localhost:1313/posts/ec2_ssrf_cloudgoat_walkthrough/</guid>
       <description>A walkthrough of the EC2 SSRF medium challenge from CloudGoat</description>
     </item>
     <item>
       <title>Intro to AWS &amp; S3 Bucket Attacking</title>
-      <link>http://localhost:1313/posts/introtoaws_s3_bucketattack/</link>
+      <link>//localhost:1313/posts/introtoaws_s3_bucketattack/</link>
       <pubDate>Sat, 17 May 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/introtoaws_s3_bucketattack/</guid>
+      <guid>//localhost:1313/posts/introtoaws_s3_bucketattack/</guid>
       <description>A walkthrough of the Intro to AWS Pentesting Attacking S3 Buckets for Credit Card Info</description>
     </item>
     <item>
       <title>Intro to AWS &amp; IAM Enumeration</title>
-      <link>http://localhost:1313/posts/introtoaws_iam_enumeration/</link>
+      <link>//localhost:1313/posts/introtoaws_iam_enumeration/</link>
       <pubDate>Thu, 15 May 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/introtoaws_iam_enumeration/</guid>
+      <guid>//localhost:1313/posts/introtoaws_iam_enumeration/</guid>
       <description>A walkthrough of the Intro to AWS Pentesting IAM Enumeration with Pacu Challenge</description>
     </item>
     <item>
       <title>Who Am I? Challenge</title>
-      <link>http://localhost:1313/whoami/</link>
+      <link>//localhost:1313/whoami/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/whoami/</guid>
+      <guid>//localhost:1313/whoami/</guid>
       <description></description>
     </item>
   </channel>

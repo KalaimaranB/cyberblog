@@ -2,87 +2,87 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Personal Portfolio</title>
-    <link>http://localhost:1313/categories/</link>
+    <link>//localhost:1313/categories/</link>
     <description>Recent content in Categories on Personal Portfolio</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 17 Jun 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="//localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Blog</title>
-      <link>http://localhost:1313/categories/blog/</link>
+      <link>//localhost:1313/categories/blog/</link>
       <pubDate>Tue, 17 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/categories/blog/</guid>
+      <guid>//localhost:1313/categories/blog/</guid>
       <description></description>
     </item>
     <item>
       <title>All</title>
-      <link>http://localhost:1313/categories/all/</link>
+      <link>//localhost:1313/categories/all/</link>
       <pubDate>Sat, 17 May 2025 00:00:00 -0700</pubDate>
-      <guid>http://localhost:1313/categories/all/</guid>
+      <guid>//localhost:1313/categories/all/</guid>
       <description></description>
     </item>
     <item>
       <title>APSC</title>
-      <link>http://localhost:1313/categories/apsc/</link>
+      <link>//localhost:1313/categories/apsc/</link>
       <pubDate>Sat, 17 May 2025 00:00:00 -0700</pubDate>
-      <guid>http://localhost:1313/categories/apsc/</guid>
+      <guid>//localhost:1313/categories/apsc/</guid>
       <description></description>
     </item>
     <item>
       <title>BIOC</title>
-      <link>http://localhost:1313/categories/bioc/</link>
+      <link>//localhost:1313/categories/bioc/</link>
       <pubDate>Sat, 17 May 2025 00:00:00 -0700</pubDate>
-      <guid>http://localhost:1313/categories/bioc/</guid>
+      <guid>//localhost:1313/categories/bioc/</guid>
       <description></description>
     </item>
     <item>
       <title>BMEG</title>
-      <link>http://localhost:1313/categories/bmeg/</link>
+      <link>//localhost:1313/categories/bmeg/</link>
       <pubDate>Sat, 17 May 2025 00:00:00 -0700</pubDate>
-      <guid>http://localhost:1313/categories/bmeg/</guid>
+      <guid>//localhost:1313/categories/bmeg/</guid>
       <description></description>
     </item>
     <item>
       <title>CHEM</title>
-      <link>http://localhost:1313/categories/chem/</link>
+      <link>//localhost:1313/categories/chem/</link>
       <pubDate>Sat, 17 May 2025 00:00:00 -0700</pubDate>
-      <guid>http://localhost:1313/categories/chem/</guid>
+      <guid>//localhost:1313/categories/chem/</guid>
       <description></description>
     </item>
     <item>
       <title>CPEN</title>
-      <link>http://localhost:1313/categories/cpen/</link>
+      <link>//localhost:1313/categories/cpen/</link>
       <pubDate>Sat, 17 May 2025 00:00:00 -0700</pubDate>
-      <guid>http://localhost:1313/categories/cpen/</guid>
+      <guid>//localhost:1313/categories/cpen/</guid>
       <description></description>
     </item>
     <item>
       <title>CPSC</title>
-      <link>http://localhost:1313/categories/cpsc/</link>
+      <link>//localhost:1313/categories/cpsc/</link>
       <pubDate>Sat, 17 May 2025 00:00:00 -0700</pubDate>
-      <guid>http://localhost:1313/categories/cpsc/</guid>
+      <guid>//localhost:1313/categories/cpsc/</guid>
       <description></description>
     </item>
     <item>
       <title>MATH</title>
-      <link>http://localhost:1313/categories/math/</link>
+      <link>//localhost:1313/categories/math/</link>
       <pubDate>Sat, 17 May 2025 00:00:00 -0700</pubDate>
-      <guid>http://localhost:1313/categories/math/</guid>
+      <guid>//localhost:1313/categories/math/</guid>
       <description></description>
     </item>
     <item>
       <title>MICB</title>
-      <link>http://localhost:1313/categories/micb/</link>
+      <link>//localhost:1313/categories/micb/</link>
       <pubDate>Sat, 17 May 2025 00:00:00 -0700</pubDate>
-      <guid>http://localhost:1313/categories/micb/</guid>
+      <guid>//localhost:1313/categories/micb/</guid>
       <description></description>
     </item>
     <item>
       <title>PHYS</title>
-      <link>http://localhost:1313/categories/phys/</link>
+      <link>//localhost:1313/categories/phys/</link>
       <pubDate>Sat, 17 May 2025 00:00:00 -0700</pubDate>
-      <guid>http://localhost:1313/categories/phys/</guid>
+      <guid>//localhost:1313/categories/phys/</guid>
       <description></description>
     </item>
   </channel>

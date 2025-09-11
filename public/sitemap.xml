@@ -2,122 +2,122 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/</loc>
+    <loc>//localhost:1313/</loc>
     <lastmod>2025-06-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/</loc>
+    <loc>//localhost:1313/posts/</loc>
     <lastmod>2025-06-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/aws-pentesting/</loc>
+    <loc>//localhost:1313/tags/aws-pentesting/</loc>
     <lastmod>2025-06-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/blog/</loc>
+    <loc>//localhost:1313/categories/blog/</loc>
     <lastmod>2025-06-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/</loc>
+    <loc>//localhost:1313/categories/</loc>
     <lastmod>2025-06-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/cloudgoat/</loc>
+    <loc>//localhost:1313/tags/cloudgoat/</loc>
     <lastmod>2025-06-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/sqsflagshop_cloudgoat-walkthrough/</loc>
+    <loc>//localhost:1313/posts/sqsflagshop_cloudgoat-walkthrough/</loc>
     <lastmod>2025-06-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/sqs/</loc>
+    <loc>//localhost:1313/tags/sqs/</loc>
     <lastmod>2025-06-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/</loc>
+    <loc>//localhost:1313/tags/</loc>
     <lastmod>2025-06-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/iam_privesc_by_rollback_walkthrough/</loc>
+    <loc>//localhost:1313/posts/iam_privesc_by_rollback_walkthrough/</loc>
     <lastmod>2025-06-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/iam/</loc>
+    <loc>//localhost:1313/tags/iam/</loc>
     <lastmod>2025-06-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/iam_privesc_by_key_rotation_walkthrough/</loc>
+    <loc>//localhost:1313/posts/iam_privesc_by_key_rotation_walkthrough/</loc>
     <lastmod>2025-05-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/snssecrets_cloudgoat-walkthrough/</loc>
+    <loc>//localhost:1313/posts/snssecrets_cloudgoat-walkthrough/</loc>
     <lastmod>2025-05-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/sns/</loc>
+    <loc>//localhost:1313/tags/sns/</loc>
     <lastmod>2025-05-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/beanstalk/</loc>
+    <loc>//localhost:1313/tags/beanstalk/</loc>
     <lastmod>2025-05-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/beanstalksecrets_cloudgoat-walkthrough/</loc>
+    <loc>//localhost:1313/posts/beanstalksecrets_cloudgoat-walkthrough/</loc>
     <lastmod>2025-05-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/lambdaprivsec_cloudgoat-walkthrough/</loc>
+    <loc>//localhost:1313/posts/lambdaprivsec_cloudgoat-walkthrough/</loc>
     <lastmod>2025-05-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/lambda/</loc>
+    <loc>//localhost:1313/tags/lambda/</loc>
     <lastmod>2025-05-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/privilege-escalation/</loc>
+    <loc>//localhost:1313/tags/privilege-escalation/</loc>
     <lastmod>2025-05-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/aws/</loc>
+    <loc>//localhost:1313/tags/aws/</loc>
     <lastmod>2025-05-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/ec2_ssrf_cloudgoat_walkthrough/</loc>
+    <loc>//localhost:1313/posts/ec2_ssrf_cloudgoat_walkthrough/</loc>
     <lastmod>2025-05-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/pacu/</loc>
+    <loc>//localhost:1313/tags/pacu/</loc>
     <lastmod>2025-05-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/all/</loc>
+    <loc>//localhost:1313/categories/all/</loc>
     <lastmod>2025-05-17T00:00:00-07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/apsc/</loc>
+    <loc>//localhost:1313/categories/apsc/</loc>
     <lastmod>2025-05-17T00:00:00-07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/bioc/</loc>
+    <loc>//localhost:1313/categories/bioc/</loc>
     <lastmod>2025-05-17T00:00:00-07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/biomedical/</loc>
+    <loc>//localhost:1313/biomedical/</loc>
     <lastmod>2025-05-17T00:00:00-07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/bmeg/</loc>
+    <loc>//localhost:1313/categories/bmeg/</loc>
     <lastmod>2025-05-17T00:00:00-07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/chem/</loc>
+    <loc>//localhost:1313/categories/chem/</loc>
     <lastmod>2025-05-17T00:00:00-07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/cpen/</loc>
+    <loc>//localhost:1313/categories/cpen/</loc>
     <lastmod>2025-05-17T00:00:00-07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/cpsc/</loc>
+    <loc>//localhost:1313/categories/cpsc/</loc>
     <lastmod>2025-05-17T00:00:00-07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/cybersecurity/</loc>
+    <loc>//localhost:1313/cybersecurity/</loc>
     <lastmod>2025-05-17T00:00:00-07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/math/</loc>
+    <loc>//localhost:1313/categories/math/</loc>
     <lastmod>2025-05-17T00:00:00-07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/micb/</loc>
+    <loc>//localhost:1313/categories/micb/</loc>
     <lastmod>2025-05-17T00:00:00-07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/phys/</loc>
+    <loc>//localhost:1313/categories/phys/</loc>
     <lastmod>2025-05-17T00:00:00-07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/enumeration/</loc>
+    <loc>//localhost:1313/tags/enumeration/</loc>
     <lastmod>2025-05-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/introtoaws_s3_bucketattack/</loc>
+    <loc>//localhost:1313/posts/introtoaws_s3_bucketattack/</loc>
     <lastmod>2025-05-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/s3/</loc>
+    <loc>//localhost:1313/tags/s3/</loc>
     <lastmod>2025-05-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/introtoaws_iam_enumeration/</loc>
+    <loc>//localhost:1313/posts/introtoaws_iam_enumeration/</loc>
     <lastmod>2025-05-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/software/</loc>
+    <loc>//localhost:1313/software/</loc>
   </url><url>
-    <loc>http://localhost:1313/whoami/</loc>
+    <loc>//localhost:1313/whoami/</loc>
   </url>
 </urlset>

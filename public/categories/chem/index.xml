@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>CHEM on Personal Portfolio</title>
-    <link>http://localhost:1313/categories/chem/</link>
+    <link>//localhost:1313/categories/chem/</link>
     <description>Recent content in CHEM on Personal Portfolio</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 17 May 2025 00:00:00 -0700</lastBuildDate>
-    <atom:link href="http://localhost:1313/categories/chem/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="//localhost:1313/categories/chem/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Biomedical 🧬</title>
-      <link>http://localhost:1313/biomedical/</link>
+      <link>//localhost:1313/biomedical/</link>
       <pubDate>Sat, 17 May 2025 00:00:00 -0700</pubDate>
-      <guid>http://localhost:1313/biomedical/</guid>
+      <guid>//localhost:1313/biomedical/</guid>
       <description></description>
     </item>
   </channel>
