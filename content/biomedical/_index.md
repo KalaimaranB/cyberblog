@@ -15,7 +15,7 @@ introContent: |
 
 
 startupDescription: |
-   I am one of the founding members for Patch, a biotech company based in Vancouver. It was founded by one of my colleagues in SBME at UBC along with a small team of engineers across various disciplines. My role is focused on simulations for the model and assisting the design engineer as needed. This priamarily meant utilizing Solidworks to create fluid & static simulation for our product. I also am responsible for our private cloud in Oracle. My role for the cloud was primarly to set up a cloud vm & network to help host some of our automation tools. The website for more information is linked [here](https://patch-med.base44.app/). 
+   I am one of the founding members for Patch, a biotech company based in Vancouver. It was founded by one of my colleagues in SBME at UBC along with a small team of engineers across various disciplines. My role is focused on simulations for the model and assisting the design engineer as needed. This priamarily meant utilizing Solidworks to create fluid & static simulation for our product. I also am responsible for our private cloud in Oracle that I set up to help host some of our automation tools. The website for more information is linked [here](https://patch-med.base44.app/). 
 
 
 

@@ -14,9 +14,7 @@ images:
     caption: "MEDIC Foundation"
     text: "At UBC, I volunteer with the MEDIC Foundation, an organization committed to community-driven innovation and care, with a focus on supporting seniors across British Columbia. Since joining the IT team in September 2024, I have contributed to the development of a web application designed to connect seniors with volunteers throughout the Lower Mainland. My work has involved both technical implementation and interdisciplinary collaboration—drawing from fields such as psychology to improve user experience. More technical details are available on the software page."
 ---
-My work sits at the intersection of biology, software, and security. I'm driven by a fundamental curiosity about how complex systems work—and how to make them more resilient.
-
-This passion led me to Biomedical Engineering at the University of British Columbia (UBC), where I specialize in cellular engineering and bioinformatics. My specific focus in on the immune system, in particulary using computational models to predict cellular reactions & engineerng synthetic biology. I enjoy working in both wet lab and computational environments, bridging the gap between biological theory and practical application.
+I’ve always been fascinated by systems—whether biological, digital, or somewhere in between. That curiosity brought me to Biomedical Engineering at the University of British Columbia (UBC), where I focus on cellular engineering and bioinformatics. I’m especially interested in the immune system: particularly on how to utilize immune cells in a therapuetic approach by utilizing synthetic biology techniques for cell engineering & modelling. 
 
 My proficiency in Python and C# forms the foundation of my approach to both biology and cybersecurity. Understanding programming languages gives me a way to think about DNA itself — how simple instructions can combine to create complex behaviors and higher-order systems. I can apply the same mindset in cybersecurity, as understanding the code underneath helps me understand the software at a stronger level. Programming is the bridge between these worlds: it trains me to look beneath the surface, whether in biological or digital systems, to uncover how they truly work.
 
@@ -24,4 +22,4 @@ This fascination with system defense naturally extended into the digital realm. 
 
 To me, synthetic immunology and cybersecurity are two sides of the same coin. One deals with biological pathogens, the other with digital malware. Both require a deep understanding of a system's architecture, its potential weaknesses, and the strategies to defend it. My goal is to leverage this cross-disciplinary perspective to build adaptive technologies that protect and enhance human health.
 
-Something to play with: [A project in the works...](/whoami). If you're curious to meet me on the dark side, visit http[:]//maranbm462nroj65ao4z5eo7ussoemhjlfotxobtlpmdn2ujcbybizad.onion using the leet port!
+Something to play with: [A project in the works...](/whoami). If you're curious to meet me on the other side, visit http[:]//maranbm462nroj65ao4z5eo7ussoemhjlfotxobtlpmdn2ujcbybizad.onion using port 1337 via tor!
