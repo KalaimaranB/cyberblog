@@ -7,18 +7,17 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+
   <link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-touch-icon.png" />
   <link rel="icon" type="image/png" sizes="32x32" href="../favicon/favicon-32x32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="../favicon/favicon-16x16.png" />
   <link rel="manifest" href="../favicon/site.webmanifest" />
   <link rel="mask-icon" href="../favicon/safari-pinned-tab.svg" color="#5bbad5" />
 
-  
   <meta name="msapplication-TileColor" content="#da532c" />
   <meta name="theme-color" content="#ffffff" />
 
-  
   <title itemprop="name"> Cybersecurity 🛡️ | Personal Portfolio 
 </title>
 <meta name="description" content="My cybersecurity projects, write-ups, and credentials." />
@@ -36,33 +35,27 @@
 <meta property="og:type" content="article" />
 
 
-  
   <script>
-    if (
-      localStorage.getItem('color-theme') === 'dark' ||
-      (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
-    ) {
+    if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
       document.documentElement.classList.add('dark');
     } else {
       document.documentElement.classList.remove('dark');
     }
   </script>
 
-  
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper/css/effect-coverflow.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" media="print"
+    onload="this.media='all'" />
+  <noscript>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+  </noscript>
 
   
   
-  
-    
-    <link rel="stylesheet" href="/css/style.min.d4b7d48197766dd5e1da1cccb03d39771f0aa165539e17e532a6a158cd245aa4.css" integrity="sha256-1LfUgZd2bdXh2hzMsD05dx8KoWVTnhflMqahWM0kWqQ=" />
+  <link rel="stylesheet" href="../css/style.css" />
   
 
-  
-  <link rel="stylesheet" href="../css/custom-swiper.css" />
+  <link rel="stylesheet" href="../%20css/custom-swiper.css" media="print" onload="this.media='all'" />
 </head>
-
 </head>
 
 <body class="bg-zinc-100 dark:bg-gray-800">

@@ -1,0 +1,8 @@
+{{ $image := .Page.Resources.GetMatch (.Get "src") }}
+{{ if $image }}
+{{ $webp := $image.Process "webp q75" }}
+<img src="{{ $webp.RelPermalink }}" width="{{ $webp.Width }}" height="{{ $webp.Height }}" alt="{{ .Get " alt" }}"
+    loading="lazy" class="{{ .Get " class" }}">
+{{ else }}
+<img src="{{ .Get " src" | absURL }}" alt="{{ .Get " alt" }}" class="{{ .Get " class" }}">
+{{ end }}
