@@ -37,16 +37,18 @@
         <div class="swiper-slide flex flex-col md:flex-row bg-gray-200 dark:bg-gray-900 overflow-hidden rounded-lg">
 
           <div class="w-full md:w-1/3 flex items-center justify-center p-4">
-            {{/* Logic to find image in assets folder */}}
+            {{/* Extract filename from path */}}
             {{ $imgName := index (last 1 (split $slide.image "/")) 0 }}
+            {{/* Look for image in assets/images/lab_work/ */}}
             {{ $labImg := resources.Get (printf "images/lab_work/%s" $imgName) }}
 
             {{ if $labImg }}
+            {{/* Optimization Success */}}
             {{ $labOpt := $labImg.Resize "500x webp q75" }}
             <img src="{{ $labOpt.RelPermalink }}" width="{{ $labOpt.Width }}" height="{{ $labOpt.Height }}"
               alt="{{ $slide.alt }}" class="object-contain h-32 w-auto" loading="lazy" />
             {{ else }}
-            {{/* Fallback to static if move didn't happen */}}
+            {{/* Fallback (Means file is not in assets folder) */}}
             <img src="{{ $slide.image }}" alt="{{ $slide.alt }}" class="object-contain h-32 w-auto" loading="lazy" />
             {{ end }}
           </div>
@@ -64,7 +66,6 @@
         </div>
         {{- end }}
       </div>
-
       <div class="swiper-pagination"></div>
     </div>
   </section>
@@ -106,20 +107,51 @@
   onload="this.media='all'" />
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
-<script src="https://cdn.jsdelivr.net/npm/three@0.125.0/build/three.min.js" defer></script>
-<script src="https://cdn.jsdelivr.net/npm/three@0.125.0/examples/js/controls/OrbitControls.js" defer></script>
-<script src="https://cdn.jsdelivr.net/npm/three@0.125.0/examples/js/loaders/OBJLoader.js" defer></script>
-<script src="https://cdn.jsdelivr.net/npm/three@0.125.0/examples/js/loaders/MTLLoader.js" defer></script>
 
 <script type="module">
   document.addEventListener('DOMContentLoaded', () => {
-    // Wait for libraries to load before running custom code
-    const init3D = () => {
-      if (typeof THREE === 'undefined') { setTimeout(init3D, 100); return; }
 
-      const canvas = document.getElementById('patch-canvas');
-      if (!canvas) return;
+    // 1. Swiper Init (Immediate, but after defer)
+    const initSwiper = () => {
+      if (typeof Swiper === 'undefined') { setTimeout(initSwiper, 100); return; }
+      new Swiper('.labSwiper', {
+        effect: 'slide',
+        slidesPerView: 1,
+        spaceBetween: 40,
+        centeredSlides: true,
+        loop: true,
+        autoplay: { delay: 5000, disableOnInteraction: false },
+        pagination: { el: '.labSwiper .swiper-pagination', clickable: true },
+      });
+    };
+    initSwiper();
 
+    // 2. Three.js Lazy Loader (IntersectionObserver)
+    const canvas = document.getElementById('patch-canvas');
+
+    const loadThreeJS = () => {
+      // Dynamically inject scripts only when needed
+      const scripts = [
+        "https://cdn.jsdelivr.net/npm/three@0.125.0/build/three.min.js",
+        "https://cdn.jsdelivr.net/npm/three@0.125.0/examples/js/controls/OrbitControls.js",
+        "https://cdn.jsdelivr.net/npm/three@0.125.0/examples/js/loaders/OBJLoader.js",
+        "https://cdn.jsdelivr.net/npm/three@0.125.0/examples/js/loaders/MTLLoader.js"
+      ];
+
+      let loaded = 0;
+      scripts.forEach(src => {
+        const script = document.createElement('script');
+        script.src = src;
+        script.async = false; // Maintain order
+        script.onload = () => {
+          loaded++;
+          if (loaded === scripts.length) init3DScene();
+        };
+        document.body.appendChild(script);
+      });
+    };
+
+    const init3DScene = () => {
       const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
       renderer.setPixelRatio(window.devicePixelRatio);
       renderer.setClearColor(0x2a2f3a, 1);
@@ -176,29 +208,20 @@
           animate();
         });
       });
-
-      window.addEventListener('resize', () => {
-        resizeRenderer();
-        camera.aspect = canvas.parentElement.clientWidth / canvas.parentElement.clientHeight;
-        camera.updateProjectionMatrix();
-      });
     };
 
-    const initSwiper = () => {
-      if (typeof Swiper === 'undefined') { setTimeout(initSwiper, 100); return; }
-      new Swiper('.labSwiper', {
-        effect: 'slide',
-        slidesPerView: 1,
-        spaceBetween: 40,
-        centeredSlides: true,
-        loop: true,
-        autoplay: { delay: 5000, disableOnInteraction: false },
-        pagination: { el: '.labSwiper .swiper-pagination', clickable: true },
-      });
-    };
-
-    init3D();
-    initSwiper();
+    // Observer: Only load Three.js if user scrolls near the canvas
+    if (canvas) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            loadThreeJS();
+            observer.disconnect(); // Only load once
+          }
+        });
+      }, { rootMargin: "200px" }); // Start loading 200px before it comes into view
+      observer.observe(canvas);
+    }
   });
 </script>
 
