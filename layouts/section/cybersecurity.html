@@ -23,12 +23,12 @@
           <div class="flex items-center w-full space-x-6 h-full">
 
             <div class="w-full md:w-2/3 h-full flex items-center justify-center">
-              {{/* PERFORMANCE FIX: Resize Certificate */}}
-              {{ $certRes := resources.Get (printf "images/certificates/%s" $c.file) }}
+              {{/* NUCLEAR FIX: Find image anywhere in assets and resize strictly */}}
+              {{ $certRes := resources.GetMatch (printf "**/%s" $c.file) }}
 
               {{ if $certRes }}
-              {{/* Certificates need high quality (q90) for text readability */}}
-              {{ $certOpt := $certRes.Resize "800x webp q90" }}
+              {{/* PERFORMANCE FIX: Resize to 500x (down from 800x) */}}
+              {{ $certOpt := $certRes.Resize "500x webp q85" }}
               <img src="{{ $certOpt.RelPermalink }}" width="{{ $certOpt.Width }}" height="{{ $certOpt.Height }}"
                 alt="{{ $c.file }}" class="object-contain h-full w-auto rounded" loading="lazy" />
               {{ else }}
@@ -49,7 +49,8 @@
               {{ with $c.resource }}
               <p class="mt-4 italic">
                 <a href="{{ . }}" target="_blank" rel="noopener noreferrer"
-                  class="text-blue-600 dark:text-blue-400 hover:underline">
+                  class="text-blue-600 dark:text-blue-400 hover:underline"
+                  aria-label="Learn more about {{ $c.description | default " this certificate" }}">
                   Learn more!
                 </a>
               </p>
@@ -81,13 +82,13 @@
 
 <script defer>
   document.addEventListener('DOMContentLoaded', () => {
-    // Wait for Swiper to load
+
+    // Init Swiper with safety check
     const initCyberSwiper = () => {
       if (typeof Swiper === 'undefined') { setTimeout(initCyberSwiper, 100); return; }
 
       const swiper = new Swiper('.cyberSwiper', {
-        // Important: set init: false so we can attach event listeners first
-        init: false,
+        init: false, // Wait to attach listeners
         effect: 'coverflow',
         grabCursor: true,
         centeredSlides: true,
@@ -149,7 +150,7 @@
       iframe.style.height = nativeH + 'px';
       iframe.style.position = 'absolute';
       iframe.style.top = '50%';
-      iframe.style.left = '50%'; // Centered 50% instead of 58% for better alignment
+      iframe.style.left = '50%';
       iframe.style.transformOrigin = 'center center';
       iframe.style.transform = `translate(-50%, -50%) scale(${scale})`;
     }
@@ -158,4 +159,11 @@
     window.addEventListener('resize', scaleBadge);
   });
 </script>
+
+<style>
+  .swiper-pagination-bullet {
+    width: 12px;
+    height: 12px;
+  }
+</style>
 {{ end }}
