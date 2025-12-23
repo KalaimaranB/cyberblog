@@ -17,16 +17,12 @@
           </p>
         </div>
         <div class="col-span-6">
-          {{/* PERFORMANCE FIX: Profile Image */}}
-          {{/* Try to find image in assets folder for optimization */}}
           {{ $profileRes := resources.Get "images/profile.jpg" }}
           {{ if $profileRes }}
-          {{/* If found in assets, resize to WebP */}}
           {{ $profileOpt := $profileRes.Resize "600x webp q75" }}
           <img src="{{ $profileOpt.RelPermalink }}" width="{{ $profileOpt.Width }}" height="{{ $profileOpt.Height }}"
             alt="Cyber-Immuno Fusion" class="w-full max-w-xl mx-auto rounded-lg" fetchpriority="high" />
           {{ else }}
-          {{/* Fallback: If not moved to assets, use original slow method */}}
           <img src="{{ " /images/profile.jpg" | relURL }}" alt="Cyber-Immuno Fusion"
             class="w-full max-w-xl mx-auto rounded-lg" />
           {{ end }}
@@ -37,17 +33,13 @@
 
   <div id="wrapper" class="relative w-full overflow-hidden">
 
-    {{/* PERFORMANCE FIX: LCP Background */}}
-    {{/* Replaced CSS background with an IMG tag so browser loads it immediately */}}
     <div id="bg-container" class="absolute inset-0 z-0">
       {{ $bgDarkRes := resources.Get "images/cyber-immuno-fusion.png" }}
       {{ $bgLightRes := resources.Get "images/light-cyber-immuno-fusion.png" }}
 
-      {{/* Define variables for paths */}}
       {{ $darkSrc := "/images/cyber-immuno-fusion.png" }}
       {{ $lightSrc := "/images/light-cyber-immuno-fusion.png" }}
 
-      {{/* If images exist in assets, optimize them */}}
       {{ if $bgDarkRes }}
       {{ $darkSrc = ($bgDarkRes.Resize "1600x webp q50").RelPermalink }}
       {{ end }}
@@ -62,9 +54,9 @@
 
     <div class="relative z-10 pt-8">
 
-      <h1 class="text-3xl font-black text-primary-500 dark:text-primary-300 sm:text-4xl text-center">
+      <h2 class="text-3xl font-black text-primary-500 dark:text-primary-300 sm:text-4xl text-center">
         Who am I?
-      </h1>
+      </h2>
       <section
         class="mt-12 max-w-3xl mx-auto px-6 prose text-gray-900 dark:text-gray-200 mb-8 dark:prose-a:text-primary-300">
         {{ .Content }}
@@ -75,12 +67,11 @@
 
       <div class="max-w-3xl mx-auto relative">
         <div class="swiper aboutSwiper overflow-hidden rounded-lg">
-          <h1 class="text-3xl font-bold text-center text-gray-800 dark:text-gray-200">My Volunteering Experiences</h1>
+          <h2 class="text-3xl font-bold text-center text-gray-800 dark:text-gray-200">My Volunteering Experiences</h2>
           <div class="swiper-wrapper">
             {{ range .Params.images }}
             <div class="swiper-slide flex flex-col md:flex-row items-center justify-center p-6 gap-6">
               <div class="w-full md:w-1/2 flex items-center justify-center">
-                {{/* PERFORMANCE FIX: Carousel Images */}}
                 {{ $slideRes := resources.Get .src }}
                 {{ if $slideRes }}
                 {{ $slideOpt := $slideRes.Fill "720x640 webp q70" }}
@@ -153,7 +144,6 @@
       const progressCircle = document.querySelector(".autoplay-progress svg");
       const progressContent = document.querySelector(".autoplay-progress span");
 
-      // Only init swiper if element exists
       if (document.querySelector(".aboutSwiper")) {
         new Swiper(".aboutSwiper", {
           effect: "fade",
@@ -174,7 +164,6 @@
 
   <script>
     function updateBackground() {
-      // We now target the IMG tag instead of the DIV background
       const bgImg = document.getElementById("bg-img-element");
       const wrapper = document.getElementById("wrapper");
 
@@ -182,7 +171,6 @@
 
       const isDark = document.documentElement.classList.contains("dark");
 
-      // Swap the src of the image tag
       if (isDark) {
         bgImg.src = bgImg.dataset.dark;
         if (wrapper) wrapper.style.backgroundColor = "#111827";
@@ -193,12 +181,8 @@
     }
 
     document.addEventListener("DOMContentLoaded", updateBackground);
-
-    // Watch for class changes on HTML element (Dark Mode toggle)
     const observer = new MutationObserver(updateBackground);
     observer.observe(document.documentElement, { attributes: true, attributeFilter: ["class"] });
-
-    // Watch for system preference changes
     window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", updateBackground);
   </script>
 
@@ -213,7 +197,7 @@
           {{ .Site.Params.P4.Heading }}
         </h2>
         {{ range .Site.Params.P4.Content }}
-        <p class="max-w-2xl mx-auto mt-3 text-xl text-gray-500 dark:text-gray-300 sm:mt-4">
+        <p class="max-w-2xl mx-auto mt-3 text-xl text-gray-600 dark:text-gray-300 sm:mt-4">
           {{ .text }}
         </p>
         {{ end }}

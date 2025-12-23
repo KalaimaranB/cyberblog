@@ -61,71 +61,90 @@
 </head>
 
 <body class="bg-zinc-100 dark:bg-gray-800">
-    <div class="top-0 z-50 w-full text-gray-700 bg-gray-300 border-b border-gray-300 dark:text-gray-300 dark:bg-gray-900 dark:border-gray-700 md:sticky">
-    <div x-data="{ open: false }" class="flex flex-col max-w-full px-4 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
+    <div
+    class="top-0 z-50 w-full text-gray-700 bg-gray-300 border-b border-gray-300 dark:text-gray-300 dark:bg-gray-900 dark:border-gray-700 md:sticky">
+    <div x-data="{ open: false }"
+        class="flex flex-col max-w-full px-4 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
         <div class="flex flex-row items-center justify-between p-4">
-            <a href="../../"
-            class="flex
+            <a href="../../" class="flex
                     text-gray-700 dark:text-gray-300
                     transition-colors
-                    hover:text-gray-900 dark:hover:text-white"
-            >
-            <img
-                src="../../images/cyber-immuno-fusion.png"
-                class="transition-opacity h-9 w-9
-                    hover:opacity-50 focus:opacity-70"
-                alt="Personal Portfolio Logo"
-            />
-            <div
-                class="mt-1 ml-3 text-xl font-black tracking-tight
+                    hover:text-gray-900 dark:hover:text-white">
+
+                
+                
+                
+                
+                
+                <img src="../../images/cyber-immuno-fusion_hu_340def3ed382021e.webp" width="72" height="72"
+                    class="transition-opacity h-9 w-9 hover:opacity-50 focus:opacity-70" alt="Personal Portfolio Logo" />
+                
+
+                <div class="mt-1 ml-3 text-xl font-black tracking-tight
                     text-gray-700 dark:text-gray-300 uppercase
                     transition-colors
-                    hover:text-gray-400 dark:hover:text-white"
-            >
-                Personal Portfolio
-            </div>
+                    hover:text-gray-400 dark:hover:text-white">
+                    Personal Portfolio
+                </div>
             </a>
-            <button class="rounded-lg md:hidden focus:outline-none focus:shadow-outline" @click="open = !open" role="navigation" aria-expanded="false" aria-label="Main" aria-controls="menuItems">
+
+            <button class="rounded-lg md:hidden focus:outline-none focus:shadow-outline" @click="open = !open"
+                aria-expanded="false" aria-label="Main" aria-controls="menuItems">
                 <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
-                    <path x-show="!open" fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z" clip-rule="evenodd"></path>
-                    <path x-show="open" fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                    <path x-show="!open" fill-rule="evenodd"
+                        d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z"
+                        clip-rule="evenodd"></path>
+                    <path x-show="open" fill-rule="evenodd"
+                        d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                        clip-rule="evenodd"></path>
                 </svg>
             </button>
         </div>
-        <nav :class="{'flex': open, 'hidden': !open}" class="flex-col flex-grow hidden pb-4 md:pb-0 md:flex md:justify-end md:flex-row">
+        <nav :class="{'flex': open, 'hidden': !open}"
+            class="flex-col flex-grow hidden pb-4 md:pb-0 md:flex md:justify-end md:flex-row">
             
             
-            <a class="px-4 py-2 mt-2 text-sm font-semibold rounded-lg md:mt-0 md:ml-4 hover:text-white focus:text-white hover:bg-primary-600 focus:bg-primary-700 focus:outline-none focus:shadow-outline" href="//localhost:1313/" title="Home">
+            <a class="px-4 py-2 mt-2 text-sm font-semibold rounded-lg md:mt-0 md:ml-4 hover:text-white focus:text-white hover:bg-primary-600 focus:bg-primary-700 focus:outline-none focus:shadow-outline"
+                href="//localhost:1313/" title="Home">
                 Home
             </a>
             
             
             
-            <a class="px-4 py-2 mt-2 text-sm font-semibold rounded-lg md:mt-0 md:ml-4 hover:text-white focus:text-white hover:bg-primary-600 focus:bg-primary-700 focus:outline-none focus:shadow-outline" href="//localhost:1313/biomedical/" title="Biomedical">
+            <a class="px-4 py-2 mt-2 text-sm font-semibold rounded-lg md:mt-0 md:ml-4 hover:text-white focus:text-white hover:bg-primary-600 focus:bg-primary-700 focus:outline-none focus:shadow-outline"
+                href="//localhost:1313/biomedical/" title="Biomedical">
                 Biomedical
             </a>
             
             
             
-            <a class="px-4 py-2 mt-2 text-sm font-semibold rounded-lg md:mt-0 md:ml-4 hover:text-white focus:text-white hover:bg-primary-600 focus:bg-primary-700 focus:outline-none focus:shadow-outline" href="//localhost:1313/software/" title="Software">
+            <a class="px-4 py-2 mt-2 text-sm font-semibold rounded-lg md:mt-0 md:ml-4 hover:text-white focus:text-white hover:bg-primary-600 focus:bg-primary-700 focus:outline-none focus:shadow-outline"
+                href="//localhost:1313/software/" title="Software">
                 Software
             </a>
             
             
             
-            <a class="px-4 py-2 mt-2 text-sm font-semibold rounded-lg md:mt-0 md:ml-4 hover:text-white focus:text-white hover:bg-primary-600 focus:bg-primary-700 focus:outline-none focus:shadow-outline" href="//localhost:1313/cybersecurity/" title="Cybersecurity">
+            <a class="px-4 py-2 mt-2 text-sm font-semibold rounded-lg md:mt-0 md:ml-4 hover:text-white focus:text-white hover:bg-primary-600 focus:bg-primary-700 focus:outline-none focus:shadow-outline"
+                href="//localhost:1313/cybersecurity/" title="Cybersecurity">
                 Cybersecurity
             </a>
             
             
             
-            <button id="theme-toggle" type="button" class="p-2 text-sm text-gray-500 rounded-lg md: dark:text-gray-400 md:hover:bg-gray-100 dark:md:hover:bg-gray-700 md:focus:outline-none md:focus:ring-4 md:focus:ring-gray-200 dark:md:focus:ring-gray-700 md:ml-2 xs:hidden">
-                <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+
+            <button id="theme-toggle" type="button" aria-label="Toggle Dark Mode"
+                class="p-2 text-sm text-gray-500 rounded-lg md: dark:text-gray-400 md:hover:bg-gray-100 dark:md:hover:bg-gray-700 md:focus:outline-none md:focus:ring-4 md:focus:ring-gray-200 dark:md:focus:ring-gray-700 md:ml-2 xs:hidden">
+                <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg">
                     <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z">
                     </path>
                 </svg>
-                <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" aria-label="Dark or Light Mode" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
+                <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+                    aria-label="Dark or Light Mode" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                        fill-rule="evenodd" clip-rule="evenodd"></path>
                 </svg>
             </button>
             
@@ -154,9 +173,6 @@
           
           
           
-          
-          
-          
           <img src="../../images/profile_hu_9427e62a9a6a1b3d.webp" width="600" height="600"
             alt="Cyber-Immuno Fusion" class="w-full max-w-xl mx-auto rounded-lg" fetchpriority="high" />
           
@@ -167,17 +183,13 @@
 
   <div id="wrapper" class="relative w-full overflow-hidden">
 
-    
-    
     <div id="bg-container" class="absolute inset-0 z-0">
       
       
 
       
       
-      
 
-      
       
       
       
@@ -192,9 +204,9 @@
 
     <div class="relative z-10 pt-8">
 
-      <h1 class="text-3xl font-black text-primary-500 dark:text-primary-300 sm:text-4xl text-center">
+      <h2 class="text-3xl font-black text-primary-500 dark:text-primary-300 sm:text-4xl text-center">
         Who am I?
-      </h1>
+      </h2>
       <section
         class="mt-12 max-w-3xl mx-auto px-6 prose text-gray-900 dark:text-gray-200 mb-8 dark:prose-a:text-primary-300">
         <p>I’ve always been fascinated by systems—whether biological, digital, or somewhere in between. That curiosity brought me to Biomedical Engineering at the University of British Columbia (UBC), where I focus on cellular engineering and bioinformatics. I’m especially interested in the immune system: particularly on how to utilize immune cells in a therapuetic approach by utilizing synthetic biology techniques for cell engineering &amp; modelling.</p>
@@ -210,7 +222,7 @@
 
       <div class="max-w-3xl mx-auto relative">
         <div class="swiper aboutSwiper overflow-hidden rounded-lg">
-          <h1 class="text-3xl font-bold text-center text-gray-800 dark:text-gray-200">My Volunteering Experiences</h1>
+          <h2 class="text-3xl font-bold text-center text-gray-800 dark:text-gray-200">My Volunteering Experiences</h2>
           <div class="swiper-wrapper">
             
             <div class="swiper-slide flex flex-col md:flex-row items-center justify-center p-6 gap-6">
@@ -218,8 +230,8 @@
                 
                 
                 
-                <img src="../../images/about/coding_club.png" alt="Coding Club" loading="lazy"
-                  class="object-cover rounded shadow-md w-full h-64" />
+                <img src="../../images/about/coding_club_hu_d9600057b52dd6a6.webp" width="720" height="640"
+                  alt="Coding Club" loading="lazy" class="object-cover rounded shadow-md w-full h-64" />
                 
               </div>
               <div class="w-full md:w-1/2 text-center text-gray-800 dark:text-gray-200">
@@ -233,8 +245,8 @@
                 
                 
                 
-                <img src="../../images/about/stemastery.jpg" alt="STEMastery" loading="lazy"
-                  class="object-cover rounded shadow-md w-full h-64" />
+                <img src="../../images/about/stemastery_hu_7f37ea55ecdcd4cb.webp" width="720" height="640"
+                  alt="STEMastery" loading="lazy" class="object-cover rounded shadow-md w-full h-64" />
                 
               </div>
               <div class="w-full md:w-1/2 text-center text-gray-800 dark:text-gray-200">
@@ -248,8 +260,8 @@
                 
                 
                 
-                <img src="../../images/about/MEDIC.jpg" alt="MEDIC Foundation" loading="lazy"
-                  class="object-cover rounded shadow-md w-full h-64" />
+                <img src="../../images/about/MEDIC_hu_45ac2b689376055a.webp" width="720" height="640"
+                  alt="MEDIC Foundation" loading="lazy" class="object-cover rounded shadow-md w-full h-64" />
                 
               </div>
               <div class="w-full md:w-1/2 text-center text-gray-800 dark:text-gray-200">
@@ -314,7 +326,6 @@
       const progressCircle = document.querySelector(".autoplay-progress svg");
       const progressContent = document.querySelector(".autoplay-progress span");
 
-      
       if (document.querySelector(".aboutSwiper")) {
         new Swiper(".aboutSwiper", {
           effect: "fade",
@@ -335,7 +346,6 @@
 
   <script>
     function updateBackground() {
-      
       const bgImg = document.getElementById("bg-img-element");
       const wrapper = document.getElementById("wrapper");
 
@@ -343,7 +353,6 @@
 
       const isDark = document.documentElement.classList.contains("dark");
 
-      
       if (isDark) {
         bgImg.src = bgImg.dataset.dark;
         if (wrapper) wrapper.style.backgroundColor = "#111827";
@@ -354,12 +363,8 @@
     }
 
     document.addEventListener("DOMContentLoaded", updateBackground);
-
-    
     const observer = new MutationObserver(updateBackground);
     observer.observe(document.documentElement, { attributes: true, attributeFilter: ["class"] });
-
-    
     window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", updateBackground);
   </script>
 
@@ -374,7 +379,7 @@
           Latest Walkthroughs
         </h2>
         
-        <p class="max-w-2xl mx-auto mt-3 text-xl text-gray-500 dark:text-gray-300 sm:mt-4">
+        <p class="max-w-2xl mx-auto mt-3 text-xl text-gray-600 dark:text-gray-300 sm:mt-4">
           Here are my latest AWS Cloudgoat walkthroughs (very much in progress)
         </p>
         
