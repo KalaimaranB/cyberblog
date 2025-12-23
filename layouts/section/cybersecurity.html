@@ -5,18 +5,16 @@
   {{/* Load and parse certs.json */}}
   {{ $jsonData := readFile "content/cybersecurity/certs.json" | transform.Unmarshal }}
 
-  <!-- Main markdown content -->
   <section class="max-w-3xl mt-12 mx-auto prose dark:prose-invert dark:text-white mb-16">
     {{ .Content }}
   </section>
 
-  <!-- TryHackMe badge -->
   <div class="badge-container relative overflow-hidden max-w-4xl mx-auto my-8 px-6 py-8 mb-8" style="height: 200px;">
     <iframe class="badge-iframe" src="https://tryhackme.com/api/v2/badges/public-profile?userPublicId=3251752"
-      scrolling="no" loading="lazy" title="TryHackMe Badges" style="border:none;"></iframe>
+      scrolling="no" loading="lazy" title="TryHackMe Badges" style="border:none;">
+    </iframe>
   </div>
 
-  <!-- Carousel: grid layout to enforce side-by-side -->
   <div class="max-w-4xl mx-auto">
     <div class="swiper cyberSwiper w-full h-[400px] dark:bg-gray-900 bg-gray-200 overflow-hidden rounded-lg">
       <div class="swiper-wrapper h-full items-center">
@@ -24,16 +22,22 @@
         <div class="swiper-slide h-full flex items-center justify-center p-4" data-description="{{ $c.description }}">
           <div class="flex items-center w-full space-x-6 h-full">
 
-            <!-- 1. Image: fixed 2/3 width, full height -->
             <div class="w-full md:w-2/3 h-full flex items-center justify-center">
-                <img
-                  src="{{ printf "images/certificates/%s" $c.file | relURL }}"
-                  alt="{{ $c.file }}"
-                  class="object-contain h-full w-auto rounded"
-                  />
+              {{/* PERFORMANCE FIX: Resize Certificate */}}
+              {{ $certRes := resources.Get (printf "images/certificates/%s" $c.file) }}
+
+              {{ if $certRes }}
+              {{/* Certificates need high quality (q90) for text readability */}}
+              {{ $certOpt := $certRes.Resize "800x webp q90" }}
+              <img src="{{ $certOpt.RelPermalink }}" width="{{ $certOpt.Width }}" height="{{ $certOpt.Height }}"
+                alt="{{ $c.file }}" class="object-contain h-full w-auto rounded" loading="lazy" />
+              {{ else }}
+              {{/* Fallback */}}
+              <img src="{{ printf " images/certificates/%s" $c.file | relURL }}" alt="{{ $c.file }}"
+                class="object-contain h-full w-auto rounded" loading="lazy" />
+              {{ end }}
             </div>
 
-            <!-- 2. Skills text & Resource: fixed 2/3 width -->
             <div class="w-full md:w-1/3 h-full text-gray-800 dark:text-gray-300 overflow-auto">
               <h2 class="font-bold mb-2">Skills Gained</h2>
               <ul class="list-disc list-inside space-y-1 text-base">
@@ -44,112 +48,114 @@
 
               {{ with $c.resource }}
               <p class="mt-4 italic">
-                <a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:underline">
+                <a href="{{ . }}" target="_blank" rel="noopener noreferrer"
+                  class="text-blue-600 dark:text-blue-400 hover:underline">
                   Learn more!
                 </a>
               </p>
               {{ end }}
             </div>
 
-
           </div>
         </div>
         {{ end }}
       </div>
 
-      <!-- navigation -->
       <div class="swiper-button-prev text-white"></div>
       <div class="swiper-button-next text-white"></div>
       <div class="swiper-pagination bottom-4"></div>
     </div>
 
-    <!-- caption -->
     <div id="cert-caption" class="mt-4 text-center text-gray-800 dark:text-gray-300 text-base md:text-lg break-normal">
       {{ (index $jsonData 0).description }}
     </div>
   </div>
-  <br></br>
-
+  <br>
 
 </main>
 
-<!-- Swiper CSS & JS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" media="print"
+  onload="this.media='all'" />
+
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
 
-
-<!-- Initialize Swiper -->
 <script defer>
   document.addEventListener('DOMContentLoaded', () => {
-    const swiper = new Swiper('.cyberSwiper', {
-      effect: 'coverflow',
-      grabCursor: true,
-      centeredSlides: true,
-      slidesPerView: 1,
-      spaceBetween: 30,
-      loop: true,
-      autoplay: {
-        delay: 5000,
-        disableOnInteraction: false,
-      },
-      coverflowEffect: {
-        rotate: 30,
-        stretch: 0,
-        depth: 150,
-        modifier: 1,
-        slideShadows: true,
-      },
-      navigation: {
-        nextEl: '.cyberSwiper .swiper-button-next',
-        prevEl: '.cyberSwiper .swiper-button-prev',
-      },
-      pagination: {
-        el: '.cyberSwiper .swiper-pagination',
-        clickable: true,
-      }
-    });
+    // Wait for Swiper to load
+    const initCyberSwiper = () => {
+      if (typeof Swiper === 'undefined') { setTimeout(initCyberSwiper, 100); return; }
 
-    const captionEl = document.getElementById('cert-caption');
-    function updateCaption() {
-      const active = document.querySelector('.cyberSwiper .swiper-slide-active');
-      captionEl.innerText = active ? active.dataset.description : '';
+      const swiper = new Swiper('.cyberSwiper', {
+        // Important: set init: false so we can attach event listeners first
+        init: false,
+        effect: 'coverflow',
+        grabCursor: true,
+        centeredSlides: true,
+        slidesPerView: 1,
+        spaceBetween: 30,
+        loop: true,
+        autoplay: {
+          delay: 5000,
+          disableOnInteraction: false,
+        },
+        coverflowEffect: {
+          rotate: 30,
+          stretch: 0,
+          depth: 150,
+          modifier: 1,
+          slideShadows: true,
+        },
+        navigation: {
+          nextEl: '.cyberSwiper .swiper-button-next',
+          prevEl: '.cyberSwiper .swiper-button-prev',
+        },
+        pagination: {
+          el: '.cyberSwiper .swiper-pagination',
+          clickable: true,
+        }
+      });
+
+      const captionEl = document.getElementById('cert-caption');
+      function updateCaption() {
+        const active = document.querySelector('.cyberSwiper .swiper-slide-active');
+        if (active && captionEl) {
+          captionEl.innerText = active.dataset.description;
+        }
+      }
+
+      swiper.on('init', updateCaption);
+      swiper.on('slideChange', updateCaption);
+      swiper.on('transitionEnd', updateCaption);
+
+      swiper.init();
+    };
+
+    initCyberSwiper();
+
+    // Badge Scaling Logic
+    function scaleBadge() {
+      const container = document.querySelector('.badge-container');
+      const iframe = container ? container.querySelector('.badge-iframe') : null;
+
+      if (!container || !iframe) return;
+
+      const nativeW = 400;
+      const nativeH = 85;
+      const cw = container.clientWidth;
+      const ch = container.clientHeight;
+      const scale = Math.min(cw / nativeW, ch / nativeH);
+
+      iframe.style.width = nativeW + 'px';
+      iframe.style.height = nativeH + 'px';
+      iframe.style.position = 'absolute';
+      iframe.style.top = '50%';
+      iframe.style.left = '50%'; // Centered 50% instead of 58% for better alignment
+      iframe.style.transformOrigin = 'center center';
+      iframe.style.transform = `translate(-50%, -50%) scale(${scale})`;
     }
 
-    swiper.on('init slideChange transitionEnd', updateCaption);
-    swiper.init();
+    scaleBadge();
+    window.addEventListener('resize', scaleBadge);
   });
 </script>
-
-<script>
-  document.addEventListener('DOMContentLoaded', scaleBadge);
-  window.addEventListener('resize', scaleBadge);
-
-  function scaleBadge() {
-    const container = document.querySelector('.badge-container');
-    const iframe = container.querySelector('.badge-iframe');
-
-    // native badge dimensions
-    const nativeW = 400;
-    const nativeH = 85;
-
-    // available space
-    const cw = container.clientWidth;
-    const ch = container.clientHeight;
-
-    // pick the biggest uniform scale that fits
-    const scale = Math.min(cw / nativeW, ch / nativeH);
-
-    // force the iframe to its native size
-    iframe.style.width = nativeW + 'px';
-    iframe.style.height = nativeH + 'px';
-
-    // center + scale
-    iframe.style.position = 'absolute';
-    iframe.style.top = '50%';
-    iframe.style.left = '58%';
-    iframe.style.transformOrigin = 'center center';
-    iframe.style.transform = `translate(-50%, -50%) scale(${scale})`;
-  }
-</script>
-
-
 {{ end }}
