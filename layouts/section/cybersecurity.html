@@ -23,16 +23,20 @@
           <div class="flex items-center w-full space-x-6 h-full">
 
             <div class="w-full md:w-2/3 h-full flex items-center justify-center">
-              {{/* NUCLEAR FIX: Find image anywhere in assets and resize strictly */}}
+              {{/* Find image anywhere in assets */}}
               {{ $certRes := resources.GetMatch (printf "**/%s" $c.file) }}
 
               {{ if $certRes }}
-              {{/* PERFORMANCE FIX: Resize to 500x (down from 800x) */}}
-              {{ $certOpt := $certRes.Resize "500x webp q85" }}
-              <img src="{{ $certOpt.RelPermalink }}" width="{{ $certOpt.Width }}" height="{{ $certOpt.Height }}"
+              {{/* Generate two sizes: Small for mobile, Large for desktop */}}
+              {{ $imgSm := $certRes.Resize "300x webp q80" }}
+              {{ $imgLg := $certRes.Resize "600x webp q85" }}
+
+              <img src="{{ $imgLg.RelPermalink }}"
+                srcset="{{ $imgSm.RelPermalink }} 300w, {{ $imgLg.RelPermalink }} 600w"
+                sizes="(max-width: 768px) 300px, 600px" width="{{ $imgLg.Width }}" height="{{ $imgLg.Height }}"
                 alt="{{ $c.file }}" class="object-contain h-full w-auto rounded" loading="lazy" />
               {{ else }}
-              {{/* Fallback */}}
+              {{/* Fallback if file not found */}}
               <img src="{{ printf " images/certificates/%s" $c.file | relURL }}" alt="{{ $c.file }}"
                 class="object-contain h-full w-auto rounded" loading="lazy" />
               {{ end }}
