@@ -32,6 +32,17 @@
     "resource": "https://www.isc2.org/certifications/cc"
   },
   {
+    "file": "Sliver_C2_Certificate.png",
+    "description": "A course by Tyler teaching how to utilize Sliver C2 for red teaming operations. It covers installation, configuration, and usage of Sliver for command and control, as well as techniques for evading detection.",
+    "skills": [
+      "Sliver C2 Setup & Usage",
+      "Red Teaming Techniques",
+      "Evasion Techniques",
+      "Network Pivoting"
+    ],
+    "resource": "https://www.hacksmarter.org/courses/dcb55e7c-6205-4ad2-92b7-7c8fcd71faad"
+  },
+  {
     "file": "THM-AdventOfCyber.png",
     "description": "Advent of Cyber is TryHackMe’s annual December event delivering 24 daily challenges that introduce red and blue teaming fundamentals. I learned to analyze logs, perform Wi-Fi attacks, and practice defensive monitoring in a festive format.",
     "skills": [
@@ -41,6 +52,17 @@
       "Wi-Fi Attacks"
     ],
     "resource": "https://tryhackme.com/room/adventofcyber2024"
+  },
+  {
+    "file": "THM-AdventOfCyber-2025.png",
+    "description": "Advent of Cyber is TryHackMe's annual event delivering 24 challenges, this year focused on red teaming fundementals. I learned to analyze logs, perform digital foresnsics, and practice offensive techniques in a festive format.",
+    "skills": [
+      "Red Teaming Basics",
+      "Blue Teaming Strategies",
+      "Log Analysis",
+      "Digital Forensics"
+    ],
+    "resource": "https://tryhackme.com/adventofcyber25"
   },
   {
     "file": "THM-Pathway-Cyber101.png",
