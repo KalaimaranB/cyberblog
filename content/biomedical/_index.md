@@ -197,10 +197,6 @@ courses:
     summary: "Currently enrolled - This course is focused on the design & analysis of basic algorithims along with data structures. It covers searching & sorting algorithims along with basic data structures, graphs & concurrency."
     category: "CPSC"
 
-  - title: "CPSC330- Applied Machine Learning"
-    summary: "Currently enrolled - This course discusses applications of machine learning tools focused on solving practical problems. Topics include data cleaning, feature extraction supervised/unsupervised machine learning. "
-    category: "CPSC"
-
 
   
 # 3) Lab Work Slider: each slide has an image + bullet list

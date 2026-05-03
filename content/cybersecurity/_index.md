@@ -14,5 +14,6 @@ I've added the following to this page:
 2. **Completion Certificates** – Each links back to its source for you to dive deeper.
 3. **AWS Cloud Pentesting Walkthroughs** – I’ve started with an Intro to AWS Pentesting course and personal write-ups; next up is the full CloudGoat series. Find all walkthroughs [here](/posts).
 4. **Pentest report on Wreath** - I completed a network room on TryHackMe and wrote a complete pentest report on the results. View it [here](/wreath-network-report.pdf). 
+5. **Pentest report on HackSmarter Web App** - For the capstone project from HackSmarter's Web App, I completed a full report independently. View it [here](/hacksmarter-report.pdf).
 
 My long term goal in this field is to gain the skills of a red teamer and eventually specialize in cloud and AI security testing.

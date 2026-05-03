@@ -179,5 +179,17 @@
       "Evasion Techniques"
     ],
     "resource": "https://academy.simplycyber.io/p/hands-on-phishing"
+  },
+  {
+    "file": "THM-Pathway-AI.png",
+    "description": "A THM course showing how to look at the unique security challenges presented in AI systems, including poisoning training data, prompt injection, jailbreaking, supply chain investigation and forensics.",
+    "skills": [
+      "AI Security",
+      "Prompt Injection",
+      "LLM Security",
+      "Data Poisoning",
+      "SQL Injection"
+    ],
+    "resource": "https://tryhackme.com/path/outline/aisecurity"
   }
 ]
