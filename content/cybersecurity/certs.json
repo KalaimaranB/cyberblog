@@ -191,5 +191,19 @@
       "SQL Injection"
     ],
     "resource": "https://tryhackme.com/path/outline/aisecurity"
+  },
+  {
+    "file": "Web_App_Pentest-HSM.png",
+    "description": "A comprehensive course on web application penetration testing, covering everything from the basics to advanced techniques. The curriculum includes HTTP basics, Recon, Auth, Session Management, Authorization, Server-Side and Client-Side attacks and more.",
+    "skills": [
+      "Web Application Fundamentals",
+      "Reconnaissance",
+      "Authentication",
+      "Session Management",
+      "Authorization",
+      "Server-Side Attacks",
+      "Client-Side Attacks"
+    ],
+    "resource": "https://www.hacksmarter.org/courses/f7e446b7-6213-44b7-9a8a-e8f2cce0e0cf"
   }
 ]
